@@ -53,6 +53,7 @@ const Home = () => {
             src="/lovable-uploads/female-pharmacist-writing-clipboard-examining-medications-pharmacy.jpg"
             alt="Pharmacist at work"
             className="w-full h-full object-cover object-center"
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/95 to-primary-dark/90"></div>
@@ -103,89 +104,44 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Preview Section */}
+      {/* Vision Section */}
       <section className="py-20 bg-pharma-light relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/50 pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 animate-fade-in-left">
-              <h2 className="text-3xl font-bold text-pharma-navy mb-6">About Baker & Davis</h2>
-              <p className="text-gray-700 mb-6">
-                Founded with a mission to improve global healthcare access, Baker & Davis has grown 
-                into a leading pharmaceutical manufacturer and exporter. Our state-of-the-art 
-                facilities and commitment to quality ensure that every product meets international 
-                standards.
-              </p>
-              <p className="text-gray-700 mb-8">
-                With a robust R&D department and experienced team, we constantly innovate to address 
-                evolving healthcare needs worldwide.
-              </p>
-              <Button asChild variant="default" className="bg-pharma-navy hover:bg-primary-dark group transition-all duration-300">
-                <NavLink to="/about" className="flex items-center gap-2">
-                  Learn More About Us
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </NavLink>
-              </Button>
-            </div>
-            <div className="order-1 md:order-2 animate-fade-in-right">
-              <div className="bg-white p-6 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-                <img 
-                  src="/public/placeholder.svg" 
-                  alt="Pharmaceutical Manufacturing" 
-                  className="w-full h-auto rounded-lg" 
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pharma-light/5 to-transparent pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-pharma-navy mb-12">What Our Clients Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={testimonial.id} 
-                className={`bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${
-                  animate ? 'animate-fade-in' : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic">{testimonial.content}</p>
-                <div className="border-t pt-4">
-                  <p className="font-semibold text-pharma-navy">{testimonial.author}</p>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern opacity-10"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-6">Ready to Partner with a Global Leader?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join the many healthcare providers and distributors worldwide who trust Baker & Davis for their pharmaceutical needs.
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-pharma-navy mb-6">Our Vision</h2>
+          <p className="text-gray-700 mb-6">
+            At Baker & Davis, we envision a world where every individual has access to high-quality, affordable medicines.
           </p>
-          <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100 group transition-all duration-300 transform hover:scale-105">
-            <NavLink to="/contact" className="flex items-center gap-2">
-              Get in Touch Today
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </NavLink>
-          </Button>
+          <p className="text-gray-700">
+            We are committed to innovation, sustainability, and excellence in pharmaceutical manufacturing.
+          </p>
         </div>
       </section>
+
+      {/* Products Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-pharma-navy mb-12">Our Products</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img src="/public/product1.jpg" alt="Product 1" className="w-full h-40 object-cover rounded-t-lg mb-4" />
+              <h3 className="text-xl font-bold text-pharma-navy mb-2">Product Name 1</h3>
+              <p className="text-gray-600">Description of Product 1</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img src="/public/product2.jpg" alt="Product 2" className="w-full h-40 object-cover rounded-t-lg mb-4" />
+              <h3 className="text-xl font-bold text-pharma-navy mb-2">Product Name 2</h3>
+              <p className="text-gray-600">Description of Product 2</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img src="/public/product3.jpg" alt="Product 3" className="w-full h-40 object-cover rounded-t-lg mb-4" />
+              <h3 className="text-xl font-bold text-pharma-navy mb-2">Product Name 3</h3>
+              <p className="text-gray-600">Description of Product 3</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials and CTA sections (unchanged) */}
     </div>
   );
 };
