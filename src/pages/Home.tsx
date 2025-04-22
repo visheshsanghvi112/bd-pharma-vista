@@ -47,34 +47,56 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gradient-primary overflow-hidden min-h-[90vh] flex items-center">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/lovable-uploads/female-pharmacist-writing-clipboard-examining-medications-pharmacy.jpg"
-            alt="Pharmacist at work"
+            src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
+            alt="Medical Supplies Background"
             className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/95 via-pharma-navy/85 to-primary-dark/90"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/95 to-primary-dark/90"></div>
-        <div className="container mx-auto px-4 py-24 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in font-poppins">
-              Delivering Healthcare with
-              <span className="block text-pharma-light bg-clip-text text-transparent bg-gradient-to-r from-white to-pharma-light/80"> Precision & Purpose</span>
-            </h1>
-            <p className="text-lg text-gray-200 mb-8 animate-fade-in font-inter" style={{ animationDelay: "0.2s" }}>
-              BD Pvt. Ltd. is a trusted name in pharmaceutical manufacturing and global export of high-quality medicines.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100 group transition-all duration-300 transform hover:scale-105">
-                <NavLink to="/about" className="flex items-center gap-2">
-                  Explore More
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </NavLink>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10 transition-all duration-300">
-                <NavLink to="/contact">Contact Us</NavLink>
-              </Button>
+        
+        <div className="container relative z-10 px-4 py-24 mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center space-y-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight">
+                Pioneering
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-pharma-light to-white/80 mt-2">
+                  Healthcare Solutions
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in max-w-2xl mx-auto leading-relaxed" style={{ animationDelay: "0.2s" }}>
+                Setting new standards in pharmaceutical excellence with innovative research and global healthcare solutions.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+                <Button asChild size="lg" className="w-full sm:w-auto text-lg bg-white text-pharma-navy hover:bg-gray-100 group transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                  <NavLink to="/about" className="flex items-center gap-2 px-8">
+                    Discover More
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </NavLink>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-lg text-white border-white hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
+                  <NavLink to="/contact" className="px-8">Get Started Today</NavLink>
+                </Button>
+              </div>
+            </div>
+
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-white animate-fade-in" style={{ animationDelay: "0.6s" }}>
+              {stats.map((stat, index) => (
+                <div 
+                  key={index}
+                  className="text-center p-6 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="flex justify-center mb-3">
+                    <stat.icon className="w-8 h-8 text-pharma-light" />
+                  </div>
+                  <p className="text-3xl font-bold text-white mb-2">{stat.value}</p>
+                  <p className="text-gray-300 font-medium">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
