@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
@@ -11,7 +10,6 @@ import {
 } from "lucide-react";
 
 const Home = () => {
-  // Animation for hero section stats
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -50,8 +48,14 @@ const Home = () => {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative bg-gradient-primary overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 bg-[url('/public/placeholder.svg')] opacity-10 bg-center bg-cover bg-no-repeat mix-blend-overlay"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/90 to-primary-dark/80"></div>
+        <div className="absolute inset-0">
+          <img
+            src="/lovable-uploads/female-pharmacist-writing-clipboard-examining-medications-pharmacy.jpg"
+            alt="Pharmacist at work"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/95 to-primary-dark/90"></div>
         <div className="container mx-auto px-4 py-24 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in font-poppins">

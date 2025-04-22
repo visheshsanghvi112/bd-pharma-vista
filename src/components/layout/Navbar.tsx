@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -22,20 +21,19 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <NavLink to="/" className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <NavLink to="/" className="flex items-center gap-3 group">
             <img
               src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
               alt="Baker & Davis Logo"
-              className="h-8 w-auto"
+              className="h-10 w-auto transform transition-all duration-300 hover:scale-105 drop-shadow-[0_0_10px_rgba(40,53,147,0.3)] filter-none"
             />
-            <span className="hidden font-bold text-xl text-pharma-navy sm:inline-block">
+            <span className="hidden font-bold text-2xl text-pharma-navy drop-shadow-sm sm:inline-block">
               Baker & Davis
             </span>
           </NavLink>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <NavLink
@@ -63,7 +61,6 @@ const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="icon"
@@ -74,7 +71,6 @@ const Navbar = () => {
         </Button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t p-4 space-y-4 bg-background">
           <nav className="flex flex-col space-y-4">
