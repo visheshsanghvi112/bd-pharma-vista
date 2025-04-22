@@ -1,34 +1,53 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
+import { Factory, Flask, CircleCheck, ArrowRight } from "lucide-react";
+import DirectorCard from "@/components/about/DirectorCard";
+import MissionVisionCard from "@/components/about/MissionVisionCard";
 
 const About = () => {
   const values = [
     {
       title: "Quality",
-      description: "We maintain the highest standards in all aspects of our operation, from raw materials to finished products."
+      description: "We maintain the highest standards in all aspects of our operation, from raw materials to finished products.",
+      icon: CircleCheck
     },
     {
       title: "Innovation",
-      description: "Our dedicated R&D team constantly works to improve formulations and develop new solutions for global health challenges."
+      description: "Our dedicated R&D team constantly works to improve formulations and develop new solutions for global health challenges.",
+      icon: Flask
     },
     {
       title: "Integrity",
-      description: "We conduct our business with unwavering ethical standards and transparency, building trust with partners worldwide."
+      description: "We conduct our business with unwavering ethical standards and transparency, building trust with partners worldwide.",
+      icon: CircleCheck
     },
     {
       title: "Compliance",
-      description: "We adhere to all international regulatory requirements and maintain certifications from leading global health authorities."
+      description: "We adhere to all international regulatory requirements and maintain certifications from leading global health authorities.",
+      icon: Factory
     }
   ];
 
-  const milestones = [
-    { year: "2005", event: "Foundation of Baker & Davis Pharmaceuticals" },
-    { year: "2009", event: "Achieved WHO-GMP certification" },
-    { year: "2012", event: "Expanded export operations to 25 countries" },
-    { year: "2017", event: "Incorporation as BD Pvt. Ltd." },
-    { year: "2020", event: "Established state-of-the-art R&D facility" },
-    { year: "2023", event: "Reached milestone of 200+ pharmaceutical products" }
+  const directors = [
+    {
+      name: "Dr. Sarah Mitchell",
+      role: "Chief Executive Officer",
+      description: "Leading BD's global vision and strategic initiatives with over 15 years of pharmaceutical industry experience.",
+      imageUrl: "/lovable-uploads/70b85ca1-1299-4fe8-8a48-f3c0cec53ff7.png"
+    },
+    {
+      name: "Dr. James Anderson",
+      role: "Director of Research & Development",
+      description: "Spearheading innovation in drug development and formulation with a focus on next-generation pharmaceuticals.",
+      imageUrl: "/lovable-uploads/b363471a-fde0-4fe3-822e-95eb8934a7f6.png"
+    },
+    {
+      name: "Dr. Emily Parker",
+      role: "Head of Quality Assurance",
+      description: "Ensuring the highest standards of quality and compliance across all our manufacturing processes.",
+      imageUrl: "/lovable-uploads/09448174-a3e2-4f28-b61d-1a45b660434b.png"
+    }
   ];
 
   return (
@@ -43,8 +62,24 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Overview */}
+      {/* Mission & Vision Section */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            <MissionVisionCard
+              title="Mission"
+              content="To improve lives by delivering trusted pharmaceutical solutions across the globe through innovation, quality, and accessibility."
+            />
+            <MissionVisionCard
+              title="Vision"
+              content="To be the most trusted partner in global healthcare, recognized for our unwavering commitment to quality, innovation, and patient well-being."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Company Overview */}
+      <section className="py-16 bg-pharma-light">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -59,17 +94,25 @@ const About = () => {
                 Today, BD Pvt. Ltd. serves healthcare providers and patients in over 50 countries, with a continuously expanding portfolio of essential and specialty medications.
               </p>
             </div>
-            <div className="bg-pharma-light p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-pharma-navy mb-4">Our Mission</h3>
-              <p className="text-gray-700 mb-6 italic border-l-4 border-pharma-navy pl-4 py-2">
-                "To improve lives by delivering trusted pharmaceutical solutions across the globe."
-              </p>
-              
-              <h3 className="text-2xl font-bold text-pharma-navy mb-4">Our Vision</h3>
-              <p className="text-gray-700 italic border-l-4 border-pharma-navy pl-4 py-2">
-                "To be the most trusted partner in global healthcare, recognized for quality, innovation, and accessibility."
-              </p>
+            <div>
+              <img 
+                src="/lovable-uploads/193f0ec9-fa4c-454b-8378-097babca8c55.png" 
+                alt="Pharmaceutical Manufacturing"
+                className="rounded-lg shadow-lg transform hover:scale-[1.02] transition-all duration-300"
+              />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Directors Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-pharma-navy mb-12">Our Leadership</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {directors.map((director, index) => (
+              <DirectorCard key={index} {...director} />
+            ))}
           </div>
         </div>
       </section>
@@ -81,79 +124,13 @@ const About = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-xl font-bold text-pharma-navy mb-4">{value.title}</h3>
-                <p className="text-gray-700">{value.description}</p>
+                <div className="flex justify-center mb-4">
+                  <value.icon className="w-12 h-12 text-pharma-navy opacity-80" />
+                </div>
+                <h3 className="text-xl font-bold text-pharma-navy mb-4 text-center">{value.title}</h3>
+                <p className="text-gray-700 text-center">{value.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Facilities Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl font-bold text-pharma-navy mb-6">State-of-the-Art Facilities</h2>
-              <p className="text-gray-700 mb-4">
-                Baker & Davis operates modern manufacturing facilities that comply with international standards for pharmaceutical production. Our plants are equipped with the latest technology to ensure precision, quality, and efficiency.
-              </p>
-              <p className="text-gray-700 mb-4">
-                Our dedicated R&D center houses experienced scientists and researchers who work tirelessly to develop new formulations and improve existing products. This commitment to innovation allows us to address evolving healthcare needs worldwide.
-              </p>
-              <p className="text-gray-700 mb-4">
-                Quality control is at the heart of our operation, with comprehensive testing performed at every stage of production. Our facilities are regularly audited by international regulatory bodies to maintain our certifications.
-              </p>
-            </div>
-            <div className="order-1 md:order-2">
-              <img 
-                src="/public/placeholder.svg" 
-                alt="BD Pharmaceutical Facility" 
-                className="w-full h-auto rounded-lg shadow-lg" 
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline/Milestones */}
-      <section className="py-16 bg-pharma-light">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-pharma-navy mb-12">Our Journey</h2>
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pharma-navy"></div>
-            
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div 
-                  key={index} 
-                  className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'} md:justify-between`}
-                >
-                  <div className={`hidden md:block w-5/12 ${index % 2 !== 0 ? 'order-2 text-left' : 'order-1 text-right'}`}>
-                    <div className={`p-4 rounded-lg bg-white shadow ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}>
-                      <h3 className="text-xl font-bold text-pharma-navy">{milestone.year}</h3>
-                      <p className="text-gray-700">{milestone.event}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-pharma-navy z-10"></div>
-                  
-                  <div className={`md:hidden block w-full text-left p-4 rounded-lg bg-white shadow ml-8`}>
-                    <h3 className="text-xl font-bold text-pharma-navy">{milestone.year}</h3>
-                    <p className="text-gray-700">{milestone.event}</p>
-                  </div>
-                  
-                  <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? 'order-2 text-left' : 'order-1 text-right'}`}>
-                    <div className={`p-4 rounded-lg bg-white shadow ${index % 2 === 0 ? 'ml-8' : 'mr-8'}`}>
-                      <h3 className="text-xl font-bold text-pharma-navy">{milestone.year}</h3>
-                      <p className="text-gray-700">{milestone.event}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -165,14 +142,12 @@ const About = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Partner with Baker & Davis to contribute to global healthcare improvement and access to quality medicines.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100">
-              <NavLink to="/contact">Contact Us</NavLink>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-              <NavLink to="/team">Meet Our Team</NavLink>
-            </Button>
-          </div>
+          <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100">
+            <NavLink to="/contact" className="flex items-center gap-2">
+              Contact Us
+              <ArrowRight className="w-5 h-5" />
+            </NavLink>
+          </Button>
         </div>
       </section>
     </div>
