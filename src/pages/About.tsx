@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { Factory, Flask, CircleCheck, ArrowRight } from "lucide-react";
+import { Factory, Beaker, CircleCheck, ArrowRight } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 
@@ -15,7 +15,7 @@ const About = () => {
     {
       title: "Innovation",
       description: "Our dedicated R&D team constantly works to improve formulations and develop new solutions for global health challenges.",
-      icon: Flask
+      icon: Beaker
     },
     {
       title: "Integrity",
