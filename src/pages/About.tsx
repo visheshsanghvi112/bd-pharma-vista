@@ -1,31 +1,33 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { Factory, Beaker, CircleCheck, ArrowRight } from "lucide-react";
+import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
+import FounderSection from "@/components/about/FounderSection";
+import StatCard from "@/components/about/StatCard";
 
 const About = () => {
   const values = [
     {
       title: "Quality",
       description: "We maintain the highest standards in all aspects of our operation, from raw materials to finished products.",
-      icon: CircleCheck
+      icon: Star
     },
     {
       title: "Innovation",
       description: "Our dedicated R&D team constantly works to improve formulations and develop new solutions for global health challenges.",
-      icon: Beaker
+      icon: User
     },
     {
       title: "Integrity",
       description: "We conduct our business with unwavering ethical standards and transparency, building trust with partners worldwide.",
-      icon: CircleCheck
+      icon: Award
     },
     {
       title: "Compliance",
       description: "We adhere to all international regulatory requirements and maintain certifications from leading global health authorities.",
-      icon: Factory
+      icon: Briefcase
     }
   ];
 
@@ -33,30 +35,32 @@ const About = () => {
     {
       name: "Dr. Sarah Mitchell",
       role: "Chief Executive Officer",
-      description: "Leading BD's global vision and strategic initiatives with over 15 years of pharmaceutical industry experience.",
-      imageUrl: "/lovable-uploads/70b85ca1-1299-4fe8-8a48-f3c0cec53ff7.png"
+      description: "Leading our global vision and strategic initiatives with over 15 years of pharmaceutical industry experience.",
+      imageUrl: "/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
     },
     {
       name: "Dr. James Anderson",
       role: "Director of Research & Development",
       description: "Spearheading innovation in drug development and formulation with a focus on next-generation pharmaceuticals.",
-      imageUrl: "/lovable-uploads/b363471a-fde0-4fe3-822e-95eb8934a7f6.png"
+      imageUrl: "/lovable-uploads/female-pharmacist-writing-clipboard-examining-medications-pharmacy.jpg"
     },
     {
       name: "Dr. Emily Parker",
       role: "Head of Quality Assurance",
       description: "Ensuring the highest standards of quality and compliance across all our manufacturing processes.",
-      imageUrl: "/lovable-uploads/09448174-a3e2-4f28-b61d-1a45b660434b.png"
+      imageUrl: "/lovable-uploads/colorful-medication-tablets-capsules-displayed-light-blue-background-emphasizing-health-healthcare-themes.jpg"
     }
   ];
 
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="bg-gradient-primary py-20 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">About Baker & Davis</h1>
-          <p className="text-xl max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+      <section className="relative py-24 bg-gradient-to-br from-pharma-light/30 via-primary-light/40 to-primary dark:from-pharma-dark/40 dark:via-primary-dark/50 dark:to-primary text-white overflow-hidden">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-pharma-navy to-primary-dark dark:from-white dark:to-primary-light">
+            About Baker & Davis
+          </h1>
+          <p className="text-xl max-w-3xl mx-auto animate-fade-in text-pharma-navy dark:text-gray-200" style={{ animationDelay: "0.2s" }}>
             A trusted pharmaceutical manufacturer and global exporter committed to improving lives through quality healthcare products
           </p>
         </div>
@@ -78,8 +82,34 @@ const About = () => {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <FounderSection />
+
+      {/* Stats Section */}
+      <section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background dark:via-background/95 dark:to-background/90">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <StatCard
+              icon={Award}
+              title="ISO-9001-2015"
+              subtitle="Certified"
+            />
+            <StatCard
+              icon={Briefcase}
+              title="22+ Years"
+              subtitle="Experience"
+            />
+            <StatCard
+              icon={Star}
+              title="Global"
+              subtitle="Presence"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Company Overview */}
-      <section className="py-16 bg-pharma-light dark:bg-pharma-dark transition-colors duration-300">
+      <section className="py-16 bg-pharma-light/30 dark:bg-pharma-dark/20 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -96,8 +126,8 @@ const About = () => {
             </div>
             <div>
               <img 
-                src="/lovable-uploads/193f0ec9-fa4c-454b-8378-097babca8c55.png" 
-                alt="Pharmaceutical Manufacturing"
+                src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg" 
+                alt="Medical Supplies and Equipment"
                 className="rounded-lg shadow-lg transform hover:scale-[1.02] transition-all duration-300"
               />
             </div>
@@ -118,12 +148,12 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-pharma-light dark:bg-pharma-dark/40 transition-colors duration-300">
+      <section className="py-16 bg-gradient-to-br from-pharma-light/30 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">Our Core Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white dark:bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-white dark:bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                 <div className="flex justify-center mb-4">
                   <value.icon className="w-12 h-12 text-pharma-navy dark:text-primary-light transition-colors duration-300" />
                 </div>
@@ -136,7 +166,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-primary text-white">
+      <section className="py-16 bg-gradient-to-br from-primary/90 to-primary-dark dark:from-primary-dark/90 dark:to-primary text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Join Our Mission</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
