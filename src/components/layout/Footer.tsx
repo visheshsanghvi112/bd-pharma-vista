@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
               <img
                 src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
                 alt="Baker & Davis Logo"
-                className="h-16 w-auto bg-white p-2 rounded"
+                className="h-8 w-auto bg-white p-1 rounded"
               />
               <span className="font-bold text-xl">Baker & Davis</span>
             </div>
