@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-primary text-white">
+    <footer className="bg-gradient-primary dark:bg-gradient-to-br dark:from-pharma-dark dark:to-primary-dark text-white transition-all duration-300">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -14,7 +14,7 @@ const Footer = () => {
               <img
                 src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
                 alt="Baker & Davis Logo"
-                className="h-8 w-auto bg-white p-1 rounded"
+                className="h-16 w-auto p-2 bg-white dark:bg-opacity-90 rounded transition-all duration-300"
               />
               <span className="font-bold text-xl">Baker & Davis</span>
             </div>
@@ -83,10 +83,10 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Certifications</h3>
             <div className="flex flex-wrap gap-2">
-              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded">WHO-GMP</span>
-              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded">FDA Approved</span>
-              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded">ISO 9001:2015</span>
-              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded">ISO 14001:2015</span>
+              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded hover:bg-white/30 transition-colors cursor-default">WHO-GMP</span>
+              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded hover:bg-white/30 transition-colors cursor-default">FDA Approved</span>
+              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded hover:bg-white/30 transition-colors cursor-default">ISO 9001:2015</span>
+              <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded hover:bg-white/30 transition-colors cursor-default">ISO 14001:2015</span>
             </div>
           </div>
         </div>

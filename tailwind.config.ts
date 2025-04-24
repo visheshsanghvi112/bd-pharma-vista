@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -48,6 +49,7 @@ export default {
 					navy: '#283593',
 					light: '#E8EAF6',
 					gray: '#F5F5F7',
+					dark: '#1A1F2C',
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -131,6 +133,32 @@ export default {
 						opacity: '1',
 						transform: 'translateX(0)'
 					}
+				},
+				'pulse-subtle': {
+					'0%, 100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'scale(1.05)',
+						opacity: '0.9'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-500px 0'
+					},
+					'100%': {
+						backgroundPosition: '500px 0'
+					}
 				}
 			},
 			animation: {
@@ -139,11 +167,19 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-in-right': 'fade-in-right 0.5s ease-out',
 				'fade-in-left': 'fade-in-left 0.5s ease-out',
+				'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
+				'float': 'float 6s infinite ease-in-out',
+				'shimmer': 'shimmer 2s infinite linear'
 			},
 			backgroundImage: {
 				'gradient-primary': 'linear-gradient(135deg, #283593 0%, #5C6BC0 100%)',
 				'gradient-light': 'linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%)',
 				'gradient-cta': 'linear-gradient(135deg, #3949AB 0%, #303F9F 100%)',
+				'gradient-hero-light': 'linear-gradient(to bottom, rgba(232, 234, 246, 0.8) 0%, rgba(40, 53, 147, 0.8) 100%)',
+				'gradient-hero-dark': 'linear-gradient(to bottom, rgba(26, 31, 44, 0.8) 0%, rgba(40, 53, 147, 0.9) 100%)',
+				'gradient-card-light': 'linear-gradient(135deg, #ffffff 0%, #f5f7ff 100%)',
+				'gradient-card-dark': 'linear-gradient(135deg, #1a1f2c 0%, #252d3d 100%)',
+				'shimmer-gradient': 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)'
 			}
 		}
 	},
