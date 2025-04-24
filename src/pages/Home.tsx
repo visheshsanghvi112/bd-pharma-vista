@@ -54,47 +54,47 @@ const Home = () => {
             alt="Medical Supplies Background"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/95 via-pharma-navy/85 to-primary-dark/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/95 via-pharma-navy/80 to-primary-dark/70 backdrop-blur-sm"></div>
         </div>
         
         <div className="container relative z-10 px-4 py-24 mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="text-center space-y-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 animate-fade-in leading-tight tracking-tight">
                 Pioneering
-                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-pharma-light to-white/80 mt-2">
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-pharma-light to-white mt-2">
                   Healthcare Solutions
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in max-w-2xl mx-auto leading-relaxed" style={{ animationDelay: "0.2s" }}>
+              <p className="text-xl md:text-2xl text-gray-200 mb-12 animate-fade-in max-w-2xl mx-auto leading-relaxed" style={{ animationDelay: "0.2s" }}>
                 Setting new standards in pharmaceutical excellence with innovative research and global healthcare solutions.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-                <Button asChild size="lg" className="w-full sm:w-auto text-lg bg-white text-pharma-navy hover:bg-gray-100 group transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                  <NavLink to="/about" className="flex items-center gap-2 px-8">
+                <Button asChild size="lg" className="w-full sm:w-auto text-lg bg-white text-pharma-navy hover:bg-gray-100 group transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl px-8 py-6">
+                  <NavLink to="/about" className="flex items-center gap-3">
                     Discover More
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </NavLink>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-lg text-white border-white hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
-                  <NavLink to="/contact" className="px-8">Get Started Today</NavLink>
+                <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-lg text-white border-white hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 px-8 py-6">
+                  <NavLink to="/contact">Get Started Today</NavLink>
                 </Button>
               </div>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-white animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-white animate-fade-in" style={{ animationDelay: "0.6s" }}>
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="text-center p-6 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1"
+                  className="text-center p-8 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl group"
                 >
-                  <div className="flex justify-center mb-3">
-                    <stat.icon className="w-8 h-8 text-pharma-light" />
+                  <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform">
+                    <stat.icon className="w-10 h-10 text-pharma-light" />
                   </div>
-                  <p className="text-3xl font-bold text-white mb-2">{stat.value}</p>
-                  <p className="text-gray-300 font-medium">{stat.label}</p>
+                  <p className="text-4xl font-bold text-white mb-2">{stat.value}</p>
+                  <p className="text-gray-200 font-medium">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -103,19 +103,19 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-white to-pharma-light/20 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className={`text-center p-6 rounded-xl backdrop-blur-sm bg-white/50 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${
+                className={`text-center p-8 rounded-xl backdrop-blur-sm bg-white/80 border border-pharma-navy/10 hover:border-pharma-navy/30 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl group ${
                   animate ? 'animate-fade-in' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${0.2 + index * 0.1}s` }}
               >
-                <div className="flex justify-center mb-3">
-                  <stat.icon className="w-8 h-8 text-pharma-navy" />
+                <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform">
+                  <stat.icon className="w-10 h-10 text-pharma-navy" />
                 </div>
                 <p className="text-4xl font-bold text-pharma-navy mb-2">{stat.value}</p>
                 <p className="text-gray-600 font-medium">{stat.label}</p>
