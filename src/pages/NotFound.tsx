@@ -15,14 +15,14 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-pharma-light">
-      <div className="text-center p-8 bg-white rounded-lg shadow-md max-w-lg">
-        <h1 className="text-6xl font-bold text-pharma-navy mb-6">404</h1>
-        <p className="text-2xl text-pharma-navy mb-4">Page Not Found</p>
-        <p className="text-gray-600 mb-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-pharma-light dark:bg-pharma-dark transition-colors duration-300">
+      <div className="text-center p-8 bg-white dark:bg-card rounded-lg shadow-md max-w-lg transition-all duration-300">
+        <h1 className="text-6xl font-bold text-pharma-navy dark:text-primary-light mb-6 transition-colors duration-300">404</h1>
+        <p className="text-2xl text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Page Not Found</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-8 transition-colors duration-300">
           The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
         </p>
-        <Button asChild className="bg-pharma-navy hover:bg-primary-dark">
+        <Button asChild className="bg-pharma-navy hover:bg-primary-dark dark:bg-primary dark:hover:bg-primary-light transition-all duration-300">
           <NavLink to="/">Return to Home</NavLink>
         </Button>
       </div>

@@ -25,7 +25,7 @@ const App = () => {
       document.documentElement.classList.add("dark");
     } else if (savedTheme === "light") {
       document.documentElement.classList.remove("dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    } else if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }
