@@ -63,7 +63,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <MissionVisionCard
@@ -79,18 +79,18 @@ const About = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-16 bg-pharma-light">
+      <section className="py-16 bg-pharma-light dark:bg-pharma-dark transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-pharma-navy mb-6">Our Story</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6 transition-colors duration-300">Our Story</h2>
+              <p className="text-gray-700 dark:text-gray-200 mb-4 transition-colors duration-300">
                 Baker & Davis was founded with a clear mission: to improve lives by delivering trusted pharmaceutical solutions across the globe. What began as a small operation has grown into a respected pharmaceutical manufacturer and exporter with global reach.
               </p>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-700 dark:text-gray-200 mb-4 transition-colors duration-300">
                 For over a decade, we have dedicated ourselves to manufacturing premium quality medicines that meet international standards. Our commitment to excellence has earned us certifications from leading health authorities worldwide, including WHO-GMP and FDA approvals.
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 dark:text-gray-200 transition-colors duration-300">
                 Today, BD Pvt. Ltd. serves healthcare providers and patients in over 50 countries, with a continuously expanding portfolio of essential and specialty medications.
               </p>
             </div>
@@ -106,9 +106,9 @@ const About = () => {
       </section>
 
       {/* Directors Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-pharma-navy mb-12">Our Leadership</h2>
+          <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">Our Leadership</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {directors.map((director, index) => (
               <DirectorCard key={index} {...director} />
@@ -118,17 +118,17 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-pharma-light">
+      <section className="py-16 bg-pharma-light dark:bg-pharma-dark/40 transition-colors duration-300">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-pharma-navy mb-12">Our Core Values</h2>
+          <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">Our Core Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-white dark:bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                 <div className="flex justify-center mb-4">
-                  <value.icon className="w-12 h-12 text-pharma-navy opacity-80" />
+                  <value.icon className="w-12 h-12 text-pharma-navy dark:text-primary-light transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-pharma-navy mb-4 text-center">{value.title}</h3>
-                <p className="text-gray-700 text-center">{value.description}</p>
+                <h3 className="text-xl font-bold text-pharma-navy dark:text-white mb-4 text-center transition-colors duration-300">{value.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-center transition-colors duration-300">{value.description}</p>
               </div>
             ))}
           </div>
@@ -142,7 +142,7 @@ const About = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Partner with Baker & Davis to contribute to global healthcare improvement and access to quality medicines.
           </p>
-          <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100">
+          <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-100 transition-colors duration-300">
             <NavLink to="/contact" className="flex items-center gap-2">
               Contact Us
               <ArrowRight className="w-5 h-5" />

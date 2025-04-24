@@ -15,24 +15,24 @@ const Privacy = () => {
       </section>
 
       {/* Privacy Policy Content */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto prose prose-lg">
+          <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert transition-colors duration-300">
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Introduction</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Introduction</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 This Privacy Policy outlines how Baker & Davis Pvt. Ltd. ("we," "our," or "the Company") collects, uses, 
                 maintains, and discloses information collected from users (each, a "User") of our website and services. 
                 This privacy policy applies to the Site and all products and services offered by Baker & Davis Pvt. Ltd.
               </p>
-              <p className="text-gray-700 mt-4">
+              <p className="text-gray-700 dark:text-gray-300 mt-4 transition-colors duration-300">
                 Last updated: April 2023
               </p>
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Information Collection</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Information Collection</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 We may collect personal identification information from Users in a variety of ways, including, but not 
                 limited to, when Users visit our site, register on the site, fill out a form, and in connection with 
                 other activities, services, features or resources we make available on our Site. Users may be asked for, 
@@ -44,11 +44,11 @@ const Privacy = () => {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Information Usage</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Information Usage</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 Baker & Davis Pvt. Ltd. may collect and use Users' personal information for the following purposes:
               </p>
-              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 <li>To improve customer service - Information you provide helps us respond to your customer service requests and support needs more efficiently.</li>
                 <li>To personalize user experience - We may use information in the aggregate to understand how our Users as a group use the services and resources provided on our Site.</li>
                 <li>To improve our Site - We may use feedback you provide to improve our products and services.</li>
@@ -60,8 +60,8 @@ const Privacy = () => {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Information Protection</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Information Protection</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 We adopt appropriate data collection, storage and processing practices and security measures to protect against 
                 unauthorized access, alteration, disclosure or destruction of your personal information, username, password, 
                 transaction information and data stored on our Site.
@@ -69,8 +69,8 @@ const Privacy = () => {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Sharing Personal Information</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Sharing Personal Information</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 We do not sell, trade, or rent Users' personal identification information to others. We may share generic 
                 aggregated demographic information not linked to any personal identification information regarding visitors 
                 and users with our business partners, trusted affiliates and advertisers for the purposes outlined above.
@@ -78,8 +78,8 @@ const Privacy = () => {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Third-Party Websites</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Third-Party Websites</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 Users may find advertising or other content on our Site that link to the sites and services of our partners, 
                 suppliers, advertisers, sponsors, licensors and other third parties. We do not control the content or links 
                 that appear on these sites and are not responsible for the practices employed by websites linked to or from 
@@ -91,8 +91,8 @@ const Privacy = () => {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Changes to This Privacy Policy</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Changes to This Privacy Policy</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 Baker & Davis Pvt. Ltd. has the discretion to update this privacy policy at any time. When we do, we will revise 
                 the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to 
                 stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree 
@@ -101,8 +101,8 @@ const Privacy = () => {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Your Acceptance of These Terms</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Your Acceptance of These Terms</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 By using this Site, you signify your acceptance of this policy. If you do not agree to this policy, please do not 
                 use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your 
                 acceptance of those changes.
@@ -110,12 +110,12 @@ const Privacy = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-pharma-navy mb-4">Contacting Us</h2>
-              <p className="text-gray-700">
+              <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Contacting Us</h2>
+              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, 
                 please contact us at:
               </p>
-              <address className="mt-4 not-italic text-gray-700">
+              <address className="mt-4 not-italic text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 <p>Baker & Davis Pvt. Ltd.</p>
                 <p>42/44, Babu Genu Road, Shop No. 14, 2nd Floor,</p>
                 <p>Om Shanti Co-Operative Housing Society Ltd.,</p>
@@ -125,10 +125,10 @@ const Privacy = () => {
               </address>
             </div>
 
-            <div className="mt-10 pt-6 border-t border-gray-200 text-center">
+            <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700 text-center transition-colors duration-300">
               <NavLink 
                 to="/contact" 
-                className="text-pharma-navy font-medium hover:underline"
+                className="text-pharma-navy dark:text-primary-light font-medium hover:underline transition-colors duration-300"
               >
                 Contact Us for Privacy Questions
               </NavLink>

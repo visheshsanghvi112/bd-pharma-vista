@@ -84,15 +84,15 @@ const Team = () => {
       </section>
 
       {/* Team Grid */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member) => (
               <div 
                 key={member.id} 
-                className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100"
+                className="bg-white dark:bg-card rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 dark:border-gray-800"
               >
-                <div className="aspect-w-4 aspect-h-3 overflow-hidden bg-pharma-light">
+                <div className="aspect-w-4 aspect-h-3 overflow-hidden bg-pharma-light dark:bg-pharma-dark transition-colors duration-300">
                   <img 
                     src={member.image} 
                     alt={member.name} 
@@ -100,17 +100,17 @@ const Team = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-pharma-navy">{member.name}</h3>
-                  <p className="text-pharma-navy/70 font-medium">{member.role}</p>
+                  <h3 className="text-xl font-bold text-pharma-navy dark:text-primary-light transition-colors duration-300">{member.name}</h3>
+                  <p className="text-pharma-navy/70 dark:text-primary-light/70 font-medium transition-colors duration-300">{member.role}</p>
                   <div className="mt-4">
-                    <p className="text-gray-700">
+                    <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                       {expandedMember === member.id ? member.fullBio : member.shortBio}
                     </p>
                   </div>
                   <div className="mt-6 flex justify-between items-center">
                     <button 
                       onClick={() => toggleExpand(member.id)}
-                      className="text-sm font-medium text-pharma-navy hover:text-primary-light transition-colors"
+                      className="text-sm font-medium text-pharma-navy dark:text-primary-light hover:text-primary-light dark:hover:text-white transition-colors"
                     >
                       {expandedMember === member.id ? "Show Less" : "Read More"}
                     </button>
@@ -118,7 +118,7 @@ const Team = () => {
                       href={member.linkedin} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-pharma-navy hover:text-primary-light transition-colors"
+                      className="text-pharma-navy dark:text-primary-light hover:text-primary-light dark:hover:text-white transition-colors"
                     >
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -133,13 +133,13 @@ const Team = () => {
       </section>
 
       {/* Join the Team CTA */}
-      <section className="py-16 bg-pharma-light">
+      <section className="py-16 bg-pharma-light dark:bg-pharma-dark/40 transition-colors duration-300">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-pharma-navy mb-6">Join Our Team</h2>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6 transition-colors duration-300">Join Our Team</h2>
+          <p className="text-xl text-gray-700 dark:text-gray-200 mb-8 max-w-2xl mx-auto transition-colors duration-300">
             Interested in shaping the future of global pharmaceutical access? Explore opportunities to join the Baker & Davis team.
           </p>
-          <Button asChild size="lg" className="bg-pharma-navy hover:bg-primary-dark">
+          <Button asChild size="lg" className="bg-pharma-navy hover:bg-primary-dark dark:bg-primary dark:hover:bg-primary-light transition-all duration-300">
             <NavLink to="/careers">View Careers</NavLink>
           </Button>
         </div>
