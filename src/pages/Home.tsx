@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
@@ -9,8 +10,8 @@ import {
   Calendar,
   Pill,
   Hospital,
-  FirstAidKit,
-  Medicine 
+  Syringe,
+  TestTube 
 } from "lucide-react";
 
 const Home = () => {
@@ -60,12 +61,12 @@ const Home = () => {
       description: "Serving healthcare facilities worldwide with excellence"
     },
     {
-      icon: FirstAidKit,
+      icon: Syringe,
       title: "Innovation",
       description: "Cutting-edge research and development facilities"
     },
     {
-      icon: Medicine,
+      icon: TestTube,
       title: "Compliance",
       description: "Strict adherence to international regulations"
     }
