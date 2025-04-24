@@ -22,14 +22,14 @@ const DirectorCard = ({ name, role, description, imageUrl }: DirectorProps) => {
         )}
       </div>
       <CardHeader className="flex flex-col items-center space-y-2">
-        <h3 className="text-xl font-bold text-pharma-navy">{name}</h3>
-        <div className="flex items-center gap-2 text-gray-600">
+        <h3 className="text-xl font-bold text-pharma-navy dark:text-white">{name}</h3>
+        <div className="flex items-center gap-2 text-black dark:text-white">
           <Briefcase className="w-4 h-4" />
           <span>{role}</span>
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-600 text-center">{description}</p>
+        <p className="text-black dark:text-white text-center">{description}</p>
       </CardContent>
     </Card>
   );

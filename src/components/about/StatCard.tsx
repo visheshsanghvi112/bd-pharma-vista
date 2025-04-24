@@ -14,7 +14,7 @@ const StatCard = ({ icon: Icon, title, subtitle }: StatCardProps) => {
         <Icon className="w-12 h-12 text-primary dark:text-primary-light" />
       </div>
       <h3 className="text-2xl font-bold text-pharma-navy dark:text-white mb-2">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300">{subtitle}</p>
+      <p className="text-black dark:text-white">{subtitle}</p>
     </div>
   );
 };

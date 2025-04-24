@@ -1,11 +1,20 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
+import { ArrowRight, Award, User, Star, Briefcase, MapPin, Certificate, Globe, Trophy, HeartHandshake, Factory, Microscope, LineChart } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 import FounderSection from "@/components/about/FounderSection";
 import StatCard from "@/components/about/StatCard";
+import TimelineSection from "@/components/about/TimelineSection";
+import AwardsSection from "@/components/about/AwardsSection";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
+import PartnersCarousel from "@/components/about/PartnersCarousel";
+import CsrSection from "@/components/about/CsrSection";
+import FacilitiesSection from "@/components/about/FacilitiesSection";
+import ProductDevelopmentSection from "@/components/about/ProductDevelopmentSection";
+import CertificationsSection from "@/components/about/CertificationsSection";
+import GlobalPresenceMap from "@/components/about/GlobalPresenceMap";
 
 const About = () => {
   const values = [
@@ -60,7 +69,7 @@ const About = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-pharma-navy to-primary-dark dark:from-white dark:to-primary-light">
             About Baker & Davis
           </h1>
-          <p className="text-xl max-w-3xl mx-auto animate-fade-in text-pharma-navy dark:text-gray-200" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl max-w-3xl mx-auto animate-fade-in text-pharma-navy dark:text-white" style={{ animationDelay: "0.2s" }}>
             A trusted pharmaceutical manufacturer and global exporter committed to improving lives through quality healthcare products
           </p>
         </div>
@@ -81,6 +90,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Timeline Section */}
+      <TimelineSection />
 
       {/* Founder Section */}
       <FounderSection />
@@ -114,13 +126,13 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6 transition-colors duration-300">Our Story</h2>
-              <p className="text-gray-700 dark:text-gray-200 mb-4 transition-colors duration-300">
+              <p className="text-black dark:text-white mb-4 transition-colors duration-300">
                 Baker & Davis was founded with a clear mission: to improve lives by delivering trusted pharmaceutical solutions across the globe. What began as a small operation has grown into a respected pharmaceutical manufacturer and exporter with global reach.
               </p>
-              <p className="text-gray-700 dark:text-gray-200 mb-4 transition-colors duration-300">
+              <p className="text-black dark:text-white mb-4 transition-colors duration-300">
                 For over a decade, we have dedicated ourselves to manufacturing premium quality medicines that meet international standards. Our commitment to excellence has earned us certifications from leading health authorities worldwide, including WHO-GMP and FDA approvals.
               </p>
-              <p className="text-gray-700 dark:text-gray-200 transition-colors duration-300">
+              <p className="text-black dark:text-white transition-colors duration-300">
                 Today, BD Pvt. Ltd. serves healthcare providers and patients in over 50 countries, with a continuously expanding portfolio of essential and specialty medications.
               </p>
             </div>
@@ -135,6 +147,12 @@ const About = () => {
         </div>
       </section>
 
+      {/* Awards Section */}
+      <AwardsSection />
+
+      {/* Global Presence Map */}
+      <GlobalPresenceMap />
+      
       {/* Directors Section */}
       <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
         <div className="container mx-auto px-4">
@@ -147,6 +165,12 @@ const About = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <TestimonialsSection />
+      
+      {/* Partners Carousel */}
+      <PartnersCarousel />
+
       {/* Values Section */}
       <section className="py-16 bg-gradient-to-br from-pharma-light/30 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
         <div className="container mx-auto px-4">
@@ -158,12 +182,24 @@ const About = () => {
                   <value.icon className="w-12 h-12 text-pharma-navy dark:text-primary-light transition-colors duration-300" />
                 </div>
                 <h3 className="text-xl font-bold text-pharma-navy dark:text-white mb-4 text-center transition-colors duration-300">{value.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 text-center transition-colors duration-300">{value.description}</p>
+                <p className="text-black dark:text-white text-center transition-colors duration-300">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* CSR/Community Involvement Section */}
+      <CsrSection />
+
+      {/* Manufacturing Facilities Section */}
+      <FacilitiesSection />
+
+      {/* Product Development Process */}
+      <ProductDevelopmentSection />
+
+      {/* Certifications Section */}
+      <CertificationsSection />
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-primary/90 to-primary-dark dark:from-primary-dark/90 dark:to-primary text-white">
