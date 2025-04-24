@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { ArrowRight, Award, User, Star, Briefcase, MapPin, Certificate, Globe, Trophy, HeartHandshake, Factory, Microscope, LineChart } from "lucide-react";
+import { ArrowRight, Award, User, Star, Briefcase, MapPin, Globe, Trophy, HeartHandshake, Factory, Microscope, LineChart } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 import FounderSection from "@/components/about/FounderSection";

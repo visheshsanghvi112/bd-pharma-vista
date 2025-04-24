@@ -1,5 +1,5 @@
 
-import { Certificate } from "lucide-react";
+import { Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const CertificationsSection = () => {
@@ -40,7 +40,7 @@ const CertificationsSection = () => {
     <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-3 mb-6">
-          <Certificate className="w-8 h-8 text-pharma-navy dark:text-primary-light" />
+          <Award className="w-8 h-8 text-pharma-navy dark:text-primary-light" />
           <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white transition-colors duration-300">Certifications & Standards</h2>
         </div>
         <p className="text-black dark:text-white text-center max-w-3xl mx-auto mb-12">
@@ -53,7 +53,7 @@ const CertificationsSection = () => {
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-pharma-light dark:bg-pharma-dark/40 flex items-center justify-center">
-                    <Certificate className="w-6 h-6 text-pharma-navy dark:text-primary-light" />
+                    <Award className="w-6 h-6 text-pharma-navy dark:text-primary-light" />
                   </div>
                   <div>
                     <h3 className="font-bold text-pharma-navy dark:text-white">{certification.name}</h3>

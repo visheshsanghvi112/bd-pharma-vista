@@ -70,16 +70,18 @@ const PartnersCarousel = () => {
       </div>
       
       {/* Add the animation keyframes to the page */}
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
+      <style>
+        {`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-${partners.length * 210}px));
+            }
           }
-          100% {
-            transform: translateX(calc(-${partners.length * 210}px));
-          }
-        }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };

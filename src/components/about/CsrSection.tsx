@@ -1,5 +1,5 @@
 
-import { HeartHandshake, Seedling, Users, School } from "lucide-react";
+import { HeartHandshake, Award, Users, School } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const CsrSection = () => {
@@ -12,7 +12,7 @@ const CsrSection = () => {
     {
       title: "Environmental Sustainability",
       description: "Reducing our carbon footprint and implementing eco-friendly manufacturing processes across all facilities.",
-      icon: Seedling
+      icon: Award
     },
     {
       title: "Community Outreach",
