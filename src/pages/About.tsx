@@ -1,12 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { ArrowRight, Award, User, Star, Briefcase, MapPin, Globe, Trophy, HeartHandshake, Factory, Microscope, LineChart } from "lucide-react";
+import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 import FounderSection from "@/components/about/FounderSection";
 import StatCard from "@/components/about/StatCard";
-import TimelineSection from "@/components/about/TimelineSection";
 import AwardsSection from "@/components/about/AwardsSection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 import PartnersCarousel from "@/components/about/PartnersCarousel";
@@ -90,9 +88,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Timeline Section */}
-      <TimelineSection />
 
       {/* Founder Section */}
       <FounderSection />
