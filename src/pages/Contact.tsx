@@ -48,25 +48,30 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="bg-gradient-primary py-20 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Contact Us</h1>
-          <p className="text-xl max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+      {/* Hero Section with enhanced styling */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-light/20 dark:from-primary/10 dark:to-primary/5" />
+        <div className="container relative mx-auto px-4 text-center z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-pharma-navy dark:text-primary-light animate-fade-in">
+            Contact Us
+          </h1>
+          <p className="text-xl max-w-3xl mx-auto text-gray-700 dark:text-gray-300 animate-fade-in">
             Get in touch with our team for inquiries about our pharmaceutical products and services
           </p>
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
+      {/* Contact Information with enhanced cards */}
+      <section className="py-20 bg-white dark:bg-background transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-pharma-light dark:bg-pharma-dark/60 p-6 rounded-lg text-center flex flex-col items-center transition-colors duration-300">
-              <div className="bg-pharma-navy dark:bg-primary p-4 rounded-full text-white mb-4 transition-colors duration-300">
-                <MapPin className="h-6 w-6" />
+            <div className="bg-gradient-to-br from-pharma-light to-white dark:from-pharma-dark/60 dark:to-background p-8 rounded-lg text-center group hover:shadow-lg transition-all duration-300">
+              <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 mb-6 transition-colors duration-300">
+                <MapPin className="h-8 w-8 text-primary dark:text-primary-light" />
               </div>
-              <h3 className="text-xl font-bold text-pharma-navy dark:text-primary-light mb-2 transition-colors duration-300">Visit Us</h3>
+              <h3 className="text-xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">
+                Visit Us
+              </h3>
               <address className="text-gray-700 dark:text-gray-300 not-italic transition-colors duration-300">
                 <p>42/44, Babu Genu Road,</p>
                 <p>Shop No. 14, 2nd Floor,</p>
@@ -75,31 +80,35 @@ const Contact = () => {
               </address>
             </div>
 
-            <div className="bg-pharma-light dark:bg-pharma-dark/60 p-6 rounded-lg text-center flex flex-col items-center transition-colors duration-300">
-              <div className="bg-pharma-navy dark:bg-primary p-4 rounded-full text-white mb-4 transition-colors duration-300">
-                <Mail className="h-6 w-6" />
+            <div className="bg-gradient-to-br from-pharma-light to-white dark:from-pharma-dark/60 dark:to-background p-8 rounded-lg text-center group hover:shadow-lg transition-all duration-300">
+              <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 mb-6 transition-colors duration-300">
+                <Mail className="h-8 w-8 text-primary dark:text-primary-light" />
               </div>
-              <h3 className="text-xl font-bold text-pharma-navy dark:text-primary-light mb-2 transition-colors duration-300">Email Us</h3>
+              <h3 className="text-xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">
+                Email Us
+              </h3>
               <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 <a href="mailto:admin@bdindia.in" className="hover:underline">admin@bdindia.in</a>
               </p>
-              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
+              <p className="text-gray-700 dark:text-gray-300 mt-4 transition-colors duration-300">
                 We'll respond to your inquiry within 24-48 business hours.
               </p>
             </div>
 
-            <div className="bg-pharma-light dark:bg-pharma-dark/60 p-6 rounded-lg text-center flex flex-col items-center transition-colors duration-300">
-              <div className="bg-pharma-navy dark:bg-primary p-4 rounded-full text-white mb-4 transition-colors duration-300">
-                <Phone className="h-6 w-6" />
+            <div className="bg-gradient-to-br from-pharma-light to-white dark:from-pharma-dark/60 dark:to-background p-8 rounded-lg text-center group hover:shadow-lg transition-all duration-300">
+              <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 mb-6 transition-colors duration-300">
+                <Phone className="h-8 w-8 text-primary dark:text-primary-light" />
               </div>
-              <h3 className="text-xl font-bold text-pharma-navy dark:text-primary-light mb-2 transition-colors duration-300">Call Us</h3>
+              <h3 className="text-xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">
+                Call Us
+              </h3>
               <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 <a href="tel:02248256677" className="hover:underline">022-48256677</a>
               </p>
               <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 <a href="tel:02240134455" className="hover:underline">022-40134455</a>
               </p>
-              <p className="text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300">
+              <p className="text-gray-700 dark:text-gray-300 mt-4 transition-colors duration-300">
                 Monday to Friday, 9:00 AM - 6:00 PM IST
               </p>
             </div>
