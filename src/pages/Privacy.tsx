@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 import { Shield } from "lucide-react";
 
@@ -5,22 +6,23 @@ const Privacy = () => {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary-light to-background py-12 dark:from-primary/20 dark:to-background">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-light/20 dark:from-primary/10 dark:to-primary/5" />
+        <div className="container relative mx-auto px-4 text-center z-10">
           <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
             <Shield className="h-8 w-8 text-primary dark:text-primary-light" />
           </div>
-          <h1 className="mb-4 text-3xl font-bold text-primary dark:text-primary-light md:text-4xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-pharma-navy dark:text-primary-light animate-fade-in">
             Privacy Policy
           </h1>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="text-xl max-w-2xl mx-auto text-gray-700 dark:text-gray-300 animate-fade-in">
             Baker & Davis is committed to protecting your privacy and personal information
           </p>
         </div>
       </section>
 
       {/* Privacy Policy Content */}
-      <section className="flex-1 py-16">
+      <section className="flex-1 py-16 bg-white dark:bg-background">
         <div className="container mx-auto px-4">
           <div className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
             <div className="mb-10">
@@ -143,13 +145,13 @@ const Privacy = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-card py-8 dark:bg-card/50">
+      <section className="py-16 bg-gradient-to-br from-pharma-light to-white dark:from-pharma-dark/60 dark:to-background">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-4 text-2xl font-bold text-primary dark:text-primary-light">
+            <h2 className="mb-4 text-2xl font-bold text-pharma-navy dark:text-primary-light">
               Have Questions About Our Privacy Policy?
             </h2>
-            <p className="mb-6 text-muted-foreground">
+            <p className="mb-6 text-gray-700 dark:text-gray-300">
               Our team is here to help you understand how we protect your data
             </p>
             <NavLink
