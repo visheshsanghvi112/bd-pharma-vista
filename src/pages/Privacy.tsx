@@ -1,23 +1,28 @@
-
 import { NavLink } from "react-router-dom";
+import { Shield } from "lucide-react";
 
 const Privacy = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-primary py-12 text-white">
+      <section className="bg-gradient-to-b from-primary-light to-background py-12 dark:from-primary/20 dark:to-background">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">Privacy Policy</h1>
-          <p className="text-lg max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
+            <Shield className="h-8 w-8 text-primary dark:text-primary-light" />
+          </div>
+          <h1 className="mb-4 text-3xl font-bold text-primary dark:text-primary-light md:text-4xl">
+            Privacy Policy
+          </h1>
+          <p className="mx-auto max-w-2xl text-muted-foreground">
             Baker & Davis is committed to protecting your privacy and personal information
           </p>
         </div>
       </section>
 
       {/* Privacy Policy Content */}
-      <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
+      <section className="flex-1 py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert transition-colors duration-300">
+          <div className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
             <div className="mb-10">
               <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-4 transition-colors duration-300">Introduction</h2>
               <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
@@ -133,6 +138,26 @@ const Privacy = () => {
                 Contact Us for Privacy Questions
               </NavLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="bg-card py-8 dark:bg-card/50">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-4 text-2xl font-bold text-primary dark:text-primary-light">
+              Have Questions About Our Privacy Policy?
+            </h2>
+            <p className="mb-6 text-muted-foreground">
+              Our team is here to help you understand how we protect your data
+            </p>
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 dark:bg-primary-light dark:text-primary dark:hover:bg-primary-light/90"
+            >
+              Contact Our Privacy Team
+            </NavLink>
           </div>
         </div>
       </section>

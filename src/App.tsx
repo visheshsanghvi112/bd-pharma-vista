@@ -1,9 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { analytics } from "@/lib/firebase";
 import { logEvent } from "firebase/analytics";
@@ -15,10 +14,10 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
-// Analytics wrapper component
 const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
@@ -33,7 +32,6 @@ const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 const App = () => {
-  // Set up theme on initial load
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     
@@ -62,6 +60,7 @@ const App = () => {
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy" element={<Privacy />} />
+                <Route path="/faq" element={<FAQ />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
