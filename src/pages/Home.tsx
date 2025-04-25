@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
@@ -13,6 +12,8 @@ import {
   Syringe,
   TestTube 
 } from "lucide-react";
+import FeaturedServices from "@/components/home/FeaturedServices";
+import FAQ from "@/components/home/FAQ";
 
 const Home = () => {
   const [animate, setAnimate] = useState(false);
@@ -129,6 +130,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <FeaturedServices />
 
       <section className="py-24 bg-gradient-to-b from-pharma-light to-white dark:from-pharma-dark dark:to-background relative overflow-hidden transition-colors duration-300">
         <div className="container mx-auto px-4">
@@ -286,6 +289,8 @@ const Home = () => {
           </Button>
         </div>
       </section>
+
+      <FAQ />
     </div>
   );
 };
