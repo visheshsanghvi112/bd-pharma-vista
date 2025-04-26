@@ -1,4 +1,6 @@
+
 import { SEO } from "@/components/ui/seo";
+import { Shield } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
