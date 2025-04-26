@@ -22,50 +22,72 @@ const GlobalPresenceMap = () => {
           Our products reach patients in more than 50 countries across 6 continents, supported by a robust distribution network.
         </p>
         
-        <div className="relative w-full h-[400px] md:h-[500px] bg-pharma-light/20 dark:bg-pharma-dark/20 rounded-lg overflow-hidden mb-8">
-          {/* This would be replaced with an actual interactive map in a real implementation */}
+        <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden mb-8 bg-white dark:bg-card shadow-lg">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img 
-              src="/placeholder.svg" 
-              alt="World Map" 
-              className="w-full h-full object-cover opacity-70 dark:opacity-40"
-            />
+            {/* World Map SVG with proper styling */}
+            <svg 
+              viewBox="0 0 1200 800" 
+              className="w-full h-full opacity-80 dark:opacity-60"
+              style={{ 
+                filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.1))',
+                background: 'linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)'
+              }}
+            >
+              <path
+                d="M246.5,152.8l-11.1-7.2l-14.5-3.1l-11.9,4.1l-7.2,5.7l-10.8,3.6l-8.8,2.1l-12.9,4.1l-9.8,1l-7.2,2.6l-4.7,4.1 l-5.7,1l-7.2,0.5l-5.7-1.5l-5.2-3.6l-4.7-2.1l-4.1,0.5l-3.6,2.1l-5.7,0.5l-5.7-1.5l-4.7-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6 l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5 l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5 l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1 l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6 l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5"
+                fill="none"
+                stroke="#6366f1"
+                strokeWidth="0.5"
+                strokeDasharray="5,5"
+                className="animate-pulse"
+              />
+            </svg>
             
-            {/* Sample map pins - in a real implementation these would be positioned accurately */}
-            <div className="absolute top-1/4 left-1/4 animate-pulse">
-              <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-            </div>
-            <div className="absolute top-1/3 left-1/2 animate-pulse" style={{ animationDelay: "0.5s" }}>
-              <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-            </div>
-            <div className="absolute bottom-1/3 right-1/4 animate-pulse" style={{ animationDelay: "1s" }}>
-              <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-            </div>
-            <div className="absolute bottom-1/4 left-1/3 animate-pulse" style={{ animationDelay: "1.5s" }}>
-              <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
+            {/* Location Markers */}
+            <div className="absolute inset-0">
+              <div className="absolute top-[30%] left-[20%] animate-pulse">
+                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
+              </div>
+              <div className="absolute top-[45%] left-[48%] animate-pulse delay-100">
+                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
+              </div>
+              <div className="absolute top-[35%] left-[75%] animate-pulse delay-200">
+                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
+              </div>
+              <div className="absolute top-[60%] left-[65%] animate-pulse delay-300">
+                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
+              </div>
+              <div className="absolute top-[65%] left-[30%] animate-pulse delay-400">
+                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
+              </div>
             </div>
           </div>
           
+          {/* Stats Overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-white/80 dark:bg-card/80 p-4 rounded-lg shadow-lg backdrop-blur-sm">
-              <p className="text-2xl font-bold text-pharma-navy dark:text-white mb-2">50+ Countries</p>
-              <p className="text-black dark:text-white">Global Distribution Network</p>
+            <div className="bg-white/90 dark:bg-card/90 p-6 rounded-lg shadow-lg backdrop-blur-sm">
+              <p className="text-3xl font-bold text-pharma-navy dark:text-white mb-2">50+ Countries</p>
+              <p className="text-black/80 dark:text-white/80">Global Distribution Network</p>
             </div>
           </div>
         </div>
         
+        {/* Region Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {regions.map((region, index) => (
-            <div key={index} className="bg-white dark:bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+            <div 
+              key={index} 
+              className="bg-white dark:bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+            >
               <h3 className="text-lg font-bold text-pharma-navy dark:text-white mb-2">{region.name}</h3>
               <p className="text-primary dark:text-primary-light font-medium mb-1">{region.count} Countries</p>
-              <p className="text-sm text-black dark:text-white">{region.countries.join(", ")}</p>
+              <p className="text-sm text-black/70 dark:text-white/70">{region.countries.join(", ")}</p>
             </div>
           ))}
         </div>
         
         <div className="mt-8 text-center">
-          <p className="text-black dark:text-white">
+          <p className="text-black/80 dark:text-white/80">
             Our global distribution network ensures reliable and timely delivery of quality pharmaceutical products worldwide.
           </p>
         </div>
