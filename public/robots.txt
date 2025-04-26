@@ -2,4 +2,21 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 10
+
+# Important pages
+Allow: /about
+Allow: /products
+Allow: /contact
+Allow: /careers
+Allow: /team
+Allow: /privacy
+Allow: /faq
+
+# Prevent duplicate content
+Disallow: /api/
+Disallow: /*?*
