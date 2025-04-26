@@ -4,14 +4,11 @@ import { Card } from "@/components/ui/card";
 
 const PartnersCarousel = () => {
   const partners = [
-    { name: "Mankind Pharma", logo: "/lovable-uploads/6b5ff5b5-d693-4978-829f-4452880514c4.png" },
-    { name: "Alkem Laboratories", logo: "/lovable-uploads/1651de68-9787-4c4a-9780-2b515368ce3d.png" },
-    { name: "Dr. Reddy's Laboratories", logo: "/lovable-uploads/a0f3cd1d-d1ca-4032-9c17-3f8a72e26dd2.png" },
-    { name: "Vicks", logo: "/lovable-uploads/6a7d5bc3-2ab0-4e86-90f1-869e8684d6d1.png" },
-    { name: "GSK", logo: "/lovable-uploads/77a84132-47eb-4743-9caf-404a4b00c77b.png" },
-    { name: "Ambica Pharma", logo: "/lovable-uploads/f0a94d62-b46d-4c3c-bb32-9eefac837e73.png" },
-    { name: "John Lee Pharmaceuticals", logo: "/lovable-uploads/fb30f432-a0f3-4555-b258-42191781425c.png" },
-    { name: "Emcure Pharmaceuticals", logo: "/lovable-uploads/e7a23b8f-06f4-4bfd-8453-b786b7bf0775.png" },
+    { name: "Pfizer", logo: "/lovable-uploads/fb040a1a-3ffc-4bc6-b7c7-6cfd04eca7c2.png" },
+    { name: "Piramal Pharma Limited", logo: "/lovable-uploads/b952759f-3988-4bb0-ab9e-76e5a60a8f9c.png" },
+    { name: "Glenmark", logo: "/lovable-uploads/d568a489-d0ce-4355-9b75-72542d6afa55.png" },
+    { name: "Abbott", logo: "/lovable-uploads/a78691c8-6f55-4192-a586-591d28682eca.png" },
+    { name: "Sun Pharma", logo: "/lovable-uploads/748cc5a2-e7bb-4f16-9961-f4a58d61c1a6.png" },
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
