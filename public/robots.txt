@@ -2,4 +2,14 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Common parameters to disallow
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?*
