@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { AnimatedElement } from "@/components/ui/animated-element";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const testimonials = [
   {
@@ -29,84 +30,85 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState<'left' | 'right' | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-
+  const isMobile = useIsMobile();
+  
   const handlePrev = () => {
     if (isAnimating) return;
     
-    setDirection('left');
     setIsAnimating(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) => 
         prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
       );
-    }, 300);
+      
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 300);
+    }, 100);
   };
 
   const handleNext = () => {
     if (isAnimating) return;
     
-    setDirection('right');
     setIsAnimating(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) => 
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 300);
+      
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 300);
+    }, 100);
   };
-
-  useEffect(() => {
-    if (isAnimating) {
-      const timer = setTimeout(() => setIsAnimating(false), 600);
-      return () => clearTimeout(timer);
-    }
-  }, [isAnimating]);
 
   useEffect(() => {
     // Auto-advance testimonials
     const interval = setInterval(() => {
-      handleNext();
+      if (!isAnimating) {
+        handleNext();
+      }
     }, 8000);
     
     return () => clearInterval(interval);
   }, [currentIndex, isAnimating]);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-pharma-light/10 to-white/80 dark:from-pharma-dark/20 dark:to-background/95 transition-colors duration-300 overflow-hidden">
+    <section className="py-12 md:py-16 bg-gradient-to-br from-pharma-light/10 to-white/80 dark:from-pharma-dark/20 dark:to-background/95 transition-colors duration-300 overflow-hidden">
       <div className="container mx-auto px-4">
         <AnimatedElement animation="slide-up">
-          <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-pharma-navy dark:text-white mb-8 md:mb-12 transition-colors duration-300">
             What Our Partners Say
           </h2>
         </AnimatedElement>
         
         <div className="relative max-w-4xl mx-auto">
           <Card className="bg-white dark:bg-card shadow-lg overflow-hidden">
-            <CardContent className="p-8 md:p-12 relative">
+            <CardContent className={cn(
+              "p-6 md:p-12 relative",
+              isMobile ? "min-h-[360px]" : "min-h-[280px]"
+            )}>
               <div className={cn(
                 "absolute inset-0 bg-gradient-to-r from-transparent via-pharma-light/10 to-transparent",
-                "animate-shimmer pointer-events-none opacity-70"
+                "pointer-events-none opacity-70"
               )}></div>
               
               <div className="flex justify-center mb-6 relative">
-                <div className="absolute inset-0 rounded-full bg-primary/5 dark:bg-primary-light/5 animate-pulse"></div>
-                <div className="relative z-10 bg-pharma-light dark:bg-pharma-dark/30 p-4 rounded-full transform transition-transform duration-700 hover:rotate-12">
-                  <Quote className="w-8 h-8 text-pharma-navy dark:text-primary-light animate-pulse-subtle" />
+                <div className="relative z-10 bg-pharma-light dark:bg-pharma-dark/30 p-4 rounded-full">
+                  <Quote className="w-6 h-6 md:w-8 md:h-8 text-pharma-navy dark:text-primary-light" />
                 </div>
               </div>
               
               <div className="relative overflow-hidden">
                 <div
                   className={cn(
-                    "transition-all duration-500 transform",
-                    isAnimating && direction === 'left' ? "-translate-x-full opacity-0" : "",
-                    isAnimating && direction === 'right' ? "translate-x-full opacity-0" : "",
-                    !isAnimating && "translate-x-0 opacity-100"
+                    "transition-all duration-500",
+                    isAnimating ? "opacity-0" : "opacity-100"
                   )}
                 >
                   <blockquote className="text-center mb-6">
-                    <p className="text-xl italic text-black dark:text-white mb-6">{testimonials[currentIndex].text}</p>
+                    <p className="text-lg md:text-xl italic text-black dark:text-white mb-6">{testimonials[currentIndex].text}</p>
                     <footer>
                       <div className="flex items-center justify-center gap-4">
                         <div className="w-12 h-12 rounded-full overflow-hidden bg-pharma-light/30 dark:bg-pharma-dark/40">
@@ -114,11 +116,12 @@ const TestimonialsSection = () => {
                             src={testimonials[currentIndex].image} 
                             alt={testimonials[currentIndex].name}
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         </div>
                         <div className="text-left">
                           <p className="font-bold text-pharma-navy dark:text-white">{testimonials[currentIndex].name}</p>
-                          <p className="text-gray-600 dark:text-gray-300">{testimonials[currentIndex].title}</p>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm">{testimonials[currentIndex].title}</p>
                         </div>
                       </div>
                     </footer>
@@ -131,16 +134,15 @@ const TestimonialsSection = () => {
                   <button
                     key={index}
                     onClick={() => {
-                      if (index > currentIndex) {
-                        setDirection('right');
-                      } else if (index < currentIndex) {
-                        setDirection('left');
-                      } else {
-                        return;
-                      }
+                      if (index === currentIndex || isAnimating) return;
                       
                       setIsAnimating(true);
-                      setTimeout(() => setCurrentIndex(index), 300);
+                      setTimeout(() => {
+                        setCurrentIndex(index);
+                        setTimeout(() => {
+                          setIsAnimating(false);
+                        }, 300);
+                      }, 100);
                     }}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentIndex 
@@ -159,10 +161,11 @@ const TestimonialsSection = () => {
               variant="outline" 
               size="icon" 
               onClick={handlePrev}
+              disabled={isAnimating}
               className="rounded-full bg-white dark:bg-card border-gray-200 dark:border-gray-700 shadow-md hover:bg-gray-50 dark:hover:bg-card/80 transform transition-transform hover:scale-110"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
             </Button>
           </div>
           
@@ -171,10 +174,11 @@ const TestimonialsSection = () => {
               variant="outline" 
               size="icon" 
               onClick={handleNext}
+              disabled={isAnimating}
               className="rounded-full bg-white dark:bg-card border-gray-200 dark:border-gray-700 shadow-md hover:bg-gray-50 dark:hover:bg-card/80 transform transition-transform hover:scale-110"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
             </Button>
           </div>
         </div>
