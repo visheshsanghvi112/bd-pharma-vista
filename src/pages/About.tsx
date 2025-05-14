@@ -1,20 +1,17 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
+import { Award, User, Star, Briefcase } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 import FounderSection from "@/components/about/FounderSection";
 import StatCard from "@/components/about/StatCard";
 import AwardsSection from "@/components/about/AwardsSection";
-import TestimonialsSection from "@/components/about/TestimonialsSection";
-import PartnersCarousel from "@/components/about/PartnersCarousel";
 import CsrSection from "@/components/about/CsrSection";
 import FacilitiesSection from "@/components/about/FacilitiesSection";
 import ProductDevelopmentSection from "@/components/about/ProductDevelopmentSection";
 import CertificationsSection from "@/components/about/CertificationsSection";
 import GlobalPresenceMap from "@/components/about/GlobalPresenceMap";
-import TimelineSection from "@/components/about/TimelineSection";
 import Seo from "@/components/Seo";
 
 const About = () => {
@@ -82,9 +79,6 @@ const About = () => {
               <Button asChild size="lg" variant="outline" className="bg-white/20 backdrop-blur-sm border-white/40 hover:bg-white/30 text-pharma-navy dark:text-white">
                 <a href="#our-story">Our Story</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/20 backdrop-blur-sm border-white/40 hover:bg-white/30 text-pharma-navy dark:text-white">
-                <a href="#timeline">Our Timeline</a>
-              </Button>
               <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-white">
                 <NavLink to="/contact">Contact Us</NavLink>
               </Button>
@@ -137,11 +131,6 @@ const About = () => {
             </div>
           </div>
         </section>
-
-        {/* Company Timeline Section */}
-        <div id="timeline">
-          <TimelineSection />
-        </div>
 
         {/* Awards Section */}
         <AwardsSection />
@@ -210,33 +199,6 @@ const About = () => {
                 title="Global"
                 subtitle="Presence"
               />
-            </div>
-          </div>
-        </section>
-
-        {/* Partners Carousel */}
-        <PartnersCarousel />
-
-        {/* Testimonials Section */}
-        <TestimonialsSection />
-
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-primary/90 to-primary-dark dark:from-primary-dark/90 dark:to-primary text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Join Our Mission</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Partner with Baker & Davis to contribute to global healthcare improvement and access to quality medicines.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-100 transition-colors duration-300">
-                <NavLink to="/contact" className="flex items-center gap-2">
-                  Contact Us
-                  <ArrowRight className="w-5 h-5" />
-                </NavLink>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 transition-colors duration-300">
-                <NavLink to="/careers">Join Our Team</NavLink>
-              </Button>
             </div>
           </div>
         </section>
