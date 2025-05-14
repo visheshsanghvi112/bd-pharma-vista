@@ -30,9 +30,9 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <div className="rounded-lg overflow-hidden p-1 bg-white/10 backdrop-blur-sm">
                 <img
-                  src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
+                  src="/lovable-uploads/e6dd0345-feaf-4692-a3aa-6e0eb3550f0a.png"
                   alt="Baker & Davis Logo"
-                  className="h-12 w-auto bg-white/90 rounded transition-all duration-300"
+                  className="h-12 w-auto bg-black rounded transition-all duration-300"
                 />
               </div>
               <span className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">
@@ -42,7 +42,7 @@ const Footer = () => {
             <p className="text-sm text-gray-200 leading-relaxed">
               BD Pvt. Ltd. is a trusted name in pharmaceutical manufacturing and global export of high-quality medicines since 2017.
             </p>
-            <div className="text-sm space-y-2">
+            <div className="text-sm bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/5 shadow-lg hover:shadow-xl transition-all duration-300">
               <p className="flex items-center gap-2">
                 <span className="font-medium">GSTIN:</span> 27AADCJ9014B1ZW
               </p>
