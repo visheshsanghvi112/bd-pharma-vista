@@ -10,6 +10,8 @@ import { logEvent } from "firebase/analytics";
 import { Loading } from "@/components/ui/loading";
 import Layout from "./components/layout/Layout";
 import { HelmetProvider } from 'react-helmet-async';
+import { AnimatePresence } from "framer-motion";
+import { PageTransition } from "./components/ui/page-transition";
 
 // Code-split non-essential pages for better performance
 const Home = lazy(() => import("./pages/Home"));
@@ -43,6 +45,59 @@ const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route element={<Layout />}>
+          <Route path="/" element={
+            <PageTransition>
+              <Home />
+            </PageTransition>
+          } />
+          <Route path="/about" element={
+            <PageTransition>
+              <About />
+            </PageTransition>
+          } />
+          <Route path="/team" element={
+            <PageTransition>
+              <Team />
+            </PageTransition>
+          } />
+          <Route path="/careers" element={
+            <PageTransition>
+              <Careers />
+            </PageTransition>
+          } />
+          <Route path="/contact" element={
+            <PageTransition>
+              <Contact />
+            </PageTransition>
+          } />
+          <Route path="/privacy" element={
+            <PageTransition>
+              <Privacy />
+            </PageTransition>
+          } />
+          <Route path="/faq" element={
+            <PageTransition>
+              <FAQ />
+            </PageTransition>
+          } />
+        </Route>
+        <Route path="*" element={
+          <PageTransition>
+            <NotFound />
+          </PageTransition>
+        } />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const App = () => {
   useEffect(() => {
     // Always use light mode as requested
@@ -69,18 +124,7 @@ const App = () => {
           <BrowserRouter>
             <AnalyticsWrapper>
               <Suspense fallback={<Loading />}>
-                <Routes>
-                  <Route element={<Layout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/careers" element={<Careers />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/faq" element={<FAQ />} />
-                  </Route>
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
+                <AnimatedRoutes />
               </Suspense>
             </AnalyticsWrapper>
           </BrowserRouter>

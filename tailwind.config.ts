@@ -159,6 +159,81 @@ export default {
 					'100%': {
 						backgroundPosition: '500px 0'
 					}
+				},
+				// New animations
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(40px)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'slide-down': {
+					'0%': {
+						transform: 'translateY(-40px)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'zoom-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'rotate-in': {
+					'0%': {
+						transform: 'rotate(-10deg) scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'rotate(0) scale(1)',
+						opacity: '1'
+					}
+				},
+				'bounce-in': {
+					'0%': {
+						transform: 'scale(0.8)',
+						opacity: '0'
+					},
+					'70%': {
+						transform: 'scale(1.05)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'draw-line': {
+					'0%': {
+						width: '0%',
+						height: '0%'
+					},
+					'100%': {
+						width: '100%',
+						height: '100%'
+					}
+				},
+				'ripple': {
+					'0%': {
+						transform: 'scale(0)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'scale(1.5)',
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
@@ -169,7 +244,15 @@ export default {
 				'fade-in-left': 'fade-in-left 0.5s ease-out',
 				'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
 				'float': 'float 6s infinite ease-in-out',
-				'shimmer': 'shimmer 2s infinite linear'
+				'shimmer': 'shimmer 2s infinite linear',
+				// New animations
+				'slide-up': 'slide-up 0.7s ease-out',
+				'slide-down': 'slide-down 0.7s ease-out',
+				'zoom-in': 'zoom-in 0.7s ease-out',
+				'rotate-in': 'rotate-in 0.7s ease-out',
+				'bounce-in': 'bounce-in 0.8s ease-out',
+				'draw-line': 'draw-line 1.5s forwards ease-in-out',
+				'ripple': 'ripple 1s infinite ease-out'
 			},
 			backgroundImage: {
 				'gradient-primary': 'linear-gradient(135deg, #283593 0%, #5C6BC0 100%)',

@@ -1,6 +1,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Card } from "@/components/ui/card";
+import { AnimatedElement } from "@/components/ui/animated-element";
 
 const PartnersCarousel = () => {
   const partners = [
@@ -20,37 +21,59 @@ const PartnersCarousel = () => {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [animationPaused, setAnimationPaused] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const handleMouseEnter = () => setAnimationPaused(true);
-  const handleMouseLeave = () => setAnimationPaused(false);
+  const handleMouseEnter = (index: number) => {
+    setAnimationPaused(true);
+    setActiveIndex(index);
+  };
+  
+  const handleMouseLeave = () => {
+    setAnimationPaused(false);
+    setActiveIndex(null);
+  };
 
   return (
-    <section className="py-16 bg-white transition-colors duration-300">
+    <section className="py-16 bg-white transition-colors duration-300 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-pharma-navy mb-6 transition-colors duration-300">Our Trusted Partners</h2>
-        <p className="text-black text-center max-w-3xl mx-auto mb-12">
-          Collaborating with leading pharmaceutical companies worldwide to improve global health outcomes.
-        </p>
+        <AnimatedElement animation="slide-up" className="mb-6">
+          <h2 className="text-3xl font-bold text-center text-pharma-navy mb-6 transition-colors duration-300">Our Trusted Partners</h2>
+        </AnimatedElement>
         
-        <div className="w-full overflow-hidden">
+        <AnimatedElement animation="fade-in" delay={200}>
+          <p className="text-black text-center max-w-3xl mx-auto mb-12">
+            Collaborating with leading pharmaceutical companies worldwide to improve global health outcomes.
+          </p>
+        </AnimatedElement>
+        
+        <div className="w-full overflow-hidden relative">
+          {/* Gradient fades for edges */}
+          <div className="absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+          <div className="absolute right-0 top-0 h-full w-24 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+          
           <div 
             ref={containerRef} 
             className="flex gap-8 py-4" 
             style={{
               animationPlayState: animationPaused ? 'paused' : 'running',
-              animation: 'scroll 25s linear infinite', // Increased speed (from 30s to 25s)
+              animation: 'scroll 25s linear infinite',
               width: `calc(${partners.length * 210}px * 2)`
             }}
-            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             {/* First set of partners */}
             {partners.map((partner, index) => (
               <Card 
                 key={`partner-${index}`} 
-                className="flex-shrink-0 w-48 h-32 flex items-center justify-center p-4 hover:shadow-lg transition-all duration-300 bg-white"
+                className={`flex-shrink-0 w-48 h-32 flex items-center justify-center p-4 transition-all duration-300 bg-white 
+                  ${activeIndex === index ? 'shadow-xl scale-110 z-20' : 'hover:shadow-lg hover:scale-105'}`}
+                onMouseEnter={() => handleMouseEnter(index)}
               >
-                <img src={partner.logo} alt={partner.name} className="h-16 w-auto object-contain" />
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="h-16 w-auto object-contain transition-transform duration-500 hover:scale-110" 
+                />
               </Card>
             ))}
             
@@ -58,9 +81,15 @@ const PartnersCarousel = () => {
             {partners.map((partner, index) => (
               <Card 
                 key={`partner-duplicate-${index}`} 
-                className="flex-shrink-0 w-48 h-32 flex items-center justify-center p-4 hover:shadow-lg transition-all duration-300 bg-white"
+                className={`flex-shrink-0 w-48 h-32 flex items-center justify-center p-4 transition-all duration-300 bg-white 
+                  ${activeIndex === index + partners.length ? 'shadow-xl scale-110 z-20' : 'hover:shadow-lg hover:scale-105'}`}
+                onMouseEnter={() => handleMouseEnter(index + partners.length)}
               >
-                <img src={partner.logo} alt={partner.name} className="h-16 w-auto object-contain" />
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="h-16 w-auto object-contain transition-transform duration-500 hover:scale-110" 
+                />
               </Card>
             ))}
           </div>
