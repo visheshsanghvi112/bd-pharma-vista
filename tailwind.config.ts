@@ -2,6 +2,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+	darkMode: ["class"],
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -70,6 +71,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -148,17 +159,6 @@ export default {
 					'100%': {
 						backgroundPosition: '500px 0'
 					}
-				},
-				'rotate-3d': {
-					'0%': { 
-						transform: 'perspective(1000px) rotateY(0deg)' 
-					},
-					'50%': { 
-						transform: 'perspective(1000px) rotateY(15deg)' 
-					},
-					'100%': { 
-						transform: 'perspective(1000px) rotateY(0deg)' 
-					}
 				}
 			},
 			animation: {
@@ -169,22 +169,18 @@ export default {
 				'fade-in-left': 'fade-in-left 0.5s ease-out',
 				'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
 				'float': 'float 6s infinite ease-in-out',
-				'shimmer': 'shimmer 2s infinite linear',
-				'rotate-3d': 'rotate-3d 7s infinite ease-in-out'
+				'shimmer': 'shimmer 2s infinite linear'
 			},
 			backgroundImage: {
 				'gradient-primary': 'linear-gradient(135deg, #283593 0%, #5C6BC0 100%)',
 				'gradient-light': 'linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%)',
 				'gradient-cta': 'linear-gradient(135deg, #3949AB 0%, #303F9F 100%)',
-				'gradient-hero': 'linear-gradient(to bottom, rgba(232, 234, 246, 0.8) 0%, rgba(40, 53, 147, 0.8) 100%)',
+				'gradient-hero-light': 'linear-gradient(to bottom, rgba(232, 234, 246, 0.8) 0%, rgba(40, 53, 147, 0.8) 100%)',
+				'gradient-hero-dark': 'linear-gradient(to bottom, rgba(26, 31, 44, 0.8) 0%, rgba(40, 53, 147, 0.9) 100%)',
 				'gradient-card-light': 'linear-gradient(135deg, #ffffff 0%, #f5f7ff 100%)',
+				'gradient-card-dark': 'linear-gradient(135deg, #1a1f2c 0%, #252d3d 100%)',
 				'shimmer-gradient': 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)'
-			},
-			boxShadow: {
-				'3d': '0 20px 30px -15px rgba(40, 53, 147, 0.3)',
-				'elevated': '0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 2px 5px -2px rgba(0, 0, 0, 0.05)',
-				'button': '0 10px 15px -3px rgba(40, 53, 147, 0.3), 0 4px 6px -4px rgba(40, 53, 147, 0.2)',
-			},
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
