@@ -28,9 +28,9 @@ const Navbar = () => {
             <img
               src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
               alt="Baker & Davis Logo"
-              className="h-12 w-auto transform transition-all duration-300 hover:scale-105 drop-shadow-[0_0_10px_rgba(40,53,147,0.3)] dark:drop-shadow-[0_0_10px_rgba(92,107,192,0.3)] filter-none"
+              className="h-16 w-auto transform transition-all duration-300 hover:scale-105 drop-shadow-[0_0_10px_rgba(40,53,147,0.3)] dark:drop-shadow-[0_0_10px_rgba(92,107,192,0.3)] filter-none"
             />
-            <span className="hidden font-bold text-2xl text-pharma-navy dark:text-primary-light drop-shadow-sm sm:inline-block transition-colors duration-300">
+            <span className="hidden font-bold text-3xl text-pharma-navy dark:text-primary-light drop-shadow-sm sm:inline-block transition-colors duration-300">
               Baker & Davis
             </span>
           </NavLink>
@@ -55,17 +55,10 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
-          <Button variant="outline" className="border-pharma-navy text-pharma-navy hover:bg-pharma-light hover:text-pharma-navy dark:border-primary-light dark:text-primary-light dark:hover:bg-primary/20 transition-all duration-300">
-            Log In
-          </Button>
-          <Button className="bg-pharma-navy hover:bg-primary-dark dark:bg-primary dark:hover:bg-primary-light transition-all duration-300">
-            Contact Us
-          </Button>
+          {/* Login and Contact Us buttons removed */}
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
@@ -96,14 +89,7 @@ const Navbar = () => {
               </NavLink>
             ))}
           </nav>
-          <div className="flex flex-col gap-2 pt-2">
-            <Button variant="outline" className="border-pharma-navy text-pharma-navy hover:bg-pharma-light hover:text-pharma-navy dark:border-primary-light dark:text-primary-light dark:hover:bg-primary/20 w-full transition-all duration-300">
-              Log In
-            </Button>
-            <Button className="bg-pharma-navy hover:bg-primary-dark dark:bg-primary dark:hover:bg-primary-light w-full transition-all duration-300">
-              Contact Us
-            </Button>
-          </div>
+          {/* Mobile login and contact buttons removed */}
         </div>
       )}
     </header>

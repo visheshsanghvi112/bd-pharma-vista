@@ -1,4 +1,3 @@
-
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "./button";
@@ -25,19 +24,5 @@ export function ThemeToggle() {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={toggleTheme}
-      className="rounded-full"
-      aria-label="Toggle theme"
-    >
-      {theme === "light" ? (
-        <Moon className="h-5 w-5 transition-all animate-fade-in" />
-      ) : (
-        <Sun className="h-5 w-5 transition-all animate-fade-in" />
-      )}
-    </Button>
-  );
+  return null;
 }
