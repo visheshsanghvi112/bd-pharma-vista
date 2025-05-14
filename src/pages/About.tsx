@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
@@ -13,6 +14,7 @@ import FacilitiesSection from "@/components/about/FacilitiesSection";
 import ProductDevelopmentSection from "@/components/about/ProductDevelopmentSection";
 import CertificationsSection from "@/components/about/CertificationsSection";
 import GlobalPresenceMap from "@/components/about/GlobalPresenceMap";
+import TimelineSection from "@/components/about/TimelineSection";
 import Seo from "@/components/Seo";
 
 const About = () => {
@@ -76,6 +78,14 @@ const About = () => {
             <p className="text-xl max-w-3xl mx-auto animate-fade-in text-pharma-navy dark:text-white" style={{ animationDelay: "0.2s" }}>
               A trusted pharmaceutical manufacturer and global exporter committed to improving lives through quality healthcare products
             </p>
+            <div className="flex gap-4 justify-center mt-8">
+              <Button asChild size="lg" variant="outline" className="bg-white/20 backdrop-blur-sm border-white/40 hover:bg-white/30 text-pharma-navy dark:text-white">
+                <a href="#our-story">Learn Our Story</a>
+              </Button>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-white">
+                <NavLink to="/contact">Contact Us</NavLink>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -98,31 +108,8 @@ const About = () => {
         {/* Founder Section */}
         <FounderSection />
 
-        {/* Stats Section */}
-        <section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background dark:via-background/95 dark:to-background/90">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <StatCard
-                icon={Award}
-                title="ISO-9001-2015"
-                subtitle="Certified"
-              />
-              <StatCard
-                icon={Briefcase}
-                title="22+ Years"
-                subtitle="Experience"
-              />
-              <StatCard
-                icon={Star}
-                title="Global"
-                subtitle="Presence"
-              />
-            </div>
-          </div>
-        </section>
-
         {/* Company Overview */}
-        <section className="py-16 bg-pharma-light/30 dark:bg-pharma-dark/20 transition-colors duration-300">
+        <section id="our-story" className="py-16 bg-pharma-light/30 dark:bg-pharma-dark/20 transition-colors duration-300">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -148,6 +135,9 @@ const About = () => {
           </div>
         </section>
 
+        {/* Company Timeline Section - NEWLY ADDED */}
+        <TimelineSection />
+
         {/* Awards Section */}
         <AwardsSection />
 
@@ -166,11 +156,11 @@ const About = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <TestimonialsSection />
-        
-        {/* Partners Carousel */}
-        <PartnersCarousel />
+        {/* Manufacturing Facilities Section */}
+        <FacilitiesSection />
+
+        {/* Product Development Process */}
+        <ProductDevelopmentSection />
 
         {/* Values Section */}
         <section className="py-16 bg-gradient-to-br from-pharma-light/30 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
@@ -190,17 +180,40 @@ const About = () => {
           </div>
         </section>
 
+        {/* Certifications Section */}
+        <CertificationsSection />
+
         {/* CSR/Community Involvement Section */}
         <CsrSection />
 
-        {/* Manufacturing Facilities Section */}
-        <FacilitiesSection />
+        {/* Stats Section */}
+        <section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background dark:via-background/95 dark:to-background/90">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <StatCard
+                icon={Award}
+                title="ISO-9001-2015"
+                subtitle="Certified"
+              />
+              <StatCard
+                icon={Briefcase}
+                title="22+ Years"
+                subtitle="Experience"
+              />
+              <StatCard
+                icon={Star}
+                title="Global"
+                subtitle="Presence"
+              />
+            </div>
+          </div>
+        </section>
 
-        {/* Product Development Process */}
-        <ProductDevelopmentSection />
+        {/* Partners Carousel */}
+        <PartnersCarousel />
 
-        {/* Certifications Section */}
-        <CertificationsSection />
+        {/* Testimonials Section */}
+        <TestimonialsSection />
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-primary/90 to-primary-dark dark:from-primary-dark/90 dark:to-primary text-white">
@@ -209,12 +222,17 @@ const About = () => {
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               Partner with Baker & Davis to contribute to global healthcare improvement and access to quality medicines.
             </p>
-            <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-100 transition-colors duration-300">
-              <NavLink to="/contact" className="flex items-center gap-2">
-                Contact Us
-                <ArrowRight className="w-5 h-5" />
-              </NavLink>
-            </Button>
+            <div className="flex gap-4 justify-center">
+              <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-100 transition-colors duration-300">
+                <NavLink to="/contact" className="flex items-center gap-2">
+                  Contact Us
+                  <ArrowRight className="w-5 h-5" />
+                </NavLink>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 transition-colors duration-300">
+                <NavLink to="/careers">Join Our Team</NavLink>
+              </Button>
+            </div>
           </div>
         </section>
       </div>
