@@ -11,7 +11,7 @@ const PartnersCarousel = () => {
     { name: "Abbott", logo: "/lovable-uploads/a78691c8-6f55-4192-a586-591d28682eca.png" },
     { name: "Sun Pharma", logo: "/lovable-uploads/748cc5a2-e7bb-4f16-9961-f4a58d61c1a6.png" },
     { name: "Ambica Pharma", logo: "/lovable-uploads/46875218-4919-40b1-bdff-4750ae360de1.png" },
-    { name: "Yugrow Pharmacy", logo: "/lovable-uploads/66317303-af88-4803-8bc8-5b9e556f8950.png" },
+    // Removing the Yugrow Pharmacy logo as requested
     { name: "John Lee", logo: "/lovable-uploads/6ddf886b-009f-47d3-87e0-45ca9ab29411.png" },
     { name: "Alkem", logo: "/lovable-uploads/b27364a3-3479-4883-b023-f10512275029.png" },
     { name: "Dr. Reddy's", logo: "/lovable-uploads/353dc2c8-7dbc-41b5-abad-377ed818c2a8.png" },

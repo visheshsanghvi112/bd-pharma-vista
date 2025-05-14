@@ -30,9 +30,9 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <div className="rounded-lg overflow-hidden p-1 bg-white/10 backdrop-blur-sm">
                 <img
-                  src="/lovable-uploads/e6dd0345-feaf-4692-a3aa-6e0eb3550f0a.png"
-                  alt="Baker & Davis Logo"
-                  className="h-16 w-auto transition-all duration-300"
+                  src="/lovable-uploads/3fb2f0e3-acf6-43f6-8338-0bdbac19e9ee.png"
+                  alt="Yugrow Pharmacy Logo"
+                  className="h-20 w-auto transition-all duration-300"
                 />
               </div>
               <span className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">
@@ -42,20 +42,15 @@ const Footer = () => {
             <p className="text-sm text-gray-200 leading-relaxed">
               BD Pvt. Ltd. is a trusted name in pharmaceutical manufacturing and global export of high-quality medicines since 2017.
             </p>
-            <div className="text-sm bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/5 shadow-lg hover:shadow-xl transition-all duration-300">
-              <p className="flex items-center gap-2">
-                <span className="font-medium">GSTIN:</span> 27AADCJ9014B1ZW
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="font-medium">CIN:</span> U74999MH2017PTC291801
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="font-medium">Drug License:</span> 20B-MH-MZ1-557373, 21B-MH-MZ1-557374
+            <div className="text-sm bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/5 shadow-lg hover:shadow-xl transition-all duration-300 card-hover">
+              <p className="flex items-center gap-2 mb-2">
+                <span className="font-medium text-white/90">GSTIN:</span> 
+                <span className="text-white">27AADCJ9014B1ZW</span>
               </p>
             </div>
           </div>
 
-          {/* Quick Links - Removed hover animations */}
+          {/* Quick Links */}
           <div className="space-y-5">
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-16 after:bg-white/50 after:rounded-full">
               Quick Links

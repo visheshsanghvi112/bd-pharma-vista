@@ -1,4 +1,5 @@
 
+import { useEffect, useRef } from "react";
 import { Globe, MapPin } from "lucide-react";
 
 const GlobalPresenceMap = () => {
@@ -10,6 +11,40 @@ const GlobalPresenceMap = () => {
     { name: "Africa", countries: ["South Africa", "Kenya", "Nigeria", "Egypt"], count: 4 },
     { name: "Oceania", countries: ["Australia", "New Zealand"], count: 2 },
   ];
+
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Initialize map when component mounts
+    if (!mapRef.current) return;
+
+    // Safety check to prevent multiple initializations
+    if (mapRef.current.querySelector('iframe')) return;
+
+    // Create an iframe for the Google Maps embed
+    const iframe = document.createElement('iframe');
+    
+    // Set attributes for the iframe
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.style.border = '0';
+    iframe.loading = 'lazy';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    
+    // Set the Google Maps embed URL centered on the world view
+    iframe.src = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d115945204.53685636!2d0!3d30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1621612555576!5m2!1sen!2sus";
+    
+    // Add the iframe to the map container
+    mapRef.current.appendChild(iframe);
+
+    // Clean up on unmount
+    return () => {
+      if (mapRef.current && mapRef.current.querySelector('iframe')) {
+        mapRef.current.innerHTML = '';
+      }
+    };
+  }, []);
 
   return (
     <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
@@ -23,51 +58,16 @@ const GlobalPresenceMap = () => {
         </p>
         
         <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden mb-8 bg-white dark:bg-card shadow-lg">
-          <div className="absolute inset-0 flex items-center justify-center">
-            {/* World Map SVG with proper styling */}
-            <svg 
-              viewBox="0 0 1200 800" 
-              className="w-full h-full opacity-80 dark:opacity-60"
-              style={{ 
-                filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.1))',
-                background: 'linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)'
-              }}
-            >
-              <path
-                d="M246.5,152.8l-11.1-7.2l-14.5-3.1l-11.9,4.1l-7.2,5.7l-10.8,3.6l-8.8,2.1l-12.9,4.1l-9.8,1l-7.2,2.6l-4.7,4.1 l-5.7,1l-7.2,0.5l-5.7-1.5l-5.2-3.6l-4.7-2.1l-4.1,0.5l-3.6,2.1l-5.7,0.5l-5.7-1.5l-4.7-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6 l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5 l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5 l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1 l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6 l-4.1-1.5l-4.7,0.5l-4.1,2.1l-3.6,2.6l-4.1,1.5l-4.7,0.5l-4.1-1.5l-3.6-2.6l-4.1-1.5l-4.7,0.5"
-                fill="none"
-                stroke="#6366f1"
-                strokeWidth="0.5"
-                strokeDasharray="5,5"
-                className="animate-pulse"
-              />
-            </svg>
-            
-            {/* Location Markers */}
-            <div className="absolute inset-0">
-              <div className="absolute top-[30%] left-[20%] animate-pulse">
-                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-              </div>
-              <div className="absolute top-[45%] left-[48%] animate-pulse delay-100">
-                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-              </div>
-              <div className="absolute top-[35%] left-[75%] animate-pulse delay-200">
-                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-              </div>
-              <div className="absolute top-[60%] left-[65%] animate-pulse delay-300">
-                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-              </div>
-              <div className="absolute top-[65%] left-[30%] animate-pulse delay-400">
-                <MapPin className="w-6 h-6 text-primary dark:text-primary-light" />
-              </div>
-            </div>
+          {/* Map container */}
+          <div ref={mapRef} className="absolute inset-0">
+            {/* Map will be loaded here via JavaScript */}
           </div>
           
-          {/* Stats Overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-white/90 dark:bg-card/90 p-6 rounded-lg shadow-lg backdrop-blur-sm">
-              <p className="text-3xl font-bold text-pharma-navy dark:text-white mb-2">50+ Countries</p>
-              <p className="text-black/80 dark:text-white/80">Global Distribution Network</p>
+          {/* Overlay with key locations */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-5 right-5 bg-white/80 dark:bg-card/80 p-4 rounded-lg shadow-md backdrop-blur-sm z-10">
+              <p className="text-xl font-bold text-pharma-navy dark:text-white">50+ Countries</p>
+              <p className="text-sm text-black/70 dark:text-white/70">Global Distribution Network</p>
             </div>
           </div>
         </div>
