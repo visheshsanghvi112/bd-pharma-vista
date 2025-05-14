@@ -1,13 +1,37 @@
 
-import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { useState, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import Sidebar from './Sidebar';
+import { Button } from '@/components/ui/button';
+import { Menu } from 'lucide-react';
 
 const Layout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  // Close sidebar when route changes
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [location.pathname]);
+
   return (
-    <div className="flex flex-col min-h-screen bg-background dark:bg-background transition-colors duration-300">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow transition-colors duration-300">
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      
+      <Button
+        variant="outline"
+        size="icon"
+        className="fixed left-4 top-24 z-40 md:hidden"
+        onClick={() => setIsSidebarOpen(true)}
+      >
+        <Menu className="h-5 w-5" />
+        <span className="sr-only">Open sidebar</span>
+      </Button>
+      
+      <main className="flex-grow pt-20">
         <Outlet />
       </main>
       <Footer />
