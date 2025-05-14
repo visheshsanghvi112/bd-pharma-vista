@@ -1,22 +1,17 @@
-# Welcome to your Lovable project
+
+# Baker and Davis Company
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/18d5e4e6-0dcf-4307-aef2-81cb04c33cb7
+This is the official web application for Baker and Davis Company.
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/18d5e4e6-0dcf-4307-aef2-81cb04c33cb7) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+There are several ways of editing this application.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +57,10 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/18d5e4e6-0dcf-4307-aef2-81cb04c33cb7) and click on Share -> Publish.
+You can deploy this project using any hosting service that supports static sites, such as Vercel, Netlify, or GitHub Pages.
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain to my project?
 
-Yes, you can!
+Yes, you can connect your own domain through your hosting provider's domain settings.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+To connect a domain, follow your hosting provider's instructions for connecting a custom domain to your deployed application.
