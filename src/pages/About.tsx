@@ -78,9 +78,12 @@ const About = () => {
             <p className="text-xl max-w-3xl mx-auto animate-fade-in text-pharma-navy dark:text-white" style={{ animationDelay: "0.2s" }}>
               A trusted pharmaceutical manufacturer and global exporter committed to improving lives through quality healthcare products
             </p>
-            <div className="flex gap-4 justify-center mt-8">
+            <div className="flex flex-wrap gap-4 justify-center mt-8">
               <Button asChild size="lg" variant="outline" className="bg-white/20 backdrop-blur-sm border-white/40 hover:bg-white/30 text-pharma-navy dark:text-white">
-                <a href="#our-story">Learn Our Story</a>
+                <a href="#our-story">Our Story</a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white/20 backdrop-blur-sm border-white/40 hover:bg-white/30 text-pharma-navy dark:text-white">
+                <a href="#timeline">Our Timeline</a>
               </Button>
               <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-white">
                 <NavLink to="/contact">Contact Us</NavLink>
@@ -135,8 +138,10 @@ const About = () => {
           </div>
         </section>
 
-        {/* Company Timeline Section - NEWLY ADDED */}
-        <TimelineSection />
+        {/* Company Timeline Section */}
+        <div id="timeline">
+          <TimelineSection />
+        </div>
 
         {/* Awards Section */}
         <AwardsSection />
