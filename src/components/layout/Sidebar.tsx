@@ -36,7 +36,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     >
       <div className="h-full flex flex-col">
         <div className="flex items-center justify-between p-4 border-b border-border/40">
-          <h2 className="text-lg font-medium tracking-tight text-primary">
+          <h2 className="text-base font-medium tracking-tight text-primary">
             Baker & Davis
           </h2>
           <Button variant="ghost" size="icon" onClick={onClose} className="hover:bg-accent">

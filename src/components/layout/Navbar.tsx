@@ -1,30 +1,19 @@
 
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Menu, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+type NavbarProps = {
+  onMenuClick: () => void;
+};
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+const Navbar = ({ onMenuClick }: NavbarProps) => {
   const mainNavLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -61,7 +50,7 @@ const Navbar = () => {
               to={link.path}
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors hover:text-primary relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-pharma-navy hover:after:w-full after:transition-all after:duration-300 ${
-                  isActive
+                  isActive 
                     ? "text-pharma-navy after:w-full"
                     : "text-muted-foreground"
                 }`
@@ -94,59 +83,15 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
-              >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[250px] sm:w-[300px]">
-              <SheetHeader className="mt-6 mb-6">
-                <SheetTitle className="text-3xl font-bold text-pharma-navy">Baker & Davis</SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col space-y-4">
-                {mainNavLinks.map((link) => (
-                  <NavLink
-                    key={link.name}
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `py-2 text-lg font-medium transition-colors ${
-                        isActive
-                          ? "text-pharma-navy font-semibold"
-                          : "text-muted-foreground"
-                      }`
-                    }
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </NavLink>
-                ))}
-                <div className="pt-2 pb-2">
-                  <h3 className="font-medium text-sm text-muted-foreground mb-2">Contact</h3>
-                  {dropdownLinks.map((link) => (
-                    <NavLink
-                      key={link.name}
-                      to={link.path}
-                      className={({ isActive }) =>
-                        `py-2 block text-base font-medium transition-colors ${
-                          isActive
-                            ? "text-pharma-navy font-semibold"
-                            : "text-muted-foreground"
-                        }`
-                      }
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.name}
-                    </NavLink>
-                  ))}
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onMenuClick}
+            className="md:hidden"
+          >
+            <Menu className="h-6 w-6" />
+            <span className="sr-only">Open menu</span>
+          </Button>
         </div>
       </div>
     </header>
