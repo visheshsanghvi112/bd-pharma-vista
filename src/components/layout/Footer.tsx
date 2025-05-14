@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Globe, Linkedin, Facebook, Instagram, Twitter } fr
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import Logo3D from "../ui/logo-3d";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,8 +31,8 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <div className="rounded-lg overflow-hidden p-1 bg-white/10 backdrop-blur-sm">
                 <img
-                  src="/lovable-uploads/3fb2f0e3-acf6-43f6-8338-0bdbac19e9ee.png"
-                  alt="Yugrow Pharmacy Logo"
+                  src="/lovable-uploads/5707d5a7-b2b7-46e3-95a7-8640a794f8ae.png"
+                  alt="Baker & Davis Logo"
                   className="h-20 w-auto transition-all duration-300"
                 />
               </div>
@@ -43,10 +44,20 @@ const Footer = () => {
               BD Pvt. Ltd. is a trusted name in pharmaceutical manufacturing and global export of high-quality medicines since 2017.
             </p>
             <div className="text-sm bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/5 shadow-lg hover:shadow-xl transition-all duration-300 card-hover">
-              <p className="flex items-center gap-2 mb-2">
-                <span className="font-medium text-white/90">GSTIN:</span> 
-                <span className="text-white">27AADCJ9014B1ZW</span>
-              </p>
+              <div className="flex flex-col gap-2">
+                <p className="flex items-center gap-2">
+                  <span className="font-medium text-white/90">GSTIN:</span> 
+                  <span className="text-white">27AADCJ9014B1ZW</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="font-medium text-white/90">CIN:</span> 
+                  <span className="text-white">U74999MH2017PTC291801</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="font-medium text-white/90">Drug License:</span> 
+                  <span className="text-white">20B-MH-MZ1-557373, 21B-MH-MZ1-557374</span>
+                </p>
+              </div>
             </div>
           </div>
 
