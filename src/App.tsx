@@ -1,24 +1,34 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, Suspense } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { analytics } from "@/lib/firebase";
 import { logEvent } from "firebase/analytics";
 import { Loading } from "@/components/ui/loading";
 import Layout from "./components/layout/Layout";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Team from "./pages/Team";
-import Careers from "./pages/Careers";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import NotFound from "./pages/NotFound";
-import FAQ from "./pages/FAQ";
 import { HelmetProvider } from 'react-helmet-async';
 
-const queryClient = new QueryClient();
+// Code-split non-essential pages for better performance
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Team = lazy(() => import("./pages/Team"));
+const Careers = lazy(() => import("./pages/Careers"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false, // Improves performance
+      staleTime: 1000 * 60 * 5, // 5 minutes
+    },
+  },
+});
 
 const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -35,15 +45,18 @@ const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
 
 const App = () => {
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    // Always use light mode as requested
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
     
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else if (savedTheme === "light") {
-      document.documentElement.classList.remove("dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+    // Report Core Web Vitals
+    if ('performance' in window && 'getEntriesByType' in performance) {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const paintMetrics = performance.getEntriesByType('paint');
+          console.log('Paint metrics:', paintMetrics);
+        }, 0);
+      });
     }
   }, []);
   

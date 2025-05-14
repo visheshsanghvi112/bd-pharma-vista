@@ -46,47 +46,6 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
-    --background: 222.2 18% 10%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 16% 12%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 18% 10%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 232 55% 60%;
-    --primary-light: 232 45% 65%;
-    --primary-dark: 232 65% 50%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
@@ -95,7 +54,26 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply bg-background text-foreground font-sans;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Improve accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+  
+  /* Improve touch targets on mobile */
+  @media (max-width: 768px) {
+    button, 
+    a,
+    [role="button"],
+    input[type="button"],
+    input[type="submit"] {
+      @apply min-h-[44px] min-w-[44px] py-2 px-4;
+    }
   }
 }
 
@@ -112,12 +90,21 @@
     @apply bg-gradient-to-br from-pharma-light/50 via-pharma-light/80 to-primary-light/70;
   }
   
-  .hero-gradient-dark {
-    @apply bg-gradient-to-br from-pharma-dark/70 via-primary-dark/80 to-primary/90;
+  /* 3D Logo effect */
+  .logo-3d {
+    @apply relative transition-all duration-300;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(5deg) rotateX(3deg);
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+  }
+  
+  .logo-3d:hover {
+    transform: perspective(1000px) rotateY(-2deg) rotateX(-2deg) translateY(-5px);
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.2));
   }
 }
 
-/* Add animation for partners carousel */
+/* Optimized animations */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -129,11 +116,13 @@
 
 .scroll-animation {
   animation: scroll 30s linear infinite;
+  will-change: transform;
 }
 
-/* Enhanced animations for interactive elements */
+/* Enhanced animations with will-change for performance */
 .float-animation {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes float {
@@ -147,6 +136,7 @@
 
 .pulse-animation {
   animation: pulse 3s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 @keyframes pulse {
@@ -158,4 +148,22 @@
     transform: scale(1.05);
     opacity: 0.9;
   }
+}
+
+/* Optimized loading states */
+.skeleton-loader {
+  @apply bg-gray-200 animate-pulse rounded;
+}
+
+/* Improve accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

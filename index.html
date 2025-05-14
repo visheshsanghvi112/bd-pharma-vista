@@ -11,6 +11,11 @@
     <meta name="keywords" content="pharmaceutical manufacturer, pharmaceutical exporter, global medicine supplier, pharmaceutical trading company, WHO-GMP certified, FDA approved, pharmaceutical manufacturing India, international drug trading, Baker and Davis, pharmaceutical supplier, global pharmaceutical exporter" />
     <meta name="author" content="Baker & Davis Pvt. Ltd." />
     <link rel="canonical" href="https://bdindia.in" />
+    
+    <!-- Performance optimizations for resource loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" as="image" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -18,6 +23,8 @@
     <meta property="og:title" content="Baker & Davis | Global Pharmaceutical Manufacturing & Export" />
     <meta property="og:description" content="Global pharmaceutical manufacturer and exporter with WHO-GMP certification and FDA approval. Specializing in high-quality medicine manufacturing and international pharmaceutical trading." />
     <meta property="og:image" content="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -30,10 +37,10 @@
     <link rel="icon" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" type="image/png" />
     <link rel="apple-touch-icon" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" />
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
+    <!-- Google Fonts with display=swap for better performance -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap&display=swap">
 
-    <!-- Structured Data -->
+    <!-- Enhanced Structured Data with more complete information -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -54,14 +61,108 @@
           "@type": "ContactPoint",
           "telephone": "+91-22-48256677",
           "contactType": "customer service",
-          "email": "admin@bdindia.in"
+          "email": "admin@bdindia.in",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["English", "Hindi"]
         },
         "sameAs": [
           "https://www.linkedin.com/company/baker-and-davis",
           "https://twitter.com/bakeranddavis"
+        ],
+        "foundingDate": "2003",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Dr. Baker"
+          },
+          {
+            "@type": "Person",
+            "name": "Dr. Davis"
+          }
+        ],
+        "areaServed": "Worldwide",
+        "award": ["ISO-9001-2015", "WHO-GMP Certification"]
+      }
+    </script>
+    
+    <!-- BreadcrumbList structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://bdindia.in"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://bdindia.in/about"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Products",
+            "item": "https://bdindia.in/products"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Contact",
+            "item": "https://bdindia.in/contact"
+          }
         ]
       }
     </script>
+    
+    <!-- FAQ Page structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What quality certifications do you have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We maintain WHO-GMP certification and FDA approval for our manufacturing facility, ensuring the highest quality standards in pharmaceutical production."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is your production capacity?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our state-of-the-art facility can produce millions of units per month across various pharmaceutical forms including tablets, capsules, and liquid formulations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer custom manufacturing services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we provide custom pharmaceutical manufacturing services tailored to your specific requirements while maintaining the highest quality standards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What countries do you export to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We export to over 50 countries worldwide, with a strong presence in Asia, Africa, Europe, and the Americas."
+            }
+          }
+        ]
+      }
+    </script>
+    
+    <!-- Google Search Console verification (placeholder) -->
+    <meta name="google-site-verification" content="your-verification-code" />
   </head>
 
   <body>

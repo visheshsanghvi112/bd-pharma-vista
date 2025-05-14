@@ -1,22 +1,44 @@
 
+# Baker & Davis Pharmaceuticals - Robots.txt
 User-agent: *
 Allow: /
 
 # Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml
 
-# Optimize crawling
+# Optimize crawling rate
 Crawl-delay: 10
 
-# Important pages
+# Important pages with higher priority
 Allow: /about
 Allow: /products
 Allow: /contact
-Allow: /careers
 Allow: /team
-Allow: /privacy
+Allow: /careers
 Allow: /faq
 
-# Prevent duplicate content
+# Privacy policy
+Allow: /privacy
+
+# Prevent crawling of development/internal areas
 Disallow: /api/
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /test/
 Disallow: /*?*
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Block specific crawlers (examples)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /lovable-uploads/
