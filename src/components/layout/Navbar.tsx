@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { Logo3D } from "@/components/ui/logo-3d";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,12 +25,12 @@ const Navbar = () => {
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-4">
           <NavLink to="/" className="flex items-center gap-4 group">
-            <Logo3D 
+            <img 
               src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
               alt="Baker & Davis Logo"
               width={80}
               height={80}
-              className="transform transition-all duration-300 hover:scale-105"
+              className="object-contain transform transition-all duration-300 hover:scale-105 drop-shadow-md"
             />
             <span className="hidden font-bold text-4xl text-pharma-navy drop-shadow-sm sm:inline-block transition-colors duration-300">
               Baker & Davis
