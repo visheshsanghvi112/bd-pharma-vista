@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Logo3D } from "@/components/ui/logo-3d";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,16 +22,18 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur transition-all duration-300 dark:bg-card/95">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-3">
-          <NavLink to="/" className="flex items-center gap-3 group">
-            <img
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur transition-all duration-300">
+      <div className="container flex h-20 items-center justify-between">
+        <div className="flex items-center gap-4">
+          <NavLink to="/" className="flex items-center gap-4 group">
+            <Logo3D 
               src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
               alt="Baker & Davis Logo"
-              className="h-16 w-auto transform transition-all duration-300 hover:scale-105 drop-shadow-[0_0_10px_rgba(40,53,147,0.3)] dark:drop-shadow-[0_0_10px_rgba(92,107,192,0.3)] filter-none"
+              width={80}
+              height={80}
+              className="transform transition-all duration-300 hover:scale-105"
             />
-            <span className="hidden font-bold text-3xl text-pharma-navy dark:text-primary-light drop-shadow-sm sm:inline-block transition-colors duration-300">
+            <span className="hidden font-bold text-4xl text-pharma-navy drop-shadow-sm sm:inline-block transition-colors duration-300">
               Baker & Davis
             </span>
           </NavLink>
@@ -42,9 +45,9 @@ const Navbar = () => {
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary-light relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-pharma-navy dark:after:bg-primary-light hover:after:w-full after:transition-all after:duration-300 ${
+                `text-sm font-medium transition-colors hover:text-primary relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-pharma-navy hover:after:w-full after:transition-all after:duration-300 ${
                   isActive
-                    ? "text-pharma-navy dark:text-primary-light after:w-full"
+                    ? "text-pharma-navy after:w-full"
                     : "text-muted-foreground"
                 }`
               }
@@ -70,16 +73,16 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden border-t p-4 space-y-4 bg-background dark:bg-card animate-fade-in transition-all duration-300">
+        <div className="md:hidden border-t p-4 space-y-4 bg-background animate-fade-in transition-all duration-300">
           <nav className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
-                  `py-2 text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary-light ${
+                  `py-2 text-sm font-medium transition-colors hover:text-primary ${
                     isActive
-                      ? "text-pharma-navy dark:text-primary-light font-semibold"
+                      ? "text-pharma-navy font-semibold"
                       : "text-muted-foreground"
                   }`
                 }

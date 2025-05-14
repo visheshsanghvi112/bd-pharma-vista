@@ -14,8 +14,8 @@ interface Logo3DProps {
 export function Logo3D({ 
   src, 
   alt, 
-  width = 50, 
-  height = 50, 
+  width = 60, 
+  height = 60, 
   className = '',
   linkTo = '/'
 }: Logo3DProps) {
@@ -28,6 +28,9 @@ export function Logo3D({
         height={height}
         loading="eager"
         className="object-contain"
+        style={{ 
+          filter: 'drop-shadow(0 10px 15px rgba(40,53,147,0.4))',
+        }}
       />
     </div>
   );
