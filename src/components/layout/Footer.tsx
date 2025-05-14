@@ -67,7 +67,6 @@ const Footer = () => {
                 { to: "/team", label: "Our Team" },
                 { to: "/careers", label: "Careers" },
                 { to: "/contact", label: "Contact Us" },
-                { to: "/privacy", label: "Privacy Policy" },
                 { to: "/faq", label: "FAQ" },
               ].map((link, index) => (
                 <li key={index} className="group">
