@@ -3,7 +3,17 @@
 
 ## Project info
 
-This is the official web application for Baker and Davis Company.
+This is the official web application for Baker and Davis Company, a trusted name in pharmaceutical manufacturing and global export of high-quality medicines.
+
+## License
+
+© 2025 Baker and Davis Pvt. Ltd. All rights reserved.
+
+This software is proprietary and confidential. No part of this software may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of Baker and Davis Pvt. Ltd.
+
+GSTIN No.: 27AADCJ9014B1ZW  
+CIN: U74999MH2017PTC291801  
+Drug License Nos.: 20B-MH-MZ1-557373, 21B-MH-MZ1-557374
 
 ## How can I edit this code?
 
@@ -49,11 +59,30 @@ npm run dev
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Vite - Fast and modern frontend build tool
+- TypeScript - Strongly typed programming language that builds on JavaScript
+- React - Library for building user interfaces
+- shadcn-ui - High-quality, accessible UI components
+- Tailwind CSS - Utility-first CSS framework
+- Firebase - Platform for web and mobile applications
+
+## Project Structure
+
+```
+baker-and-davis/
+├── public/             # Static assets
+├── src/
+│   ├── components/     # Reusable UI components
+│   │   ├── ui/         # Base UI components
+│   │   ├── layout/     # Layout components
+│   │   ├── about/      # About page components
+│   │   └── home/       # Home page components
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions and services
+│   ├── pages/          # Page components
+│   └── main.tsx        # Entry point
+└── README.md           # Project documentation
+```
 
 ## How can I deploy this project?
 
@@ -64,3 +93,13 @@ You can deploy this project using any hosting service that supports static sites
 Yes, you can connect your own domain through your hosting provider's domain settings.
 
 To connect a domain, follow your hosting provider's instructions for connecting a custom domain to your deployed application.
+
+## Contact Information
+
+For any inquiries related to this project, please contact:
+
+**Baker & Davis Pvt. Ltd.**
+- Registered Office: 42/44, Babu Genu Road, Shop No. 14, 2nd Floor, Om Shanti Co-Operative Housing Society Ltd., Kalbadevi, Mumbai - 400 002
+- Phone: 022-48256677 / 022-40134455
+- Email: admin@bdindia.in
+
