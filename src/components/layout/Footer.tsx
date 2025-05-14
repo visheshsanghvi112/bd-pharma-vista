@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Removed hover animations */}
           <div className="space-y-5">
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-16 after:bg-white/50 after:rounded-full">
               Quick Links
@@ -69,16 +69,14 @@ const Footer = () => {
                 { to: "/contact", label: "Contact Us" },
                 { to: "/faq", label: "FAQ" },
               ].map((link, index) => (
-                <li key={index} className="group">
+                <li key={index}>
                   <NavLink 
                     to={link.to} 
                     className={({ isActive }) => cn(
-                      "text-sm text-gray-200 hover:text-white transition-colors inline-flex items-center",
-                      "relative overflow-hidden group-hover:pl-2 duration-300",
+                      "text-sm text-gray-200 hover:text-white transition-colors",
                       isActive && "text-white font-medium"
                     )}
                   >
-                    <span className="absolute left-0 h-full w-0 bg-white/10 rounded-r-full group-hover:w-1 transition-all duration-300"></span>
                     {link.label}
                   </NavLink>
                 </li>
