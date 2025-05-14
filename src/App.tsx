@@ -1,6 +1,6 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, Suspense } from "react";
@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import FAQ from "./pages/FAQ";
+import Index from "./pages/Index";
 import { HelmetProvider } from 'react-helmet-async';
 
 const queryClient = new QueryClient();
@@ -37,41 +38,38 @@ const App = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else if (savedTheme === "light") {
-      document.documentElement.classList.remove("dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+    // Set light theme as default
+    document.documentElement.classList.remove("dark");
+    if (savedTheme) {
+      localStorage.setItem("theme", "light");
     }
   }, []);
   
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <AnalyticsWrapper>
-              <Suspense fallback={<Loading />}>
-                <Routes>
-                  <Route element={<Layout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/careers" element={<Careers />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/faq" element={<FAQ />} />
-                  </Route>
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </AnalyticsWrapper>
-          </BrowserRouter>
-        </TooltipProvider>
+        <BrowserRouter>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Index />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/faq" element={<FAQ />} />
+              </Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Toaster />
+            <Sonner />
+          </Suspense>
+          <AnalyticsWrapper>
+            {/* Analytics wrapper moved outside of Suspense to avoid hooks issues */}
+          </AnalyticsWrapper>
+        </BrowserRouter>
       </QueryClientProvider>
     </HelmetProvider>
   );
