@@ -18,12 +18,14 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const mainNavLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
+    { name: "Team", path: "/team" },
   ];
 
   const contactLinks = [
     { name: "FAQ", path: "/faq" },
     { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
+    { name: "Privacy", path: "/privacy" },
   ];
 
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -36,7 +38,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     >
       <div className="h-full flex flex-col">
         <div className="flex items-center justify-between p-4 border-b border-border/40">
-          <h2 className="text-base font-medium tracking-tight text-primary">
+          <h2 className="text-lg font-medium tracking-tight text-primary">
             Baker & Davis
           </h2>
           <Button variant="ghost" size="icon" onClick={onClose} className="hover:bg-accent">
@@ -73,7 +75,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 variant="ghost"
                 className="flex w-full justify-between items-center py-2.5 px-3 text-base font-medium rounded-md transition-colors hover:bg-accent"
               >
-                <span>Contact</span>
+                <span>Contact & Info</span>
                 <span className="text-sm">{isContactOpen ? "−" : "+"}</span>
               </Button>
             </CollapsibleTrigger>
