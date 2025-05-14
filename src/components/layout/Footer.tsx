@@ -32,7 +32,7 @@ const Footer = () => {
                 <img
                   src="/lovable-uploads/e6dd0345-feaf-4692-a3aa-6e0eb3550f0a.png"
                   alt="Baker & Davis Logo"
-                  className="h-12 w-auto bg-black rounded transition-all duration-300"
+                  className="h-16 w-auto transition-all duration-300"
                 />
               </div>
               <span className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">
