@@ -24,7 +24,7 @@ const Layout = () => {
       <Button
         variant="outline"
         size="icon"
-        className="fixed left-4 top-24 z-40 md:hidden"
+        className="fixed right-4 top-24 z-40 md:hidden"
         onClick={() => setIsSidebarOpen(true)}
       >
         <Menu className="h-5 w-5" />
