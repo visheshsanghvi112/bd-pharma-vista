@@ -1,7 +1,6 @@
 
 import { NavLink } from "react-router-dom";
 import { Mail, Phone, MapPin, Globe, Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
-import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -43,11 +42,11 @@ const Footer = () => {
             <p className="text-sm text-gray-200 leading-relaxed">
               BD Pvt. Ltd. is a trusted name in pharmaceutical manufacturing and global export of high-quality medicines since 2017.
             </p>
-            <div className="text-sm bg-white/5 p-4 rounded-lg backdrop-blur-sm border border-white/10">
-              <p className="flex items-center gap-2 mb-2">
+            <div className="text-sm space-y-2">
+              <p className="flex items-center gap-2">
                 <span className="font-medium">GSTIN:</span> 27AADCJ9014B1ZW
               </p>
-              <p className="flex items-center gap-2 mb-2">
+              <p className="flex items-center gap-2">
                 <span className="font-medium">CIN:</span> U74999MH2017PTC291801
               </p>
               <p className="flex items-center gap-2">
@@ -93,32 +92,30 @@ const Footer = () => {
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-16 after:bg-white/50 after:rounded-full">
               Contact Us
             </h3>
-            <Card className="bg-white/5 border-white/10 text-white shadow-lg">
-              <div className="p-4 space-y-4">
-                <div className="flex items-start gap-3">
-                  <MapPin size={18} className="shrink-0 mt-1 text-gray-200" />
-                  <address className="text-sm text-gray-200 not-italic">
-                    <p className="font-medium text-white mb-1">Registered Office:</p>
-                    <p>
-                      42/44, Babu Genu Road, Shop No. 14, 2nd Floor, Om Shanti Co-Operative 
-                      Housing Society Ltd., Kalbadevi, Mumbai - 400 002
-                    </p>
-                  </address>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Phone size={18} className="shrink-0 text-gray-200" />
-                  <p className="text-sm text-gray-200">022-48256677 / 022-40134455</p>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Mail size={18} className="shrink-0 text-gray-200" />
-                  <a href="mailto:admin@bdindia.in" className="text-sm text-gray-200 hover:text-white transition-colors underline decoration-white/20 hover:decoration-white">
-                    admin@bdindia.in
-                  </a>
-                </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 group hover:translate-x-1 transition-transform duration-300">
+                <MapPin size={18} className="shrink-0 mt-1 text-gray-200 group-hover:text-white" />
+                <address className="text-sm text-gray-200 not-italic group-hover:text-white transition-colors">
+                  <p className="font-medium text-white mb-1">Registered Office:</p>
+                  <p>
+                    42/44, Babu Genu Road, Shop No. 14, 2nd Floor, Om Shanti Co-Operative 
+                    Housing Society Ltd., Kalbadevi, Mumbai - 400 002
+                  </p>
+                </address>
               </div>
-            </Card>
+              
+              <div className="flex items-center gap-3 group hover:translate-x-1 transition-transform duration-300">
+                <Phone size={18} className="shrink-0 text-gray-200 group-hover:text-white" />
+                <p className="text-sm text-gray-200 group-hover:text-white transition-colors">022-48256677 / 022-40134455</p>
+              </div>
+              
+              <div className="flex items-center gap-3 group hover:translate-x-1 transition-transform duration-300">
+                <Mail size={18} className="shrink-0 text-gray-200 group-hover:text-white" />
+                <a href="mailto:admin@bdindia.in" className="text-sm text-gray-200 hover:text-white transition-colors underline decoration-white/20 hover:decoration-white">
+                  admin@bdindia.in
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Legal & Certifications */}
