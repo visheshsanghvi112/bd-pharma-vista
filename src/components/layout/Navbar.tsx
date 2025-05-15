@@ -1,19 +1,36 @@
 
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, Search, Phone } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Logo3D from "@/components/ui/logo-3d";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type NavbarProps = {
   onMenuClick: () => void;
 };
 
 const Navbar = ({ onMenuClick }: NavbarProps) => {
+  const [scrolled, setScrolled] = useState(false);
+  const isMobile = useIsMobile();
+  
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const mainNavLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -26,24 +43,34 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full backdrop-blur-sm bg-background/40 transition-all duration-300">
-      <div className="container flex h-20 items-center justify-between">
+    <header 
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/90 dark:bg-background/95 backdrop-blur-md shadow-md h-16" 
+          : "bg-transparent h-20"
+      }`}
+    >
+      <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-4">
           <NavLink to="/" className="flex items-center gap-4 group">
-            <img 
+            <Logo3D 
               src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
               alt="Baker & Davis Logo"
-              width={80}
-              height={80}
-              className="object-contain transform transition-all duration-300 hover:scale-105 drop-shadow-md"
+              width={scrolled ? 60 : 80}
+              height={scrolled ? 60 : 80}
+              className={`transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}
             />
-            <span className="hidden font-bold text-4xl text-pharma-navy drop-shadow-sm sm:inline-block transition-colors duration-300">
+            <span className={`hidden font-bold text-4xl text-pharma-navy drop-shadow-sm sm:inline-block transition-all duration-300 ${
+              scrolled ? 'text-3xl' : 'text-4xl'
+            }`}>
               Baker & Davis
             </span>
           </NavLink>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className={`hidden md:flex items-center gap-6 transition-all duration-300 ${
+          scrolled ? 'py-2' : 'py-4'
+        }`}>
           {mainNavLinks.map((link) => (
             <NavLink
               key={link.name}
@@ -62,17 +89,17 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="flex items-center gap-1 px-2">
-                Contact
-                <ChevronDown className="h-4 w-4" />
+              <Button variant="ghost" className="flex items-center gap-1 px-2 hover:bg-transparent">
+                <span className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</span>
+                <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuContent align="end" className="w-48 bg-white/95 backdrop-blur-md border border-gray-100 shadow-lg animate-fade-in animate-duration-200">
               {dropdownLinks.map((link) => (
-                <DropdownMenuItem key={link.name} asChild>
+                <DropdownMenuItem key={link.name} asChild className="hover:bg-gray-50 focus:bg-gray-50">
                   <NavLink
                     to={link.path}
-                    className="w-full cursor-pointer"
+                    className="w-full cursor-pointer text-sm font-medium py-1.5"
                   >
                     {link.name}
                   </NavLink>
@@ -82,15 +109,37 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
           </DropdownMenu>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          {!isMobile && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full hover:bg-primary/10 transition-colors"
+              aria-label="Search"
+            >
+              <Search className="h-5 w-5 text-muted-foreground" />
+            </Button>
+          )}
+          
+          <Button 
+            variant="outline" 
+            size="sm"
+            className={`hidden sm:flex items-center gap-2 border-pharma-navy/20 hover:bg-pharma-navy/5 transition-all duration-300 ${
+              scrolled ? 'py-1.5 px-3' : 'py-2 px-4'
+            }`}
+          >
+            <Phone className="h-4 w-4" />
+            <span className="text-xs font-medium">Call Us</span>
+          </Button>
+          
           <Button
             variant="ghost"
             size="icon"
             onClick={onMenuClick}
-            className="md:hidden"
+            className="md:hidden hover:bg-primary/10 transition-colors"
+            aria-label="Menu"
           >
             <Menu className="h-6 w-6" />
-            <span className="sr-only">Open menu</span>
           </Button>
         </div>
       </div>
