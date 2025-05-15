@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, ChevronDown, Search, Phone } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -109,29 +109,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
           </DropdownMenu>
         </nav>
 
-        <div className="flex items-center gap-3">
-          {!isMobile && (
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full hover:bg-primary/10 transition-colors"
-              aria-label="Search"
-            >
-              <Search className="h-5 w-5 text-muted-foreground" />
-            </Button>
-          )}
-          
-          <Button 
-            variant="outline" 
-            size="sm"
-            className={`hidden sm:flex items-center gap-2 border-pharma-navy/20 hover:bg-pharma-navy/5 transition-all duration-300 ${
-              scrolled ? 'py-1.5 px-3' : 'py-2 px-4'
-            }`}
-          >
-            <Phone className="h-4 w-4" />
-            <span className="text-xs font-medium">Call Us</span>
-          </Button>
-          
+        <div className="flex items-center">
           <Button
             variant="ghost"
             size="icon"
