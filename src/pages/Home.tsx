@@ -95,9 +95,9 @@ const Home = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-pharma-navy dark:text-white mb-6 animate-fade-in leading-tight tracking-tight">
-                  Pioneering
+                  Excellence in
                   <span className="block bg-clip-text text-transparent bg-gradient-to-r from-pharma-navy via-primary to-pharma-navy dark:from-white dark:via-primary-light dark:to-white mt-2">
-                    Healthcare Solutions
+                    Global Pharmaceuticals
                   </span>
                 </h1>
                 
