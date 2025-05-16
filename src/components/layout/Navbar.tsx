@@ -9,7 +9,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Logo3D from "@/components/ui/logo-3d";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 type NavbarProps = {
@@ -53,14 +52,14 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
       <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-4">
           <NavLink to="/" className="flex items-center gap-4 group">
-            <Logo3D 
+            <img 
               src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
               alt="Baker & Davis Logo"
-              width={scrolled ? 60 : 80}
-              height={scrolled ? 60 : 80}
-              className={`transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}
+              className={`transition-all duration-300 object-contain ${
+                scrolled ? 'w-[60px] h-[60px]' : 'w-[80px] h-[80px]'
+              }`}
             />
-            <span className={`hidden font-bold text-4xl text-pharma-navy drop-shadow-sm sm:inline-block transition-all duration-300 ${
+            <span className={`hidden font-bold text-pharma-navy drop-shadow-sm sm:inline-block transition-all duration-300 ${
               scrolled ? 'text-3xl' : 'text-4xl'
             }`}>
               Baker & Davis
