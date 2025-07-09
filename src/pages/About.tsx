@@ -40,27 +40,6 @@ const About = () => {
     }
   ];
 
-  const teamMembers = [
-    {
-      name: "Dr. Sarah Mitchell",
-      role: "Chief Executive Officer",
-      description: "Leading our global distribution strategy and business development with over 15 years of pharmaceutical industry experience.",
-      imageUrl: "/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
-    },
-    {
-      name: "Dr. James Anderson",
-      role: "Director of Operations",
-      description: "Overseeing our global supply chain operations and ensuring seamless pharmaceutical distribution across international markets.",
-      imageUrl: "/lovable-uploads/female-pharmacist-writing-clipboard-examining-medications-pharmacy.jpg"
-    },
-    {
-      name: "Dr. Emily Parker",
-      role: "Head of Quality Assurance",
-      description: "Ensuring the highest standards of quality and compliance across all our pharmaceutical distribution processes.",
-      imageUrl: "/lovable-uploads/colorful-medication-tablets-capsules-displayed-light-blue-background-emphasizing-health-healthcare-themes.jpg"
-    }
-  ];
-
   return (
     <>
       <Seo 
@@ -166,18 +145,6 @@ const About = () => {
 
         {/* Global Presence Map */}
         <GlobalPresenceMap />
-        
-        {/* Team Section */}
-        <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">Our Team</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <DirectorCard key={index} {...member} />
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Testimonials Section */}
         <TestimonialsSection />

@@ -9,9 +9,10 @@ const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
 
-  // Close sidebar when route changes
+  // Close sidebar and scroll to top when route changes
   useEffect(() => {
     setIsSidebarOpen(false);
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
