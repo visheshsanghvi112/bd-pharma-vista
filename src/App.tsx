@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,7 @@ import Layout from "./components/layout/Layout";
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/ui/page-transition";
+import { Analytics } from "@vercel/analytics/react";
 
 // Code-split non-essential pages for better performance
 const Home = lazy(() => import("./pages/Home"));
@@ -128,6 +128,7 @@ const App = () => {
               </Suspense>
             </AnalyticsWrapper>
           </BrowserRouter>
+          <Analytics />
         </TooltipProvider>
       </QueryClientProvider>
     </HelmetProvider>
