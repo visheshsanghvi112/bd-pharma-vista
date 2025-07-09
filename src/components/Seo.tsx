@@ -23,10 +23,10 @@ const Seo = ({
   publishedAt,
   updatedAt,
   keywords = [],
-  author = "Baker & Davis",
+  author = "Baker & Davis - Pharmaceutical Distributors & Exporters",
   noIndex = false
 }: SeoProps) => {
-  const siteName = "Baker & Davis";
+  const siteName = "Baker & Davis - Pharmaceutical Distribution & Export";
   const fullTitle = `${title} | ${siteName}`;
   const siteUrl = "https://bdindia.in";
   const fullCanonical = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`) : `${siteUrl}${window.location.pathname}`;
@@ -41,6 +41,10 @@ const Seo = ({
       <meta name="description" content={description} />
       {keywordsString && <meta name="keywords" content={keywordsString} />}
       {author && <meta name="author" content={author} />}
+      
+      {/* Business Type Schema */}
+      <meta name="business-type" content="Pharmaceutical Distributor, Trader & Exporter" />
+      <meta name="industry" content="Pharmaceutical Distribution & International Trade" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={fullCanonical} />
@@ -65,6 +69,12 @@ const Seo = ({
       
       {/* No Index if specified */}
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
+      
+      {/* Additional SEO for Distribution Business */}
+      <meta name="geo.region" content="IN-MH" />
+      <meta name="geo.placename" content="Mumbai, Maharashtra, India" />
+      <meta name="geo.position" content="19.0760;72.8777" />
+      <meta name="ICBM" content="19.0760, 72.8777" />
     </Helmet>
   );
 };

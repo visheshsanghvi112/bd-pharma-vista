@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
@@ -77,8 +78,30 @@ const Home = () => {
   return (
     <>
       <Seo 
-        title="Global Pharmaceutical Manufacturer & Exporter"
-        description="Baker & Davis - Leading pharmaceutical manufacturer and global exporter. WHO-GMP certified, FDA approved facility specializing in high-quality medicines and international drug trading."
+        title="Global Pharmaceutical Distributor & Exporter"
+        description="Baker & Davis - Leading pharmaceutical distributor and global exporter. WHO-GDP certified facility specializing in reliable pharmaceutical distribution, trading, and international export of quality medicines worldwide."
+        keywords={[
+          "pharmaceutical distributor",
+          "medicine exporter",
+          "pharmaceutical export company",
+          "global pharmaceutical distribution",
+          "pharmaceutical trading",
+          "medicine supply chain",
+          "pharmaceutical logistics",
+          "WHO-GDP certified distributor",
+          "pharmaceutical wholesaler",
+          "India pharmaceutical exporter",
+          "international medicine trading",
+          "pharmaceutical import export",
+          "medical supplies distributor",
+          "generic medicine distributor",
+          "pharmaceutical supply chain",
+          "medicine trading company",
+          "global pharmaceutical trader",
+          "pharmaceutical distribution network",
+          "international pharmaceutical distribution",
+          "medicine export services"
+        ]}
       />
       <div className="flex flex-col">
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

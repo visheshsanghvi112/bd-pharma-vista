@@ -48,7 +48,7 @@ const FAQ = () => {
     <>
       <Seo 
         title="FAQ"
-        description="Frequently asked questions about Baker & Davis pharmaceutical distribution and export services. Find answers about our global pharmaceutical distribution operations."
+        description="Frequently asked questions about Baker & Davis pharmaceutical distribution and export services. Find answers about our global pharmaceutical distribution operations, WHO-GDP certification, and international medicine trading."
         keywords={[
           "pharmaceutical distribution FAQ",
           "medicine export questions",
@@ -57,7 +57,13 @@ const FAQ = () => {
           "pharmaceutical logistics",
           "global pharmaceutical distribution",
           "medicine distributor questions",
-          "pharmaceutical export services"
+          "pharmaceutical export services",
+          "international medicine trading FAQ",
+          "pharmaceutical import export questions",
+          "medicine supply chain questions",
+          "pharmaceutical wholesaler FAQ",
+          "distribution network questions",
+          "pharmaceutical trading FAQ"
         ]}
       />
       <div className="min-h-screen">

@@ -44,7 +44,7 @@ const About = () => {
     <>
       <Seo 
         title="About"
-        description="Learn about Baker & Davis, a leading global pharmaceutical distributor and exporter with WHO-GDP certification. Discover our commitment to reliable pharmaceutical supply chain solutions."
+        description="Learn about Baker & Davis, a leading global pharmaceutical distributor and exporter with WHO-GDP certification. Discover our commitment to reliable pharmaceutical supply chain solutions and international medicine trading."
         keywords={[
           "pharmaceutical distributor",
           "medicine exporter",
@@ -55,7 +55,16 @@ const About = () => {
           "pharmaceutical logistics",
           "WHO-GDP certified",
           "pharmaceutical wholesaler",
-          "India pharmaceutical exporter"
+          "India pharmaceutical exporter",
+          "international medicine trading",
+          "pharmaceutical import export",
+          "medical supplies distributor",
+          "generic medicine distributor",
+          "pharmaceutical supply chain solutions",
+          "medicine trading company Mumbai",
+          "global pharmaceutical trader",
+          "pharmaceutical distribution network",
+          "international pharmaceutical distribution services"
         ]}
       />
       <div className="flex flex-col">
