@@ -1,9 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
-import FounderSection from "@/components/about/FounderSection";
+import DirectorsSection from "@/components/about/DirectorsSection";
 import StatCard from "@/components/about/StatCard";
 import AwardsSection from "@/components/about/AwardsSection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
@@ -19,12 +20,12 @@ const About = () => {
   const values = [
     {
       title: "Quality",
-      description: "We maintain the highest standards in all aspects of our operation, from raw materials to finished products.",
+      description: "We maintain the highest standards in all aspects of our pharmaceutical distribution, from sourcing to delivery.",
       icon: Star
     },
     {
-      title: "Innovation",
-      description: "Our dedicated R&D team constantly works to improve formulations and develop new solutions for global health challenges.",
+      title: "Reliability",
+      description: "Our dedicated team ensures consistent and timely delivery of pharmaceutical products to global markets.",
       icon: User
     },
     {
@@ -39,23 +40,23 @@ const About = () => {
     }
   ];
 
-  const directors = [
+  const teamMembers = [
     {
       name: "Dr. Sarah Mitchell",
       role: "Chief Executive Officer",
-      description: "Leading our global vision and strategic initiatives with over 15 years of pharmaceutical industry experience.",
+      description: "Leading our global distribution strategy and business development with over 15 years of pharmaceutical industry experience.",
       imageUrl: "/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
     },
     {
       name: "Dr. James Anderson",
-      role: "Director of Research & Development",
-      description: "Spearheading innovation in drug development and formulation with a focus on next-generation pharmaceuticals.",
+      role: "Director of Operations",
+      description: "Overseeing our global supply chain operations and ensuring seamless pharmaceutical distribution across international markets.",
       imageUrl: "/lovable-uploads/female-pharmacist-writing-clipboard-examining-medications-pharmacy.jpg"
     },
     {
       name: "Dr. Emily Parker",
       role: "Head of Quality Assurance",
-      description: "Ensuring the highest standards of quality and compliance across all our manufacturing processes.",
+      description: "Ensuring the highest standards of quality and compliance across all our pharmaceutical distribution processes.",
       imageUrl: "/lovable-uploads/colorful-medication-tablets-capsules-displayed-light-blue-background-emphasizing-health-healthcare-themes.jpg"
     }
   ];
@@ -64,7 +65,19 @@ const About = () => {
     <>
       <Seo 
         title="About"
-        description="Learn about Baker & Davis, a leading global pharmaceutical manufacturer and exporter with WHO-GMP certification and FDA approval. Discover our commitment to quality healthcare solutions."
+        description="Learn about Baker & Davis, a leading global pharmaceutical distributor and exporter with WHO-GDP certification. Discover our commitment to reliable pharmaceutical supply chain solutions."
+        keywords={[
+          "pharmaceutical distributor",
+          "medicine exporter",
+          "pharmaceutical export company",
+          "global pharmaceutical distribution",
+          "pharmaceutical trading",
+          "medicine supply chain",
+          "pharmaceutical logistics",
+          "WHO-GDP certified",
+          "pharmaceutical wholesaler",
+          "India pharmaceutical exporter"
+        ]}
       />
       <div className="flex flex-col">
         {/* Hero Section */}
@@ -74,7 +87,7 @@ const About = () => {
               About Baker & Davis
             </h1>
             <p className="text-xl max-w-3xl mx-auto animate-fade-in text-pharma-navy dark:text-white" style={{ animationDelay: "0.2s" }}>
-              A trusted pharmaceutical manufacturer and global exporter committed to improving lives through quality healthcare products
+              A trusted pharmaceutical distributor and global exporter committed to improving lives through reliable healthcare supply chain solutions
             </p>
           </div>
         </section>
@@ -85,18 +98,18 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <MissionVisionCard
                 title="Mission"
-                content="To improve lives by delivering trusted pharmaceutical solutions across the globe through innovation, quality, and accessibility."
+                content="To improve lives by delivering trusted pharmaceutical distribution solutions across the globe through reliability, quality assurance, and accessibility."
               />
               <MissionVisionCard
                 title="Vision"
-                content="To be the most trusted partner in global healthcare, recognized for our unwavering commitment to quality, innovation, and patient well-being."
+                content="To be the most trusted partner in global pharmaceutical distribution, recognized for our unwavering commitment to quality, reliability, and supply chain excellence."
               />
             </div>
           </div>
         </section>
 
-        {/* Founder Section */}
-        <FounderSection />
+        {/* Directors Section */}
+        <DirectorsSection />
 
         {/* Stats Section */}
         <section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background dark:via-background/95 dark:to-background/90">
@@ -104,7 +117,7 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <StatCard
                 icon={Award}
-                title="ISO-9001-2015"
+                title="WHO-GDP"
                 subtitle="Certified"
               />
               <StatCard
@@ -114,8 +127,8 @@ const About = () => {
               />
               <StatCard
                 icon={Star}
-                title="Global"
-                subtitle="Presence"
+                title="50+ Countries"
+                subtitle="Global Reach"
               />
             </div>
           </div>
@@ -128,13 +141,13 @@ const About = () => {
               <div>
                 <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6 transition-colors duration-300">Our Story</h2>
                 <p className="text-black dark:text-white mb-4 transition-colors duration-300">
-                  Baker & Davis was founded with a clear mission: to improve lives by delivering trusted pharmaceutical solutions across the globe. What began as a small operation has grown into a respected pharmaceutical manufacturer and exporter with global reach.
+                  Baker & Davis was founded with a clear mission: to improve lives by delivering trusted pharmaceutical distribution solutions across the globe. What began as a focused operation has grown into a respected pharmaceutical distributor and exporter with global reach.
                 </p>
                 <p className="text-black dark:text-white mb-4 transition-colors duration-300">
-                  For over a decade, we have dedicated ourselves to manufacturing premium quality medicines that meet international standards. Our commitment to excellence has earned us certifications from leading health authorities worldwide, including WHO-GMP and FDA approvals.
+                  For over two decades, we have dedicated ourselves to providing reliable pharmaceutical supply chain solutions that meet international standards. Our commitment to excellence has earned us certifications from leading health authorities worldwide, including WHO-GDP certification.
                 </p>
                 <p className="text-black dark:text-white transition-colors duration-300">
-                  Today, BD Pvt. Ltd. serves healthcare providers and patients in over 50 countries, with a continuously expanding portfolio of essential and specialty medications.
+                  Today, Baker & Davis serves healthcare providers and patients in over 50 countries, with a continuously expanding network of trusted pharmaceutical suppliers and partners.
                 </p>
               </div>
               <div>
@@ -154,13 +167,13 @@ const About = () => {
         {/* Global Presence Map */}
         <GlobalPresenceMap />
         
-        {/* Directors Section */}
+        {/* Team Section */}
         <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">Our Leadership</h2>
+            <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">Our Team</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {directors.map((director, index) => (
-                <DirectorCard key={index} {...director} />
+              {teamMembers.map((member, index) => (
+                <DirectorCard key={index} {...member} />
               ))}
             </div>
           </div>
@@ -193,10 +206,10 @@ const About = () => {
         {/* CSR/Community Involvement Section */}
         <CsrSection />
 
-        {/* Manufacturing Facilities Section */}
+        {/* Distribution Network Section */}
         <FacilitiesSection />
 
-        {/* Product Development Process */}
+        {/* Supply Chain Process */}
         <ProductDevelopmentSection />
 
         {/* Certifications Section */}
@@ -205,9 +218,9 @@ const About = () => {
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-primary/90 to-primary-dark dark:from-primary-dark/90 dark:to-primary text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Join Our Mission</h2>
+            <h2 className="text-3xl font-bold mb-6">Join Our Network</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Partner with Baker & Davis to contribute to global healthcare improvement and access to quality medicines.
+              Partner with Baker & Davis to expand your access to global pharmaceutical markets and reliable supply chain solutions.
             </p>
             <Button asChild size="lg" className="bg-white text-pharma-navy hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-100 transition-colors duration-300">
               <NavLink to="/contact" className="flex items-center gap-2">

@@ -1,3 +1,4 @@
+
 import { Shield } from "lucide-react";
 import {
   Accordion,
@@ -11,19 +12,35 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What quality certifications do you have?",
-      answer: "We maintain WHO-GMP certification and FDA approval for our manufacturing facility, ensuring the highest quality standards in pharmaceutical production."
+      answer: "We maintain WHO-GDP (Good Distribution Practice) certification and comply with all international pharmaceutical distribution standards, ensuring the highest quality in our supply chain operations."
     },
     {
-      question: "What is your production capacity?",
-      answer: "Our state-of-the-art facility can produce millions of units per month across various pharmaceutical forms including tablets, capsules, and liquid formulations."
+      question: "What is your distribution capacity?",
+      answer: "Our global distribution network can handle large-scale pharmaceutical supply operations across multiple markets, with reliable logistics partnerships and temperature-controlled storage facilities."
     },
     {
-      question: "Do you offer custom manufacturing services?",
-      answer: "Yes, we provide custom pharmaceutical manufacturing services tailored to your specific requirements while maintaining the highest quality standards."
+      question: "Do you offer pharmaceutical sourcing services?",
+      answer: "Yes, we provide comprehensive pharmaceutical sourcing and distribution services, connecting global healthcare providers with quality medicines from certified suppliers while maintaining full regulatory compliance."
     },
     {
-      question: "What countries do you export to?",
-      answer: "We export to over 50 countries worldwide, with a strong presence in Asia, Africa, Europe, and the Americas."
+      question: "What countries do you distribute to?",
+      answer: "We distribute pharmaceutical products to over 50 countries worldwide, with a strong presence in Asia, Africa, Europe, and the Americas through our established distribution network."
+    },
+    {
+      question: "How do you ensure product quality during distribution?",
+      answer: "We maintain strict cold chain management, temperature monitoring, and proper storage conditions throughout the entire distribution process. All our facilities and logistics partners are WHO-GDP certified."
+    },
+    {
+      question: "What types of pharmaceutical products do you distribute?",
+      answer: "We distribute a wide range of pharmaceutical products including generic medicines, branded pharmaceuticals, medical devices, and healthcare products, all sourced from certified and approved suppliers."
+    },
+    {
+      question: "Do you provide regulatory support for exports?",
+      answer: "Yes, we provide comprehensive regulatory support including documentation, compliance verification, and assistance with import/export requirements for different international markets."
+    },
+    {
+      question: "What is your minimum order quantity?",
+      answer: "Our minimum order quantities vary depending on the product and destination market. We work with healthcare providers of all sizes, from large hospital chains to smaller clinics and pharmacies."
     }
   ];
 
@@ -31,7 +48,17 @@ const FAQ = () => {
     <>
       <Seo 
         title="FAQ"
-        description="Frequently asked questions about Baker & Davis pharmaceutical manufacturing and export services. Find answers about our global pharmaceutical operations."
+        description="Frequently asked questions about Baker & Davis pharmaceutical distribution and export services. Find answers about our global pharmaceutical distribution operations."
+        keywords={[
+          "pharmaceutical distribution FAQ",
+          "medicine export questions",
+          "pharmaceutical supply chain FAQ",
+          "WHO-GDP certification",
+          "pharmaceutical logistics",
+          "global pharmaceutical distribution",
+          "medicine distributor questions",
+          "pharmaceutical export services"
+        ]}
       />
       <div className="min-h-screen">
         {/* Hero Section */}
@@ -45,7 +72,7 @@ const FAQ = () => {
               Frequently Asked Questions
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-700 dark:text-gray-300 animate-fade-in">
-              Find answers to common questions about our pharmaceutical services
+              Find answers to common questions about our pharmaceutical distribution services
             </p>
           </div>
         </section>

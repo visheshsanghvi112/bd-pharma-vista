@@ -1,5 +1,5 @@
 
-# Baker & Davis Pharmaceuticals - Robots.txt
+# Baker & Davis Pharmaceuticals - Distribution & Export - Robots.txt
 User-agent: *
 Allow: /
 
@@ -9,9 +9,8 @@ Sitemap: https://bdindia.in/sitemap.xml
 # Optimize crawling rate
 Crawl-delay: 10
 
-# Important pages with higher priority
+# Important pages with higher priority - Distribution & Export Focus
 Allow: /about
-Allow: /products
 Allow: /contact
 Allow: /team
 Allow: /careers
@@ -42,3 +41,9 @@ Allow: /
 
 User-agent: Googlebot-Image
 Allow: /lovable-uploads/
+
+# Additional directives for pharmaceutical distribution content
+User-agent: *
+Allow: /pharmaceutical-distribution
+Allow: /global-export
+Allow: /supply-chain

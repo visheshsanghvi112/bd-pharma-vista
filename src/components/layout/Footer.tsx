@@ -41,7 +41,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-gray-200 leading-relaxed">
-              BD Pvt. Ltd. is a trusted name in pharmaceutical manufacturing and global export of high-quality medicines since 2017.
+              BD Pvt. Ltd. is a trusted pharmaceutical distributor and global exporter of high-quality medicines, serving healthcare providers worldwide since 2000.
             </p>
             <div className="text-sm bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/5 shadow-lg hover:shadow-xl transition-all duration-300 card-hover">
               <div className="flex flex-col gap-2">
@@ -128,10 +128,10 @@ const Footer = () => {
             </h3>
             <div className="flex flex-wrap gap-2">
               {[
-                "WHO-GMP", 
-                "FDA Approved", 
+                "WHO-GDP", 
+                "Export License", 
                 "ISO 9001:2015", 
-                "ISO 14001:2015"
+                "Drug License"
               ].map((cert, index) => (
                 <span 
                   key={index} 
