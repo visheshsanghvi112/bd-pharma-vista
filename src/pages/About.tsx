@@ -43,28 +43,33 @@ const About = () => {
   return (
     <>
       <Seo 
-        title="About"
-        description="Learn about Baker & Davis, a leading global pharmaceutical distributor and exporter with WHO-GDP certification. Discover our commitment to reliable pharmaceutical supply chain solutions and international medicine trading."
+        title="About Baker & Davis - Leading Pharmaceutical Distributor & Exporter | BD India"
+        description="Learn about Baker & Davis (BD India) - a premier pharmaceutical distributor and global exporter. Baker Davis has been serving the pharmaceutical industry with reliable distribution services. Discover Davis and Baker's commitment to excellence in pharmaceutical supply chain solutions and international medicine trading."
         keywords={[
-          "pharmaceutical distributor",
-          "medicine exporter",
-          "pharmaceutical export company",
-          "global pharmaceutical distribution",
-          "pharmaceutical trading",
-          "medicine supply chain",
-          "pharmaceutical logistics",
-          "WHO-GDP certified",
-          "pharmaceutical wholesaler",
-          "India pharmaceutical exporter",
-          "international medicine trading",
-          "pharmaceutical import export",
-          "medical supplies distributor",
-          "generic medicine distributor",
-          "pharmaceutical supply chain solutions",
-          "medicine trading company Mumbai",
-          "global pharmaceutical trader",
-          "pharmaceutical distribution network",
-          "international pharmaceutical distribution services"
+          "Baker Davis pharmaceutical company",
+          "Davis Baker about us",
+          "BD India company profile",
+          "pharmaceutical distributor history Baker and Davis",
+          "Baker India pharmaceutical background",
+          "pharmaceutical export company profile Baker Davis",
+          "global pharmaceutical distribution Baker and Davis",
+          "pharmaceutical trading company history BD India",
+          "medicine supply chain company Baker Davis",
+          "pharmaceutical logistics company Baker India",
+          "WHO-GDP certified distributor Baker and Davis",
+          "pharmaceutical wholesaler profile BD India",
+          "international medicine trading Baker Davis",
+          "pharmaceutical import export company Baker India",
+          "medical supplies distributor about Baker Davis",
+          "generic medicine distributor Baker and Davis",
+          "pharmaceutical supply chain solutions BD India",
+          "medicine trading company profile Baker Davis",
+          "global pharmaceutical trader Baker India",
+          "pharmaceutical distribution network Baker and Davis",
+          "international pharmaceutical distribution Baker Davis",
+          "medicine export services company BD India",
+          "pharmaceutical company Mumbai Baker Davis",
+          "Davis pharmaceutical distribution services"
         ]}
       />
       <div className="flex flex-col">

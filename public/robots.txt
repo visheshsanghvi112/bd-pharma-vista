@@ -7,7 +7,7 @@ Allow: /
 Sitemap: https://bdindia.in/sitemap.xml
 
 # Optimize crawling rate
-Crawl-delay: 10
+Crawl-delay: 5
 
 # Important pages with higher priority - Distribution & Export Focus
 Allow: /about
@@ -19,6 +19,12 @@ Allow: /faq
 # Privacy policy
 Allow: /privacy
 
+# Brand-specific paths (future expansion)
+Allow: /baker-davis
+Allow: /bd-india
+Allow: /pharmaceutical-distribution
+Allow: /medicine-export
+
 # Prevent crawling of development/internal areas
 Disallow: /api/
 Disallow: /admin/
@@ -29,14 +35,21 @@ Disallow: /*.json$
 Disallow: /*.js$
 Disallow: /*.css$
 
-# Block specific crawlers (examples)
+# Block specific crawlers that don't respect our content
 User-agent: GPTBot
 Disallow: /
 
 User-agent: CCBot
 Disallow: /
 
+# Allow beneficial crawlers
 User-agent: AhrefsBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 User-agent: Googlebot-Image
@@ -47,3 +60,8 @@ User-agent: *
 Allow: /pharmaceutical-distribution
 Allow: /global-export
 Allow: /supply-chain
+Allow: /baker-davis-india
+Allow: /bd-pharmaceutical
+
+# Cache instructions for better crawling
+Host: bdindia.in

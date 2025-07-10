@@ -47,23 +47,29 @@ const FAQ = () => {
   return (
     <>
       <Seo 
-        title="FAQ"
-        description="Frequently asked questions about Baker & Davis pharmaceutical distribution and export services. Find answers about our global pharmaceutical distribution operations, WHO-GDP certification, and international medicine trading."
+        title="FAQ - Baker & Davis Pharmaceutical Distribution & Export Questions | BD India"
+        description="Frequently asked questions about Baker & Davis (BD India) pharmaceutical distribution and export services. Find answers about Baker Davis global pharmaceutical distribution operations, WHO-GDP certification, and Davis Baker international medicine trading services."
         keywords={[
-          "pharmaceutical distribution FAQ",
-          "medicine export questions",
-          "pharmaceutical supply chain FAQ",
-          "WHO-GDP certification",
-          "pharmaceutical logistics",
-          "global pharmaceutical distribution",
-          "medicine distributor questions",
-          "pharmaceutical export services",
-          "international medicine trading FAQ",
-          "pharmaceutical import export questions",
-          "medicine supply chain questions",
-          "pharmaceutical wholesaler FAQ",
-          "distribution network questions",
-          "pharmaceutical trading FAQ"
+          "Baker Davis pharmaceutical FAQ",
+          "Davis Baker medicine export questions",
+          "BD India pharmaceutical supply chain FAQ",
+          "Baker and Davis WHO-GDP certification questions",
+          "pharmaceutical logistics FAQ Baker Davis",
+          "global pharmaceutical distribution questions BD India",
+          "medicine distributor questions Baker India",
+          "pharmaceutical export services FAQ Baker Davis",
+          "international medicine trading FAQ Davis Baker",
+          "pharmaceutical import export questions BD India",
+          "medicine supply chain questions Baker and Davis",
+          "pharmaceutical wholesaler FAQ Baker Davis",
+          "distribution network questions Baker India",
+          "pharmaceutical trading FAQ Davis and Baker",
+          "Baker Davis distributor questions",
+          "BD India export services FAQ",
+          "pharmaceutical distribution FAQ Mumbai",
+          "medicine trading questions Baker Davis",
+          "global pharmaceutical FAQ Baker and Davis",
+          "pharmaceutical supply chain FAQ BD India"
         ]}
       />
       <div className="min-h-screen">
