@@ -104,7 +104,7 @@
   }
 }
 
-/* Optimized animations */
+/* Optimized animations with will-change for performance */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -114,15 +114,13 @@
   }
 }
 
-.scroll-animation {
-  animation: scroll 30s linear infinite;
-  will-change: transform;
-}
-
-/* Enhanced animations with will-change for performance */
-.float-animation {
-  animation: float 6s ease-in-out infinite;
-  will-change: transform;
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes float {
@@ -134,11 +132,6 @@
   }
 }
 
-.pulse-animation {
-  animation: pulse 3s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -148,6 +141,27 @@
     transform: scale(1.05);
     opacity: 0.9;
   }
+}
+
+.scroll-animation {
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.pulse-animation {
+  animation: pulse 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.shimmer-animation {
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
 }
 
 /* Optimized loading states */
@@ -166,4 +180,23 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Performance-optimized transforms */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimized gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+}
+
+.gradient-card-light {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+}
+
+.gradient-card-dark {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
 }
