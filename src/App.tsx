@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +23,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const FAQ = lazy(() => import("./pages/FAQ"));
+const OurStory = lazy(() => import("./pages/OurStory"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -60,6 +62,11 @@ const AnimatedRoutes = () => {
           <Route path="/about" element={
             <PageTransition>
               <About />
+            </PageTransition>
+          } />
+          <Route path="/our-story" element={
+            <PageTransition>
+              <OurStory />
             </PageTransition>
           } />
           <Route path="/team" element={

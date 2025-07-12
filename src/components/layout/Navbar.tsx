@@ -36,6 +36,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
   ];
 
   const dropdownLinks = [
+    { name: "Our Story", path: "/our-story" },
     { name: "FAQ", path: "/faq" },
     { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
@@ -89,7 +90,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="flex items-center gap-1 px-2 hover:bg-transparent">
-                <span className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</span>
+                <span className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">More</span>
                 <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </Button>
             </DropdownMenuTrigger>

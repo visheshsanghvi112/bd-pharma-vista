@@ -4,6 +4,8 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
+import ChatBot from '../ChatBot';
+import WhatsAppButton from '../WhatsAppButton';
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,6 +26,10 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      
+      {/* Floating Components */}
+      <WhatsAppButton />
+      <ChatBot />
     </div>
   );
 };
