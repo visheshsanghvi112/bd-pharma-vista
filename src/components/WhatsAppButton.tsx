@@ -54,8 +54,7 @@ const WhatsAppButton: React.FC = () => {
           "fixed bottom-6 left-6 z-50",
           "w-16 h-16 bg-[#25D366] hover:bg-[#20BD5C] rounded-full shadow-lg",
           "flex items-center justify-center",
-          "transition-all duration-300 hover:scale-110",
-          "animate-pulse"
+          "transition-all duration-300 hover:scale-110"
         )}
         aria-label="Contact Baker & Davis on WhatsApp"
         title="Contact Baker & Davis pharmaceutical distributors on WhatsApp"
