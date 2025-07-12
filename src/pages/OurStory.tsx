@@ -55,7 +55,16 @@ const OurStory = () => {
       <Seo 
         title="Our Story - Baker & Davis | Leading Pharmaceutical Distributors & Traders in India"
         description="Discover the inspiring journey of Baker & Davis (BD India) - from a trusted pharmaceutical distributor to leading traders and exporters. Learn about Baker India's commitment to quality healthcare distribution and global pharmaceutical trading excellence."
-        keywords="Baker & Davis story, BD India history, pharmaceutical distributors India, Baker India journey, pharmaceutical traders story, medicine export company India, healthcare distribution timeline, pharmaceutical business growth"
+        keywords={[
+          "Baker & Davis story",
+          "BD India history",
+          "pharmaceutical distributors India",
+          "Baker India journey",
+          "pharmaceutical traders story",
+          "medicine export company India",
+          "healthcare distribution timeline",
+          "pharmaceutical business growth"
+        ]}
       />
       
       <div className="min-h-screen bg-pharma-light">

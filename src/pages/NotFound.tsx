@@ -36,7 +36,16 @@ const NotFound = () => {
       <Seo 
         title="404 Page Not Found - Baker & Davis | Pharmaceutical Distributors & Traders"
         description="The page you are looking for could not be found on Baker & Davis website. You will be redirected to our homepage shortly. Baker & Davis - Leading pharmaceutical distributors, traders and exporters in India (BD India)."
-        keywords="404 error, page not found, Baker & Davis, BD India, pharmaceutical distributors, medicine traders, Baker India, pharmaceutical exporters"
+        keywords={[
+          "404 error",
+          "page not found", 
+          "Baker & Davis",
+          "BD India",
+          "pharmaceutical distributors",
+          "medicine traders",
+          "Baker India",
+          "pharmaceutical exporters"
+        ]}
       />
       <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pharma-light to-white">
         <div className="text-center p-8 bg-white rounded-2xl shadow-xl max-w-2xl mx-4 border border-gray-100">
