@@ -176,11 +176,25 @@ const Home = () => {
               loop 
               muted 
               playsInline
+              preload="metadata"
+              poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
               className="w-full h-full object-cover object-center"
+              onError={(e) => {
+                // Fallback to background image if video fails
+                const target = e.target as HTMLVideoElement;
+                target.style.display = 'none';
+              }}
             >
               <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            {/* Fallback background image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg')`
+              }}
+            ></div>
             <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/80 via-primary/60 to-pharma-navy/90 dark:from-black/70 dark:via-primary-dark/80 dark:to-black/90"></div>
           </div>
           
