@@ -110,10 +110,36 @@ const Home = () => {
       <div className="flex flex-col">
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
-              alt="Medical Supplies Background"
-              className="w-full h-full object-cover object-center"
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
+              onError={(e) => {
+                console.error('Video failed to load:', e);
+                // Fallback to image background
+                const videoElement = e.target as HTMLVideoElement;
+                videoElement.style.display = 'none';
+                const fallbackBg = document.getElementById('fallback-bg');
+                if (fallbackBg) {
+                  fallbackBg.style.display = 'block';
+                }
+              }}
+            >
+              <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            {/* Fallback background image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg')`,
+                display: 'none'
+              }}
+              id="fallback-bg"
             />
             <div className="absolute inset-0 hero-gradient-light dark:hero-gradient-dark backdrop-blur-sm transition-all duration-500"></div>
           </div>
