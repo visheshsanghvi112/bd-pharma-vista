@@ -54,10 +54,10 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
               to={link.path}
               onClick={onClose}
               className={({ isActive }) =>
-                `block py-2.5 px-3 text-base font-medium rounded-md transition-colors hover:bg-accent ${
+                `flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
                   isActive 
-                    ? "bg-accent/80 text-accent-foreground"
-                    : "text-foreground"
+                    ? "bg-accent text-accent-foreground" 
+                    : "text-muted-foreground"
                 }`
               }
             >
@@ -68,27 +68,27 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           <Collapsible
             open={isContactOpen}
             onOpenChange={setIsContactOpen}
-            className="pt-1"
+            className="pt-2"
           >
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                className="flex w-full justify-between items-center py-2.5 px-3 text-base font-medium rounded-md transition-colors hover:bg-accent"
+                className="flex w-full justify-between items-center px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
               >
                 <span>Contact & Info</span>
                 <span className="text-sm">{isContactOpen ? "−" : "+"}</span>
               </Button>
             </CollapsibleTrigger>
-            <CollapsibleContent className="space-y-1 pl-2 mt-1">
+            <CollapsibleContent className="space-y-1 pl-6">
               {contactLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.path}
                   onClick={onClose}
                   className={({ isActive }) =>
-                    `block py-2 px-3 text-base font-medium rounded-md transition-colors hover:bg-accent ${
+                    `flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
                       isActive 
-                        ? "bg-accent/50 text-accent-foreground"
+                        ? "bg-accent text-accent-foreground" 
                         : "text-muted-foreground"
                     }`
                   }
@@ -100,7 +100,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           </Collapsible>
         </nav>
         
-        <div className="p-4 border-t border-border/40 bg-muted/20">
+        <div className="p-4 border-t border-border/40">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Baker & Davis Pharmaceuticals
           </p>
