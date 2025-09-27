@@ -54,11 +54,12 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
         <div className="flex items-center gap-4">
           <NavLink to="/" className="flex items-center gap-4 group">
             <img 
-              src="/lovable-uploads/87979321-9460-40c4-ac9d-f1676911aaf6.png"
+              src="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png"
               alt="Baker & Davis Logo"
               className={`transition-all duration-300 object-contain ${
                 scrolled ? 'w-[60px] h-[60px]' : 'w-[80px] h-[80px]'
               }`}
+              loading="eager"
             />
             <span className={`hidden font-bold text-pharma-navy drop-shadow-sm sm:inline-block transition-all duration-300 ${
               scrolled ? 'text-3xl' : 'text-4xl'

@@ -200,18 +200,22 @@ const Home = () => {
                         preload="none"
                         poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
                         onLoadedData={() => {
-                          // Video loaded successfully
-                          console.log('Video loaded successfully');
+                          // Video loaded successfully - no console logging needed
                         }}
                         onError={(e) => {
-                          console.error('Video failed to load:', e);
-                          // Fallback to image
+                          // Silently handle video loading errors to prevent console spam
                           const videoElement = e.target as HTMLVideoElement;
                           videoElement.style.display = 'none';
                           const fallbackImg = document.getElementById('fallback-img');
                           if (fallbackImg) {
                             fallbackImg.style.display = 'block';
                           }
+                        }}
+                        onLoadStart={() => {
+                          // Video started loading
+                        }}
+                        onCanPlay={() => {
+                          // Video can start playing
                         }}
                       >
                         {videoLoaded && <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />}
