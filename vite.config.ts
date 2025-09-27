@@ -19,4 +19,21 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Production optimizations
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+        },
+      },
+    },
+    // Ensure proper asset handling
+    assetsInlineLimit: 4096,
+  },
+  // Production-specific optimizations
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode),
+  },
 }));

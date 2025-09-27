@@ -43,8 +43,13 @@ const Home = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && videoRef.current && !videoLoaded) {
-            videoRef.current.load();
-            setVideoLoaded(true);
+            // Add timeout for production environments
+            setTimeout(() => {
+              if (videoRef.current) {
+                videoRef.current.load();
+                setVideoLoaded(true);
+              }
+            }, 100);
           }
         });
       },
