@@ -31,7 +31,11 @@
           if (args[0] && typeof args[0] === 'string' && 
               (args[0].includes('content-script') || args[0].includes('AdUnit') || 
                args[0].includes('message channel closed') || 
-               args[0].includes('Document already loaded'))) {
+               args[0].includes('Document already loaded') ||
+               args[0].includes('browser is not defined') ||
+               args[0].includes('checkPageManual') ||
+               args[0].includes('overlays') ||
+               args[0].includes('content.js'))) {
             return;
           }
           originalError.apply(console, args);
@@ -39,11 +43,35 @@
         
         console.warn = function(...args) {
           if (args[0] && typeof args[0] === 'string' && 
-              (args[0].includes('content-script') || args[0].includes('AdUnit'))) {
+              (args[0].includes('content-script') || args[0].includes('AdUnit') ||
+               args[0].includes('browser is not defined'))) {
             return;
           }
           originalWarn.apply(console, args);
         };
+        
+        // Block browser extension APIs
+        if (typeof chrome !== 'undefined') {
+          // Block all Chrome extension APIs
+          try {
+            Object.keys(chrome).forEach(key => {
+              if (typeof chrome[key] === 'object' && chrome[key] !== null) {
+                Object.keys(chrome[key]).forEach(method => {
+                  if (typeof chrome[key][method] === 'function') {
+                    chrome[key][method] = function() { return Promise.resolve(); };
+                  }
+                });
+              }
+            });
+          } catch (e) {
+            // Ignore errors
+          }
+        }
+        
+        // Block browser object
+        if (typeof browser !== 'undefined') {
+          window.browser = undefined;
+        }
       })();
     </script>
     
