@@ -5,14 +5,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, Suspense, lazy } from "react";
-import { analytics } from "@/lib/firebase";
-import { logEvent } from "firebase/analytics";
+// Temporarily disable Firebase Analytics to prevent conflicts
+// import { analytics } from "@/lib/firebase";
+// import { logEvent } from "firebase/analytics";
 import { Loading } from "@/components/ui/loading";
 import Layout from "./components/layout/Layout";
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/ui/page-transition";
-import { Analytics } from "@vercel/analytics/react";
+// Temporarily disable Vercel Analytics to prevent conflicts
+// import { Analytics } from "@vercel/analytics/react";
 
 // Code-split non-essential pages for better performance
 const Home = lazy(() => import("./pages/Home"));
@@ -38,18 +40,9 @@ const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
   useEffect(() => {
-    // Only log events if analytics is properly initialized
-    if (analytics) {
-      try {
-        logEvent(analytics, 'page_view', {
-          page_path: location.pathname,
-          page_title: document.title
-        });
-      } catch (error) {
-        // Silently handle analytics errors
-        console.warn('Analytics event logging failed:', error);
-      }
-    }
+    // Temporarily disabled analytics to prevent production issues
+    // Analytics will be re-enabled once production is stable
+    console.log('Page view:', location.pathname);
   }, [location]);
 
   return <>{children}</>;
@@ -143,7 +136,8 @@ const App = () => {
               </Suspense>
             </AnalyticsWrapper>
           </BrowserRouter>
-          <Analytics />
+          {/* Temporarily disabled Vercel Analytics */}
+          {/* <Analytics /> */}
         </TooltipProvider>
       </QueryClientProvider>
     </HelmetProvider>

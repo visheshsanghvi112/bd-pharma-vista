@@ -37,31 +37,12 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Intersection Observer for lazy loading video
+  // Simplified video loading - load immediately
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && videoRef.current && !videoLoaded) {
-            // Add timeout for production environments
-            setTimeout(() => {
-              if (videoRef.current) {
-                videoRef.current.load();
-                setVideoLoaded(true);
-              }
-            }, 100);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
     if (videoRef.current) {
-      observer.observe(videoRef.current);
+      setVideoLoaded(true);
     }
-
-    return () => observer.disconnect();
-  }, [videoLoaded]);
+  }, []);
 
   const stats = [
     { value: "10+", label: "Years Experience", icon: Calendar },
@@ -223,7 +204,7 @@ const Home = () => {
                           // Video can start playing
                         }}
                       >
-                        {videoLoaded && <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />}
+                        <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                       
