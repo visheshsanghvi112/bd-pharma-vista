@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import { 
@@ -26,8 +26,6 @@ import Seo from "@/components/Seo";
 
 const Home = () => {
   const [animate, setAnimate] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Delay animation to improve initial load
@@ -37,11 +35,6 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Simplified video loading - no complex logic
-  useEffect(() => {
-    // Just set video as loaded, let the video element handle loading
-    setVideoLoaded(true);
-  }, []);
 
   const stats = [
     { value: "10+", label: "Years Experience", icon: Calendar },
@@ -173,35 +166,13 @@ const Home = () => {
                     {/* Inner glow effect */}
                     <div className="absolute inset-0 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-pharma-navy/10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
                     
-                    {/* Video container */}
+                    {/* Hero Image */}
                     <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
-                      <video
-                        ref={videoRef}
-                        className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="none"
-                        poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
-                        onError={() => {
-                          // Silently handle video errors - don't log repeatedly
-                        }}
-                      >
-                        <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
-                        <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
-                        <source src="./lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                      
-                      {/* Fallback image */}
                       <img 
-                        id="fallback-img"
-                        src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
-                        alt="Medical supplies and pharmaceutical products"
+                        src="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
+                        alt="Professional female pharmacist in white lab coat"
                         className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
-                        loading="lazy"
-                        style={{ display: 'none' }}
+                        loading="eager"
                       />
                       
                       {/* Animated border glow */}
