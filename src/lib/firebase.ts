@@ -15,6 +15,14 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
-// Initialize Analytics
-export const analytics = getAnalytics(app);
-setAnalyticsCollectionEnabled(analytics, true);
+// Initialize Analytics with error handling
+let analytics: any = null;
+try {
+  analytics = getAnalytics(app);
+  setAnalyticsCollectionEnabled(analytics, true);
+} catch (error) {
+  // Silently handle analytics initialization errors
+  console.warn('Firebase Analytics initialization failed:', error);
+}
+
+export { analytics };

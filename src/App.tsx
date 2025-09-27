@@ -38,10 +38,18 @@ const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
   useEffect(() => {
-    logEvent(analytics, 'page_view', {
-      page_path: location.pathname,
-      page_title: document.title
-    });
+    // Only log events if analytics is properly initialized
+    if (analytics) {
+      try {
+        logEvent(analytics, 'page_view', {
+          page_path: location.pathname,
+          page_title: document.title
+        });
+      } catch (error) {
+        // Silently handle analytics errors
+        console.warn('Analytics event logging failed:', error);
+      }
+    }
   }, [location]);
 
   return <>{children}</>;
