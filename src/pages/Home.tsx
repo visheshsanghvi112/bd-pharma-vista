@@ -37,11 +37,38 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Simplified video loading - load immediately
+  // Enhanced video loading for production
   useEffect(() => {
-    if (videoRef.current) {
-      setVideoLoaded(true);
-    }
+    const loadVideo = () => {
+      if (videoRef.current) {
+        // Force video to load and play
+        videoRef.current.load();
+        videoRef.current.play().catch((error) => {
+          console.warn('Video autoplay failed:', error);
+          // Video will still show poster image
+        });
+        setVideoLoaded(true);
+      }
+    };
+
+    // Load video after a short delay to ensure DOM is ready
+    const timer = setTimeout(loadVideo, 500);
+    
+    // Also try to load video on user interaction
+    const handleUserInteraction = () => {
+      if (videoRef.current && videoRef.current.paused) {
+        videoRef.current.play().catch(console.warn);
+      }
+    };
+
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    document.addEventListener('scroll', handleUserInteraction, { once: true });
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('scroll', handleUserInteraction);
+    };
   }, []);
 
   const stats = [
@@ -183,28 +210,32 @@ const Home = () => {
                         muted
                         loop
                         playsInline
-                        preload="none"
+                        preload="metadata"
                         poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
                         onLoadedData={() => {
-                          // Video loaded successfully - no console logging needed
+                          // Video loaded successfully
+                          console.log('Video loaded successfully');
                         }}
                         onError={(e) => {
-                          // Silently handle video loading errors to prevent console spam
-                          const videoElement = e.target as HTMLVideoElement;
-                          videoElement.style.display = 'none';
-                          const fallbackImg = document.getElementById('fallback-img');
-                          if (fallbackImg) {
-                            fallbackImg.style.display = 'block';
-                          }
+                          console.warn('Video failed to load, showing poster image');
+                          // Don't hide video, let poster show
                         }}
                         onLoadStart={() => {
-                          // Video started loading
+                          console.log('Video started loading');
                         }}
                         onCanPlay={() => {
-                          // Video can start playing
+                          console.log('Video can play');
+                          // Try to play the video
+                          if (videoRef.current) {
+                            videoRef.current.play().catch(err => {
+                              console.warn('Video play failed:', err);
+                            });
+                          }
                         }}
                       >
                         <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
+                        <source src="/lovable-uploads/Final%20Comp_1.mp4" type="video/mp4" />
+                        <source src="./lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                       
