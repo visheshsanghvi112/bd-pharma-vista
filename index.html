@@ -7,7 +7,45 @@
     <title>Baker & Davis Pharmaceuticals | Global Pharmaceutical Export & Manufacturing</title>
     
     <!-- Content Security Policy to block external script injection -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; object-src 'none'; base-uri 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self';" />
+    
+    <!-- Early script blocking -->
+    <script>
+      // Block content-script and AdUnit immediately
+      (function() {
+        // Override console methods immediately
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        console.log = function(...args) {
+          if (args[0] && typeof args[0] === 'string' && 
+              (args[0].includes('content-script') || args[0].includes('AdUnit') || 
+               args[0].includes('Document already loaded'))) {
+            return;
+          }
+          originalLog.apply(console, args);
+        };
+        
+        console.error = function(...args) {
+          if (args[0] && typeof args[0] === 'string' && 
+              (args[0].includes('content-script') || args[0].includes('AdUnit') || 
+               args[0].includes('message channel closed') || 
+               args[0].includes('Document already loaded'))) {
+            return;
+          }
+          originalError.apply(console, args);
+        };
+        
+        console.warn = function(...args) {
+          if (args[0] && typeof args[0] === 'string' && 
+              (args[0].includes('content-script') || args[0].includes('AdUnit'))) {
+            return;
+          }
+          originalWarn.apply(console, args);
+        };
+      })();
+    </script>
     
     <!-- Primary Meta Tags -->
     <meta name="description" content="Baker & Davis (BD Pvt. Ltd.) - Leading global pharmaceutical manufacturer and exporter. WHO-GMP certified, FDA approved facility specializing in high-quality medicines, international drug trading, and pharmaceutical manufacturing in Mumbai, India." />
@@ -174,88 +212,6 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Enhanced script blocking for production -->
-    <script>
-      // Block content-script and AdUnit injection
-      (function() {
-        // Override console methods to hide these specific errors
-        const originalLog = console.log;
-        const originalError = console.error;
-        const originalWarn = console.warn;
-        
-        console.log = function(...args) {
-          if (args[0] && typeof args[0] === 'string' && 
-              (args[0].includes('content-script') || args[0].includes('AdUnit') || 
-               args[0].includes('Document already loaded'))) {
-            return; // Block these logs
-          }
-          originalLog.apply(console, args);
-        };
-        
-        console.error = function(...args) {
-          if (args[0] && typeof args[0] === 'string' && 
-              (args[0].includes('content-script') || args[0].includes('AdUnit') || 
-               args[0].includes('message channel closed') || 
-               args[0].includes('Document already loaded'))) {
-            return; // Block these errors
-          }
-          originalError.apply(console, args);
-        };
-        
-        console.warn = function(...args) {
-          if (args[0] && typeof args[0] === 'string' && 
-              (args[0].includes('content-script') || args[0].includes('AdUnit'))) {
-            return; // Block these warnings
-          }
-          originalWarn.apply(console, args);
-        };
-        
-        // Block script creation more aggressively
-        const originalCreateElement = document.createElement;
-        document.createElement = function(tagName) {
-          const element = originalCreateElement.call(this, tagName);
-          if (tagName === 'script') {
-            const originalSrc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
-            Object.defineProperty(element, 'src', {
-              set: function(value) {
-                if (value && (value.includes('content-script') || value.includes('AdUnit'))) {
-                  return; // Block completely
-                }
-                if (originalSrc && originalSrc.set) {
-                  originalSrc.set.call(this, value);
-                }
-              },
-              get: function() {
-                if (originalSrc && originalSrc.get) {
-                  return originalSrc.get.call(this);
-                }
-                return this.getAttribute('src');
-              }
-            });
-          }
-          return element;
-        };
-        
-        // Block browser extension APIs
-        if (typeof chrome !== 'undefined') {
-          if (chrome.runtime) {
-            chrome.runtime.sendMessage = function() { return Promise.resolve(); };
-            chrome.runtime.onMessage = { addListener: function() {} };
-          }
-          if (chrome.tabs) {
-            chrome.tabs.sendMessage = function() { return Promise.resolve(); };
-          }
-        }
-        
-        // Block fetch requests to suspicious URLs
-        const originalFetch = window.fetch;
-        window.fetch = function(url, options) {
-          if (typeof url === 'string' && (url.includes('content-script') || url.includes('AdUnit'))) {
-            return Promise.reject(new Error('Blocked suspicious request'));
-          }
-          return originalFetch.call(this, url, options);
-        };
-      })();
-    </script>
+    <!-- Script blocking moved to head for earlier execution -->
   </body>
 </html>
