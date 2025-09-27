@@ -121,15 +121,6 @@ const Home = () => {
       />
       <div className="flex flex-col">
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F1F1F1] to-[#FCFCFC]">
-          {/* Loading indicator for video */}
-          {!videoLoaded && (
-            <div className="absolute top-4 right-4 z-20">
-              <div className="flex items-center gap-2 text-sm text-gray-600 bg-white/80 px-3 py-2 rounded-full shadow-lg">
-                <div className="w-4 h-4 border-2 border-gray-300 border-t-pharma-navy rounded-full animate-spin"></div>
-                Loading video...
-              </div>
-            </div>
-          )}
           <div className="container mx-auto px-4 py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left side - Content */}
