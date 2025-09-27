@@ -218,7 +218,13 @@ const Home = () => {
                         }}
                         onError={(e) => {
                           console.warn('Video failed to load, showing poster image');
-                          // Don't hide video, let poster show
+                          // Show poster image as fallback
+                          const videoElement = e.target as HTMLVideoElement;
+                          videoElement.style.display = 'none';
+                          const fallbackImg = document.getElementById('fallback-img');
+                          if (fallbackImg) {
+                            fallbackImg.style.display = 'block';
+                          }
                         }}
                         onLoadStart={() => {
                           console.log('Video started loading');
@@ -234,7 +240,7 @@ const Home = () => {
                         }}
                       >
                         <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
-                        <source src="/lovable-uploads/Final%20Comp_1.mp4" type="video/mp4" />
+                        <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
                         <source src="./lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
