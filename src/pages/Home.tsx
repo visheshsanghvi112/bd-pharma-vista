@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
+import debugLogger from "@/lib/debug-logger";
 import { 
   ArrowRight, 
   Star,
@@ -28,11 +29,19 @@ const Home = () => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
+    debugLogger.logMount('Home');
+    debugLogger.log('info', 'Home component mounted successfully');
+    
     // Delay animation to improve initial load
     const timer = setTimeout(() => {
       setAnimate(true);
+      debugLogger.log('info', 'Home animation triggered');
     }, 100);
-    return () => clearTimeout(timer);
+    
+    return () => {
+      clearTimeout(timer);
+      debugLogger.logUnmount('Home');
+    };
   }, []);
 
 

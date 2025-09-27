@@ -9,6 +9,7 @@ import { useEffect, Suspense, lazy } from "react";
 // import { analytics } from "@/lib/firebase";
 // import { logEvent } from "firebase/analytics";
 import { Loading } from "@/components/ui/loading";
+import debugLogger from "@/lib/debug-logger";
 import Layout from "./components/layout/Layout";
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from "framer-motion";
@@ -108,19 +109,39 @@ const AnimatedRoutes = () => {
 
 const App = () => {
   useEffect(() => {
+    // Initialize debug logging
+    debugLogger.log('info', 'App component initializing');
+    
     // Always use light mode as requested
     document.documentElement.classList.remove("dark");
     localStorage.setItem("theme", "light");
+    debugLogger.log('info', 'Theme set to light mode');
     
     // Report Core Web Vitals
     if ('performance' in window && 'getEntriesByType' in performance) {
       window.addEventListener('load', () => {
         setTimeout(() => {
           const paintMetrics = performance.getEntriesByType('paint');
+          debugLogger.log('info', 'Paint metrics collected', paintMetrics);
           console.log('Paint metrics:', paintMetrics);
         }, 0);
       });
     }
+
+    // Log app mount
+    debugLogger.logMount('App');
+    
+    // Add error boundary logging
+    const handleError = (event: ErrorEvent) => {
+      debugLogger.logError('App', 'Global error caught', event.error);
+    };
+    
+    window.addEventListener('error', handleError);
+    
+    return () => {
+      window.removeEventListener('error', handleError);
+      debugLogger.logUnmount('App');
+    };
   }, []);
   
   return (

@@ -111,35 +111,108 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Image Gallery Section */}
+        <section className="py-20 bg-gradient-to-br from-pharma-light/30 to-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-medium text-[#222222] mb-6">Our Pharmaceutical Excellence</h2>
+              <p className="text-lg text-[#555555]">
+                Discover our state-of-the-art facilities and premium pharmaceutical products.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Professional Pharmacist Team",
+                  description: "Our expert pharmacists ensuring quality and safety",
+                  image: "/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
+                },
+                {
+                  title: "Medical Equipment & Supplies",
+                  description: "Advanced medical devices and pharmaceutical supplies",
+                  image: "/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
+                },
+                {
+                  title: "Quality Control Laboratory",
+                  description: "Rigorous testing and quality assurance processes",
+                  image: "/lovable-uploads/female-pharmacist-writing-clipboard-examining-medications-pharmacy.jpg"
+                }
+              ].map((item, index) => (
+                <div 
+                  key={index}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-medium text-[#333333] mb-3">{item.title}</h3>
+                    <p className="text-[#555555]">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         
         {/* Video Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/10 to-primary/5 -z-10" />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-4">See Our Facilities In Action</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                  Take a virtual tour of our state-of-the-art pharmaceutical manufacturing facilities and see how we maintain our high-quality standards.
+                </p>
+              </div>
+              
               <div className="relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-2xl transition-all duration-500 group">
                 <AspectRatio ratio={16/9}>
                   <video
                     poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
                     className="w-full h-full object-cover"
                     controls
+                    preload="metadata"
                   >
+                    <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                     <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                    <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <Play size={24} className="text-pharma-navy ml-1" />
-                    </div>
-                  </div>
                 </AspectRatio>
               </div>
-              <div className="text-center mt-8">
-                <h3 className="text-2xl font-medium text-[#333333] mb-3">See Our Facilities In Action</h3>
-                <p className="text-[#555555] max-w-2xl mx-auto">
-                  Take a virtual tour of our state-of-the-art pharmaceutical manufacturing facilities and see how we maintain our high-quality standards.
-                </p>
-              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Statistics Section */}
+        <section className="py-20 bg-pharma-navy text-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-medium mb-6">Our Global Impact</h2>
+              <p className="text-lg text-blue-100">
+                Numbers that speak to our commitment to global healthcare excellence.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { number: "50+", label: "Countries Served" },
+                { number: "25+", label: "Years Experience" },
+                { number: "1000+", label: "Products Manufactured" },
+                { number: "99.9%", label: "Quality Assurance" }
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-blue-200">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 import ChatBot from '../ChatBot';
 import WhatsAppButton from '../WhatsAppButton';
+import DebugPanel from '../DebugPanel';
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,6 +31,7 @@ const Layout = () => {
       {/* Floating Components */}
       <WhatsAppButton />
       <ChatBot />
+      <DebugPanel />
     </div>
   );
 };
