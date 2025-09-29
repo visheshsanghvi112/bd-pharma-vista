@@ -18,7 +18,7 @@ import { PageTransition } from "./components/ui/page-transition";
 // import { Analytics } from "@vercel/analytics/react";
 
 // Code-split non-essential pages for better performance
-const Home = lazy(() => import("./pages/Home"));
+const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Team = lazy(() => import("./pages/Team"));
 const Careers = lazy(() => import("./pages/Careers"));
@@ -85,7 +85,7 @@ const AnimatedRoutes = () => {
         <Route element={<Layout />}>
           <Route path="/" element={
             <PageTransition>
-              <Home />
+              <Index />
             </PageTransition>
           } />
           <Route path="/about" element={
