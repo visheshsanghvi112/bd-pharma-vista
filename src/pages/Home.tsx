@@ -38,55 +38,9 @@ import Seo from "@/components/Seo";
 const Home = () => {
   const [animate, setAnimate] = useState(false);
 
-  // Video debugging for Home component
-  console.log('🔥 Home component rendering...');
-
   useEffect(() => {
+    // Only run once on mount
     debugLogger.logMount('Home');
-    debugLogger.log('info', 'Home component mounted successfully');
-    
-    // Video debugging
-    console.log('🚀 Home component mounted - starting video debugging...');
-    console.log('🔍 Testing video file accessibility...');
-    
-    // Test Final Comp_1.mp4
-    fetch('/lovable-uploads/Final Comp_1.mp4', { method: 'HEAD' })
-      .then(response => {
-        console.log('✅ Final Comp_1.mp4 accessible:', response.status, response.statusText);
-        if (response.status === 200) {
-          console.log('📁 Final Comp_1.mp4 file size:', response.headers.get('content-length'));
-        }
-      })
-      .catch(error => {
-        console.error('❌ Final Comp_1.mp4 not accessible:', error);
-      });
-    
-    // Test Medical Supplies video
-    fetch('/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4', { method: 'HEAD' })
-      .then(response => {
-        console.log('✅ Medical Supplies video accessible:', response.status, response.statusText);
-        if (response.status === 200) {
-          console.log('📁 Medical Supplies video file size:', response.headers.get('content-length'));
-        }
-      })
-      .catch(error => {
-        console.error('❌ Medical Supplies video not accessible:', error);
-      });
-    
-    // Check if videos exist in DOM
-    setTimeout(() => {
-      const videos = document.querySelectorAll('video');
-      console.log('🎬 Found videos in DOM:', videos.length);
-      videos.forEach((video, index) => {
-        console.log(`Video ${index + 1}:`, {
-          src: video.src,
-          currentSrc: video.currentSrc,
-          readyState: video.readyState,
-          networkState: video.networkState,
-          error: video.error
-        });
-      });
-    }, 2000);
     
     // Delay animation to improve initial load
     const timer = setTimeout(() => {
@@ -231,24 +185,16 @@ const Home = () => {
                         playsInline
                         preload="metadata"
                         className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
-                        onLoadStart={() => console.log('🔄 Hero video loading started')}
-                        onLoadedData={() => console.log('🎥 Hero video loaded')}
-                        onCanPlay={() => console.log('▶️ Hero video can play')}
+                        onLoadStart={() => {}}
+                        onLoadedData={() => {}}
+                        onCanPlay={() => {}}
                         onError={(e) => {
-                          console.error('❌ Hero video error:', e);
                           const target = e.target as HTMLVideoElement;
-                          console.error('Hero video error details:', {
-                            error: target.error,
-                            networkState: target.networkState,
-                            readyState: target.readyState
-                          });
+                          console.warn('Hero video failed to load - using fallback image');
                         }}
-                    onProgress={() => {
-                      // Throttle progress logging to reduce console spam
-                      if (Math.random() < 0.1) console.log('📊 Hero video progress');
-                    }}
-                    onWaiting={() => console.log('⏳ Hero video waiting')}
-                    onStalled={() => console.log('🔄 Hero video stalled')}
+                    onProgress={() => {}}
+                    onWaiting={() => {}}
+                    onStalled={() => {}}
                       >
                         <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                         <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
@@ -323,24 +269,16 @@ const Home = () => {
                     className="w-full h-auto object-cover rounded-2xl"
                     controls
                     preload="metadata"
-                    onLoadStart={() => console.log('🔄 Manufacturing video loading started')}
-                    onLoadedData={() => console.log('🎥 Manufacturing video loaded')}
-                    onCanPlay={() => console.log('▶️ Manufacturing video can play')}
+                    onLoadStart={() => {}}
+                    onLoadedData={() => {}}
+                    onCanPlay={() => {}}
                     onError={(e) => {
-                      console.error('❌ Manufacturing video error:', e);
                       const target = e.target as HTMLVideoElement;
-                      console.error('Manufacturing video error details:', {
-                        error: target.error,
-                        networkState: target.networkState,
-                        readyState: target.readyState
-                      });
+                      console.warn('Manufacturing video failed to load - using fallback image');
                     }}
-                    onProgress={() => {
-                      // Throttle progress logging to reduce console spam
-                      if (Math.random() < 0.1) console.log('📊 Manufacturing video progress');
-                    }}
-                    onWaiting={() => console.log('⏳ Manufacturing video waiting')}
-                    onStalled={() => console.log('🔄 Manufacturing video stalled')}
+                    onProgress={() => {}}
+                    onWaiting={() => {}}
+                    onStalled={() => {}}
                   >
                     <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
                     <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
