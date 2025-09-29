@@ -1,103 +1,95 @@
 
-import { Calendar, Star, Award, List, ArrowRight } from "lucide-react";
+import { Calendar, Star, Award, List, ArrowRight, Shield, Globe, Zap, Heart, CheckCircle } from "lucide-react";
 import { AnimatedElement } from "@/components/ui/animated-element";
 import { getStaggeredDelay } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const services = [
   {
-    icon: Star,
-    title: "Quality Products",
-    description: "Pharmaceutical products that meet international quality standards",
-    color: "bg-gradient-to-br from-yellow-100 to-amber-100 dark:from-yellow-900/30 dark:to-amber-700/30",
-    iconColor: "text-amber-500 dark:text-amber-400",
+    icon: Shield,
+    title: "Quality Assurance",
+    description: "WHO-GMP certified manufacturing with rigorous quality control processes",
+    color: "from-blue-500 to-cyan-500",
+    iconColor: "text-blue-500",
+    bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
   },
   {
-    icon: Calendar,
-    title: "Fast Production",
-    description: "Rapid manufacturing and delivery timelines",
-    color: "bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-700/30",
-    iconColor: "text-blue-500 dark:text-blue-400",
+    icon: Globe,
+    title: "Global Distribution",
+    description: "Extensive network serving healthcare providers in 50+ countries",
+    color: "from-green-500 to-emerald-500",
+    iconColor: "text-green-500",
+    bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
   },
   {
-    icon: Award,
-    title: "Certified",
-    description: "WHO-GMP certified and FDA approved manufacturing facility",
-    color: "bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-700/30",
-    iconColor: "text-green-500 dark:text-green-400",
+    icon: Zap,
+    title: "Innovation Focus",
+    description: "Cutting-edge R&D facilities developing next-generation pharmaceuticals",
+    color: "from-purple-500 to-violet-500",
+    iconColor: "text-purple-500",
+    bgColor: "bg-gradient-to-br from-purple-50 to-violet-50",
   },
   {
-    icon: List,
-    title: "Wide Range",
-    description: "Extensive portfolio of pharmaceutical products",
-    color: "bg-gradient-to-br from-purple-100 to-violet-100 dark:from-purple-900/30 dark:to-violet-700/30",
-    iconColor: "text-purple-500 dark:text-purple-400",
+    icon: Heart,
+    title: "Healthcare Mission",
+    description: "Dedicated to improving global health through quality medicine",
+    color: "from-red-500 to-pink-500",
+    iconColor: "text-red-500",
+    bgColor: "bg-gradient-to-br from-red-50 to-pink-50",
   }
 ];
 
 const FeaturedServices = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-pharma-light/20 dark:from-background dark:to-pharma-dark/20 overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <AnimatedElement
-          animation="slide-up"
-          className="mb-12 text-center"
-        >
-          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 dark:bg-primary-light/10 text-primary dark:text-primary-light rounded-full mb-3">Our Expertise</span>
-          <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-4">
-            Comprehensive Pharmaceutical Services
+        <div className="text-center mb-16">
+          <Badge className="bg-pharma-navy/10 text-pharma-navy border-pharma-navy/20 mb-4">
+            <CheckCircle className="w-4 h-4 mr-2" />
+            Our Services
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold text-pharma-navy mb-6">
+            Comprehensive Pharmaceutical Solutions
           </h2>
-          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            We offer a wide range of pharmaceutical manufacturing and export services to meet your specific needs
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            We offer a wide range of pharmaceutical manufacturing and export services to meet your specific healthcare needs.
           </p>
-        </AnimatedElement>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {services.map((service, index) => (
-            <AnimatedElement
-              key={service.title}
-              animation="zoom-in"
-              delay={getStaggeredDelay(index, 300, 150)}
-              className="h-full"
-            >
-              <div
-                className={`${service.color} p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col group relative overflow-hidden`}
-              >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-white dark:bg-primary-light/5 transition-opacity duration-500"></div>
-                <div className="flex justify-center mb-6 relative">
-                  <div className="absolute inset-0 rounded-full bg-primary/10 dark:bg-primary-light/10 transform scale-0 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700"></div>
-                  <service.icon className={`w-14 h-14 ${service.iconColor} relative z-10 drop-shadow-md`} />
+            <Card key={service.title} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+              <CardContent className="p-8 text-center relative z-10">
+                <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-center text-pharma-navy dark:text-white mb-3 relative z-10">
-                  {service.title}
-                </h3>
-                <p className="text-center text-gray-600 dark:text-gray-300 mb-6 flex-grow relative z-10">
-                  {service.description}
-                </p>
-                <div className="flex justify-center">
-                  <Button 
-                    variant="ghost"
-                    size="sm"
-                    className="group/btn hover:bg-white/50 dark:hover:bg-white/10 text-primary dark:text-primary-light"
-                  >
-                    <span>Learn more</span>
-                    <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                  </Button>
-                </div>
-              </div>
-            </AnimatedElement>
+                <h3 className="text-xl font-bold text-pharma-navy mb-4">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
+                <Button 
+                  variant="ghost"
+                  size="sm"
+                  className="group/btn hover:bg-pharma-navy/10 text-pharma-navy hover:text-pharma-navy"
+                >
+                  <span>Learn more</span>
+                  <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                </Button>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
-        <AnimatedElement animation="fade-in" delay={800} className="text-center">
-          <Button asChild variant="outline" className="border-primary/30 dark:border-primary-light/30 hover:bg-primary/5 dark:hover:bg-primary-light/5">
+        <div className="text-center">
+          <Button asChild variant="outline" className="border-pharma-navy/30 hover:bg-pharma-navy/5 text-pharma-navy hover:text-pharma-navy px-8 py-6">
             <NavLink to="/services" className="flex items-center gap-2">
               View All Services
               <ArrowRight className="h-4 w-4 transition-all group-hover:translate-x-1" />
             </NavLink>
           </Button>
-        </AnimatedElement>
+        </div>
       </div>
     </section>
   );

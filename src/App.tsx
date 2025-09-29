@@ -41,9 +41,36 @@ const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
   useEffect(() => {
-    // Temporarily disabled analytics to prevent production issues
-    // Analytics will be re-enabled once production is stable
-    console.log('Page view:', location.pathname);
+    // Enhanced analytics tracking
+    console.log('📊 Page view:', location.pathname);
+    
+    // Track page views with Firebase Analytics (if available)
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('config', 'G-ETJ5GLTF4P', {
+        page_path: location.pathname,
+        page_title: document.title
+      });
+    }
+    
+    // Track performance metrics for this page
+    const trackPagePerformance = () => {
+      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      if (navigation) {
+        const pageLoadTime = navigation.loadEventEnd - navigation.fetchStart;
+        console.log(`📈 Page load time: ${pageLoadTime.toFixed(2)}ms`);
+        
+        // Send to analytics if available
+        if (window.gtag) {
+          window.gtag('event', 'page_performance', {
+            page_path: location.pathname,
+            load_time: Math.round(pageLoadTime)
+          });
+        }
+      }
+    };
+    
+    // Track performance after a short delay
+    setTimeout(trackPagePerformance, 1000);
   }, [location]);
 
   return <>{children}</>;

@@ -1,8 +1,10 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import debugLogger from "@/lib/debug-logger";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { 
   ArrowRight, 
   Star,
@@ -12,9 +14,17 @@ import {
   Pill,
   Hospital,
   Syringe,
-  TestTube 
+  TestTube,
+  Play,
+  Shield,
+  Globe,
+  Award,
+  Users,
+  CheckCircle,
+  Zap,
+  Heart
 } from "lucide-react";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { Loading } from "@/components/ui/loading";
 
 // Lazy load heavy components with better error boundaries
@@ -28,9 +38,55 @@ import Seo from "@/components/Seo";
 const Home = () => {
   const [animate, setAnimate] = useState(false);
 
+  // Video debugging for Home component
+  console.log('🔥 Home component rendering...');
+
   useEffect(() => {
     debugLogger.logMount('Home');
     debugLogger.log('info', 'Home component mounted successfully');
+    
+    // Video debugging
+    console.log('🚀 Home component mounted - starting video debugging...');
+    console.log('🔍 Testing video file accessibility...');
+    
+    // Test Final Comp_1.mp4
+    fetch('/lovable-uploads/Final Comp_1.mp4', { method: 'HEAD' })
+      .then(response => {
+        console.log('✅ Final Comp_1.mp4 accessible:', response.status, response.statusText);
+        if (response.status === 200) {
+          console.log('📁 Final Comp_1.mp4 file size:', response.headers.get('content-length'));
+        }
+      })
+      .catch(error => {
+        console.error('❌ Final Comp_1.mp4 not accessible:', error);
+      });
+    
+    // Test Medical Supplies video
+    fetch('/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4', { method: 'HEAD' })
+      .then(response => {
+        console.log('✅ Medical Supplies video accessible:', response.status, response.statusText);
+        if (response.status === 200) {
+          console.log('📁 Medical Supplies video file size:', response.headers.get('content-length'));
+        }
+      })
+      .catch(error => {
+        console.error('❌ Medical Supplies video not accessible:', error);
+      });
+    
+    // Check if videos exist in DOM
+    setTimeout(() => {
+      const videos = document.querySelectorAll('video');
+      console.log('🎬 Found videos in DOM:', videos.length);
+      videos.forEach((video, index) => {
+        console.log(`Video ${index + 1}:`, {
+          src: video.src,
+          currentSrc: video.currentSrc,
+          readyState: video.readyState,
+          networkState: video.networkState,
+          error: video.error
+        });
+      });
+    }, 2000);
     
     // Delay animation to improve initial load
     const timer = setTimeout(() => {
@@ -43,7 +99,6 @@ const Home = () => {
       debugLogger.logUnmount('Home');
     };
   }, []);
-
 
   const stats = [
     { value: "10+", label: "Years Experience", icon: Calendar },
@@ -129,6 +184,7 @@ const Home = () => {
         ]}
       />
       <div className="flex flex-col">
+        {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F1F1F1] to-[#FCFCFC]">
           <div className="container mx-auto px-4 py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -166,14 +222,38 @@ const Home = () => {
                     {/* Inner glow effect */}
                     <div className="absolute inset-0 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-pharma-navy/10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
                     
-                    {/* Hero Image */}
+                    {/* Hero Video */}
                     <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
-                      <img 
-                        src="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
-                        alt="Professional female pharmacist in white lab coat"
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
                         className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
-                        loading="eager"
-                      />
+                        onLoadStart={() => console.log('🔄 Hero video loading started')}
+                        onLoadedData={() => console.log('🎥 Hero video loaded')}
+                        onCanPlay={() => console.log('▶️ Hero video can play')}
+                        onError={(e) => {
+                          console.error('❌ Hero video error:', e);
+                          const target = e.target as HTMLVideoElement;
+                          console.error('Hero video error details:', {
+                            error: target.error,
+                            networkState: target.networkState,
+                            readyState: target.readyState
+                          });
+                        }}
+                    onProgress={() => {
+                      // Throttle progress logging to reduce console spam
+                      if (Math.random() < 0.1) console.log('📊 Hero video progress');
+                    }}
+                    onWaiting={() => console.log('⏳ Hero video waiting')}
+                    onStalled={() => console.log('🔄 Hero video stalled')}
+                      >
+                        <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
+                        <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                       
                       {/* Animated border glow */}
                       <div className="absolute inset-0 rounded-2xl lg:rounded-3xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse-subtle"></div>
@@ -214,6 +294,7 @@ const Home = () => {
           <FeaturedServices />
         </Suspense>
 
+
         <section className="py-24 bg-gradient-to-b from-pharma-light/30 to-white dark:from-pharma-dark/30 dark:to-background relative overflow-hidden transition-colors duration-300">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -233,20 +314,41 @@ const Home = () => {
               </div>
               <div className="order-1 md:order-2 animate-fade-in-right">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 group">
-                  {/* Gradient glow container */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pharma-navy/20 via-primary/30 to-pharma-navy/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster="/lovable-uploads/pharmaceutical-manufacturing-facility-modern-laboratory-equipment-industrial-pharmacy-production-line-medical-drug-manufacturing-pharmaceutical-industry-healthcare-technology-medicine-production.jpg"
+                    className="w-full h-auto object-cover rounded-2xl"
+                    controls
+                    preload="metadata"
+                    onLoadStart={() => console.log('🔄 Manufacturing video loading started')}
+                    onLoadedData={() => console.log('🎥 Manufacturing video loaded')}
+                    onCanPlay={() => console.log('▶️ Manufacturing video can play')}
+                    onError={(e) => {
+                      console.error('❌ Manufacturing video error:', e);
+                      const target = e.target as HTMLVideoElement;
+                      console.error('Manufacturing video error details:', {
+                        error: target.error,
+                        networkState: target.networkState,
+                        readyState: target.readyState
+                      });
+                    }}
+                    onProgress={() => {
+                      // Throttle progress logging to reduce console spam
+                      if (Math.random() < 0.1) console.log('📊 Manufacturing video progress');
+                    }}
+                    onWaiting={() => console.log('⏳ Manufacturing video waiting')}
+                    onStalled={() => console.log('🔄 Manufacturing video stalled')}
+                  >
+                    <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
+                    <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   
-                  <div className="relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm">
-                    <img 
-                      src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
-                      alt="Pharmaceutical manufacturing facilities"
-                      className="w-full h-auto object-cover rounded-2xl"
-                      loading="lazy"
-                    />
-                    
-                    {/* Subtle overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
             </div>
@@ -271,7 +373,6 @@ const Home = () => {
                   className="relative p-8 rounded-2xl bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-pharma-navy/10 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group overflow-hidden"
                   style={{ animationDelay: `${0.4 + index * 0.1}s` }}
                 >
-                  {/* Gradient glow on hover */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pharma-navy/5 via-primary/10 to-pharma-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="relative z-10">
@@ -288,7 +389,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-
 
         <section className="py-20 bg-pharma-light dark:bg-pharma-dark/40 relative overflow-hidden transition-colors duration-300">
           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/50 dark:to-black/30 pointer-events-none"></div>
@@ -315,7 +415,6 @@ const Home = () => {
               </div>
               <div className="order-1 md:order-2 animate-fade-in-right">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 group">
-                  {/* Gradient glow container */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pharma-navy/20 via-primary/30 to-pharma-navy/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm">
@@ -326,7 +425,6 @@ const Home = () => {
                       loading="lazy"
                     />
                     
-                    {/* Subtle overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
@@ -353,7 +451,6 @@ const Home = () => {
                   className="relative bg-white/80 dark:bg-white/5 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-pharma-navy/10 dark:border-white/10 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group overflow-hidden"
                   style={{ animationDelay: `${0.4 + index * 0.1}s` }}
                 >
-                  {/* Gradient glow on hover */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pharma-navy/5 via-primary/10 to-pharma-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="relative z-10">
@@ -375,7 +472,6 @@ const Home = () => {
         </section>
 
         <section className="py-24 bg-gradient-to-br from-pharma-navy via-primary to-pharma-navy dark:from-pharma-dark dark:via-primary-dark dark:to-pharma-dark text-white relative overflow-hidden transition-colors duration-300">
-          {/* Animated background pattern */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-50"></div>
           <div className="absolute inset-0 bg-[url('/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg')] bg-center opacity-10 bg-cover"></div>
           

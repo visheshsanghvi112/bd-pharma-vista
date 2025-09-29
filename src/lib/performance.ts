@@ -58,12 +58,40 @@ export const reportPerformanceToConsole = (): void => {
   const metrics = getPerformanceMetrics();
   
   if (metrics.length > 0) {
-    console.group('Performance Metrics');
+    console.group('🚀 Performance Metrics');
     metrics.forEach(metric => {
-      console.log(`${metric.name}: ${metric.value.toFixed(2)}ms (${metric.rating})`);
+      const emoji = metric.rating === 'good' ? '✅' : metric.rating === 'needs-improvement' ? '⚠️' : '❌';
+      console.log(`${emoji} ${metric.name}: ${metric.value.toFixed(2)}ms (${metric.rating})`);
     });
+    
+    // Add additional performance insights
+    if (typeof window !== 'undefined' && 'performance' in window) {
+      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      if (navigation) {
+        console.log(`📊 DOM Content Loaded: ${navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart}ms`);
+        console.log(`📊 Page Load Complete: ${navigation.loadEventEnd - navigation.loadEventStart}ms`);
+      }
+    }
+    
     console.groupEnd();
   }
+};
+
+/**
+ * Track video performance metrics
+ */
+export const trackVideoPerformance = (videoElement: HTMLVideoElement, videoName: string): void => {
+  const startTime = performance.now();
+  
+  const trackMetric = (eventName: string) => {
+    const duration = performance.now() - startTime;
+    console.log(`🎬 ${videoName} ${eventName}: ${duration.toFixed(2)}ms`);
+  };
+  
+  videoElement.addEventListener('loadstart', () => trackMetric('load started'));
+  videoElement.addEventListener('loadeddata', () => trackMetric('data loaded'));
+  videoElement.addEventListener('canplay', () => trackMetric('can play'));
+  videoElement.addEventListener('playing', () => trackMetric('started playing'));
 };
 
 /**

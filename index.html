@@ -109,7 +109,17 @@
     <!-- Google Fonts with display=swap for better performance -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
 
-    <!-- Google Analytics - Removed duplicate, using Firebase Analytics instead -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ETJ5GLTF4P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ETJ5GLTF4P', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    </script>
 
     <!-- Enhanced Structured Data with more complete information -->
     <script type="application/ld+json">
