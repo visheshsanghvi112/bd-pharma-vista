@@ -268,7 +268,7 @@ const Index = () => {
                         onCanPlay={() => console.log('Video can play')}
                       >
                         <source src="/lovable-uploads/medicalsupplies.mp4" type="video/mp4" />
-                        <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
+                        <source src="/lovable-uploads/final.mp4" type="video/mp4" />
                         <img 
                           src="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" 
                           alt="Pharmaceutical Excellence"
