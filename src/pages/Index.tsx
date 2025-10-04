@@ -259,8 +259,14 @@ const Index = () => {
                         preload="auto"
                         className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
                         onError={(e) => {
-                          console.warn('Hero video failed to load');
                           const target = e.target as HTMLVideoElement;
+                          console.error('Hero video failed to load:', {
+                            error: e,
+                            videoSrc: target.src,
+                            networkState: target.networkState,
+                            readyState: target.readyState,
+                            error: target.error
+                          });
                           target.style.display = 'none';
                           // Show fallback image
                           const fallback = document.createElement('img');
@@ -269,7 +275,31 @@ const Index = () => {
                           fallback.className = 'w-full h-auto object-cover rounded-2xl lg:rounded-3xl';
                           target.parentNode?.appendChild(fallback);
                         }}
-                        onLoadStart={() => console.log('Video loading started')}
+                        onLoadStart={() => {
+                          console.log('Video loading started');
+                          console.log('Testing video file accessibility...');
+                          fetch('/lovable-uploads/medicalsupplies.mp4', { method: 'HEAD' })
+                            .then(response => {
+                              console.log('medicalsupplies.mp4 status:', response.status);
+                              if (response.ok) {
+                                console.log('medicalsupplies.mp4 is accessible');
+                              } else {
+                                console.error('medicalsupplies.mp4 not accessible:', response.status);
+                              }
+                            })
+                            .catch(err => console.error('Error checking medicalsupplies.mp4:', err));
+                          
+                          fetch('/lovable-uploads/final.mp4', { method: 'HEAD' })
+                            .then(response => {
+                              console.log('final.mp4 status:', response.status);
+                              if (response.ok) {
+                                console.log('final.mp4 is accessible');
+                              } else {
+                                console.error('final.mp4 not accessible:', response.status);
+                              }
+                            })
+                            .catch(err => console.error('Error checking final.mp4:', err));
+                        }}
                         onCanPlay={() => console.log('Video can play')}
                         onLoadedData={() => console.log('Video data loaded')}
                       >
