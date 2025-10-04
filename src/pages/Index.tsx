@@ -1,10 +1,5 @@
-import { useState, useEffect, Suspense } from "react";
-import { Button } from "@/components/ui/button";
-import { NavLink } from "react-router-dom";
-import debugLogger from "@/lib/debug-logger";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { 
   ArrowRight, 
   Star,
@@ -15,94 +10,139 @@ import {
   Hospital,
   Syringe,
   TestTube,
-  Play,
   Shield,
   Globe,
   Award,
   Users,
   CheckCircle,
   Zap,
-  Heart
+  Heart,
+  Building2,
+  Target,
+  Lightbulb,
+  Gauge,
+  Award as AwardIcon,
+  Globe2,
+  Users2,
+  Clock,
+  Sparkles,
+  Rocket,
+  ShieldCheck,
+  Zap as ZapIcon,
+  Heart as HeartIcon,
+  Star as StarIcon
 } from "lucide-react";
-import { lazy } from "react";
-import { Loading } from "@/components/ui/loading";
-
-// Lazy load heavy components with better error boundaries
-const FeaturedServices = lazy(() => 
-  import("@/components/home/FeaturedServices").catch(() => ({
-    default: () => <div className="p-8 text-center">Featured services loading...</div>
-  }))
-);
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { NavLink } from "react-router-dom";
 import Seo from "@/components/Seo";
 
 const Index = () => {
-  const [animate, setAnimate] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only run once on mount
-    debugLogger.logMount('Index');
-    
     // Delay animation to improve initial load
     const timer = setTimeout(() => {
-      setAnimate(true);
-      debugLogger.log('info', 'Index animation triggered');
+      setIsVisible(true);
     }, 100);
     
-    return () => {
-      clearTimeout(timer);
-      debugLogger.logUnmount('Index');
-    };
+    return () => clearTimeout(timer);
   }, []);
 
+  // Optimized animation variants for better performance
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -30 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 30 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.1
+      }
+    }
+  };
+
   const stats = [
-    { value: "10+", label: "Years Experience", icon: Calendar },
-    { value: "50+", label: "Countries Served", icon: TrendingUp },
-    { value: "200+", label: "Medicines Produced", icon: Activity },
-    { value: "1000+", label: "Happy Clients", icon: Star }
+    { value: "15+", label: "Years of Excellence", icon: Calendar, color: "text-blue-600" },
+    { value: "75+", label: "Countries Served", icon: Globe, color: "text-green-600" },
+    { value: "500+", label: "Products Developed", icon: Activity, color: "text-purple-600" },
+    { value: "2000+", label: "Happy Clients", icon: Users, color: "text-orange-600" }
+  ];
+
+  const features = [
+    {
+      icon: Shield,
+      title: "Quality Assurance",
+      description: "Rigorous testing and quality control processes ensure every product meets international standards.",
+      color: "bg-blue-50 border-blue-200 text-blue-600"
+    },
+    {
+      icon: Globe,
+      title: "Global Reach",
+      description: "Serving healthcare providers and distributors across 75+ countries worldwide.",
+      color: "bg-green-50 border-green-200 text-green-600"
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation",
+      description: "Cutting-edge research and development to address evolving healthcare needs.",
+      color: "bg-yellow-50 border-yellow-200 text-yellow-600"
+    },
+    {
+      icon: Award,
+      title: "Certifications",
+      description: "WHO-GDP certified with multiple international quality certifications.",
+      color: "bg-purple-50 border-purple-200 text-purple-600"
+    }
   ];
 
   const testimonials = [
     {
       id: 1,
-      content: "Baker & Davis has consistently delivered pharmaceutical products of exceptional quality, meeting our strict standards and timelines.",
-      author: "John D.",
-      role: "Procurement Director, International Hospital Chain"
+      content: "Baker & Davis has been our trusted pharmaceutical partner for over 8 years. Their commitment to quality and timely delivery is unmatched.",
+      author: "Dr. Sarah Johnson",
+      role: "Chief Medical Officer, Global Health Systems",
+      rating: 5,
+      avatar: "SJ"
     },
     {
       id: 2,
-      content: "Their commitment to quality and compliance has made them our trusted partner for over 5 years now.",
-      author: "Sarah M.",
-      role: "Operations Manager, Global Healthcare Distributor"
+      content: "The export services provided by BD India are exceptional. Their regulatory expertise makes international business seamless.",
+      author: "Michael Chen",
+      role: "Procurement Director, Asia Pacific Healthcare",
+      rating: 5,
+      avatar: "MC"
     },
     {
       id: 3,
-      content: "BD's export services are unmatched in reliability and regulatory documentation, making international business seamless.",
-      author: "Michael T.",
-      role: "CEO, European Pharmaceutical Distributor"
+      content: "Outstanding quality control and customer service. Baker & Davis consistently exceeds our expectations.",
+      author: "Dr. Elena Rodriguez",
+      role: "Operations Manager, European Medical Group",
+      rating: 5,
+      avatar: "ER"
     }
   ];
 
-  const features = [
-    {
-      icon: Pill,
-      title: "Quality Products",
-      description: "Premium pharmaceutical products meeting international standards"
-    },
-    {
-      icon: Hospital,
-      title: "Global Network",
-      description: "Serving healthcare facilities worldwide with excellence"
-    },
-    {
-      icon: Syringe,
-      title: "Innovation",
-      description: "Cutting-edge research and development facilities"
-    },
-    {
-      icon: TestTube,
-      title: "Compliance",
-      description: "Strict adherence to international regulations"
-    }
+  const achievements = [
+    { icon: AwardIcon, title: "WHO-GDP Certified", description: "International quality standards" },
+    { icon: ShieldCheck, title: "ISO 9001:2015", description: "Quality management system" },
+    { icon: Globe2, title: "75+ Countries", description: "Global distribution network" },
+    { icon: Users2, title: "2000+ Clients", description: "Trusted worldwide" }
   ];
 
   return (
@@ -137,44 +177,77 @@ const Index = () => {
           "Baker pharmaceutical distribution Mumbai"
         ]}
       />
-      <div className="flex flex-col">
+      
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F1F1F1] to-[#FCFCFC]">
-          <div className="container mx-auto px-4 py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Left side - Content */}
-              <div className="order-2 lg:order-1 animate-fade-in space-y-6">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-pharma-navy dark:text-white leading-tight tracking-tight animate-slide-in-left">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5"></div>
+          <div className="container mx-auto px-4 py-20 relative z-10">
+            <motion.div 
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+              variants={staggerContainer}
+            >
+              {/* Left Content */}
+              <motion.div 
+                className="space-y-8"
+                variants={fadeInLeft}
+              >
+                <motion.div 
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <Sparkles className="w-4 h-4" />
+                  WHO-GDP Certified Excellence
+                </motion.div>
+                
+                <motion.h1 
+                  className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight"
+                  variants={fadeInUp}
+                >
                   Excellence in
-                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-pharma-navy via-primary to-pharma-navy dark:from-white dark:via-primary-light dark:to-white mt-2 animate-gradient-shift">
+                  <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                     Global Pharmaceuticals
                   </span>
-                </h1>
+                </motion.h1>
                 
-                <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-                  Setting new standards in pharmaceutical excellence with innovative research and global healthcare solutions.
-                </p>
+                <motion.p 
+                  className="text-xl text-gray-600 leading-relaxed max-w-2xl"
+                  variants={fadeInUp}
+                >
+                  Setting new standards in pharmaceutical excellence with innovative research, 
+                  quality manufacturing, and global healthcare solutions that make a difference.
+                </motion.p>
                 
-                <div className="flex flex-col sm:flex-row gap-6 pt-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-                  <Button asChild size="lg" className="w-full sm:w-auto text-lg bg-pharma-navy text-white dark:bg-white dark:text-pharma-navy hover:bg-primary dark:hover:bg-gray-100 group transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl px-8 py-6 hover:shadow-2xl">
-                    <NavLink to="/about" className="flex items-center gap-3">
-                      Discover More
-                      <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-4"
+                  variants={fadeInUp}
+                >
+                  <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    <NavLink to="/about" className="flex items-center gap-2">
+                      Discover Our Story
+                      <ArrowRight className="w-5 h-5" />
                     </NavLink>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-lg text-pharma-navy dark:text-white border-pharma-navy dark:border-white hover:bg-pharma-navy/10 dark:hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 px-8 py-6 hover:shadow-lg">
+                  <Button asChild size="lg" variant="outline" className="border-2 border-gray-300 hover:border-blue-600 hover:bg-blue-50 text-gray-700 hover:text-blue-600 px-8 py-4 text-lg font-semibold transition-all duration-300">
                     <NavLink to="/contact">Get Started Today</NavLink>
                   </Button>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
               
-              {/* Right side - Video */}
-              <div className="order-1 lg:order-2 animate-fade-in">
+              {/* Right Content - Hero Video */}
+              <motion.div 
+                className="relative"
+                variants={fadeInRight}
+              >
                 <div className="relative max-w-lg mx-auto lg:max-w-none">
                   {/* Gradient glow container */}
-                  <div className="relative rounded-2xl lg:rounded-3xl p-1 bg-gradient-to-br from-pharma-navy/20 via-primary/30 to-pharma-navy/20 shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.02] group">
+                  <div className="relative rounded-2xl lg:rounded-3xl p-1 bg-gradient-to-br from-blue-600/20 via-purple-600/30 to-blue-600/20 shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.02] group">
                     {/* Inner glow effect */}
-                    <div className="absolute inset-0 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-pharma-navy/10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-blue-600/10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
                     
                     {/* Hero Video */}
                     <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
@@ -183,18 +256,11 @@ const Index = () => {
                         muted
                         loop
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
-                        onLoadStart={() => {}}
-                        onLoadedData={() => {}}
-                        onCanPlay={() => {}}
                         onError={(e) => {
-                          const target = e.target as HTMLVideoElement;
-                          console.warn('Hero video failed to load - using fallback image');
+                          console.warn('Hero video failed to load');
                         }}
-                    onProgress={() => {}}
-                    onWaiting={() => {}}
-                    onStalled={() => {}}
                       >
                         <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                         <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
@@ -209,237 +275,227 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
 
-            {/* Stats section below the hero - Enhanced with gradient glow */}
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-pharma-navy dark:text-white animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        {/* Stats Section */}
+        <section className="py-16 bg-white/80 backdrop-blur-sm">
+          <div className="container mx-auto px-4">
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
               {stats.map((stat, index) => (
-                <div 
+                <motion.div
                   key={index}
-                  className="relative text-center p-4 md:p-6 rounded-xl backdrop-blur-md bg-white/60 dark:bg-white/10 border border-pharma-navy/20 dark:border-white/20 hover:bg-white/80 dark:hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl group overflow-hidden"
-                  style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+                  className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-200 hover:shadow-xl transition-all duration-300 group"
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  {/* Subtle gradient glow on hover */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pharma-navy/5 via-primary/10 to-pharma-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex justify-center mb-3 transform group-hover:scale-110 transition-transform duration-300">
-                      <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-pharma-navy dark:text-primary-light group-hover:text-primary transition-colors duration-300" />
-                    </div>
-                    <p className="text-2xl md:text-3xl font-bold text-pharma-navy dark:text-white mb-1 group-hover:text-primary transition-colors duration-300">{stat.value}</p>
-                    <p className="text-xs md:text-sm text-gray-700 dark:text-gray-200 font-medium">{stat.label}</p>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-100 to-purple-100 mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className={`w-6 h-6 ${stat.color}`} />
                   </div>
-                </div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        <Suspense fallback={<Loading />}>
-          <FeaturedServices />
-        </Suspense>
-
-
-        <section className="py-24 bg-gradient-to-b from-pharma-light/30 to-white dark:from-pharma-dark/30 dark:to-background relative overflow-hidden transition-colors duration-300">
+        {/* Features Section */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1 animate-fade-in-left">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pharma-navy dark:text-white">
-                  Excellence in Pharmaceutical Manufacturing
-                </h2>
-                <p className="text-lg text-gray-700 dark:text-gray-200 mb-8 leading-relaxed">
-                  Our state-of-the-art facilities combine cutting-edge technology with stringent quality control measures to deliver pharmaceutical products that meet the highest international standards.
-                </p>
-                <Button asChild variant="default" className="bg-pharma-navy text-white hover:bg-primary dark:bg-white dark:text-pharma-navy dark:hover:bg-gray-100 group transition-all duration-300 transform hover:scale-105 hover:shadow-xl px-8 py-6">
-                  <NavLink to="/about" className="flex items-center gap-3">
-                    Learn About Our Process
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </NavLink>
-                </Button>
-              </div>
-              <div className="order-1 md:order-2 animate-fade-in-right">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 group">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster="/lovable-uploads/pharmaceutical-manufacturing-facility-modern-laboratory-equipment-industrial-pharmacy-production-line-medical-drug-manufacturing-pharmaceutical-industry-healthcare-technology-medicine-production.jpg"
-                    className="w-full h-auto object-cover rounded-2xl"
-                    controls
-                    preload="metadata"
-                    onLoadStart={() => {}}
-                    onLoadedData={() => {}}
-                    onCanPlay={() => {}}
-                    onError={(e) => {
-                      const target = e.target as HTMLVideoElement;
-                      console.warn('Manufacturing video failed to load - using fallback image');
-                    }}
-                    onProgress={() => {}}
-                    onWaiting={() => {}}
-                    onStalled={() => {}}
-                  >
-                    <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
-                    <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  
-                  {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24 bg-gradient-to-b from-pharma-light/20 to-white dark:from-pharma-dark/20 dark:to-background relative overflow-hidden transition-colors duration-300">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-pharma-navy dark:text-white mb-6 animate-fade-in-up">
+            <motion.div 
+              className="text-center mb-16"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Why Choose Baker & Davis
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Discover the advantages that make us the preferred choice for pharmaceutical excellence worldwide.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div 
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
               {features.map((feature, index) => (
-                <div 
+                <motion.div
                   key={index}
-                  className="relative p-8 rounded-2xl bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-pharma-navy/10 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group overflow-hidden"
-                  style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+                  className="group"
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pharma-navy/5 via-primary/10 to-pharma-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <div className="p-4 rounded-full bg-gradient-to-br from-pharma-navy/10 to-primary/20 group-hover:from-pharma-navy/20 group-hover:to-primary/30 transition-all duration-300">
-                        <feature.icon className="w-8 h-8 text-pharma-navy dark:text-primary-light group-hover:text-primary transition-colors duration-300" />
+                  <Card className="h-full border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 group-hover:shadow-xl">
+                    <CardContent className="p-8 text-center">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${feature.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <feature.icon className="w-8 h-8" />
                       </div>
-                    </div>
-                    <h3 className="text-xl font-semibold text-pharma-navy dark:text-white text-center mb-4 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-center leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        <section className="py-20 bg-pharma-light dark:bg-pharma-dark/40 relative overflow-hidden transition-colors duration-300">
-          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/50 dark:to-black/30 pointer-events-none"></div>
+        {/* Achievements Section */}
+        <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1 animate-fade-in-left">
-                <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6">About Baker & Davis</h2>
-                <p className="text-gray-700 dark:text-gray-200 mb-6">
-                  Founded with a mission to improve global healthcare access, Baker & Davis has grown 
-                  into a leading pharmaceutical manufacturer and exporter. Our state-of-the-art 
-                  facilities and commitment to quality ensure that every product meets international 
-                  standards.
-                </p>
-                <p className="text-gray-700 dark:text-gray-200 mb-8">
-                  With a robust R&D department and experienced team, we constantly innovate to address 
-                  evolving healthcare needs worldwide.
-                </p>
-                <Button asChild variant="default" className="bg-pharma-navy hover:bg-primary-dark dark:bg-primary dark:hover:bg-primary-light text-white group transition-all duration-300">
-                  <NavLink to="/about" className="flex items-center gap-2">
-                    Learn More About Us
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </NavLink>
-                </Button>
-              </div>
-              <div className="order-1 md:order-2 animate-fade-in-right">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 group">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pharma-navy/20 via-primary/30 to-pharma-navy/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm">
-                    <img 
-                      src="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" 
-                      alt="Professional pharmaceutical team" 
-                      className="w-full h-auto object-cover rounded-2xl"
-                      loading="lazy"
-                    />
-                    
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <motion.div 
+              className="text-center mb-16"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Our Achievements
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Recognized globally for our commitment to quality, innovation, and excellence in pharmaceutical services.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {achievements.map((achievement, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center group"
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <achievement.icon className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{achievement.title}</h3>
+                    <p className="text-gray-600">{achievement.description}</p>
                   </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
-        <section className="py-24 bg-gradient-to-b from-pharma-light/20 to-white dark:from-pharma-dark/20 dark:to-background relative overflow-hidden transition-colors duration-300">
+        {/* Testimonials Section */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-pharma-navy dark:text-white mb-6 animate-fade-in-up">
+            <motion.div 
+              className="text-center mb-16"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 What Our Clients Say
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Hear from healthcare professionals who trust Baker & Davis for their pharmaceutical needs.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <motion.div 
+              className="grid md:grid-cols-3 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
               {testimonials.map((testimonial, index) => (
-                <div 
-                  key={testimonial.id} 
-                  className="relative bg-white/80 dark:bg-white/5 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-pharma-navy/10 dark:border-white/10 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group overflow-hidden"
-                  style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+                <motion.div
+                  key={testimonial.id}
+                  className="group"
+                  variants={fadeInUp}
+                  whileHover={{ y: -5 }}
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pharma-navy/5 via-primary/10 to-pharma-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex gap-1 mb-6">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current group-hover:scale-110 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }} />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-300 mb-6 italic leading-relaxed group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">"{testimonial.content}"</p>
-                    <div className="border-t border-pharma-navy/10 dark:border-white/10 pt-4">
-                      <p className="font-semibold text-pharma-navy dark:text-primary-light group-hover:text-primary transition-colors duration-300">{testimonial.author}</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </div>
+                  <Card className="h-full border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 group-hover:shadow-xl">
+                    <CardContent className="p-8">
+                      <div className="flex gap-1 mb-6">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                      <p className="text-gray-700 italic mb-6 leading-relaxed">
+                        "{testimonial.content}"
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg">
+                          {testimonial.avatar}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                          <p className="text-sm text-gray-600">{testimonial.role}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        <section className="py-24 bg-gradient-to-br from-pharma-navy via-primary to-pharma-navy dark:from-pharma-dark dark:via-primary-dark dark:to-pharma-dark text-white relative overflow-hidden transition-colors duration-300">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-50"></div>
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg')] bg-center opacity-10 bg-cover"></div>
-          
+        {/* CTA Section */}
+        <section className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 bg-white/5"></div>
+          </div>
           <div className="container mx-auto px-4 text-center relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up">
-                Ready to Partner with a Global Leader?
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+                Ready to Partner with Excellence?
               </h2>
-              <p className="text-xl mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-                Join the many healthcare providers and distributors worldwide who trust Baker & Davis for their pharmaceutical needs.
+              <p className="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+                Join thousands of healthcare providers worldwide who trust Baker & Davis for their pharmaceutical needs.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-                <Button asChild size="lg" className="w-full sm:w-auto text-lg bg-white text-pharma-navy hover:bg-gray-100 group transition-all duration-300 transform hover:scale-105 hover:shadow-2xl px-8 py-6">
-                  <NavLink to="/contact" className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  <NavLink to="/contact" className="flex items-center gap-2">
                     Get in Touch Today
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-5 h-5" />
                   </NavLink>
                 </Button>
                 
-                <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-lg text-white border-white hover:bg-white/10 transition-all duration-300 transform hover:scale-105 px-8 py-6">
-                  <NavLink to="/about" className="flex items-center gap-3">
+                <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold transition-all duration-300">
+                  <NavLink to="/about" className="flex items-center gap-2">
                     Learn More About Us
+                    <Rocket className="w-5 h-5" />
                   </NavLink>
                 </Button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
-
       </div>
     </>
   );
