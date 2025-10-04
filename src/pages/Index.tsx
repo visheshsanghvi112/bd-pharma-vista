@@ -256,24 +256,26 @@ const Index = () => {
                         muted
                         loop
                         playsInline
-                        preload="metadata"
+                        preload="auto"
                         className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
-                        poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                         onError={(e) => {
-                          console.warn('Hero video failed to load, using fallback image');
+                          console.warn('Hero video failed to load');
                           const target = e.target as HTMLVideoElement;
                           target.style.display = 'none';
+                          // Show fallback image
+                          const fallback = document.createElement('img');
+                          fallback.src = '/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg';
+                          fallback.alt = 'Pharmaceutical Excellence';
+                          fallback.className = 'w-full h-auto object-cover rounded-2xl lg:rounded-3xl';
+                          target.parentNode?.appendChild(fallback);
                         }}
                         onLoadStart={() => console.log('Video loading started')}
                         onCanPlay={() => console.log('Video can play')}
+                        onLoadedData={() => console.log('Video data loaded')}
                       >
                         <source src="/lovable-uploads/medicalsupplies.mp4" type="video/mp4" />
                         <source src="/lovable-uploads/final.mp4" type="video/mp4" />
-                        <img 
-                          src="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" 
-                          alt="Pharmaceutical Excellence"
-                          className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
-                        />
+                        Your browser does not support the video tag.
                       </video>
                       
                       {/* Animated border glow */}
