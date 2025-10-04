@@ -267,7 +267,7 @@ const Index = () => {
                         onLoadStart={() => console.log('Video loading started')}
                         onCanPlay={() => console.log('Video can play')}
                       >
-                        <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
+                        <source src="/lovable-uploads/medicalsupplies.mp4" type="video/mp4" />
                         <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                         <img 
                           src="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" 
