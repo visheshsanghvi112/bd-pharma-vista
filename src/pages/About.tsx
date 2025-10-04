@@ -187,18 +187,13 @@ const About = () => {
                   loop
                   playsInline
                   preload="metadata"
-                  poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
                   onError={(e) => {
                     console.warn('About page video failed to load');
                   }}
                 >
-                  <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
                   <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
-                  <img 
-                    src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg" 
-                    alt="Medical Supplies and Equipment"
-                    className="w-full h-auto object-cover"
-                  />
+                  <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
               </motion.div>
             </div>
