@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 import DirectorsSection from "@/components/about/DirectorsSection";
@@ -159,23 +160,47 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-pharma-navy/10 to-primary/5 -z-10" />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
+              <motion.div 
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-4">See Our Facilities In Action</h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                   Take a virtual tour of our state-of-the-art pharmaceutical manufacturing facilities and see how we maintain our high-quality standards.
                 </p>
-              </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-2xl transition-all duration-500 group">
+              </motion.div>
+              <motion.div 
+                className="relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-2xl transition-all duration-500 group"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                whileHover={{ scale: 1.02 }}
+              >
                 <video
                   className="w-full h-auto object-cover"
-                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                   poster="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg"
+                  onError={(e) => {
+                    console.warn('About page video failed to load');
+                  }}
                 >
-                  <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                   <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
+                  <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
+                  <img 
+                    src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg" 
+                    alt="Medical Supplies and Equipment"
+                    className="w-full h-auto object-cover"
+                  />
                 </video>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
