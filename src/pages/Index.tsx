@@ -256,15 +256,24 @@ const Index = () => {
                         muted
                         loop
                         playsInline
-                        preload="none"
+                        preload="metadata"
                         className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
+                        poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                         onError={(e) => {
-                          console.warn('Hero video failed to load');
+                          console.warn('Hero video failed to load, using fallback image');
+                          const target = e.target as HTMLVideoElement;
+                          target.style.display = 'none';
                         }}
+                        onLoadStart={() => console.log('Video loading started')}
+                        onCanPlay={() => console.log('Video can play')}
                       >
-                        <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
                         <source src="/lovable-uploads/0_Medical Supplies_First Aid Kit_3840x2160.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
+                        <source src="/lovable-uploads/Final Comp_1.mp4" type="video/mp4" />
+                        <img 
+                          src="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" 
+                          alt="Pharmaceutical Excellence"
+                          className="w-full h-auto object-cover rounded-2xl lg:rounded-3xl"
+                        />
                       </video>
                       
                       {/* Animated border glow */}

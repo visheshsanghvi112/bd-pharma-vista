@@ -13,6 +13,19 @@
           "value": "script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' data: https:; object-src 'none';"
         }
       ]
+    },
+    {
+      "source": "/lovable-uploads/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Content-Type",
+          "value": "video/mp4"
+        }
+      ]
     }
   ]
 }
