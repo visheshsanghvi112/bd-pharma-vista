@@ -1,11 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { ArrowRight, Award, User, Star, Briefcase } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 import DirectorsSection from "@/components/about/DirectorsSection";
-import StatCard from "@/components/about/StatCard";
 import AwardsSection from "@/components/about/AwardsSection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 import PartnersCarousel from "@/components/about/PartnersCarousel";
@@ -104,28 +103,6 @@ const About = () => {
         {/* Directors Section */}
         <DirectorsSection />
 
-        {/* Stats Section */}
-        <section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background dark:via-background/95 dark:to-background/90">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <StatCard
-                icon={Award}
-                title="WHO-GDP"
-                subtitle="Certified"
-              />
-              <StatCard
-                icon={Briefcase}
-                title="22+ Years"
-                subtitle="Experience"
-              />
-              <StatCard
-                icon={Star}
-                title="50+ Countries"
-                subtitle="Global Reach"
-              />
-            </div>
-          </div>
-        </section>
 
         {/* Company Overview */}
         <section className="py-16 bg-pharma-light/30 dark:bg-pharma-dark/20 transition-colors duration-300">
