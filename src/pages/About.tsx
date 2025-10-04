@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { ArrowRight, User, Award, Briefcase } from "lucide-react";
+import { ArrowRight, User, Award, Briefcase, Star } from "lucide-react";
 import DirectorCard from "@/components/about/DirectorCard";
 import MissionVisionCard from "@/components/about/MissionVisionCard";
 import DirectorsSection from "@/components/about/DirectorsSection";
