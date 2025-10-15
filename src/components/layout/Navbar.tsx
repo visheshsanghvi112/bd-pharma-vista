@@ -32,14 +32,14 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
 
   const mainNavLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const dropdownLinks = [
     { name: "Our Story", path: "/our-story" },
     { name: "FAQ", path: "/faq" },
     { name: "Careers", path: "/careers" },
-    { name: "Contact", path: "/contact" },
   ];
 
   return (
