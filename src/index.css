@@ -5,46 +5,57 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Page Backgrounds - Clean white/light gray */
+    --background: 0 0% 100%;              /* Pure white for main background */
+    --foreground: 222 47% 11%;            /* Dark text color (#1A1F2C) */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card/Component Backgrounds - White with subtle shadow */
+    --card: 0 0% 100%;                    /* White for cards */
+    --card-foreground: 222 47% 11%;       /* Dark text on cards */
 
+    /* Popover/Dropdown Colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 232 55% 37%;
-    --primary-light: 232 45% 47%;
-    --primary-dark: 232 65% 27%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand Colors - Pharma Navy (#283593) */
+    --primary: 232 55% 37%;               /* Main brand color */
+    --primary-light: 232 45% 52%;         /* Lighter variation (#5C6BC0) */
+    --primary-dark: 232 65% 27%;          /* Darker variation (#1A237E) */
+    --primary-foreground: 0 0% 100%;      /* White text on primary */
 
-    --secondary: 232 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Brand Colors - Light Purple */
+    --secondary: 232 40% 96%;             /* Very light purple background */
+    --secondary-foreground: 222 47% 11%;  /* Dark text */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Colors - For subtle text and backgrounds */
+    --muted: 220 13% 96%;                 /* Light gray background */
+    --muted-foreground: 215 16% 47%;      /* Gray text (#6B7280) */
 
-    --accent: 232 75% 55%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent Colors - For highlights and interactive elements */
+    --accent: 232 75% 55%;                /* Brighter purple for accents */
+    --accent-foreground: 0 0% 100%;       /* White text on accents */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors */
+    --destructive: 0 84% 60%;             /* Red for errors */
+    --destructive-foreground: 0 0% 100%;  /* White text */
 
-    --border: 220 13% 91%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 232 55% 37%;
+    /* Border and Input Colors */
+    --border: 220 13% 91%;                /* Light gray borders */
+    --input: 220 13% 91%;                 /* Light gray input borders */
+    --ring: 232 55% 37%;                  /* Primary color for focus rings */
 
+    /* Border Radius */
     --radius: 0.5rem;
 
+    /* Sidebar Colors (if needed) */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 232 55% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 232 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 232 55% 37%;
   }
 }
 
@@ -266,4 +277,100 @@
     linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
+}
+
+/* === PREMIUM GRADIENT EFFECTS === */
+@layer utilities {
+  /* Animated gradient background */
+  .bg-gradient-animated {
+    background-size: 300% 300%;
+    animation: gradient-shift 15s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% { 
+      background-position: 0% 50%; 
+    }
+    50% { 
+      background-position: 100% 50%; 
+    }
+  }
+  
+  /* Glass morphism effect with gradient */
+  .glass-gradient {
+    @apply backdrop-blur-md bg-gradient-to-br from-white/40 to-pharma-light/30 border border-white/20;
+    box-shadow: 0 8px 32px 0 rgba(40, 53, 147, 0.1);
+  }
+  
+  /* Premium card effect */
+  .card-premium {
+    @apply bg-gradient-card-premium shadow-lg hover:shadow-xl transition-all duration-300;
+    border: 1px solid rgba(232, 234, 246, 0.3);
+  }
+  
+  /* Premium card with glow */
+  .card-premium-glow {
+    @apply bg-gradient-card-premium shadow-lg hover:shadow-2xl transition-all duration-500;
+    border: 1px solid rgba(92, 107, 192, 0.2);
+    box-shadow: 0 10px 40px rgba(92, 107, 192, 0.15);
+  }
+  
+  .card-premium-glow:hover {
+    box-shadow: 0 15px 50px rgba(92, 107, 192, 0.25);
+    transform: translateY(-4px);
+  }
+  
+  /* Gradient text effect */
+  .text-gradient-premium {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pharma-navy via-primary to-primary-light;
+  }
+  
+  /* Section with layered gradients */
+  .section-gradient-layered {
+    @apply relative overflow-hidden;
+  }
+  
+  .section-gradient-layered::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-section-light opacity-80;
+  }
+  
+  .section-gradient-layered::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-glow-center pointer-events-none;
+  }
+  
+  /* Hover gradient shift */
+  .hover-gradient-shift {
+    @apply transition-all duration-500;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+  }
+  
+  .hover-gradient-shift:hover {
+    background-position: 100% 50%;
+  }
+}
+
+/* === GRADIENT BORDERS === */
+@layer utilities {
+  .border-gradient {
+    border-image: linear-gradient(135deg, #E8EAF6, #C5CAE9, #9FA8DA) 1;
+  }
+  
+  .border-gradient-premium {
+    position: relative;
+  }
+  
+  .border-gradient-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #E8EAF6, #9FA8DA);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 }

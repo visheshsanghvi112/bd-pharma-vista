@@ -21,7 +21,7 @@ const Footer = () => {
 
   return (
     <footer className={cn(
-      "bg-gradient-primary dark:bg-gradient-to-br dark:from-pharma-dark dark:to-primary-dark text-white transition-all duration-500",
+      "bg-gradient-footer text-white transition-all duration-500",
       isVisible ? "opacity-100" : "opacity-0"
     )}>
       <div className="container mx-auto px-4 py-16">
@@ -36,11 +36,11 @@ const Footer = () => {
                   className="h-20 w-auto transition-all duration-300"
                 />
               </div>
-              <span className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">
+              <span className="font-bold text-2xl text-white">
                 Baker & Davis
               </span>
             </div>
-            <p className="text-sm text-gray-200 leading-relaxed">
+            <p className="text-sm text-white/90 leading-relaxed">
               BD Pvt. Ltd. is a trusted pharmaceutical distributor and global exporter of high-quality medicines, serving healthcare providers worldwide since 2000.
             </p>
             <div className="text-sm bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/5 shadow-lg hover:shadow-xl transition-all duration-300 card-hover">
@@ -79,7 +79,7 @@ const Footer = () => {
                   <NavLink 
                     to={link.to} 
                     className={({ isActive }) => cn(
-                      "text-sm text-gray-200 hover:text-white transition-colors",
+                      "text-sm text-white/80 hover:text-white transition-colors",
                       isActive && "text-white font-medium"
                     )}
                   >
@@ -97,8 +97,8 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3 group hover:translate-x-1 transition-transform duration-300">
-                <MapPin size={18} className="shrink-0 mt-1 text-gray-200 group-hover:text-white" />
-                <address className="text-sm text-gray-200 not-italic group-hover:text-white transition-colors">
+                <MapPin size={18} className="shrink-0 mt-1 text-white/80 group-hover:text-white" />
+                <address className="text-sm text-white/80 not-italic group-hover:text-white transition-colors">
                   <p className="font-medium text-white mb-1">Registered Office:</p>
                   <p>
                     42/44, Babu Genu Road, Shop No. 14, 2nd Floor, Om Shanti Co-Operative 
@@ -108,13 +108,13 @@ const Footer = () => {
               </div>
               
               <div className="flex items-center gap-3 group hover:translate-x-1 transition-transform duration-300">
-                <Phone size={18} className="shrink-0 text-gray-200 group-hover:text-white" />
-                <p className="text-sm text-gray-200 group-hover:text-white transition-colors">022-48256677 / 022-40134455</p>
+                <Phone size={18} className="shrink-0 text-white/80 group-hover:text-white" />
+                <p className="text-sm text-white/80 group-hover:text-white transition-colors">022-48256677 / 022-40134455</p>
               </div>
               
               <div className="flex items-center gap-3 group hover:translate-x-1 transition-transform duration-300">
-                <Mail size={18} className="shrink-0 text-gray-200 group-hover:text-white" />
-                <a href="mailto:admin@bdindia.in" className="text-sm text-gray-200 hover:text-white transition-colors underline decoration-white/20 hover:decoration-white">
+                <Mail size={18} className="shrink-0 text-white/80 group-hover:text-white" />
+                <a href="mailto:admin@bdindia.in" className="text-sm text-white/80 hover:text-white transition-colors underline decoration-white/20 hover:decoration-white">
                   admin@bdindia.in
                 </a>
               </div>
@@ -143,7 +143,7 @@ const Footer = () => {
             </div>
 
             <div className="pt-2">
-              <p className="text-sm text-gray-300 mb-3">Follow us on social media:</p>
+              <p className="text-sm text-white/90 mb-3">Follow us on social media:</p>
               <div className="flex items-center gap-3">
                 {[
                   { icon: Facebook, href: "#", label: "Facebook" },
@@ -169,12 +169,12 @@ const Footer = () => {
         <Separator className="my-8 bg-white/20" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-center">
-          <p className="text-gray-300">© {currentYear} Baker & Davis Pvt. Ltd. All rights reserved.</p>
+          <p className="text-white/80">© {currentYear} Baker & Davis Pvt. Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <NavLink to="/privacy" className="text-gray-300 hover:text-white transition-colors">
+            <NavLink to="/privacy" className="text-white/80 hover:text-white transition-colors">
               Privacy Policy
             </NavLink>
-            <NavLink to="/terms" className="text-gray-300 hover:text-white transition-colors">
+            <NavLink to="/terms" className="text-white/80 hover:text-white transition-colors">
               Terms of Use
             </NavLink>
           </div>

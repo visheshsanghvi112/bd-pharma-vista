@@ -18,11 +18,11 @@ const DirectorsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-white dark:from-background dark:to-background/95 transition-colors duration-300">
+    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6">Our Leadership</h2>
-          <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-pharma-navy mb-6">Our Leadership</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto">
             Led by experienced directors with deep expertise in pharmaceutical distribution and global trade, 
             Baker & Davis continues to excel in providing reliable pharmaceutical supply chain solutions worldwide.
           </p>
@@ -30,7 +30,7 @@ const DirectorsSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {directors.map((director, index) => (
-            <div key={index} className="bg-white dark:bg-card rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div key={index} className="bg-card rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="p-8">
                 <div className="flex items-center mb-6">
                   <div className="w-20 h-20 rounded-full overflow-hidden mr-6 bg-pharma-light/30">
@@ -41,14 +41,14 @@ const DirectorsSection = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-pharma-navy dark:text-white mb-2">{director.name}</h3>
-                    <div className="flex items-center gap-2 text-primary dark:text-primary-light">
+                    <h3 className="text-2xl font-bold text-pharma-navy mb-2">{director.name}</h3>
+                    <div className="flex items-center gap-2 text-primary">
                       <Briefcase className="w-4 h-4" />
                       <span className="font-medium">{director.title}</span>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {director.description}
                 </p>
               </div>
@@ -57,20 +57,20 @@ const DirectorsSection = () => {
         </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-8">
-          <div className="text-center p-6 bg-pharma-light/30 dark:bg-pharma-dark/20 rounded-lg">
-            <Award className="w-12 h-12 text-primary dark:text-primary-light mx-auto mb-4" />
-            <h4 className="text-lg font-bold text-pharma-navy dark:text-white mb-2">Quality Excellence</h4>
-            <p className="text-gray-700 dark:text-gray-300">Commitment to maintaining the highest standards in pharmaceutical distribution</p>
+          <div className="text-center p-6 bg-pharma-light/30 rounded-lg">
+            <Award className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h4 className="text-lg font-bold text-pharma-navy mb-2">Quality Excellence</h4>
+            <p className="text-muted-foreground">Commitment to maintaining the highest standards in pharmaceutical distribution</p>
           </div>
-          <div className="text-center p-6 bg-pharma-light/30 dark:bg-pharma-dark/20 rounded-lg">
-            <Star className="w-12 h-12 text-primary dark:text-primary-light mx-auto mb-4" />
-            <h4 className="text-lg font-bold text-pharma-navy dark:text-white mb-2">Global Reach</h4>
-            <p className="text-gray-700 dark:text-gray-300">Extensive network spanning over 50 countries worldwide</p>
+          <div className="text-center p-6 bg-pharma-light/30 rounded-lg">
+            <Star className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h4 className="text-lg font-bold text-pharma-navy mb-2">Global Reach</h4>
+            <p className="text-muted-foreground">Extensive network spanning over 50 countries worldwide</p>
           </div>
-          <div className="text-center p-6 bg-pharma-light/30 dark:bg-pharma-dark/20 rounded-lg">
-            <Briefcase className="w-12 h-12 text-primary dark:text-primary-light mx-auto mb-4" />
-            <h4 className="text-lg font-bold text-pharma-navy dark:text-white mb-2">Regulatory Compliance</h4>
-            <p className="text-gray-700 dark:text-gray-300">Full adherence to international pharmaceutical trade regulations</p>
+          <div className="text-center p-6 bg-pharma-light/30 rounded-lg">
+            <Briefcase className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h4 className="text-lg font-bold text-pharma-navy mb-2">Regulatory Compliance</h4>
+            <p className="text-muted-foreground">Full adherence to international pharmaceutical trade regulations</p>
           </div>
         </div>
       </div>

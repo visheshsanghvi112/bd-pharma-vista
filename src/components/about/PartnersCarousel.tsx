@@ -56,7 +56,10 @@ const PartnersCarousel = () => {
             className="flex gap-8 py-4" 
             style={{
               animationPlayState: animationPaused ? 'paused' : 'running',
-              animation: 'scroll 25s linear infinite',
+              animationName: 'scroll',
+              animationDuration: '25s',
+              animationTimingFunction: 'linear',
+              animationIterationCount: 'infinite',
               width: `calc(${partners.length * 210}px * 2)`
             }}
             onMouseLeave={handleMouseLeave}

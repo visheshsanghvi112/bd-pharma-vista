@@ -47,17 +47,17 @@ const GlobalPresenceMap = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
+    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-background">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-3 mb-6">
-          <Globe className="w-8 h-8 text-pharma-navy dark:text-primary-light" />
-          <h2 className="text-3xl font-bold text-pharma-navy dark:text-white transition-colors duration-300">Global Presence</h2>
+          <Globe className="w-8 h-8 text-pharma-navy" />
+          <h2 className="text-3xl font-bold text-pharma-navy transition-colors duration-300">Global Presence</h2>
         </div>
-        <p className="text-black dark:text-white text-center max-w-3xl mx-auto mb-12">
+        <p className="text-foreground text-center max-w-3xl mx-auto mb-12">
           Our products reach patients in more than 50 countries across 6 continents, supported by a robust distribution network.
         </p>
         
-        <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden mb-8 bg-white dark:bg-card shadow-lg">
+        <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden mb-8 bg-card shadow-lg">
           {/* Map container */}
           <div ref={mapRef} className="absolute inset-0">
             {/* Map will be loaded here via JavaScript */}
@@ -66,8 +66,8 @@ const GlobalPresenceMap = () => {
           {/* Overlay with key locations */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-5 right-5 bg-white/80 dark:bg-card/80 p-4 rounded-lg shadow-md backdrop-blur-sm z-10">
-              <p className="text-xl font-bold text-pharma-navy dark:text-white">50+ Countries</p>
-              <p className="text-sm text-black/70 dark:text-white/70">Global Distribution Network</p>
+              <p className="text-xl font-bold text-pharma-navy">50+ Countries</p>
+              <p className="text-sm text-muted-foreground">Global Distribution Network</p>
             </div>
           </div>
         </div>
@@ -77,17 +77,17 @@ const GlobalPresenceMap = () => {
           {regions.map((region, index) => (
             <div 
               key={index} 
-              className="bg-white dark:bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <h3 className="text-lg font-bold text-pharma-navy dark:text-white mb-2">{region.name}</h3>
-              <p className="text-primary dark:text-primary-light font-medium mb-1">{region.count} Countries</p>
-              <p className="text-sm text-black/70 dark:text-white/70">{region.countries.join(", ")}</p>
+              <h3 className="text-lg font-bold text-pharma-navy mb-2">{region.name}</h3>
+              <p className="text-primary font-medium mb-1">{region.count} Countries</p>
+              <p className="text-sm text-muted-foreground">{region.countries.join(", ")}</p>
             </div>
           ))}
         </div>
         
         <div className="mt-8 text-center">
-          <p className="text-black/80 dark:text-white/80">
+          <p className="text-foreground/80">
             Our global distribution network ensures reliable and timely delivery of quality pharmaceutical products worldwide.
           </p>
         </div>

@@ -27,10 +27,10 @@ const CsrSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-white dark:from-pharma-dark/30 dark:to-background/95 transition-colors duration-300">
+    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-6 transition-colors duration-300">Community Involvement</h2>
-        <p className="text-black dark:text-white text-center max-w-3xl mx-auto mb-12">
+        <h2 className="text-3xl font-bold text-center text-pharma-navy mb-6">Community Involvement</h2>
+        <p className="text-foreground text-center max-w-3xl mx-auto mb-12">
           At Baker & Davis, we believe in giving back to communities and contributing to sustainable development.
         </p>
         
@@ -43,11 +43,11 @@ const CsrSection = () => {
                 className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-pharma-light dark:bg-pharma-dark/40 flex items-center justify-center mb-4">
-                    <Icon className="w-8 h-8 text-pharma-navy dark:text-primary-light" />
+                  <div className="w-16 h-16 rounded-full bg-pharma-light flex items-center justify-center mb-4">
+                    <Icon className="w-8 h-8 text-pharma-navy" />
                   </div>
-                  <h3 className="text-xl font-bold text-pharma-navy dark:text-white mb-3">{initiative.title}</h3>
-                  <p className="text-black dark:text-white">{initiative.description}</p>
+                  <h3 className="text-xl font-bold text-pharma-navy mb-3">{initiative.title}</h3>
+                  <p className="text-foreground">{initiative.description}</p>
                 </CardContent>
               </Card>
             );
@@ -55,20 +55,20 @@ const CsrSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <div className="max-w-3xl mx-auto bg-white dark:bg-card p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold text-pharma-navy dark:text-white mb-4">Our Impact</h3>
+          <div className="max-w-3xl mx-auto bg-card p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-bold text-pharma-navy mb-4">Our Impact</h3>
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <p className="text-3xl font-bold text-primary dark:text-primary-light mb-2">50+</p>
-                <p className="text-black dark:text-white text-sm">Communities Served</p>
+                <p className="text-3xl font-bold text-primary mb-2">50+</p>
+                <p className="text-card-foreground text-sm">Communities Served</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary dark:text-primary-light mb-2">$2M+</p>
-                <p className="text-black dark:text-white text-sm">CSR Investment</p>
+                <p className="text-3xl font-bold text-primary mb-2">$2M+</p>
+                <p className="text-card-foreground text-sm">CSR Investment</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary dark:text-primary-light mb-2">10,000+</p>
-                <p className="text-black dark:text-white text-sm">Lives Impacted</p>
+                <p className="text-3xl font-bold text-primary mb-2">10,000+</p>
+                <p className="text-card-foreground text-sm">Lives Impacted</p>
               </div>
             </div>
           </div>

@@ -72,17 +72,25 @@ const About = () => {
         ]}
       />
       <div className="flex flex-col">
-        {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-pharma-light/30 via-primary-light/40 to-primary dark:from-pharma-dark/40 dark:via-primary-dark/50 dark:to-primary text-white overflow-hidden">
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-pharma-navy to-primary-dark dark:from-white dark:to-primary-light">
-              About Baker & Davis
-            </h1>
-            <p className="text-xl max-w-3xl mx-auto animate-fade-in text-pharma-navy dark:text-white" style={{ animationDelay: "0.2s" }}>
-              A trusted pharmaceutical distributor and global exporter committed to improving lives through reliable healthcare supply chain solutions
-            </p>
-          </div>
-        </section>
+		{/* Hero Image */}
+		<section className="relative overflow-hidden">
+			<img 
+				src="/lovable-uploads/about_us_banner.jpg" 
+				alt="About Baker & Davis"
+				className="w-full h-64 sm:h-72 md:h-96 object-cover"
+			/>
+		</section>
+		{/* Title and subtitle below the image */}
+		<section className="py-12 bg-background">
+			<div className="container mx-auto px-4 text-center">
+				<h1 className="text-4xl md:text-5xl font-bold mb-4 text-pharma-navy">
+					About Baker & Davis
+				</h1>
+				<p className="text-xl max-w-3xl mx-auto text-muted-foreground">
+					A trusted pharmaceutical distributor and global exporter committed to improving lives through reliable healthcare supply chain solutions
+				</p>
+			</div>
+		</section>
 
         {/* Mission & Vision Section */}
         <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
@@ -122,9 +130,9 @@ const About = () => {
               </div>
               <div>
                 <img 
-                  src="/lovable-uploads/medical-supplies-diabetes-management-glucose-meter-insulin-syringe-medication-health-care-pills-orange-tablets-health-monitoring-medical-equipment-pharmacy-treatment-healthcare-tools-diabetes.jpg" 
-                  alt="Medical Supplies and Equipment"
-                  className="rounded-lg shadow-lg transform hover:scale-[1.02] transition-all duration-300"
+                  src="/lovable-uploads/pexels-pixabay-356040.jpg" 
+                  alt="Our Story"
+                  className="rounded-lg shadow-lg transform hover:scale-[1.02] transition-all duration-300 object-cover w-full h-full"
                 />
               </div>
             </div>

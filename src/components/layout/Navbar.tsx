@@ -46,7 +46,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
     <header 
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled 
-          ? "bg-white/90 dark:bg-background/95 backdrop-blur-md shadow-md h-16" 
+          ? "glass-gradient shadow-lg h-16" 
           : "bg-transparent h-20"
       }`}
     >

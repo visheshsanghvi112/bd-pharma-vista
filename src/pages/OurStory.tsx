@@ -68,10 +68,15 @@ const OurStory = () => {
       />
       
       <div className="min-h-screen bg-pharma-light">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-pharma-navy to-primary-dark text-white overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="container mx-auto px-4 relative z-10">
+        {/* Hero Section with image */}
+        <section className="relative overflow-hidden text-white">
+          <img 
+            src="/lovable-uploads/pexels-pixabay-356040.jpg" 
+            alt="Our Story"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="container mx-auto px-4 relative z-10 py-20">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

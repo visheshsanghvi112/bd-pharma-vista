@@ -37,13 +37,13 @@ const CertificationsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-3 mb-6">
-          <Award className="w-8 h-8 text-pharma-navy dark:text-primary-light" />
-          <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white transition-colors duration-300">Certifications & Standards</h2>
+          <Award className="w-8 h-8 text-pharma-navy" />
+          <h2 className="text-3xl font-bold text-center text-pharma-navy">Certifications & Standards</h2>
         </div>
-        <p className="text-black dark:text-white text-center max-w-3xl mx-auto mb-12">
+        <p className="text-foreground text-center max-w-3xl mx-auto mb-12">
           Our operations and products comply with the highest international quality and safety standards.
         </p>
         
@@ -52,12 +52,12 @@ const CertificationsSection = () => {
             <Card key={index} className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-pharma-light dark:bg-pharma-dark/40 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-pharma-navy dark:text-primary-light" />
+                  <div className="w-12 h-12 rounded-full bg-pharma-light flex items-center justify-center">
+                    <Award className="w-6 h-6 text-pharma-navy" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-pharma-navy dark:text-white">{certification.name}</h3>
-                    <p className="text-sm text-black dark:text-white">{certification.description}</p>
+                    <h3 className="font-bold text-pharma-navy">{certification.name}</h3>
+                    <p className="text-sm text-foreground">{certification.description}</p>
                   </div>
                 </div>
               </CardContent>
@@ -65,9 +65,9 @@ const CertificationsSection = () => {
           ))}
         </div>
         
-        <div className="mt-12 bg-pharma-light/20 dark:bg-pharma-dark/20 p-6 rounded-lg">
-          <h3 className="text-xl font-bold text-pharma-navy dark:text-white mb-4 text-center">Quality Policy</h3>
-          <p className="text-black dark:text-white text-center max-w-3xl mx-auto">
+        <div className="mt-12 bg-pharma-light/20 p-6 rounded-lg">
+          <h3 className="text-xl font-bold text-pharma-navy mb-4 text-center">Quality Policy</h3>
+          <p className="text-foreground text-center max-w-3xl mx-auto">
             At Baker & Davis, we are committed to maintaining the highest standards of quality in all aspects of our operations. 
             Our comprehensive quality policy ensures consistent product excellence, regulatory compliance, and continuous improvement 
             to meet and exceed customer expectations.

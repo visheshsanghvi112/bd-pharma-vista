@@ -15,10 +15,10 @@ const MissionVisionCard = ({ title, content, className = "" }: MissionVisionProp
         <div className="w-12 h-12 rounded-full bg-pharma-light flex items-center justify-center group-hover:bg-pharma-navy transition-colors duration-300">
           <Star className="w-6 h-6 text-pharma-navy group-hover:text-white transition-colors duration-300" />
         </div>
-        <CardTitle className="text-2xl text-pharma-navy dark:text-white">{title}</CardTitle>
+        <CardTitle className="text-2xl text-pharma-navy">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-black dark:text-white leading-relaxed">{content}</p>
+        <p className="text-card-foreground leading-relaxed">{content}</p>
       </CardContent>
     </Card>
   );

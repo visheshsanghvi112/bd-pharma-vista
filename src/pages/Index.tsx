@@ -35,6 +35,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import PartnersCarousel from "@/components/about/PartnersCarousel";
 import { NavLink } from "react-router-dom";
 import Seo from "@/components/Seo";
 
@@ -211,34 +212,34 @@ const Index = () => {
         ]}
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      <div className="min-h-screen bg-gradient-navy-accent text-white">
         {/* Hero Section */}
         <section className="relative flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20">
-          {/* Animated Background Layers */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5"></div>
+          {/* Premium Gradient Background with Glow */}
+          <div className="absolute inset-0 bg-gradient-glow-top-right"></div>
           
-          {/* Animated Gradient Orbs */}
+          {/* Animated Gradient Orbs - Logo Colors */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-300/10 to-purple-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#9FA8DA]/30 to-[#7986CB]/30 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-pharma-navy/20 to-primary-light/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#C5CAE9]/15 to-[#9FA8DA]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           </div>
           
           {/* Floating Particles/Pills Animation */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {/* Medical Cross Symbols */}
-            <div className="absolute top-1/4 left-1/4 text-blue-200/20 text-6xl animate-float" style={{ animationDelay: '0s', animationDuration: '6s' }}>+</div>
-            <div className="absolute top-3/4 right-1/4 text-purple-200/20 text-5xl animate-float" style={{ animationDelay: '1s', animationDuration: '7s' }}>+</div>
-            <div className="absolute top-1/2 right-1/3 text-blue-300/20 text-4xl animate-float" style={{ animationDelay: '2s', animationDuration: '8s' }}>+</div>
+            {/* Medical Cross Symbols - Logo Colors */}
+            <div className="absolute top-1/4 left-1/4 text-[#C5CAE9]/25 text-6xl animate-float" style={{ animationDelay: '0s', animationDuration: '6s' }}>+</div>
+            <div className="absolute top-3/4 right-1/4 text-[#9FA8DA]/25 text-5xl animate-float" style={{ animationDelay: '1s', animationDuration: '7s' }}>+</div>
+            <div className="absolute top-1/2 right-1/3 text-[#7986CB]/25 text-4xl animate-float" style={{ animationDelay: '2s', animationDuration: '8s' }}>+</div>
             
-            {/* Pills/Capsules - represented with rounded shapes */}
-            <div className="absolute top-20 right-20 w-16 h-6 bg-gradient-to-r from-blue-200/30 to-blue-300/30 rounded-full animate-float" style={{ animationDelay: '0.5s', animationDuration: '9s' }}></div>
-            <div className="absolute bottom-40 left-20 w-12 h-5 bg-gradient-to-r from-purple-200/30 to-purple-300/30 rounded-full animate-float" style={{ animationDelay: '1.5s', animationDuration: '10s' }}></div>
-            <div className="absolute top-1/3 left-1/5 w-10 h-4 bg-gradient-to-r from-pink-200/30 to-pink-300/30 rounded-full animate-float" style={{ animationDelay: '2.5s', animationDuration: '11s' }}></div>
+            {/* Pills/Capsules - Premium Gradient */}
+            <div className="absolute top-20 right-20 w-16 h-6 bg-gradient-to-r from-[#C5CAE9]/30 to-[#9FA8DA]/30 rounded-full animate-float" style={{ animationDelay: '0.5s', animationDuration: '9s' }}></div>
+            <div className="absolute bottom-40 left-20 w-12 h-5 bg-gradient-to-r from-pharma-navy/20 to-primary-light/30 rounded-full animate-float" style={{ animationDelay: '1.5s', animationDuration: '10s' }}></div>
+            <div className="absolute top-1/3 left-1/5 w-10 h-4 bg-gradient-to-r from-primary-light/30 to-[#7986CB]/30 rounded-full animate-float" style={{ animationDelay: '2.5s', animationDuration: '11s' }}></div>
             
-            {/* DNA Helix inspired curves - using SVG-like shapes */}
-            <div className="absolute top-10 left-10 w-32 h-32 border-2 border-blue-200/20 rounded-full animate-spin-slow"></div>
-            <div className="absolute bottom-10 right-10 w-40 h-40 border-2 border-purple-200/20 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse' }}></div>
+            {/* DNA Helix inspired curves - Logo Colors */}
+            <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#C5CAE9]/25 rounded-full animate-spin-slow"></div>
+            <div className="absolute bottom-10 right-10 w-40 h-40 border-2 border-pharma-navy/20 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse' }}></div>
           </div>
           
           {/* Grid Pattern Overlay */}
@@ -257,7 +258,7 @@ const Index = () => {
                 variants={fadeInLeft}
               >
                 <motion.div 
-                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 rounded-full bg-white/15 text-white/90 border border-white/20 backdrop-blur text-xs sm:text-sm font-medium"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2 }}
@@ -267,17 +268,17 @@ const Index = () => {
                 </motion.div>
                 
                 <motion.h1 
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight"
                   variants={fadeInUp}
                 >
                   Excellence in
-                  <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  <span className="block text-white">
                     Global Pharmaceuticals
                   </span>
                 </motion.h1>
                 
                 <motion.p 
-                  className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+                  className="text-base sm:text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto lg:mx-0"
                   variants={fadeInUp}
                 >
                   Setting new standards in pharmaceutical excellence with innovative research, 
@@ -314,11 +315,16 @@ const Index = () => {
                     {/* Hero Video */}
                     <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
                       <video
-                        autoPlay={!isMobile} // Disable autoplay on mobile for performance
+                        autoPlay
                         muted
                         loop
                         playsInline
-                        preload={isMobile ? "metadata" : "auto"} // Reduce preload on mobile
+                        preload="auto"
+                        controls={false}
+                        onCanPlay={(e) => {
+                          const v = e.currentTarget;
+                          try { v.play(); } catch {}
+                        }}
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" // Add poster for better loading
                         onError={(e) => {
@@ -412,7 +418,9 @@ const Index = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white/80 backdrop-blur-sm">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-section-light relative overflow-hidden">
+          {/* Subtle glow overlay */}
+          <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
@@ -440,7 +448,9 @@ const Index = () => {
         </section>
 
         {/* Pharmaceutical Products Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-section-subtle relative overflow-hidden">
+          {/* Layered gradient effect */}
+          <div className="absolute inset-0 bg-gradient-glow-bottom-left pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-12 sm:mb-16"
@@ -602,7 +612,9 @@ const Index = () => {
         </section>
 
         {/* Product Categories Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-section-light relative overflow-hidden">
+          {/* Premium gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-glow-top pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-12 sm:mb-16"
@@ -620,7 +632,7 @@ const Index = () => {
             </motion.div>
             
             <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+              className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -643,12 +655,12 @@ const Index = () => {
                   whileHover={{ y: isMobile ? -5 : -10 }}
                 >
                   <Card className="h-full border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 group-hover:shadow-xl">
-                    <CardContent className="p-4 sm:p-6 text-center">
-                      <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gray-50 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <CardContent className="p-3 sm:p-6 text-center">
+                      <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gray-50 mb-2 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
                         <category.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${category.color}`} />
                       </div>
-                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">{category.title}</h3>
-                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{category.description}</p>
+                      <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-3">{category.title}</h3>
+                      <p className="text-gray-600 text-[11px] sm:text-sm leading-relaxed">{category.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -676,7 +688,9 @@ const Index = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gradient-section-alternate relative overflow-hidden">
+          {/* Center glow for testimonials */}
+          <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
           <div className="container mx-auto px-4">
             <motion.div 
               className="text-center mb-16"
@@ -734,42 +748,9 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0 bg-white/5"></div>
-          </div>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-                Ready to Partner with Excellence?
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
-                Join thousands of healthcare providers worldwide who trust Baker & Davis for their pharmaceutical needs.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                <Button asChild size={isMobile ? "default" : "lg"} className="bg-white text-blue-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
-                  <NavLink to="/contact" className="flex items-center justify-center gap-2">
-                    Get in Touch Today
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </NavLink>
-                </Button>
-                
-                <Button asChild size={isMobile ? "default" : "lg"} variant="outline" className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-                  <NavLink to="/about" className="flex items-center justify-center gap-2">
-                    Learn More About Us
-                    <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </NavLink>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+        {/* Trusted Partners Section (moved here) */}
+        <section className="py-0">
+          <PartnersCarousel />
         </section>
       </div>
     </>
