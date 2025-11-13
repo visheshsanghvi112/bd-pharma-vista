@@ -1,63 +1,15 @@
 
-# Baker & Davis Pharmaceuticals - Robots.txt
+# Baker and Davis Pharmaceuticals - Robots.txt
+# ALL bots and crawlers are welcome!
+
 User-agent: *
 Allow: /
 
 # Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml
 
-# Important pages
-Allow: /about
-Allow: /contact
-Allow: /team
-Allow: /careers
-Allow: /faq
-Allow: /privacy
-Allow: /our-story
-
-# Allow static assets and images
-Allow: /lovable-uploads/
-
-# Prevent crawling of development/internal areas
-Disallow: /api/
-Disallow: /admin/
-Disallow: /dev/
-Disallow: /test/
-
-# Block specific AI crawlers
-User-agent: GPTBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-# Allow beneficial crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
+# Open to ALL crawlers - no restrictions
+# Anyone can scrape, index, and crawl this site
 
 # Cache instructions
 Host: https://bdindia.in
