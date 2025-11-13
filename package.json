@@ -5,10 +5,32 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && react-snap && node verify-build.js",
+    "build:nosnap": "vite build",
     "build:dev": "vite build --mode development",
+    "build:verbose": "vite build --debug --logLevel info",
+    "postbuild": "echo Build completed! Check above for any errors.",
+    "verify": "node verify-build.js",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "include": [
+      "/",
+      "/about",
+      "/team",
+      "/careers",
+      "/contact",
+      "/privacy",
+      "/faq",
+      "/our-story"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -79,10 +101,10 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "postcss": "^8.4.47",
+    "react-snap": "^1.23.0",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1",
-    "vite-plugin-prerender": "^1.0.8"
+    "vite": "^5.4.1"
   }
 }
