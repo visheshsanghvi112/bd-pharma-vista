@@ -23,31 +23,48 @@ const Seo = ({
   publishedAt,
   updatedAt,
   keywords = [],
-  author = "Baker & Davis - Pharmaceutical Distributors & Exporters",
+  author = "Baker and Davis - Pharmaceutical Distributors & Exporters",
   noIndex = false
 }: SeoProps) => {
-  const siteName = "Baker & Davis - Pharmaceutical Distribution & Export";
+  const siteName = "Baker and Davis | Baker & Davis | Baker Davis";
   const fullTitle = `${title} | ${siteName}`;
   const siteUrl = "https://bdindia.in";
   const fullCanonical = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`) : `${siteUrl}${window.location.pathname}`;
   
-  // Core brand keywords - Baker & Davis variations
+  // Core brand keywords - ALL variations for maximum visibility
   const brandKeywords = [
+    "Baker and Davis",
     "Baker & Davis",
-    "Baker and Davis", 
     "Baker Davis",
     "Davis and Baker",
     "Davis Baker",
     "BD India",
     "bdindia",
     "Baker India",
-    "Baker pharmaceutical India",
-    "Davis pharmaceutical India",
-    "Baker & Davis India",
+    "Baker Davis India",
+    "Baker and Davis India",
+    "Baker and Davis Mumbai",
+    "Baker & Davis Mumbai",
+    "Baker Davis Mumbai",
     "Baker and Davis pharmaceutical",
-    "BD pharmaceutical distributor",
+    "Baker & Davis pharmaceutical",
+    "Baker Davis pharmaceutical",
+    "Baker and Davis distributor",
+    "Baker Davis distributor",
+    "BD India distributor",
+    "Baker and Davis exporter",
     "Baker Davis exporter",
-    "Baker & Davis trader"
+    "Baker India pharmaceutical",
+    "Davis pharmaceutical India",
+    "Baker and Davis pharmaceutical distributor",
+    "Baker Davis pharmaceutical distributor",
+    "BD pharmaceutical distributor",
+    "Baker and Davis trader",
+    "Baker Davis trader",
+    "pharmaceutical distributor Baker and Davis",
+    "pharmaceutical distributor Baker Davis",
+    "Baker and Davis pharmaceutical company",
+    "Baker Davis pharmaceutical company"
   ];
   
   // Merge brand keywords with page-specific keywords
@@ -62,16 +79,18 @@ const Seo = ({
       <meta name="keywords" content={keywordsString} />
       {author && <meta name="author" content={author} />}
       
-      {/* Brand-specific meta tags */}
-      <meta name="company" content="Baker & Davis" />
-      <meta name="brand" content="Baker and Davis, BD India, bdindia" />
-      <meta name="business-name" content="Baker & Davis Pharmaceutical Distributors" />
-      <meta name="alternate-names" content="Baker Davis, Davis Baker, BD India, Baker India" />
+      {/* Brand-specific meta tags - ALL NAME VARIATIONS */}
+      <meta name="company" content="Baker and Davis, Baker & Davis, Baker Davis" />
+      <meta name="brand" content="Baker and Davis, Baker & Davis, Baker Davis, BD India, bdindia, Baker India" />
+      <meta name="business-name" content="Baker and Davis Pharmaceutical Distributors" />
+      <meta name="alternate-names" content="Baker Davis, Davis Baker, Davis and Baker, BD India, Baker India, Baker Davis India, Baker and Davis Mumbai, Baker and Davis India" />
+      <meta name="organization" content="Baker and Davis Private Limited" />
       
       {/* Business Type Schema */}
       <meta name="business-type" content="Pharmaceutical Distributor, Trader & Exporter" />
       <meta name="industry" content="Pharmaceutical Distribution & International Trade" />
-      <meta name="services" content="Pharmaceutical Distribution, Medicine Export, Global Trading" />
+      <meta name="services" content="Pharmaceutical Distribution, Medicine Export, Global Trading, Pharmaceutical Supply Chain, Medicine Distribution" />
+      <meta name="target-audience" content="Pharmaceutical Buyers, Hospitals, Medical Distributors, International Pharmaceutical Traders" />
       
       {/* Location-specific */}
       <meta name="geo.region" content="IN-MH" />
@@ -81,6 +100,12 @@ const Seo = ({
       
       {/* Canonical URL */}
       <link rel="canonical" href={fullCanonical} />
+      
+      {/* Hreflang for international SEO */}
+      <link rel="alternate" hrefLang="en" href={fullCanonical} />
+      <link rel="alternate" hrefLang="en-in" href={fullCanonical} />
+      <link rel="alternate" hrefLang="en-us" href={fullCanonical} />
+      <link rel="alternate" hrefLang="x-default" href={fullCanonical} />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
@@ -102,39 +127,72 @@ const Seo = ({
       {type === 'article' && publishedAt && <meta property="article:published_time" content={publishedAt} />}
       {type === 'article' && updatedAt && <meta property="article:modified_time" content={updatedAt} />}
       
-      {/* Schema.org JSON-LD for Business */}
+      {/* Schema.org JSON-LD for Business - Enhanced with all name variations */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Corporation",
-          "name": "Baker & Davis",
-          "alternateName": ["Baker and Davis", "Baker Davis", "BD India", "bdindia", "Baker India"],
+          "name": "Baker and Davis",
+          "legalName": "Baker and Davis Private Limited",
+          "alternateName": [
+            "Baker & Davis",
+            "Baker Davis", 
+            "Davis and Baker",
+            "Davis Baker",
+            "BD India", 
+            "bdindia",
+            "Baker India",
+            "Baker Davis India",
+            "Baker and Davis India",
+            "Baker and Davis Mumbai",
+            "Baker and Davis Pharmaceuticals",
+            "Baker Davis Pharmaceuticals"
+          ],
           "url": siteUrl,
           "logo": `${siteUrl}${image}`,
+          "image": `${siteUrl}${image}`,
           "description": description,
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "42/44, Babu Genu Road, Shop No. 14, 2nd Floor",
             "addressLocality": "Mumbai",
             "addressRegion": "Maharashtra", 
+            "postalCode": "400002",
             "addressCountry": "IN"
           },
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "availableLanguage": ["English", "Hindi"]
+            "telephone": "+91-22-48256677",
+            "email": "admin@bdindia.in",
+            "availableLanguage": ["English", "Hindi"],
+            "areaServed": "Worldwide"
           },
           "sameAs": [
             `${siteUrl}`,
             "https://bdindia.in"
           ],
-          "founders": [
-            {
-              "@type": "Person",
-              "name": "Baker & Davis Leadership"
-            }
-          ],
+          "foundingDate": "2003",
+          "foundingLocation": {
+            "@type": "Place",
+            "name": "Mumbai, India"
+          },
           "industry": "Pharmaceutical Distribution and Export",
-          "foundingLocation": "Mumbai, India"
+          "knowsAbout": [
+            "Pharmaceutical Distribution",
+            "Medicine Export",
+            "Pharmaceutical Trading",
+            "Global Pharmaceutical Supply",
+            "Medicine Distribution",
+            "Pharmaceutical Logistics"
+          ],
+          "slogan": "Baker and Davis - Your Trusted Pharmaceutical Partner",
+          "brand": {
+            "@type": "Brand",
+            "name": "Baker and Davis",
+            "alternateName": ["Baker & Davis", "Baker Davis", "BD India"]
+          },
+          "award": ["ISO-9001-2015", "WHO-GMP Certification"]
         })}
       </script>
       

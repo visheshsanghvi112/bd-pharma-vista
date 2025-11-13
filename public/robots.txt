@@ -1,67 +1,63 @@
 
-# Baker & Davis Pharmaceuticals - Distribution & Export - Robots.txt
+# Baker & Davis Pharmaceuticals - Robots.txt
 User-agent: *
 Allow: /
 
 # Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml
 
-# Optimize crawling rate
-Crawl-delay: 5
-
-# Important pages with higher priority - Distribution & Export Focus
+# Important pages
 Allow: /about
 Allow: /contact
 Allow: /team
 Allow: /careers
 Allow: /faq
-
-# Privacy policy
 Allow: /privacy
+Allow: /our-story
 
-# Brand-specific paths (future expansion)
-Allow: /baker-davis
-Allow: /bd-india
-Allow: /pharmaceutical-distribution
-Allow: /medicine-export
+# Allow static assets and images
+Allow: /lovable-uploads/
 
 # Prevent crawling of development/internal areas
 Disallow: /api/
 Disallow: /admin/
 Disallow: /dev/
 Disallow: /test/
-Disallow: /*?*
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
 
-# Block specific crawlers that don't respect our content
+# Block specific AI crawlers
 User-agent: GPTBot
 Disallow: /
 
 User-agent: CCBot
 Disallow: /
 
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
 # Allow beneficial crawlers
-User-agent: AhrefsBot
+User-agent: Googlebot
 Allow: /
 
-User-agent: Googlebot
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Googlebot-Image
-Allow: /lovable-uploads/
+User-agent: Slurp
+Allow: /
 
-# Additional directives for pharmaceutical distribution content
-User-agent: *
-Allow: /pharmaceutical-distribution
-Allow: /global-export
-Allow: /supply-chain
-Allow: /baker-davis-india
-Allow: /bd-pharmaceutical
+User-agent: DuckDuckBot
+Allow: /
 
-# Cache instructions for better crawling
-Host: bdindia.in
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Cache instructions
+Host: https://bdindia.in

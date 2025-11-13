@@ -182,33 +182,53 @@ const Index = () => {
   return (
     <>
       <Seo 
-        title="Baker & Davis - Leading Pharmaceutical Distributor & Global Exporter | BD India"
-        description="Baker & Davis (BD India) - Premier pharmaceutical distributor and global medicine exporter. Baker Davis specializes in reliable pharmaceutical distribution, international trading, and export services. Davis and Baker - your trusted pharmaceutical supply chain partner worldwide."
+        title="Baker and Davis | Baker & Davis | Baker Davis - Leading Pharmaceutical Distributor Mumbai India | BD India"
+        description="Baker and Davis (Baker & Davis, Baker Davis, BD India) - Premier pharmaceutical distributor and global medicine exporter in Mumbai, India. Baker and Davis specializes in reliable pharmaceutical distribution, international medicine trading, and export services. Contact Baker Davis for pharmaceutical supply chain solutions worldwide."
         keywords={[
-          "pharmaceutical distributor India",
-          "medicine exporter Mumbai", 
+          "Baker and Davis",
+          "Baker & Davis",
+          "Baker Davis",
+          "Davis and Baker",
+          "Davis Baker",
+          "BD India",
+          "bdindia",
+          "Baker India",
+          "Baker Davis India",
+          "Baker and Davis India",
+          "Baker and Davis Mumbai",
+          "Baker Davis Mumbai",
+          "Baker and Davis pharmaceutical",
           "Baker Davis pharmaceutical",
-          "Davis Baker trading",
+          "Baker and Davis distributor",
+          "Baker Davis distributor",
+          "Baker and Davis exporter",
+          "Baker Davis exporter",
+          "pharmaceutical distributor Baker and Davis",
+          "pharmaceutical distributor Baker Davis",
+          "pharmaceutical distributor India",
+          "medicine exporter Mumbai",
+          "pharmaceutical trading company Mumbai",
           "BD India distributor",
           "pharmaceutical export company India",
-          "Baker India medicine distributor",
-          "global pharmaceutical distribution Baker Davis",
-          "pharmaceutical trading company Mumbai",
-          "medicine supply chain Baker and Davis",
+          "Baker India pharmaceutical distributor",
+          "Davis pharmaceutical India",
+          "global pharmaceutical distribution Baker and Davis",
+          "medicine supply chain Baker Davis",
           "pharmaceutical logistics BD India",
-          "WHO-GDP certified Baker Davis",
-          "pharmaceutical wholesaler India",
-          "international medicine trading Baker India",
-          "pharmaceutical import export BD",
-          "medical supplies distributor Baker Davis",
+          "WHO-GDP certified Baker and Davis",
+          "pharmaceutical wholesaler Mumbai",
+          "international medicine trading Baker and Davis",
+          "pharmaceutical import export Baker Davis",
+          "medical supplies distributor Baker and Davis",
           "generic medicine distributor India",
           "pharmaceutical supply chain Baker and Davis",
-          "medicine trading company Baker Davis Mumbai",
+          "medicine trading company Baker and Davis Mumbai",
           "global pharmaceutical trader BD India",
           "pharmaceutical distribution network Baker Davis",
           "international pharmaceutical services Baker India",
-          "Davis pharmaceutical export services",
-          "Baker pharmaceutical distribution Mumbai"
+          "Baker and Davis pharmaceutical company",
+          "Baker Davis pharmaceutical company India",
+          "pharmaceutical distributor Mumbai India"
         ]}
       />
       
@@ -319,23 +339,17 @@ const Index = () => {
                         muted
                         loop
                         playsInline
-                        preload="auto"
+                        preload="metadata"
                         controls={false}
                         onCanPlay={(e) => {
                           const v = e.currentTarget;
                           try { v.play(); } catch {}
                         }}
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
-                        poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" // Add poster for better loading
+                        poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                         onError={(e) => {
                           const target = e.target as HTMLVideoElement;
-                          console.error('Hero video failed to load:', {
-                            error: e,
-                            videoSrc: target.src,
-                            networkState: target.networkState,
-                            readyState: target.readyState,
-                            videoError: target.error
-                          });
+                          console.error('Hero video failed to load');
                           target.style.display = 'none';
                           // Show fallback image
                           const fallback = document.createElement('img');
@@ -344,38 +358,22 @@ const Index = () => {
                           fallback.className = 'w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl';
                           target.parentNode?.appendChild(fallback);
                         }}
-                        onLoadStart={() => {
-                          if (!isMobile) { // Only run debug on desktop
-                            console.log('Video loading started');
-                            console.log('Testing video file accessibility...');
-                            fetch('https://res.cloudinary.com/dwfcnnt0x/video/upload/v1760529684/medicalsupplies_l6qzzh.mp4', { method: 'HEAD' })
-                              .then(response => {
-                                console.log('medicalsupplies.mp4 status:', response.status);
-                                if (response.ok) {
-                                  console.log('medicalsupplies.mp4 is accessible');
-                                } else {
-                                  console.error('medicalsupplies.mp4 not accessible:', response.status);
-                                }
-                              })
-                              .catch(err => console.error('Error checking medicalsupplies.mp4:', err));
-                            
-                            fetch('https://res.cloudinary.com/dwfcnnt0x/video/upload/v1760530032/final_itndfl.mp4', { method: 'HEAD' })
-                              .then(response => {
-                                console.log('final.mp4 status:', response.status);
-                                if (response.ok) {
-                                  console.log('final.mp4 is accessible');
-                                } else {
-                                  console.error('final.mp4 not accessible:', response.status);
-                                }
-                              })
-                              .catch(err => console.error('Error checking final.mp4:', err));
-                          }
-                        }}
-                        onCanPlay={() => !isMobile && console.log('Video can play')}
-                        onLoadedData={() => !isMobile && console.log('Video data loaded')}
                       >
-                        <source src="https://res.cloudinary.com/dwfcnnt0x/video/upload/v1760530032/final_itndfl.mp4" type="video/mp4" />
-                        <source src="https://res.cloudinary.com/dwfcnnt0x/video/upload/v1760529684/medicalsupplies_l6qzzh.mp4" type="video/mp4" />
+                        {/* Optimized Cloudinary video with quality and format transformations */}
+                        <source 
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:low,f_auto,w_800,c_limit/v1760530032/final_itndfl.mp4" 
+                          type="video/mp4" 
+                          media="(max-width: 640px)"
+                        />
+                        <source 
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1200,c_limit/v1760530032/final_itndfl.mp4" 
+                          type="video/mp4" 
+                          media="(max-width: 1024px)"
+                        />
+                        <source 
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760530032/final_itndfl.mp4" 
+                          type="video/mp4"
+                        />
                         Your browser does not support the video tag.
                       </video>
                       
@@ -569,11 +567,25 @@ const Index = () => {
                         muted
                         loop
                         playsInline
-                        preload={isMobile ? "metadata" : "auto"}
+                        preload="metadata"
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                       >
-                        <source src="https://res.cloudinary.com/dwfcnnt0x/video/upload/v1760529684/medicalsupplies_l6qzzh.mp4" type="video/mp4" />
+                        {/* Optimized Cloudinary video with responsive transformations */}
+                        <source 
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:low,f_auto,w_800,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4" 
+                          type="video/mp4" 
+                          media="(max-width: 640px)"
+                        />
+                        <source 
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1200,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4" 
+                          type="video/mp4" 
+                          media="(max-width: 1024px)"
+                        />
+                        <source 
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4" 
+                          type="video/mp4"
+                        />
                         Your browser does not support the video tag.
                       </video>
                       
