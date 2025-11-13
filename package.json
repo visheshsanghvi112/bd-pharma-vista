@@ -5,12 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node verify-build.js",
-    "build:fast": "vite build",
-    "build:dev": "vite build --mode development",
-    "build:verbose": "vite build --debug --logLevel info",
-    "postbuild": "echo Build completed successfully!",
-    "verify": "node verify-build.js",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

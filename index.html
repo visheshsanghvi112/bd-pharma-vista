@@ -6,73 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baker and Davis | Baker & Davis | Baker Davis Pharmaceuticals India - Global Pharmaceutical Distributor & Exporter Mumbai</title>
     
-    
-    <!-- Early script blocking -->
-    <script>
-      // Block content-script and AdUnit immediately
-      (function() {
-        // Override console methods immediately
-        const originalLog = console.log;
-        const originalError = console.error;
-        const originalWarn = console.warn;
-        
-        console.log = function(...args) {
-          if (args[0] && typeof args[0] === 'string' && 
-              (args[0].includes('content-script') || args[0].includes('AdUnit') || 
-               args[0].includes('Document already loaded'))) {
-            return;
-          }
-          originalLog.apply(console, args);
-        };
-        
-        console.error = function(...args) {
-          if (args[0] && typeof args[0] === 'string' && 
-              (args[0].includes('content-script') || args[0].includes('AdUnit') || 
-               args[0].includes('message channel closed') || 
-               args[0].includes('Document already loaded') ||
-               args[0].includes('browser is not defined') ||
-               args[0].includes('checkPageManual') ||
-               args[0].includes('overlays') ||
-               args[0].includes('content.js'))) {
-            return;
-          }
-          originalError.apply(console, args);
-        };
-        
-        console.warn = function(...args) {
-          if (args[0] && typeof args[0] === 'string' && 
-              (args[0].includes('content-script') || args[0].includes('AdUnit') ||
-               args[0].includes('browser is not defined'))) {
-            return;
-          }
-          originalWarn.apply(console, args);
-        };
-        
-        // Block browser extension APIs
-        if (typeof chrome !== 'undefined') {
-          // Block all Chrome extension APIs
-          try {
-            Object.keys(chrome).forEach(key => {
-              if (typeof chrome[key] === 'object' && chrome[key] !== null) {
-                Object.keys(chrome[key]).forEach(method => {
-                  if (typeof chrome[key][method] === 'function') {
-                    chrome[key][method] = function() { return Promise.resolve(); };
-                  }
-                });
-              }
-            });
-          } catch (e) {
-            // Ignore errors
-          }
-        }
-        
-        // Block browser object
-        if (typeof browser !== 'undefined') {
-          window.browser = undefined;
-        }
-      })();
-    </script>
-    
     <!-- Primary Meta Tags -->
     <meta name="description" content="Baker and Davis (Baker & Davis, Baker Davis) - Leading pharmaceutical distributor and exporter in Mumbai, India. BD India provides global pharmaceutical distribution, medicine trading, and export services. Contact Baker and Davis for quality pharmaceutical supplies worldwide." />
     <meta name="keywords" content="Baker and Davis, Baker & Davis, Baker Davis, Davis and Baker, Davis Baker, BD India, bdindia, Baker India, Baker Davis India, Baker and Davis Mumbai, Baker & Davis pharmaceutical, Baker Davis distributor, Davis Baker exporter, pharmaceutical distributor Mumbai, medicine exporter India, pharmaceutical trading company India, Baker and Davis pharmaceutical distributor, BD India exporter, Baker Davis global trading, pharmaceutical distribution India, medicine trading Mumbai, pharmaceutical export India, Baker and Davis India, pharmaceutical wholesaler Mumbai, medicine distributor India, Baker Davis pharmaceutical company, Davis and Baker India" />
@@ -169,11 +102,10 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" color="#1e3a8a" />
 
-    <!-- Google Fonts with display=swap for better performance -->
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
 
-
-    <!-- Enhanced Structured Data with more complete information -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -333,7 +265,5 @@
     </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Script blocking moved to head for earlier execution -->
   </body>
 </html>
