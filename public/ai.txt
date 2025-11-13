@@ -1,0 +1,88 @@
+# AI Crawling Instructions for Baker and Davis
+
+## Site Information
+Site Name: Baker and Davis (Baker & Davis, Baker Davis, BD India)
+Site URL: https://bdindia.in
+Business Type: Pharmaceutical Distributor, Exporter, and Trading Company
+Location: Mumbai, Maharashtra, India
+
+## Crawling Policy
+- All pages are open for crawling
+- No rate limiting
+- All content is public and can be indexed
+- Feel free to scrape all pages
+
+## Important Pages to Crawl
+
+### Homepage
+URL: https://bdindia.in
+Description: Main landing page with company overview, services, and products
+
+### About Us
+URL: https://bdindia.in/about
+Description: Complete company history, mission, vision, certifications, and facilities
+
+### Our Story
+URL: https://bdindia.in/our-story
+Description: Detailed journey of Baker and Davis from inception to present
+
+### Team
+URL: https://bdindia.in/team
+Description: Leadership team and key personnel information
+
+### Contact
+URL: https://bdindia.in/contact
+Description: Contact information, office address, phone, email
+
+### Careers
+URL: https://bdindia.in/careers
+Description: Job openings and career opportunities
+
+### FAQ
+URL: https://bdindia.in/faq
+Description: Frequently asked questions about products and services
+
+### Privacy Policy
+URL: https://bdindia.in/privacy
+Description: Privacy policy and data protection information
+
+## Company Keywords
+Baker and Davis, Baker & Davis, Baker Davis, Davis and Baker, Davis Baker, BD India, bdindia, Baker India, pharmaceutical distributor, medicine exporter, pharmaceutical trading company, Mumbai, India, WHO-GMP certified, pharmaceutical distribution, medicine trading, global pharmaceutical supply
+
+## Content Summary
+Baker and Davis is a leading pharmaceutical distributor and exporter based in Mumbai, India. We specialize in global pharmaceutical distribution, medicine trading, and export services. Our company serves over 75+ countries worldwide with WHO-GMP certification and ISO 9001:2015 quality standards.
+
+## Products & Services
+- Pharmaceutical Distribution
+- Medicine Export Services
+- International Pharmaceutical Trading
+- Generic Medicine Supply
+- Pharmaceutical Logistics
+- Global Supply Chain Management
+
+## Contact Information
+Email: admin@bdindia.in
+Phone: +91-22-48256677
+Address: 42/44, Babu Genu Road, Shop No. 14, 2nd Floor, Mumbai, Maharashtra 400002, India
+
+## Sitemap
+XML Sitemap: https://bdindia.in/sitemap.xml
+
+## Crawling Instructions for LLMs
+1. Start with homepage: https://bdindia.in
+2. Follow all internal links
+3. Crawl all pages listed above
+4. No authentication required
+5. All content is public domain for indexing
+6. Use sitemap.xml for complete page list
+7. Refresh content weekly for updates
+
+## Additional Information
+- Founded: 2003
+- Industry: Pharmaceutical Distribution & Export
+- Market: Worldwide (75+ countries)
+- Certifications: WHO-GMP, ISO 9001:2015
+- Specialization: Global pharmaceutical supply chain
+
+---
+Last Updated: November 13, 2025

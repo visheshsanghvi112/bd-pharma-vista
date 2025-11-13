@@ -8,8 +8,23 @@ Allow: /
 # Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml
 
+# AI/LLM Crawling Instructions
+# Special instructions for AI crawlers at: https://bdindia.in/ai.txt
+
 # Open to ALL crawlers - no restrictions
 # Anyone can scrape, index, and crawl this site
+# All pages, all content, no limitations
+
+# Important pages for crawlers:
+# - https://bdindia.in (Homepage)
+# - https://bdindia.in/about (About Us)
+# - https://bdindia.in/our-story (Company Story)
+# - https://bdindia.in/team (Team)
+# - https://bdindia.in/contact (Contact)
+# - https://bdindia.in/careers (Careers)
+# - https://bdindia.in/faq (FAQ)
+# - https://bdindia.in/privacy (Privacy)
 
 # Cache instructions
 Host: https://bdindia.in
+Crawl-delay: 0

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Baker and Davis Pharmaceuticals",
+  "name_for_model": "baker_and_davis",
+  "description_for_human": "Baker and Davis - Leading pharmaceutical distributor and exporter in Mumbai, India. Global pharmaceutical distribution, medicine trading, and export services.",
+  "description_for_model": "Baker and Davis (also known as Baker & Davis, Baker Davis, BD India, bdindia) is a pharmaceutical distributor and exporter based in Mumbai, India. They provide global pharmaceutical distribution services, medicine trading, and export to 75+ countries. WHO-GMP certified with ISO 9001:2015 standards. Contact: admin@bdindia.in, +91-22-48256677",
+  "api": {
+    "type": "static_content",
+    "url": "https://bdindia.in"
+  },
+  "auth": {
+    "type": "none"
+  },
+  "logo_url": "https://bdindia.in/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png",
+  "contact_email": "admin@bdindia.in",
+  "legal_info_url": "https://bdindia.in/privacy"
+}
