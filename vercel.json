@@ -26,6 +26,14 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "X-Powered-By",
+          "value": "Baker and Davis"
+        },
+        {
+          "key": "Server",
+          "value": "Baker and Davis"
         }
       ]
     },

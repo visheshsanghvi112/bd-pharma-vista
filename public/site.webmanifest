@@ -1,0 +1,30 @@
+{
+  "name": "Baker and Davis - Pharmaceutical Distributor & Exporter",
+  "short_name": "Baker and Davis",
+  "description": "Baker and Davis (Baker & Davis, Baker Davis) - Leading pharmaceutical distributor and exporter in Mumbai, India",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "medical", "pharmaceutical"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}
