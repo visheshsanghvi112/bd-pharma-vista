@@ -10,7 +10,6 @@ import Layout from "./components/layout/Layout";
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/ui/page-transition";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Code-split non-essential pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -113,10 +112,7 @@ const App = () => {
                 <AnimatedRoutes />
               </Suspense>
             </AnalyticsWrapper>
-            <SpeedInsights />
           </BrowserRouter>
-          {/* Temporarily disabled Vercel Analytics */}
-          {/* <Analytics /> */}
         </TooltipProvider>
       </QueryClientProvider>
     </HelmetProvider>
