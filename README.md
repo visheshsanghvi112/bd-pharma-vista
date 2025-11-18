@@ -81,8 +81,30 @@ baker-and-davis/
 │   ├── lib/            # Utility functions and services
 │   ├── pages/          # Page components
 │   └── main.tsx        # Entry point
-└── README.md           # Project documentation
+├── IMAGE_OPTIMIZATION.md        # Image optimization guide
+├── PERFORMANCE_IMPROVEMENTS.md  # Performance changelog
+├── CHANGES_SUMMARY.md           # Latest changes summary
+└── README.md                    # Project documentation
 ```
+
+## Performance & Optimization Documentation
+
+This project includes comprehensive documentation for performance optimization:
+
+- **[IMAGE_OPTIMIZATION.md](./IMAGE_OPTIMIZATION.md)** - Guide for optimizing images, includes compression tools, WebP conversion, and identifies ~30MB of images to optimize
+- **[PERFORMANCE_IMPROVEMENTS.md](./PERFORMANCE_IMPROVEMENTS.md)** - Detailed changelog of all performance optimizations, testing checklist, and next steps
+- **[CHANGES_SUMMARY.md](./CHANGES_SUMMARY.md)** - Executive summary of recent performance and SEO improvements
+
+### Key Performance Features
+
+- ✅ Advanced code splitting with vendor chunking
+- ✅ Lazy loading for all below-the-fold images
+- ✅ Debounced event listeners for better performance
+- ✅ Reduced motion support for accessibility
+- ✅ Optimized SEO meta tags and descriptions
+- ✅ Performance monitoring utilities (debounce, throttle, long task detection)
+- ✅ Image optimization utilities with Cloudinary support
+- ✅ DNS prefetch and preconnect for external resources
 
 ## How can I deploy this project?
 
