@@ -52,3 +52,43 @@ export const getImageLoadingAttribute = (isAboveFold: boolean): 'lazy' | 'eager'
  * Default sizes attribute for responsive images
  */
 export const defaultSizes = '(max-width: 640px) 100vw, (max-width: 768px) 75vw, 50vw';
+
+/**
+ * Checks if an image should use WebP format
+ * @returns boolean indicating WebP support
+ */
+export const supportsWebP = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  
+  const canvas = document.createElement('canvas');
+  if (canvas.getContext && canvas.getContext('2d')) {
+    return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+  }
+  return false;
+};
+
+/**
+ * Get optimized image URL with Cloudinary transformations
+ * @param url The original image URL
+ * @param options Optimization options
+ * @returns Optimized URL
+ */
+export const getOptimizedImageUrl = (
+  url: string,
+  options: {
+    width?: number;
+    quality?: 'auto:low' | 'auto:good' | 'auto:best';
+    format?: 'auto' | 'webp' | 'jpg' | 'png';
+  } = {}
+): string => {
+  // Only optimize Cloudinary URLs
+  if (!url.includes('cloudinary.com')) {
+    return url;
+  }
+  
+  const { width = 1200, quality = 'auto:good', format = 'auto' } = options;
+  
+  // Insert transformations into Cloudinary URL
+  const transformations = `q_${quality},f_${format},w_${width},c_limit`;
+  return url.replace('/upload/', `/upload/${transformations}/`);
+};

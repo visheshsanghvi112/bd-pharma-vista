@@ -17,14 +17,8 @@ export default defineConfig({
   build: {
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
-    // Enable minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.logs in production
-        drop_debugger: true,
-      },
-    },
+    // Enable minification with esbuild (faster and built-in)
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         // Improved code splitting strategy
