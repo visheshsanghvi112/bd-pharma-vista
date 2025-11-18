@@ -1,9 +1,17 @@
 
 # Baker and Davis Pharmaceuticals - Robots.txt
+# Last Updated: 2025-11-18
 # ALL bots and crawlers are welcome!
 
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /our-story
+Allow: /team
+Allow: /careers
+Allow: /contact
+Allow: /faq
+Allow: /privacy
 
 # Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml
@@ -11,19 +19,40 @@ Sitemap: https://bdindia.in/sitemap.xml
 # AI/LLM Crawling Instructions
 # Special instructions for AI crawlers at: https://bdindia.in/ai.txt
 
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
 # Open to ALL crawlers - no restrictions
 # Anyone can scrape, index, and crawl this site
 # All pages, all content, no limitations
 
 # Important pages for crawlers:
-# - https://bdindia.in (Homepage)
+# - https://bdindia.in/ (Homepage)
 # - https://bdindia.in/about (About Us)
 # - https://bdindia.in/our-story (Company Story)
 # - https://bdindia.in/team (Team)
 # - https://bdindia.in/contact (Contact)
 # - https://bdindia.in/careers (Careers)
 # - https://bdindia.in/faq (FAQ)
-# - https://bdindia.in/privacy (Privacy)
+# - https://bdindia.in/privacy (Privacy Policy)
 
 # Cache instructions
 Host: https://bdindia.in

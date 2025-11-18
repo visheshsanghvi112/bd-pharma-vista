@@ -552,7 +552,7 @@ const Index = () => {
                 </div>
               </motion.div>
 
-              {/* Right Video */}
+              {/* Right Video - Shows on all devices */}
               <motion.div 
                 className="relative order-1 lg:order-2"
                 variants={fadeInRight}
@@ -563,7 +563,7 @@ const Index = () => {
                     
                     <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
                       <video
-                        autoPlay={!isMobile}
+                        autoPlay
                         muted
                         loop
                         playsInline
@@ -571,12 +571,7 @@ const Index = () => {
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                       >
-                        {/* Optimized Cloudinary video with responsive transformations */}
-                        <source 
-                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:low,f_auto,w_800,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4" 
-                          type="video/mp4" 
-                          media="(max-width: 640px)"
-                        />
+                        {/* Optimized Cloudinary video */}
                         <source 
                           src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1200,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4" 
                           type="video/mp4" 
@@ -590,31 +585,6 @@ const Index = () => {
                       </video>
                       
                       <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse-subtle"></div>
-                      
-                      {/* Play button for mobile */}
-                      {isMobile && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <button 
-                            className="bg-white/90 rounded-full p-3 shadow-lg hover:bg-white transition-colors duration-300"
-                            onClick={(e) => {
-                              const video = e.currentTarget.parentElement?.querySelector('video') as HTMLVideoElement;
-                              if (video) {
-                                if (video.paused) {
-                                  video.play();
-                                  e.currentTarget.style.display = 'none';
-                                } else {
-                                  video.pause();
-                                  e.currentTarget.style.display = 'flex';
-                                }
-                              }
-                            }}
-                          >
-                            <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z"/>
-                            </svg>
-                          </button>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -699,8 +669,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="py-24 bg-gradient-section-alternate relative overflow-hidden">
+        {/* Testimonials Section - Hidden on mobile */}
+        <section className="hidden md:block py-24 bg-gradient-section-alternate relative overflow-hidden">
           {/* Center glow for testimonials */}
           <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
           <div className="container mx-auto px-4">

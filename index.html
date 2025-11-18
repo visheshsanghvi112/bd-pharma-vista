@@ -37,6 +37,9 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="fragment" content="!" />
+    <meta name="google" content="nositelinkssearchbox" />
+    <meta name="google" content="notranslate" />
     
     <!-- Site Identity & Ownership -->
     <meta name="owner" content="Baker and Davis Pvt. Ltd." />
@@ -197,6 +200,30 @@
             "item": "https://bdindia.in/contact"
           }
         ]
+      }
+    </script>
+    
+    <!-- Website structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Baker and Davis",
+        "alternateName": ["Baker & Davis", "Baker Davis", "BD India"],
+        "url": "https://bdindia.in",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://bdindia.in/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Baker and Davis",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bdindia.in/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png"
+          }
+        }
       }
     </script>
     

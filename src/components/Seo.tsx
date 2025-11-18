@@ -201,6 +201,14 @@ const Seo = ({
       
       {/* Enhanced robots meta */}
       {!noIndex && <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+      {!noIndex && <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+      {!noIndex && <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+      
+      {/* Fragment identifier for AJAX crawling */}
+      <meta name="fragment" content="!" />
+      
+      {/* Prerender hints */}
+      <link rel="prerender" href={fullCanonical} />
     </Helmet>
   );
 };
