@@ -81,11 +81,18 @@ export const getOptimizedImageUrl = (
     format?: 'auto' | 'webp' | 'jpg' | 'png';
   } = {}
 ): string => {
-  // Only optimize Cloudinary URLs - use proper URL parsing for security
+  // Only optimize Cloudinary URLs - use strict validation for security
   try {
     const urlObj = new URL(url);
-    // Check if hostname ends with cloudinary.com (prevents subdomain hijacking)
-    if (!urlObj.hostname.endsWith('cloudinary.com') && urlObj.hostname !== 'cloudinary.com') {
+    const hostname = urlObj.hostname;
+    
+    // Strict validation: hostname must be cloudinary.com or *.cloudinary.com subdomain
+    // This prevents attacks with arbitrary hosts before cloudinary.com
+    const isValidCloudinaryDomain = 
+      hostname === 'cloudinary.com' || 
+      (hostname.endsWith('.cloudinary.com') && hostname.split('.').length >= 3);
+    
+    if (!isValidCloudinaryDomain) {
       return url;
     }
   } catch {
