@@ -31,51 +31,34 @@ const Seo = ({
   const siteUrl = "https://bdindia.in";
   const fullCanonical = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`) : `${siteUrl}${window.location.pathname}`;
   
-  // Core brand keywords - ALL variations for maximum visibility
+  // Optimize description length for SEO (150-160 characters is ideal)
+  const optimizedDescription = description.length > 160 
+    ? description.substring(0, 157) + '...' 
+    : description;
+  
+  // Core brand keywords - Prioritized and optimized list
   const brandKeywords = [
     "Baker and Davis",
     "Baker & Davis",
     "Baker Davis",
-    "Davis and Baker",
-    "Davis Baker",
     "BD India",
-    "bdindia",
-    "Baker India",
     "Baker Davis India",
-    "Baker and Davis India",
     "Baker and Davis Mumbai",
-    "Baker & Davis Mumbai",
-    "Baker Davis Mumbai",
-    "Baker and Davis pharmaceutical",
-    "Baker & Davis pharmaceutical",
+    "pharmaceutical distributor Mumbai",
+    "medicine exporter India",
     "Baker Davis pharmaceutical",
-    "Baker and Davis distributor",
-    "Baker Davis distributor",
-    "BD India distributor",
-    "Baker and Davis exporter",
-    "Baker Davis exporter",
-    "Baker India pharmaceutical",
-    "Davis pharmaceutical India",
-    "Baker and Davis pharmaceutical distributor",
-    "Baker Davis pharmaceutical distributor",
-    "BD pharmaceutical distributor",
-    "Baker and Davis trader",
-    "Baker Davis trader",
-    "pharmaceutical distributor Baker and Davis",
-    "pharmaceutical distributor Baker Davis",
-    "Baker and Davis pharmaceutical company",
-    "Baker Davis pharmaceutical company"
+    "pharmaceutical trading India"
   ];
   
-  // Merge brand keywords with page-specific keywords
-  const allKeywords = [...brandKeywords, ...keywords];
+  // Merge brand keywords with page-specific keywords, limit total for performance
+  const allKeywords = [...brandKeywords, ...keywords].slice(0, 20);
   const keywordsString = allKeywords.join(', ');
   
   return (
     <Helmet>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={optimizedDescription} />
       <meta name="keywords" content={keywordsString} />
       {author && <meta name="author" content={author} />}
       
@@ -111,7 +94,7 @@ const Seo = ({
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={optimizedDescription} />
       <meta property="og:image" content={image.startsWith('http') ? image : `${siteUrl}${image}`} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_IN" />
@@ -120,7 +103,7 @@ const Seo = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@BakerDavisIndia" />
       <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={optimizedDescription} />
       <meta name="twitter:image" content={image.startsWith('http') ? image : `${siteUrl}${image}`} />
       
       {/* Article Specific (if type is article) */}

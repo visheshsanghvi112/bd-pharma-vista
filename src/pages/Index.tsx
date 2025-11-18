@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
-  Star,
-  TrendingUp,
   Activity,
   Calendar,
   Pill,
@@ -17,20 +15,12 @@ import {
   CheckCircle,
   Zap,
   Heart,
-  Building2,
-  Target,
   Lightbulb,
-  Gauge,
-  Award as AwardIcon,
   Globe2,
   Users2,
-  Clock,
   Sparkles,
-  Rocket,
   ShieldCheck,
-  Zap as ZapIcon,
-  Heart as HeartIcon,
-  Star as StarIcon
+  Star
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -49,8 +39,15 @@ const Index = () => {
       setIsMobile(window.innerWidth < 768);
     };
     
+    // Debounce resize events for better performance
+    let resizeTimer: NodeJS.Timeout;
+    const debouncedCheckMobile = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(checkMobile, 150);
+    };
+    
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', debouncedCheckMobile);
     
     // Delay animation to improve initial load
     const timer = setTimeout(() => {
@@ -59,7 +56,8 @@ const Index = () => {
     
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('resize', checkMobile);
+      clearTimeout(resizeTimer);
+      window.removeEventListener('resize', debouncedCheckMobile);
     };
   }, []);
 
@@ -173,7 +171,7 @@ const Index = () => {
   ];
 
   const achievements = [
-    { icon: AwardIcon, title: "WHO-GDP Certified", description: "International quality standards" },
+    { icon: Award, title: "WHO-GDP Certified", description: "International quality standards" },
     { icon: ShieldCheck, title: "ISO 9001:2015", description: "Quality management system" },
     { icon: Globe2, title: "75+ Countries", description: "Global distribution network" },
     { icon: Users2, title: "2000+ Clients", description: "Trusted worldwide" }
@@ -737,7 +735,7 @@ const Index = () => {
                     <CardContent className="p-8">
                       <div className="flex gap-1 mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                         ))}
                       </div>
                       <p className="text-gray-700 italic mb-6 leading-relaxed">
