@@ -81,8 +81,15 @@ export const getOptimizedImageUrl = (
     format?: 'auto' | 'webp' | 'jpg' | 'png';
   } = {}
 ): string => {
-  // Only optimize Cloudinary URLs
-  if (!url.includes('cloudinary.com')) {
+  // Only optimize Cloudinary URLs - use proper URL parsing for security
+  try {
+    const urlObj = new URL(url);
+    // Check if hostname ends with cloudinary.com (prevents subdomain hijacking)
+    if (!urlObj.hostname.endsWith('cloudinary.com') && urlObj.hostname !== 'cloudinary.com') {
+      return url;
+    }
+  } catch {
+    // If URL parsing fails, return original URL
     return url;
   }
   
