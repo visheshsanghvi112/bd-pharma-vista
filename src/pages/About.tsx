@@ -80,67 +80,105 @@ const About = () => {
 				className="w-full h-64 sm:h-72 md:h-96 object-cover object-center"
 			/>
 		</section>
-		{/* Title and subtitle below the image */}
-		<section className="py-12 bg-background">
-			<div className="container mx-auto px-4 text-center">
-				<h1 className="text-4xl md:text-5xl font-bold mb-4 text-pharma-navy">
-					About Baker & Davis
-				</h1>
-				<p className="text-xl max-w-3xl mx-auto text-muted-foreground">
-					A trusted pharmaceutical distributor and global exporter committed to improving lives through reliable healthcare supply chain solutions
-				</p>
+		{/* Title and intro - Mobile optimized */}
+		<section className="py-8 md:py-16 bg-white">
+			<div className="container mx-auto px-4">
+				<div className="max-w-5xl mx-auto">
+					<h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-pharma-navy text-center">
+						About Baker & Davis
+					</h1>
+					<p className="text-base md:text-xl text-center mb-6 md:mb-8 text-gray-700">
+						A trusted pharmaceutical distributor and global exporter committed to improving lives through reliable healthcare supply chain solutions
+					</p>
+					<div className="bg-gradient-to-br from-pharma-light/30 to-white p-4 md:p-8 rounded-2xl shadow-md">
+						<p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-3 md:mb-4">
+							Baker & Davis is a premier pharmaceutical distributor and exporter based in Mumbai, India, serving the global healthcare industry with dedication to quality and reliability.
+						</p>
+						<p className="text-sm md:text-lg text-gray-700 leading-relaxed">
+							Our operations span across more than 50 countries with <span className="font-semibold text-pharma-navy">WHO-GDP certification</span>, ensuring every product meets the highest standards of safety and efficacy.
+						</p>
+						<p className="hidden md:block text-lg text-gray-700 leading-relaxed mt-4">
+							At Baker & Davis, we don't just distribute pharmaceuticals – we build partnerships, ensure regulatory compliance, and contribute to global health accessibility. Our expertise in international pharmaceutical logistics makes us the preferred partner for pharmaceutical companies seeking reliable global distribution channels.
+						</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
-        {/* Mission & Vision Section */}
-        <section className="py-16 bg-white dark:bg-background transition-colors duration-300">
+        {/* Mission & Vision - Mobile optimized */}
+        <section className="py-10 md:py-20 bg-gradient-to-br from-pharma-light/40 to-white">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
-              <MissionVisionCard
-                title="Mission"
-                content="To improve lives by delivering trusted pharmaceutical distribution solutions across the globe through reliability, quality assurance, and accessibility."
-              />
-              <MissionVisionCard
-                title="Vision"
-                content="To be the most trusted partner in global pharmaceutical distribution, recognized for our unwavering commitment to quality, reliability, and supply chain excellence."
-              />
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-pharma-navy mb-2 md:mb-4">Our Purpose & Direction</h2>
+              <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto hidden md:block">Guided by clear principles and driven by a vision for global healthcare excellence</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+              <div className="bg-white p-5 md:p-8 rounded-2xl shadow-lg border-l-4 border-pharma-navy hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pharma-navy flex items-center justify-center flex-shrink-0">
+                    <Star className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-pharma-navy">Our Mission</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm md:text-lg">
+                  To improve lives by delivering trusted pharmaceutical distribution solutions globally through reliability, quality assurance, and accessibility.
+                  <span className="hidden md:inline"> We are committed to ensuring that essential medicines reach healthcare providers and patients worldwide, maintaining the highest standards of pharmaceutical supply chain management.</span>
+                </p>
+              </div>
+              <div className="bg-white p-5 md:p-8 rounded-2xl shadow-lg border-l-4 border-primary-light hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-pharma-navy to-primary-light flex items-center justify-center flex-shrink-0">
+                    <Star className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-pharma-navy">Our Vision</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm md:text-lg">
+                  To be the most trusted partner in global pharmaceutical distribution, recognized for our commitment to quality, reliability, and supply chain excellence.
+                  <span className="hidden md:inline"> We envision a world where access to quality medicines is seamless, and Baker & Davis serves as the bridge connecting pharmaceutical innovation with patient care worldwide.</span>
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Directors Section */}
-        <DirectorsSection />
-
-
-        {/* Company Overview */}
-        <section className="py-16 bg-pharma-light/30 dark:bg-pharma-dark/20 transition-colors duration-300">
+        {/* Our Story - Mobile optimized */}
+        <section className="py-10 md:py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
               <div>
-                <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6 transition-colors duration-300">Our Story</h2>
-                <p className="text-black dark:text-white mb-4 transition-colors duration-300">
-                  Baker & Davis was founded with a clear mission to improve lives by delivering trusted pharmaceutical distribution solutions across the globe. What began as a focused operation has grown into a respected pharmaceutical distributor and exporter with global reach.
-                </p>
-                <p className="text-black dark:text-white mb-4 transition-colors duration-300">
-                  For over two decades, we have dedicated ourselves to providing reliable pharmaceutical supply chain solutions that meet international standards. Our commitment to excellence has earned us certifications from leading health authorities worldwide, including WHO-GDP certification.
-                </p>
-                <p className="text-black dark:text-white transition-colors duration-300">
-                  Today, Baker & Davis serves healthcare providers and patients in over 50 countries, with a continuously expanding network of trusted pharmaceutical suppliers and partners.
-                </p>
+                <h2 className="text-2xl md:text-4xl font-bold text-pharma-navy mb-4 md:mb-6">Our Story</h2>
+                <div className="space-y-3 md:space-y-4 text-gray-700 text-sm md:text-lg leading-relaxed">
+                  <p>
+                    Baker & Davis was founded with a mission to deliver trusted pharmaceutical distribution solutions globally. What began in Mumbai has grown into a respected pharmaceutical distributor with truly global reach.
+                  </p>
+                  <p>
+                    For over <span className="font-semibold text-pharma-navy">two decades</span>, we've provided reliable pharmaceutical supply chain solutions meeting rigorous international standards.
+                    <span className="hidden md:inline"> Our journey has been marked by continuous growth, strategic partnerships, and an unwavering commitment to excellence.</span>
+                  </p>
+                  <p className="hidden md:block">
+                    Our commitment to quality has earned us certifications from leading health authorities worldwide, including <span className="font-semibold text-pharma-navy">WHO-GDP certification</span>, ISO standards, and regulatory approvals from multiple international markets.
+                  </p>
+                  <p>
+                    Today, we serve healthcare providers in over <span className="font-semibold text-pharma-navy">50 countries</span><span className="hidden md:inline">, with a continuously expanding network of trusted pharmaceutical suppliers, manufacturers, and distribution partners. Every day, we facilitate the journey of life-saving medicines from manufacturers to patients worldwide</span>.
+                  </p>
+                </div>
               </div>
-              <div>
+              <div className="hidden md:block">
                 <img 
                   src="/lovable-uploads/pexels-pixabay-356040.jpg" 
                   alt="Our Story"
-                  className="rounded-lg shadow-lg transform hover:scale-[1.02] transition-all duration-300 object-cover w-full h-full"
+                  className="rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-all duration-300 object-cover w-full h-auto"
                 />
               </div>
             </div>
           </div>
         </section>
 
+        {/* Leadership Section - Redesigned without images */}
+        <DirectorsSection />
 
-        {/* Awards Section */}
+
+        {/* Awards & Recognition */}
         <AwardsSection />
 
         {/* Global Presence Map */}

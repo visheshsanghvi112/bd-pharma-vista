@@ -126,8 +126,8 @@ const ProductDevelopmentSection = () => {
           </div>
         </div>
         
-        <AnimatedElement animation="slide-up" delay={700} className="mt-16">
-          <div className="bg-white dark:bg-card p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-500">
+        <div className="mt-16">
+          <div className="bg-white dark:bg-card p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-bold text-pharma-navy dark:text-white mb-4 text-center">Our R&D Focus Areas</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -144,23 +144,20 @@ const ProductDevelopmentSection = () => {
                   description: "Specializing in complex formulations for challenging therapeutic areas and patient populations."
                 }
               ].map((focus, index) => (
-                <AnimatedElement
+                <div
                   key={index}
-                  animation="fade-in"
-                  delay={getStaggeredDelay(index, 900, 200)}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-pharma-light dark:bg-pharma-dark/40 flex items-center justify-center mx-auto mb-4 
-                               transition-all duration-500 transform hover:rotate-12 hover:scale-110 animate-float">
+                  <div className="w-16 h-16 rounded-full bg-pharma-light dark:bg-pharma-dark/40 flex items-center justify-center mx-auto mb-4">
                     <LineChart className="w-8 h-8 text-pharma-navy dark:text-primary-light" />
                   </div>
                   <h4 className="text-lg font-medium text-pharma-navy dark:text-white mb-2">{focus.title}</h4>
                   <p className="text-black dark:text-white text-sm">{focus.description}</p>
-                </AnimatedElement>
+                </div>
               ))}
             </div>
           </div>
-        </AnimatedElement>
+        </div>
       </div>
     </section>
   );
