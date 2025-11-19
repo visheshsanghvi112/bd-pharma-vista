@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Calendar, Clock, ArrowRight, Heart, Leaf, Sunrise, Apple } from "lucide-react";
+import { Calendar, Clock, Heart, Leaf, Sunrise, Apple, CheckCircle2, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Seo from "@/components/Seo";
 
 interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
+  fullContent: JSX.Element;
   category: string;
   readTime: string;
   date: string;
@@ -26,7 +27,71 @@ const Blog = () => {
       readTime: "5 min read",
       date: "November 15, 2025",
       image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&q=80",
-      icon: Sunrise
+      icon: Sunrise,
+      fullContent: (
+        <div className="prose prose-lg max-w-none">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=1200&q=80" alt="Lemon and honey" className="w-full h-64 object-cover rounded-xl mb-6" />
+          
+          <p className="text-xl text-gray-700 leading-relaxed mb-6">
+            Starting your day with warm lemon water and honey is more than just a trendy health hack—it's an ancient practice rooted in Ayurvedic medicine that offers remarkable benefits for your body and mind.
+          </p>
+
+          <h3 className="text-2xl font-bold text-pharma-navy mt-8 mb-4 flex items-center gap-2">
+            <Sunrise className="w-6 h-6" />
+            Key Health Benefits
+          </h3>
+          
+          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl mb-6">
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Boosts Immunity:</strong> Rich in Vitamin C, lemons strengthen your immune system and help fight off infections.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Aids Digestion:</strong> The acidic nature of lemon stimulates digestive juices, while honey soothes the digestive tract.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Natural Detoxification:</strong> Helps flush toxins from your body and supports liver function.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Glowing Skin:</strong> Antioxidants and vitamin C promote healthy, radiant skin from within.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Weight Management:</strong> Supports metabolism and helps maintain healthy weight.</span>
+              </li>
+            </ul>
+          </div>
+
+          <h3 className="text-2xl font-bold text-pharma-navy mt-8 mb-4">The Perfect Recipe</h3>
+          
+          <div className="bg-white border-2 border-pharma-light rounded-xl p-6 mb-6">
+            <h4 className="text-xl font-bold text-pharma-navy mb-4">Ingredients</h4>
+            <ul className="space-y-2 mb-6">
+              <li className="text-gray-700">• 1 cup (240ml) warm water (not boiling)</li>
+              <li className="text-gray-700">• 1/2 fresh lemon (organic preferred)</li>
+              <li className="text-gray-700">• 1 teaspoon raw honey</li>
+            </ul>
+
+            <h4 className="text-xl font-bold text-pharma-navy mb-4">Instructions</h4>
+            <ol className="space-y-3 list-decimal list-inside">
+              <li className="text-gray-700">Heat the water to a comfortable warm temperature (not boiling).</li>
+              <li className="text-gray-700">Squeeze half a lemon into the warm water.</li>
+              <li className="text-gray-700">Add honey and stir well until completely dissolved.</li>
+              <li className="text-gray-700">Drink immediately on an empty stomach, 20-30 minutes before breakfast.</li>
+            </ol>
+          </div>
+
+          <div className="bg-amber-50 border-l-4 border-amber-500 p-4 my-6 rounded-r-lg">
+            <p className="text-sm text-amber-900">
+              <strong>Medical Disclaimer:</strong> Always consult with a qualified healthcare provider before starting any new health regimen, especially if you have existing health conditions or are taking medications.
+            </p>
+          </div>
+        </div>
+      )
     },
     {
       id: "turmeric-golden-milk",
@@ -36,7 +101,61 @@ const Blog = () => {
       readTime: "4 min read",
       date: "November 12, 2025",
       image: "https://images.unsplash.com/photo-1556910110-a5a63dfd393f?w=800&q=80",
-      icon: Heart
+      icon: Heart,
+      fullContent: (
+        <div className="prose prose-lg max-w-none">
+          <img src="https://images.unsplash.com/photo-1556910110-a5a63dfd393f?w=1200&q=80" alt="Turmeric golden milk" className="w-full h-64 object-cover rounded-xl mb-6" />
+          
+          <p className="text-xl text-gray-700 leading-relaxed mb-6">
+            Golden milk, also known as turmeric milk or "haldi doodh," is an ancient Indian beverage that's gaining worldwide popularity for its incredible anti-inflammatory and immune-boosting properties.
+          </p>
+
+          <h3 className="text-2xl font-bold text-pharma-navy mt-8 mb-4">Health Benefits</h3>
+          
+          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl mb-6">
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Anti-Inflammatory:</strong> Curcumin in turmeric reduces inflammation throughout the body.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Immune Support:</strong> Strengthens immunity and helps fight infections naturally.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Better Sleep:</strong> Warm milk with turmeric promotes relaxation and restful sleep.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <span className="text-gray-700"><strong>Joint Health:</strong> Helps reduce joint pain and stiffness.</span>
+              </li>
+            </ul>
+          </div>
+
+          <h3 className="text-2xl font-bold text-pharma-navy mt-8 mb-4">Traditional Recipe</h3>
+          
+          <div className="bg-white border-2 border-pharma-light rounded-xl p-6 mb-6">
+            <h4 className="text-xl font-bold text-pharma-navy mb-4">Ingredients</h4>
+            <ul className="space-y-2 mb-6">
+              <li className="text-gray-700">• 1 cup milk (dairy or plant-based)</li>
+              <li className="text-gray-700">• 1 teaspoon turmeric powder</li>
+              <li className="text-gray-700">• 1/4 teaspoon black pepper (enhances absorption)</li>
+              <li className="text-gray-700">• 1/2 teaspoon cinnamon</li>
+              <li className="text-gray-700">• 1 teaspoon honey or maple syrup</li>
+              <li className="text-gray-700">• Pinch of ginger (optional)</li>
+            </ul>
+
+            <h4 className="text-xl font-bold text-pharma-navy mb-4">Instructions</h4>
+            <ol className="space-y-3 list-decimal list-inside">
+              <li className="text-gray-700">Heat milk in a saucepan on medium heat.</li>
+              <li className="text-gray-700">Add turmeric, black pepper, cinnamon, and ginger.</li>
+              <li className="text-gray-700">Whisk continuously for 5-7 minutes until hot (don't boil).</li>
+              <li className="text-gray-700">Remove from heat, add honey, and enjoy warm before bed.</li>
+            </ol>
+          </div>
+        </div>
+      )
     },
     {
       id: "herbal-tea-immunity",
@@ -46,7 +165,50 @@ const Blog = () => {
       readTime: "6 min read",
       date: "November 8, 2025",
       image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=800&q=80",
-      icon: Leaf
+      icon: Leaf,
+      fullContent: (
+        <div className="prose prose-lg max-w-none">
+          <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=1200&q=80" alt="Herbal tea" className="w-full h-64 object-cover rounded-xl mb-6" />
+          
+          <p className="text-xl text-gray-700 leading-relaxed mb-6">
+            Herbal teas are nature's medicine, packed with antioxidants, vitamins, and compounds that naturally strengthen your immune system and protect against seasonal illnesses.
+          </p>
+
+          <h3 className="text-2xl font-bold text-pharma-navy mt-8 mb-4">5 Powerful Immunity-Boosting Teas</h3>
+          
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3">1. Ginger Tea</h4>
+              <p className="text-gray-700 mb-2"><strong>Benefits:</strong> Anti-inflammatory, aids digestion, fights nausea</p>
+              <p className="text-gray-700"><strong>Recipe:</strong> Boil fresh ginger slices in water for 10 minutes, add honey and lemon</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3">2. Tulsi (Holy Basil) Tea</h4>
+              <p className="text-gray-700 mb-2"><strong>Benefits:</strong> Adaptogenic, stress-relief, respiratory support</p>
+              <p className="text-gray-700"><strong>Recipe:</strong> Steep fresh or dried tulsi leaves in hot water for 5-7 minutes</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3">3. Cinnamon Tea</h4>
+              <p className="text-gray-700 mb-2"><strong>Benefits:</strong> Blood sugar regulation, antimicrobial properties</p>
+              <p className="text-gray-700"><strong>Recipe:</strong> Simmer cinnamon stick in water for 15 minutes</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3">4. Green Tea with Lemon</h4>
+              <p className="text-gray-700 mb-2"><strong>Benefits:</strong> Antioxidant-rich, metabolism boost, vitamin C</p>
+              <p className="text-gray-700"><strong>Recipe:</strong> Steep green tea for 3 minutes, add fresh lemon juice</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3">5. Echinacea Tea</h4>
+              <p className="text-gray-700 mb-2"><strong>Benefits:</strong> Immune system booster, cold prevention</p>
+              <p className="text-gray-700"><strong>Recipe:</strong> Steep echinacea flowers or root in hot water for 10 minutes</p>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
       id: "healthy-eating-habits",
@@ -56,11 +218,79 @@ const Blog = () => {
       readTime: "7 min read",
       date: "November 5, 2025",
       image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
-      icon: Apple
+      icon: Apple,
+      fullContent: (
+        <div className="prose prose-lg max-w-none">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80" alt="Healthy eating" className="w-full h-64 object-cover rounded-xl mb-6" />
+          
+          <p className="text-xl text-gray-700 leading-relaxed mb-6">
+            True health isn't built in a day—it's the result of consistent, small daily habits that compound over time. Here are the most impactful habits you can adopt today.
+          </p>
+
+          <h3 className="text-2xl font-bold text-pharma-navy mt-8 mb-4">Essential Daily Habits</h3>
+          
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                Drink Water First Thing
+              </h4>
+              <p className="text-gray-700">Start your day with 1-2 glasses of water to rehydrate after sleep and kickstart your metabolism.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                Eat More Whole Foods
+              </h4>
+              <p className="text-gray-700">Focus on fruits, vegetables, whole grains, and lean proteins. Minimize processed foods and added sugars.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                Move Your Body Daily
+              </h4>
+              <p className="text-gray-700">Aim for 30 minutes of physical activity—walking, yoga, dancing, or gym workouts.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                Prioritize Sleep
+              </h4>
+              <p className="text-gray-700">Get 7-8 hours of quality sleep. Maintain a consistent sleep schedule and create a relaxing bedtime routine.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-pink-50 to-rose-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                Practice Mindfulness
+              </h4>
+              <p className="text-gray-700">Take 5-10 minutes daily for meditation, deep breathing, or simply being present.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-pharma-navy mb-3 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                Regular Health Check-ups
+              </h4>
+              <p className="text-gray-700">Schedule annual physical exams and screenings. Prevention is better than cure.</p>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 border-l-4 border-amber-500 p-4 my-6 rounded-r-lg">
+            <p className="text-sm text-amber-900">
+              <strong>Remember:</strong> Start with one or two habits and build gradually. Consistency matters more than perfection. Always consult healthcare professionals for personalized advice.
+            </p>
+          </div>
+        </div>
+      )
     }
   ];
 
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const categories = ["All", "Morning Wellness", "Natural Remedies", "Immunity Boosters", "Lifestyle"];
 
   const filteredPosts = selectedCategory === "All" 
@@ -163,12 +393,14 @@ const Blog = () => {
                       {post.excerpt}
                     </p>
                     
-                    <NavLink to={`/blog/${post.id}`}>
-                      <Button variant="link" className="p-0 h-auto text-pharma-navy group-hover:text-primary">
-                        Read Full Article
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </NavLink>
+                    <Button 
+                      variant="link" 
+                      className="p-0 h-auto text-pharma-navy group-hover:text-primary"
+                      onClick={() => setSelectedPost(post)}
+                    >
+                      Read Full Article
+                      <span className="ml-1">→</span>
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -181,6 +413,32 @@ const Blog = () => {
             )}
           </div>
         </section>
+
+        {/* Blog Post Dialog/Modal */}
+        <Dialog open={!!selectedPost} onOpenChange={(open) => !open && setSelectedPost(null)}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <div className="flex items-center justify-between">
+                <DialogTitle className="text-2xl md:text-3xl font-bold text-pharma-navy pr-8">
+                  {selectedPost?.title}
+                </DialogTitle>
+              </div>
+              <div className="flex gap-4 text-sm text-gray-500 mt-2">
+                <div className="flex items-center gap-1">
+                  <Calendar className="w-4 h-4" />
+                  <span>{selectedPost?.date}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Clock className="w-4 h-4" />
+                  <span>{selectedPost?.readTime}</span>
+                </div>
+              </div>
+            </DialogHeader>
+            <div className="mt-6">
+              {selectedPost?.fullContent}
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {/* Newsletter Section */}
         <section className="py-12 md:py-16 bg-gradient-to-br from-pharma-navy to-primary-light text-white">

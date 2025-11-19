@@ -19,7 +19,6 @@ import CookieConsent from "./components/CookieConsent";
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Blog = lazy(() => import("./pages/Blog"));
-const LemonHoneyMorningRitual = lazy(() => import("./pages/blog/LemonHoneyMorningRitual"));
 const Team = lazy(() => import("./pages/Team"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -67,11 +66,6 @@ const AnimatedRoutes = () => {
           <Route path="/blog" element={
             <PageTransition>
               <Blog />
-            </PageTransition>
-          } />
-          <Route path="/blog/lemon-honey-morning-ritual" element={
-            <PageTransition>
-              <LemonHoneyMorningRitual />
             </PageTransition>
           } />
           <Route path="/our-story" element={
