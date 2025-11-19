@@ -12,10 +12,22 @@ window.addEventListener('error', (event) => {
     event.filename?.includes('overlays.js') ||
     event.filename?.includes('content.js') ||
     event.filename?.includes('content-script.js') ||
-    event.message?.includes('browser is not defined')
+    event.message?.includes('browser is not defined') ||
+    event.message?.includes('message channel closed')
   ) {
     event.preventDefault();
     event.stopPropagation();
+    return false;
+  }
+});
+
+// Suppress unhandled promise rejections from extensions
+window.addEventListener('unhandledrejection', (event) => {
+  if (
+    event.reason?.message?.includes('message channel closed') ||
+    event.reason?.message?.includes('Extension context invalidated')
+  ) {
+    event.preventDefault();
     return false;
   }
 });
