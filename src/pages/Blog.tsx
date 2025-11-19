@@ -100,11 +100,11 @@ const Blog = () => {
       category: "Natural Remedies",
       readTime: "4 min read",
       date: "November 12, 2025",
-      image: "https://images.unsplash.com/photo-1556910110-a5a63dfd393f?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=800&q=80",
       icon: Heart,
       fullContent: (
         <div className="prose prose-lg max-w-none">
-          <img src="https://images.unsplash.com/photo-1556910110-a5a63dfd393f?w=1200&q=80" alt="Turmeric golden milk" className="w-full h-64 object-cover rounded-xl mb-6" />
+          <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=1200&q=80" alt="Turmeric golden milk" className="w-full h-64 object-cover rounded-xl mb-6" />
           
           <p className="text-xl text-gray-700 leading-relaxed mb-6">
             Golden milk, also known as turmeric milk or "haldi doodh," is an ancient Indian beverage that's gaining worldwide popularity for its incredible anti-inflammatory and immune-boosting properties.
