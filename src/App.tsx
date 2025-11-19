@@ -18,6 +18,7 @@ import CookieConsent from "./components/CookieConsent";
 // Code-split non-essential pages for better performance
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
+const Blog = lazy(() => import("./pages/Blog"));
 const Team = lazy(() => import("./pages/Team"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -60,6 +61,11 @@ const AnimatedRoutes = () => {
           <Route path="/about" element={
             <PageTransition>
               <About />
+            </PageTransition>
+          } />
+          <Route path="/blog" element={
+            <PageTransition>
+              <Blog />
             </PageTransition>
           } />
           <Route path="/our-story" element={
