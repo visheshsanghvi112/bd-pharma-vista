@@ -68,8 +68,22 @@ export const reportPerformanceToConsole = (): void => {
     if (typeof window !== 'undefined' && 'performance' in window) {
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       if (navigation) {
-        console.log(`📊 DOM Content Loaded: ${navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart}ms`);
-        console.log(`📊 Page Load Complete: ${navigation.loadEventEnd - navigation.loadEventStart}ms`);
+        const domTime = navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart;
+        const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
+        
+        // Only log if values are meaningful (greater than 0)
+        if (domTime > 0) {
+          console.log(`📊 DOM Content Loaded: ${domTime.toFixed(2)}ms`);
+        }
+        if (loadTime > 0) {
+          console.log(`📊 Page Load Complete: ${loadTime.toFixed(2)}ms`);
+        }
+        
+        // Log total page load time
+        const totalTime = navigation.loadEventEnd - navigation.fetchStart;
+        if (totalTime > 0) {
+          console.log(`⏱️ Total Page Load: ${totalTime.toFixed(2)}ms`);
+        }
       }
     }
     
