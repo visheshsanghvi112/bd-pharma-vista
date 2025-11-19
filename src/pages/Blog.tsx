@@ -25,7 +25,7 @@ const Blog = () => {
       category: "Morning Wellness",
       readTime: "5 min read",
       date: "November 15, 2025",
-      image: "/lovable-uploads/lemon-honey.jpg",
+      image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&q=80",
       icon: Sunrise
     },
     {
@@ -35,7 +35,7 @@ const Blog = () => {
       category: "Natural Remedies",
       readTime: "4 min read",
       date: "November 12, 2025",
-      image: "/lovable-uploads/turmeric-milk.jpg",
+      image: "https://images.unsplash.com/photo-1556910110-a5a63dfd393f?w=800&q=80",
       icon: Heart
     },
     {
@@ -45,7 +45,7 @@ const Blog = () => {
       category: "Immunity Boosters",
       readTime: "6 min read",
       date: "November 8, 2025",
-      image: "/lovable-uploads/herbal-tea.jpg",
+      image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=800&q=80",
       icon: Leaf
     },
     {
@@ -55,7 +55,7 @@ const Blog = () => {
       category: "Lifestyle",
       readTime: "7 min read",
       date: "November 5, 2025",
-      image: "/lovable-uploads/healthy-habits.jpg",
+      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
       icon: Apple
     }
   ];
@@ -131,10 +131,13 @@ const Blog = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {filteredPosts.map((post) => (
                 <Card key={post.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                  <div className="relative h-56 md:h-64 overflow-hidden bg-gradient-to-br from-pharma-light/30 to-primary-light/20">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <post.icon className="w-24 h-24 text-pharma-navy/20" />
-                    </div>
+                  <div className="relative h-56 md:h-64 overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                     <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-pharma-navy shadow-md">
                       {post.category}
                     </div>
@@ -160,10 +163,12 @@ const Blog = () => {
                       {post.excerpt}
                     </p>
                     
-                    <Button variant="link" className="p-0 h-auto text-pharma-navy group-hover:text-primary">
-                      Read Full Article
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <NavLink to={`/blog/${post.id}`}>
+                      <Button variant="link" className="p-0 h-auto text-pharma-navy group-hover:text-primary">
+                        Read Full Article
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </NavLink>
                   </CardContent>
                 </Card>
               ))}
