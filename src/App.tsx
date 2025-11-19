@@ -12,6 +12,7 @@ import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/ui/page-transition";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+import { trackPageView } from "./lib/analytics";
 
 // Code-split non-essential pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -39,6 +40,12 @@ const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+  
+  // Track page views on route changes
+  useEffect(() => {
+    const pageTitle = document.title || 'Baker and Davis';
+    trackPageView(location.pathname, pageTitle);
+  }, [location]);
   
   return (
     <AnimatePresence mode="wait">

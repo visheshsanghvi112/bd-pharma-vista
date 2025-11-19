@@ -3,9 +3,15 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { initializePerformanceMonitoring } from './lib/performance';
+import { analytics } from './lib/firebase';
 
 // Enhanced performance monitoring
 const initializeApp = () => {
+  // Initialize Firebase Analytics
+  if (analytics && process.env.NODE_ENV === 'production') {
+    console.log('Firebase Analytics initialized');
+  }
+  
   // Initialize performance monitoring
   if (process.env.NODE_ENV !== 'production') {
     initializePerformanceMonitoring();
