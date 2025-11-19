@@ -6,7 +6,7 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
     <loc>https://bdindia.in/</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/" />
@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://bdindia.in/about</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/about" />
@@ -31,7 +31,7 @@
   </url>
   <url>
     <loc>https://bdindia.in/our-story</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/our-story" />
@@ -41,7 +41,7 @@
   </url>
   <url>
     <loc>https://bdindia.in/team</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/team" />
@@ -51,7 +51,7 @@
   </url>
   <url>
     <loc>https://bdindia.in/careers</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/careers" />
@@ -61,7 +61,7 @@
   </url>
   <url>
     <loc>https://bdindia.in/contact</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/contact" />
@@ -71,7 +71,7 @@
   </url>
   <url>
     <loc>https://bdindia.in/faq</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/faq" />
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>https://bdindia.in/privacy</loc>
-    <lastmod>2025-11-18T12:00:00+05:30</lastmod>
+    <lastmod>2025-11-19T12:00:00+05:30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bdindia.in/privacy" />
