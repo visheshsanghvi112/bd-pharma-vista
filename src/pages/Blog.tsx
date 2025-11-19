@@ -18,6 +18,38 @@ interface BlogPost {
 }
 
 const Blog = () => {
+  const [email, setEmail] = useState<string>("");
+  const [emailError, setEmailError] = useState<string>("");
+  const [subscribed, setSubscribed] = useState<boolean>(false);
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubscribe = () => {
+    setEmailError("");
+    
+    if (!email) {
+      setEmailError("Please enter your email address");
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address");
+      return;
+    }
+    
+    // Success
+    setSubscribed(true);
+    setEmail("");
+    
+    // Reset success message after 5 seconds
+    setTimeout(() => {
+      setSubscribed(false);
+    }, 5000);
+  };
+
   const blogPosts: BlogPost[] = [
     {
       id: "lemon-honey-morning-ritual",
@@ -451,15 +483,36 @@ const Blog = () => {
               <p className="text-lg text-white/90 mb-6">
                 Get the latest wellness tips, natural remedies, and health awareness content delivered to your inbox.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-                <Button className="bg-white text-pharma-navy hover:bg-gray-100 px-6 py-3">
-                  Subscribe
-                </Button>
+              <div className="max-w-md mx-auto">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setEmailError("");
+                      setSubscribed(false);
+                    }}
+                    className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                  />
+                  <Button 
+                    onClick={handleSubscribe}
+                    className="bg-white text-pharma-navy hover:bg-gray-100 px-8 py-3 whitespace-nowrap font-semibold"
+                  >
+                    Subscribe
+                  </Button>
+                </div>
+                {emailError && (
+                  <p className="text-sm text-red-200 mt-2 text-left">
+                    {emailError}
+                  </p>
+                )}
+                {subscribed && (
+                  <p className="text-sm text-green-200 mt-2 text-left font-semibold">
+                    ✓ Successfully subscribed! Thank you for joining our wellness community.
+                  </p>
+                )}
               </div>
               <p className="text-sm text-white/70 mt-4">
                 We respect your privacy. Unsubscribe anytime.
