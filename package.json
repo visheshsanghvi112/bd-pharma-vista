@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-snapshots.js",
+    "build": "vite build",
     "build:basic": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
