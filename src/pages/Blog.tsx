@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Calendar, Clock, Heart, Leaf, Sunrise, Apple, CheckCircle2, X } from "lucide-react";
+import { Calendar, Clock, Heart, Leaf, Sunrise, Apple, CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
 import Seo from "@/components/Seo";
 
 interface BlogPost {
@@ -18,9 +19,9 @@ interface BlogPost {
 }
 
 const Blog = () => {
+  const { toast } = useToast();
   const [email, setEmail] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
-  const [subscribed, setSubscribed] = useState<boolean>(false);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,13 +42,11 @@ const Blog = () => {
     }
     
     // Success
-    setSubscribed(true);
+    toast({
+      title: "Successfully subscribed! 🎉",
+      description: "Thank you for joining our wellness community. Check your inbox for updates.",
+    });
     setEmail("");
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      setSubscribed(false);
-    }, 5000);
   };
 
   const blogPosts: BlogPost[] = [
@@ -448,13 +447,11 @@ const Blog = () => {
 
         {/* Blog Post Dialog/Modal */}
         <Dialog open={!!selectedPost} onOpenChange={(open) => !open && setSelectedPost(null)}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <div className="flex items-center justify-between">
-                <DialogTitle className="text-2xl md:text-3xl font-bold text-pharma-navy pr-8">
-                  {selectedPost?.title}
-                </DialogTitle>
-              </div>
+          <DialogContent className="max-w-4xl max-h-[85vh] overflow-hidden flex flex-col p-0">
+            <DialogHeader className="px-6 pt-6 pb-4 border-b">
+              <DialogTitle className="text-2xl md:text-3xl font-bold text-pharma-navy pr-8">
+                {selectedPost?.title}
+              </DialogTitle>
               <div className="flex gap-4 text-sm text-gray-500 mt-2">
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
@@ -466,7 +463,7 @@ const Blog = () => {
                 </div>
               </div>
             </DialogHeader>
-            <div className="mt-6">
+            <div className="overflow-y-auto px-6 py-6 flex-1">
               {selectedPost?.fullContent}
             </div>
           </DialogContent>
@@ -492,7 +489,11 @@ const Blog = () => {
                     onChange={(e) => {
                       setEmail(e.target.value);
                       setEmailError("");
-                      setSubscribed(false);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleSubscribe();
+                      }
                     }}
                     className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
                   />
@@ -505,12 +506,7 @@ const Blog = () => {
                 </div>
                 {emailError && (
                   <p className="text-sm text-red-200 mt-2 text-left">
-                    {emailError}
-                  </p>
-                )}
-                {subscribed && (
-                  <p className="text-sm text-green-200 mt-2 text-left font-semibold">
-                    ✓ Successfully subscribed! Thank you for joining our wellness community.
+                    ⚠ {emailError}
                   </p>
                 )}
               </div>
