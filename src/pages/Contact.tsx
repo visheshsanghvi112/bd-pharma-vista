@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Seo from "@/components/Seo";
+import { trackEvent, trackFormSubmit } from "@/lib/analytics";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +27,28 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Track form submission with user data
+    trackFormSubmit('contact_form');
+    
+    // Track detailed form data (PII capture)
+    trackEvent('contact_form_submission', {
+      user_name: formData.name,
+      user_email: formData.email,
+      user_phone: formData.phone,
+      inquiry_subject: formData.subject,
+      message_length: formData.message.length,
+      form_location: 'contact_page',
+      timestamp: new Date().toISOString(),
+    });
+    
+    // Also send to Firebase/GA4 as user properties
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('set', 'user_properties', {
+        contact_name: formData.name,
+        contact_email: formData.email,
+      });
+    }
     
     // Simulate form submission
     setTimeout(() => {
