@@ -40,8 +40,30 @@ const Careers = () => {
   return (
     <>
       <Seo 
-        title="Careers"
-        description="Join Baker & Davis pharmaceutical manufacturing team. Explore career opportunities in pharmaceutical manufacturing, research, and global trade."
+        title="Careers - Join Baker & Davis | Pharmaceutical Distribution Jobs Mumbai | BD India Employment"
+        description="Explore career opportunities at Baker & Davis (BD India) - leading pharmaceutical distributor and exporter in Mumbai. Join the Baker Davis team for pharmaceutical distribution, trading, and export careers. Davis Baker offers competitive positions in global pharmaceutical supply chain management and international medicine trading."
+        keywords={[
+          "Baker Davis careers",
+          "Davis Baker jobs Mumbai",
+          "BD India employment",
+          "pharmaceutical distributor careers Baker and Davis",
+          "Baker India job opportunities",
+          "pharmaceutical trader jobs Baker Davis",
+          "medicine export careers BD India",
+          "pharmaceutical supply chain jobs Baker and Davis",
+          "Baker Davis Mumbai jobs",
+          "pharmaceutical distribution careers India",
+          "Baker India pharmaceutical jobs",
+          "Davis pharmaceutical careers Mumbai",
+          "pharmaceutical trading jobs Baker and Davis",
+          "BD India distributor careers",
+          "pharmaceutical export jobs Baker Davis",
+          "global pharmaceutical careers Baker India",
+          "medicine trading jobs BD India",
+          "pharmaceutical logistics careers Baker Davis",
+          "Baker and Davis employment Mumbai",
+          "pharmaceutical wholesaler jobs India"
+        ]}
       />
       <div className="flex flex-col">
         {/* Hero Section */}

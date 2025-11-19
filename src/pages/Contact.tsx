@@ -72,8 +72,30 @@ const Contact = () => {
   return (
     <>
       <Seo 
-        title="Contact"
-        description="Get in touch with Baker & Davis pharmaceutical manufacturing and export team. Reach out for pharmaceutical inquiries, partnerships, and global distribution opportunities."
+        title="Contact Baker & Davis | Pharmaceutical Distributor Mumbai | BD India Export Inquiries"
+        description="Contact Baker & Davis (BD India) pharmaceutical distributor and exporter in Mumbai. Reach Baker Davis for pharmaceutical distribution inquiries, medicine trading partnerships, and global export opportunities. Davis Baker serves Kalbadevi Mumbai and worldwide. Get pharmaceutical supply chain solutions from Baker India."
+        keywords={[
+          "contact Baker Davis Mumbai",
+          "Davis Baker pharmaceutical distributor contact",
+          "BD India pharmaceutical inquiries",
+          "Baker and Davis Mumbai address",
+          "pharmaceutical distributor Kalbadevi",
+          "Baker Davis export contact",
+          "pharmaceutical trader Mumbai contact Baker India",
+          "medicine export inquiries BD India",
+          "Baker and Davis phone number",
+          "pharmaceutical supply chain contact Baker Davis",
+          "Davis pharmaceutical Mumbai office",
+          "pharmaceutical distribution inquiries Baker India",
+          "Baker Davis Babu Genu Road",
+          "BD India pharmaceutical exporter contact",
+          "Baker and Davis email Mumbai",
+          "pharmaceutical trading contact Baker Davis",
+          "medicine distributor Mumbai contact",
+          "Baker India pharmaceutical partnerships",
+          "Davis Baker global distribution contact",
+          "pharmaceutical wholesaler Mumbai Baker Davis"
+        ]}
       />
       <div className="flex flex-col">
         {/* Hero Section */}

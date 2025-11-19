@@ -119,7 +119,7 @@ const About = () => {
               <div>
                 <h2 className="text-3xl font-bold text-pharma-navy dark:text-white mb-6 transition-colors duration-300">Our Story</h2>
                 <p className="text-black dark:text-white mb-4 transition-colors duration-300">
-                  Baker & Davis was founded with a clear mission: to improve lives by delivering trusted pharmaceutical distribution solutions across the globe. What began as a focused operation has grown into a respected pharmaceutical distributor and exporter with global reach.
+                  Baker & Davis was founded with a clear mission to improve lives by delivering trusted pharmaceutical distribution solutions across the globe. What began as a focused operation has grown into a respected pharmaceutical distributor and exporter with global reach.
                 </p>
                 <p className="text-black dark:text-white mb-4 transition-colors duration-300">
                   For over two decades, we have dedicated ourselves to providing reliable pharmaceutical supply chain solutions that meet international standards. Our commitment to excellence has earned us certifications from leading health authorities worldwide, including WHO-GDP certification.
