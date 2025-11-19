@@ -148,9 +148,6 @@ const About = () => {
 
         {/* Testimonials Section */}
         <TestimonialsSection />
-        
-        {/* Partners Carousel */}
-        <PartnersCarousel />
 
         {/* Values Section */}
         <section className="py-16 bg-gradient-to-br from-pharma-light/30 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
