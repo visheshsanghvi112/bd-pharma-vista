@@ -77,7 +77,7 @@ const About = () => {
 			<img 
 				src="/lovable-uploads/about_us_banner.jpg" 
 				alt="About Baker & Davis"
-				className="w-full h-64 sm:h-72 md:h-96 object-cover"
+				className="w-full h-64 sm:h-72 md:h-96 object-cover object-center"
 			/>
 		</section>
 		{/* Title and subtitle below the image */}
@@ -156,22 +156,24 @@ const About = () => {
         <section className="py-16 bg-gradient-to-br from-pharma-light/30 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-pharma-navy dark:text-white mb-12 transition-colors duration-300">Our Core Values</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
               {values.map((value, index) => (
-                <div key={index} className="bg-white dark:bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-                  <div className="flex justify-center mb-4">
-                    <value.icon className="w-12 h-12 text-pharma-navy dark:text-primary-light transition-colors duration-300" />
+                <div key={index} className="bg-white dark:bg-card p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="flex justify-center mb-3 sm:mb-4">
+                    <value.icon className="w-10 h-10 sm:w-12 sm:h-12 text-pharma-navy dark:text-primary-light transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-bold text-pharma-navy dark:text-white mb-4 text-center transition-colors duration-300">{value.title}</h3>
-                  <p className="text-black dark:text-white text-center transition-colors duration-300">{value.description}</p>
+                  <h3 className="text-base sm:text-xl font-bold text-pharma-navy dark:text-white mb-2 sm:mb-4 text-center transition-colors duration-300">{value.title}</h3>
+                  <p className="text-xs sm:text-base text-black dark:text-white text-center transition-colors duration-300">{value.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CSR/Community Involvement Section */}
-        <CsrSection />
+        {/* CSR/Community Involvement Section - Hidden on mobile */}
+        <div className="hidden md:block">
+          <CsrSection />
+        </div>
 
         {/* Distribution Network Section */}
         <FacilitiesSection />

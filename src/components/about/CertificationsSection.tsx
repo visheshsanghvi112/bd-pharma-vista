@@ -1,5 +1,5 @@
 
-import { Award } from "lucide-react";
+import { Award, ShieldCheck, FileCheck, Globe, Leaf, HardHat } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const CertificationsSection = () => {
@@ -7,32 +7,32 @@ const CertificationsSection = () => {
     {
       name: "WHO-GMP",
       description: "World Health Organization Good Manufacturing Practices",
-      logo: "/placeholder.svg"
+      icon: Globe
     },
     {
       name: "ISO 9001:2015",
       description: "Quality Management Systems",
-      logo: "/placeholder.svg"
+      icon: ShieldCheck
     },
     {
       name: "ISO 14001:2015",
       description: "Environmental Management Systems",
-      logo: "/placeholder.svg"
+      icon: Leaf
     },
     {
       name: "FDA Approval",
       description: "U.S. Food and Drug Administration",
-      logo: "/placeholder.svg"
+      icon: FileCheck
     },
     {
       name: "EU-GMP",
       description: "European Union Good Manufacturing Practices",
-      logo: "/placeholder.svg"
+      icon: Award
     },
     {
       name: "OHSAS 18001",
       description: "Occupational Health and Safety Assessment Series",
-      logo: "/placeholder.svg"
+      icon: HardHat
     }
   ];
 
@@ -47,22 +47,25 @@ const CertificationsSection = () => {
           Our operations and products comply with the highest international quality and safety standards.
         </p>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {certifications.map((certification, index) => (
-            <Card key={index} className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-pharma-light flex items-center justify-center">
-                    <Award className="w-6 h-6 text-pharma-navy" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          {certifications.map((certification, index) => {
+            const Icon = certification.icon;
+            return (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-pharma-light flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-pharma-navy" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-pharma-navy text-sm sm:text-base mb-1">{certification.name}</h3>
+                      <p className="text-xs sm:text-sm text-foreground line-clamp-2">{certification.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-pharma-navy">{certification.name}</h3>
-                    <p className="text-sm text-foreground">{certification.description}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
         
         <div className="mt-12 bg-pharma-light/20 p-6 rounded-lg">
