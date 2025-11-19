@@ -13,6 +13,7 @@ import { PageTransition } from "./components/ui/page-transition";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import { trackPageView } from "./lib/analytics";
+import CookieConsent from "./components/CookieConsent";
 
 // Code-split non-essential pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -121,6 +122,7 @@ const App = () => {
                 <AnimatedRoutes />
               </Suspense>
             </AnalyticsWrapper>
+            <CookieConsent />
             <SpeedInsights />
             <Analytics />
           </BrowserRouter>
