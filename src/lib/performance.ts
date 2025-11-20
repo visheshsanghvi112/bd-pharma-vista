@@ -120,5 +120,66 @@ export const initializePerformanceMonitoring = (): void => {
         reportPerformanceToConsole();
       }, 1000);
     });
+    
+    // Monitor long tasks that block the main thread
+    if ('PerformanceObserver' in window) {
+      try {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            // Log long tasks (over 50ms)
+            if (entry.duration > 50) {
+              console.warn(`⚠️ Long task detected: ${entry.duration.toFixed(2)}ms`);
+            }
+          }
+        });
+        observer.observe({ entryTypes: ['longtask'] });
+      } catch (e) {
+        // longtask not supported in all browsers
+      }
+    }
   }
+};
+
+/**
+ * Debounce function for performance optimization
+ * @param func Function to debounce
+ * @param wait Wait time in milliseconds
+ * @returns Debounced function
+ */
+export const debounce = <T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): ((...args: Parameters<T>) => void) => {
+  let timeout: NodeJS.Timeout | null = null;
+  
+  return function executedFunction(...args: Parameters<T>) {
+    const later = () => {
+      timeout = null;
+      func(...args);
+    };
+    
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
+/**
+ * Throttle function for performance optimization
+ * @param func Function to throttle
+ * @param limit Limit in milliseconds
+ * @returns Throttled function
+ */
+export const throttle = <T extends (...args: any[]) => any>(
+  func: T,
+  limit: number
+): ((...args: Parameters<T>) => void) => {
+  let inThrottle: boolean;
+  
+  return function executedFunction(...args: Parameters<T>) {
+    if (!inThrottle) {
+      func(...args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
 };

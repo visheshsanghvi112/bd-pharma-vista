@@ -52,3 +52,57 @@ export const getImageLoadingAttribute = (isAboveFold: boolean): 'lazy' | 'eager'
  * Default sizes attribute for responsive images
  */
 export const defaultSizes = '(max-width: 640px) 100vw, (max-width: 768px) 75vw, 50vw';
+
+/**
+ * Checks if an image should use WebP format
+ * @returns boolean indicating WebP support
+ */
+export const supportsWebP = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  
+  const canvas = document.createElement('canvas');
+  if (canvas.getContext && canvas.getContext('2d')) {
+    return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+  }
+  return false;
+};
+
+/**
+ * Get optimized image URL with Cloudinary transformations
+ * @param url The original image URL
+ * @param options Optimization options
+ * @returns Optimized URL
+ */
+export const getOptimizedImageUrl = (
+  url: string,
+  options: {
+    width?: number;
+    quality?: 'auto:low' | 'auto:good' | 'auto:best';
+    format?: 'auto' | 'webp' | 'jpg' | 'png';
+  } = {}
+): string => {
+  // Only optimize Cloudinary URLs - use strict validation for security
+  try {
+    const urlObj = new URL(url);
+    const hostname = urlObj.hostname;
+    
+    // Strict validation: hostname must be cloudinary.com or *.cloudinary.com subdomain
+    // This prevents attacks with arbitrary hosts before cloudinary.com
+    const isValidCloudinaryDomain = 
+      hostname === 'cloudinary.com' || 
+      (hostname.endsWith('.cloudinary.com') && hostname.split('.').length >= 3);
+    
+    if (!isValidCloudinaryDomain) {
+      return url;
+    }
+  } catch {
+    // If URL parsing fails, return original URL
+    return url;
+  }
+  
+  const { width = 1200, quality = 'auto:good', format = 'auto' } = options;
+  
+  // Insert transformations into Cloudinary URL
+  const transformations = `q_${quality},f_${format},w_${width},c_limit`;
+  return url.replace('/upload/', `/upload/${transformations}/`);
+};

@@ -15,12 +15,61 @@ export default defineConfig({
     },
   },
   build: {
+    // Optimize chunk size
+    chunkSizeWarningLimit: 1000,
+    // Enable minification with esbuild (faster and built-in)
+    minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
+        // Improved code splitting strategy
+        manualChunks: (id) => {
+          // Core dependencies
+          if (id.includes('node_modules')) {
+            // React core
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor-react';
+            }
+            // Router
+            if (id.includes('react-router')) {
+              return 'vendor-router';
+            }
+            // UI components (radix-ui)
+            if (id.includes('@radix-ui')) {
+              return 'vendor-ui';
+            }
+            // Animations
+            if (id.includes('framer-motion')) {
+              return 'vendor-animation';
+            }
+            // Forms and validation
+            if (id.includes('react-hook-form') || id.includes('zod') || id.includes('@hookform')) {
+              return 'vendor-forms';
+            }
+            // Icons
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+            // Analytics
+            if (id.includes('@vercel/analytics') || id.includes('@vercel/speed-insights')) {
+              return 'vendor-analytics';
+            }
+            // Other node_modules
+            return 'vendor-misc';
+          }
         },
+        // Optimize asset file naming
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          } else if (/woff2?|ttf|eot/i.test(ext)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
   },
