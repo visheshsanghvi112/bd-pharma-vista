@@ -3,7 +3,9 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics, setAnalyticsCollectionEnabled } from 'firebase/analytics';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCa2qyne7WuVssWtNSXKun26rToPBZVho8",
+  // DO NOT store secret keys in source. Use environment variables instead.
+  // Provide the key via Vite environment variable `VITE_FIREBASE_API_KEY`.
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || '',
   authDomain: "bdindia.firebaseapp.com",
   projectId: "bdindia",
   storageBucket: "bdindia.firebasestorage.app",
