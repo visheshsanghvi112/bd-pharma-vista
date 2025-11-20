@@ -37,8 +37,23 @@ cd <YOUR_PROJECT_NAME>
 # Step 3: Install the necessary dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Set up environment variables
+cp .env.example .env
+# Edit .env and add your Firebase API key
+
+# Step 5: Start the development server with auto-reloading and an instant preview.
 npm run dev
+```
+
+## Environment Variables
+
+This project requires environment variables for Firebase integration. See `SECURITY.md` for detailed setup instructions.
+
+Required variables:
+- `VITE_FIREBASE_API_KEY` - Your Firebase API key
+
+**Important:** Never commit `.env` files to git. Only commit `.env.example` as a template.
+
 ```
 
 **Edit a file directly in GitHub**
