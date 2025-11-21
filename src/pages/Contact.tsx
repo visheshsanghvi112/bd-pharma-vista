@@ -27,10 +27,10 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Track form submission with user data
     trackFormSubmit('contact_form');
-    
+
     // Track detailed form data (PII capture)
     trackEvent('contact_form_submission', {
       user_name: formData.name,
@@ -41,7 +41,7 @@ const Contact = () => {
       form_location: 'contact_page',
       timestamp: new Date().toISOString(),
     });
-    
+
     // Also send to Firebase/GA4 as user properties
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('set', 'user_properties', {
@@ -49,7 +49,7 @@ const Contact = () => {
         contact_email: formData.email,
       });
     }
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -61,7 +61,7 @@ const Contact = () => {
         subject: "",
         message: ""
       });
-      
+
       // Reset submitted state after 5 seconds
       setTimeout(() => {
         setSubmitted(false);
@@ -71,7 +71,7 @@ const Contact = () => {
 
   return (
     <>
-      <Seo 
+      <Seo
         title="Contact Baker & Davis | Pharmaceutical Distributor Mumbai | BD India Export Inquiries"
         description="Contact Baker & Davis (BD India) pharmaceutical distributor and exporter in Mumbai. Reach Baker Davis for pharmaceutical distribution inquiries, medicine trading partnerships, and global export opportunities. Davis Baker serves Kalbadevi Mumbai and worldwide. Get pharmaceutical supply chain solutions from Baker India."
         keywords={[
@@ -96,6 +96,26 @@ const Contact = () => {
           "Davis Baker global distribution contact",
           "pharmaceutical wholesaler Mumbai Baker Davis"
         ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Baker and Davis",
+          "description": "Contact information for Baker and Davis Pharmaceutical Distributor",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Baker and Davis",
+            "telephone": "+91-22-48256677",
+            "email": "admin@bdindia.in",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "42/44, Babu Genu Road, Shop No. 14, 2nd Floor",
+              "addressLocality": "Mumbai",
+              "addressRegion": "Maharashtra",
+              "postalCode": "400002",
+              "addressCountry": "IN"
+            }
+          }
+        }}
       />
       <div className="flex flex-col">
         {/* Hero Section */}
@@ -172,7 +192,7 @@ const Contact = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white/50 dark:bg-card/50 p-4 rounded-lg shadow-md transition-colors duration-300">
                 <div className="aspect-w-16 aspect-h-9 h-full">
-                  <iframe 
+                  <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.8340762335247!2d72.82382391034244!3d18.94660626010359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce0f1bda2c95%3A0xf2b4f73fb97f3c28!2sOm%20Shanti%20Co-Operative%20Housing%20Society%2C%2042%2F44%2C%20Babu%20Genu%20Rd%2C%20Kalbadevi%2C%20Mumbai%2C%20Maharashtra%20400002!5e0!3m2!1sen!2sin!4v1693329244841!5m2!1sen!2sin"
                     className="w-full h-full rounded-md"
                     style={{ border: 0 }}
@@ -186,13 +206,13 @@ const Contact = () => {
 
               <div className="bg-white/50 dark:bg-card/50 p-6 rounded-lg shadow-lg backdrop-blur-sm transition-colors duration-300">
                 <h2 className="text-2xl font-bold text-pharma-navy dark:text-primary-light mb-6">Send Us a Message</h2>
-                
+
                 {submitted ? (
                   <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 text-green-700 dark:text-green-400 p-4 rounded-md mb-6 transition-colors duration-300">
                     Thank you for your message! We'll get back to you as soon as possible.
                   </div>
                 ) : null}
-                
+
                 <form onSubmit={handleSubmit}>
                   <div className="grid gap-6">
                     <div className="grid gap-3">
@@ -207,7 +227,7 @@ const Contact = () => {
                         className="border-gray-300 dark:border-gray-600 dark:bg-card dark:text-white transition-colors duration-300"
                       />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="grid gap-3">
                         <Label htmlFor="email" className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Email</Label>
@@ -222,7 +242,7 @@ const Contact = () => {
                           className="border-gray-300 dark:border-gray-600 dark:bg-card dark:text-white transition-colors duration-300"
                         />
                       </div>
-                      
+
                       <div className="grid gap-3">
                         <Label htmlFor="phone" className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Phone Number</Label>
                         <Input
@@ -235,7 +255,7 @@ const Contact = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="grid gap-3">
                       <Label htmlFor="subject" className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Subject</Label>
                       <Input
@@ -248,7 +268,7 @@ const Contact = () => {
                         className="border-gray-300 dark:border-gray-600 dark:bg-card dark:text-white transition-colors duration-300"
                       />
                     </div>
-                    
+
                     <div className="grid gap-3">
                       <Label htmlFor="message" className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Message</Label>
                       <Textarea
@@ -262,9 +282,9 @@ const Contact = () => {
                         className="border-gray-300 dark:border-gray-600 dark:bg-card dark:text-white transition-colors duration-300"
                       />
                     </div>
-                    
-                    <Button 
-                      type="submit" 
+
+                    <Button
+                      type="submit"
                       className="bg-pharma-navy hover:bg-primary-dark dark:bg-primary dark:hover:bg-primary-light w-full transition-all duration-300"
                       disabled={isSubmitting}
                     >

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
+import {
+  ArrowRight,
   Star,
   TrendingUp,
   Activity,
@@ -48,15 +48,15 @@ const Index = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     // Delay animation to improve initial load
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, isMobile ? 200 : 100);
-    
+
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', checkMobile);
@@ -66,37 +66,37 @@ const Index = () => {
   // Optimized animation variants for better performance - mobile-friendly
   const fadeInUp = {
     hidden: { opacity: 0, y: isMobile ? 20 : 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: isMobile ? 0.4 : 0.6, 
-        ease: "easeOut" 
-      } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: isMobile ? 0.4 : 0.6,
+        ease: "easeOut"
+      }
     }
   };
 
   const fadeInLeft = {
     hidden: { opacity: 0, x: isMobile ? -20 : -30 },
-    visible: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { 
-        duration: isMobile ? 0.4 : 0.6, 
-        ease: "easeOut" 
-      } 
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: isMobile ? 0.4 : 0.6,
+        ease: "easeOut"
+      }
     }
   };
 
   const fadeInRight = {
     hidden: { opacity: 0, x: isMobile ? 20 : 30 },
-    visible: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { 
-        duration: isMobile ? 0.4 : 0.6, 
-        ease: "easeOut" 
-      } 
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: isMobile ? 0.4 : 0.6,
+        ease: "easeOut"
+      }
     }
   };
 
@@ -116,33 +116,6 @@ const Index = () => {
     { value: "75+", label: "Countries Served", icon: Globe, color: "text-green-600" },
     { value: "500+", label: "Products Developed", icon: Activity, color: "text-purple-600" },
     { value: "2000+", label: "Happy Clients", icon: Users, color: "text-orange-600" }
-  ];
-
-  const features = [
-    {
-      icon: Shield,
-      title: "Quality Assurance",
-      description: "Rigorous testing and quality control processes ensure every product meets international standards.",
-      color: "bg-blue-50 border-blue-200 text-blue-600"
-    },
-    {
-      icon: Globe,
-      title: "Global Reach",
-      description: "Serving healthcare providers and distributors across 75+ countries worldwide.",
-      color: "bg-green-50 border-green-200 text-green-600"
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation",
-      description: "Cutting-edge research and development to address evolving healthcare needs.",
-      color: "bg-yellow-50 border-yellow-200 text-yellow-600"
-    },
-    {
-      icon: Award,
-      title: "Certifications",
-      description: "WHO-GDP certified with multiple international quality certifications.",
-      color: "bg-purple-50 border-purple-200 text-purple-600"
-    }
   ];
 
   const testimonials = [
@@ -172,16 +145,9 @@ const Index = () => {
     }
   ];
 
-  const achievements = [
-    { icon: AwardIcon, title: "WHO-GDP Certified", description: "International quality standards" },
-    { icon: ShieldCheck, title: "ISO 9001:2015", description: "Quality management system" },
-    { icon: Globe2, title: "75+ Countries", description: "Global distribution network" },
-    { icon: Users2, title: "2000+ Clients", description: "Trusted worldwide" }
-  ];
-
   return (
     <>
-      <Seo 
+      <Seo
         title="Baker and Davis | Baker & Davis | Baker Davis - Leading Pharmaceutical Distributor Mumbai India | BD India"
         description="Baker and Davis (Baker & Davis, Baker Davis, BD India) - Premier pharmaceutical distributor and global medicine exporter in Mumbai, India. Baker and Davis specializes in reliable pharmaceutical distribution, international medicine trading, and export services. Contact Baker Davis for pharmaceutical supply chain solutions worldwide."
         keywords={[
@@ -217,11 +183,6 @@ const Index = () => {
           "pharmaceutical logistics BD India",
           "WHO-GDP certified Baker and Davis",
           "pharmaceutical wholesaler Mumbai",
-          "international medicine trading Baker and Davis",
-          "pharmaceutical import export Baker Davis",
-          "medical supplies distributor Baker and Davis",
-          "generic medicine distributor India",
-          "pharmaceutical supply chain Baker and Davis",
           "medicine trading company Baker and Davis Mumbai",
           "global pharmaceutical trader BD India",
           "pharmaceutical distribution network Baker Davis",
@@ -230,54 +191,66 @@ const Index = () => {
           "Baker Davis pharmaceutical company India",
           "pharmaceutical distributor Mumbai India"
         ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Baker and Davis",
+          "alternateName": ["Baker & Davis", "Baker Davis", "BD India"],
+          "url": "https://bdindia.in",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://bdindia.in/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }}
       />
-      
-      <div className="min-h-screen bg-gradient-navy-accent text-white">
+
+      <div className="overflow-hidden">
         {/* Hero Section */}
-        <section className="relative flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20">
+        <section className="relative flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 bg-gradient-navy-accent text-white">
           {/* Premium Gradient Background with Glow */}
           <div className="absolute inset-0 bg-gradient-glow-top-right"></div>
-          
+
           {/* Animated Gradient Orbs - Logo Colors */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#9FA8DA]/30 to-[#7986CB]/30 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-pharma-navy/20 to-primary-light/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#C5CAE9]/15 to-[#9FA8DA]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           </div>
-          
+
           {/* Floating Particles/Pills Animation */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Medical Cross Symbols - Logo Colors */}
             <div className="absolute top-1/4 left-1/4 text-[#C5CAE9]/25 text-6xl animate-float" style={{ animationDelay: '0s', animationDuration: '6s' }}>+</div>
             <div className="absolute top-3/4 right-1/4 text-[#9FA8DA]/25 text-5xl animate-float" style={{ animationDelay: '1s', animationDuration: '7s' }}>+</div>
             <div className="absolute top-1/2 right-1/3 text-[#7986CB]/25 text-4xl animate-float" style={{ animationDelay: '2s', animationDuration: '8s' }}>+</div>
-            
+
             {/* Pills/Capsules - Premium Gradient */}
             <div className="absolute top-20 right-20 w-16 h-6 bg-gradient-to-r from-[#C5CAE9]/30 to-[#9FA8DA]/30 rounded-full animate-float" style={{ animationDelay: '0.5s', animationDuration: '9s' }}></div>
             <div className="absolute bottom-40 left-20 w-12 h-5 bg-gradient-to-r from-pharma-navy/20 to-primary-light/30 rounded-full animate-float" style={{ animationDelay: '1.5s', animationDuration: '10s' }}></div>
             <div className="absolute top-1/3 left-1/5 w-10 h-4 bg-gradient-to-r from-primary-light/30 to-[#7986CB]/30 rounded-full animate-float" style={{ animationDelay: '2.5s', animationDuration: '11s' }}></div>
-            
+
             {/* DNA Helix inspired curves - Logo Colors */}
             <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#C5CAE9]/25 rounded-full animate-spin-slow"></div>
             <div className="absolute bottom-10 right-10 w-40 h-40 border-2 border-pharma-navy/20 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse' }}></div>
           </div>
-          
+
           {/* Grid Pattern Overlay */}
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <motion.div 
+            <motion.div
               className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               variants={staggerContainer}
             >
               {/* Left Content - Order 1 on mobile, 1 on desktop */}
-              <motion.div 
+              <motion.div
                 className="space-y-6 lg:space-y-8 text-center lg:text-left order-1"
                 variants={fadeInLeft}
               >
-                <motion.div 
+                <motion.div
                   className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 rounded-full bg-white/15 text-white/90 border border-white/20 backdrop-blur text-xs sm:text-sm font-medium"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -286,8 +259,8 @@ const Index = () => {
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
                   WHO-GDP Certified Excellence
                 </motion.div>
-                
-                <motion.h1 
+
+                <motion.h1
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight"
                   variants={fadeInUp}
                 >
@@ -296,16 +269,16 @@ const Index = () => {
                     Global Pharmaceuticals
                   </span>
                 </motion.h1>
-                
-                <motion.p 
+
+                <motion.p
                   className="text-base sm:text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto lg:mx-0"
                   variants={fadeInUp}
                 >
-                  Setting new standards in pharmaceutical excellence with innovative research, 
+                  Setting new standards in pharmaceutical excellence with innovative research,
                   quality manufacturing, and global healthcare solutions that make a difference.
                 </motion.p>
-                
-                <motion.div 
+
+                <motion.div
                   className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
                   variants={fadeInUp}
                 >
@@ -320,9 +293,9 @@ const Index = () => {
                   </Button>
                 </motion.div>
               </motion.div>
-              
+
               {/* Right Content - Hero Video - Order 2 on mobile, 2 on desktop */}
-              <motion.div 
+              <motion.div
                 className="relative mt-8 lg:mt-0 order-2"
                 variants={fadeInRight}
               >
@@ -331,7 +304,7 @@ const Index = () => {
                   <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl p-0.5 sm:p-1 bg-gradient-to-br from-blue-600/20 via-purple-600/30 to-blue-600/20 shadow-xl lg:shadow-2xl hover:shadow-2xl lg:hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01] lg:hover:scale-[1.02] group">
                     {/* Inner glow effect */}
                     <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-blue-600/10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                    
+
                     {/* Hero Video */}
                     <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
                       <video
@@ -343,7 +316,7 @@ const Index = () => {
                         controls={false}
                         onCanPlay={(e) => {
                           const v = e.currentTarget;
-                          try { v.play(); } catch {}
+                          try { v.play(); } catch { }
                         }}
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
@@ -360,33 +333,33 @@ const Index = () => {
                         }}
                       >
                         {/* Optimized Cloudinary video with quality and format transformations */}
-                        <source 
-                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:low,f_auto,w_800,c_limit/v1760530032/final_itndfl.mp4" 
-                          type="video/mp4" 
+                        <source
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:low,f_auto,w_800,c_limit/v1760530032/final_itndfl.mp4"
+                          type="video/mp4"
                           media="(max-width: 640px)"
                         />
-                        <source 
-                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1200,c_limit/v1760530032/final_itndfl.mp4" 
-                          type="video/mp4" 
+                        <source
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1200,c_limit/v1760530032/final_itndfl.mp4"
+                          type="video/mp4"
                           media="(max-width: 1024px)"
                         />
-                        <source 
-                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760530032/final_itndfl.mp4" 
+                        <source
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760530032/final_itndfl.mp4"
                           type="video/mp4"
                         />
                         Your browser does not support the video tag.
                       </video>
-                      
+
                       {/* Animated border glow */}
                       <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse-subtle"></div>
-                      
+
                       {/* Subtle overlay for better text contrast if needed */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                      
+
                       {/* Play button for mobile */}
                       {isMobile && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <button 
+                          <button
                             className="bg-white/90 rounded-full p-4 shadow-lg hover:bg-white transition-colors duration-300"
                             onClick={(e) => {
                               const video = e.currentTarget.parentElement?.querySelector('video') as HTMLVideoElement;
@@ -402,7 +375,7 @@ const Index = () => {
                             }}
                           >
                             <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z"/>
+                              <path d="M8 5v14l11-7z" />
                             </svg>
                           </button>
                         </div>
@@ -420,7 +393,7 @@ const Index = () => {
           {/* Subtle glow overlay */}
           <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
+            <motion.div
               className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
               initial="hidden"
               whileInView="visible"
@@ -450,7 +423,7 @@ const Index = () => {
           {/* Layered gradient effect */}
           <div className="absolute inset-0 bg-gradient-glow-bottom-left pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
+            <motion.div
               className="text-center mb-12 sm:mb-16"
               initial="hidden"
               whileInView="visible"
@@ -461,13 +434,13 @@ const Index = () => {
                 We Provide Different Medicines To Improve Your Health
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                We offer a diverse array of products that consistently adhere to globally accredited quality standards. 
+                We offer a diverse array of products that consistently adhere to globally accredited quality standards.
                 Our dedicated departmental executives oversee operations to guarantee efficient and timely completion of all tasks.
               </p>
             </motion.div>
 
             {/* Key Benefits */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16"
               initial="hidden"
               whileInView="visible"
@@ -518,7 +491,7 @@ const Index = () => {
             </motion.div>
 
             {/* Video and Content Section */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16"
               initial="hidden"
               whileInView="visible"
@@ -526,7 +499,7 @@ const Index = () => {
               variants={staggerContainer}
             >
               {/* Left Content */}
-              <motion.div 
+              <motion.div
                 className="space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-1"
                 variants={fadeInLeft}
               >
@@ -553,14 +526,14 @@ const Index = () => {
               </motion.div>
 
               {/* Right Video - Shows on all devices */}
-              <motion.div 
+              <motion.div
                 className="relative order-1 lg:order-2"
                 variants={fadeInRight}
               >
                 <div className="relative max-w-sm sm:max-w-md lg:max-w-lg mx-auto lg:max-w-none">
                   <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl p-0.5 sm:p-1 bg-gradient-to-br from-blue-600/20 via-purple-600/30 to-blue-600/20 shadow-xl lg:shadow-2xl hover:shadow-2xl lg:hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01] lg:hover:scale-[1.02] group">
                     <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-blue-600/10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                    
+
                     <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
                       <video
                         autoPlay
@@ -572,18 +545,18 @@ const Index = () => {
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                       >
                         {/* Optimized Cloudinary video */}
-                        <source 
-                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1200,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4" 
-                          type="video/mp4" 
+                        <source
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1200,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4"
+                          type="video/mp4"
                           media="(max-width: 1024px)"
                         />
-                        <source 
-                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4" 
+                        <source
+                          src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4"
                           type="video/mp4"
                         />
                         Your browser does not support the video tag.
                       </video>
-                      
+
                       <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse-subtle"></div>
                     </div>
                   </div>
@@ -598,7 +571,7 @@ const Index = () => {
           {/* Premium gradient overlay */}
           <div className="absolute inset-0 bg-gradient-glow-top pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
+            <motion.div
               className="text-center mb-12 sm:mb-16"
               initial="hidden"
               whileInView="visible"
@@ -612,8 +585,8 @@ const Index = () => {
                 Explore our extensive range of high-quality pharmaceutical products across therapeutic categories.
               </p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8"
               initial="hidden"
               whileInView="visible"
@@ -649,7 +622,7 @@ const Index = () => {
               ))}
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="text-center mt-8 sm:mt-12"
               initial="hidden"
               whileInView="visible"
@@ -674,7 +647,7 @@ const Index = () => {
           {/* Center glow for testimonials */}
           <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
           <div className="container mx-auto px-4">
-            <motion.div 
+            <motion.div
               className="text-center mb-16"
               initial="hidden"
               whileInView="visible"
@@ -688,8 +661,8 @@ const Index = () => {
                 Hear from healthcare professionals who trust Baker & Davis for their pharmaceutical needs.
               </p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid md:grid-cols-3 gap-8"
               initial="hidden"
               whileInView="visible"

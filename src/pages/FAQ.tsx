@@ -46,7 +46,7 @@ const FAQ = () => {
 
   return (
     <>
-      <Seo 
+      <Seo
         title="FAQ - Baker & Davis Pharmaceutical Distribution & Export Questions | BD India"
         description="Frequently asked questions about Baker & Davis (BD India) pharmaceutical distribution and export services. Find answers about Baker Davis global pharmaceutical distribution operations, WHO-GDP certification, and Davis Baker international medicine trading services."
         keywords={[
@@ -71,6 +71,18 @@ const FAQ = () => {
           "global pharmaceutical FAQ Baker and Davis",
           "pharmaceutical supply chain FAQ BD India"
         ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        }}
       />
       <div className="min-h-screen">
         {/* Hero Section */}
