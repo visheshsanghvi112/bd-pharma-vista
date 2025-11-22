@@ -31,7 +31,11 @@ const Seo = ({
   const siteName = "Baker and Davis | Baker & Davis | Baker Davis";
   const fullTitle = `${title} | ${siteName}`;
   const siteUrl = "https://bdindia.in";
-  const fullCanonical = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`) : `${siteUrl}${window.location.pathname}`;
+  // Fix canonical URL: normalize path, remove trailing slash except for root
+  const cleanPath = window.location.pathname === '/' ? '/' : window.location.pathname.replace(/\/$/, '');
+  const fullCanonical = canonicalUrl 
+    ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`.replace(/\/$/, '') || siteUrl) 
+    : `${siteUrl}${cleanPath}`;
 
   // Core brand keywords - ALL variations for maximum visibility
   const brandKeywords = [
@@ -103,10 +107,7 @@ const Seo = ({
       {/* Canonical URL */}
       <link rel="canonical" href={fullCanonical} />
 
-      {/* Hreflang for international SEO */}
-      <link rel="alternate" hrefLang="en" href={fullCanonical} />
-      <link rel="alternate" hrefLang="en-in" href={fullCanonical} />
-      <link rel="alternate" hrefLang="en-us" href={fullCanonical} />
+      {/* Hreflang for international SEO - single x-default to avoid duplicate canonical issues */}
       <link rel="alternate" hrefLang="x-default" href={fullCanonical} />
 
       {/* Open Graph / Facebook */}

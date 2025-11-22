@@ -314,6 +314,9 @@ const Index = () => {
                         playsInline
                         preload="metadata"
                         controls={false}
+                        aria-label="Baker and Davis pharmaceutical excellence showcase video"
+                        width="1920"
+                        height="1080"
                         onCanPlay={(e) => {
                           const v = e.currentTarget;
                           try { v.play(); } catch { }
@@ -347,6 +350,7 @@ const Index = () => {
                           src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760530032/final_itndfl.mp4"
                           type="video/mp4"
                         />
+                        <track kind="captions" srcLang="en" label="English captions" />
                         Your browser does not support the video tag.
                       </video>
 
@@ -360,6 +364,7 @@ const Index = () => {
                       {isMobile && (
                         <div className="absolute inset-0 flex items-center justify-center">
                           <button
+                            aria-label="Play or pause video"
                             className="bg-white/90 rounded-full p-4 shadow-lg hover:bg-white transition-colors duration-300"
                             onClick={(e) => {
                               const video = e.currentTarget.parentElement?.querySelector('video') as HTMLVideoElement;
@@ -541,6 +546,9 @@ const Index = () => {
                         loop
                         playsInline
                         preload="metadata"
+                        aria-label="Medical supplies and pharmaceutical products showcase"
+                        width="1920"
+                        height="1080"
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                       >
@@ -554,6 +562,7 @@ const Index = () => {
                           src="https://res.cloudinary.com/dwfcnnt0x/video/upload/q_auto:good,f_auto,w_1600,c_limit/v1760529684/medicalsupplies_l6qzzh.mp4"
                           type="video/mp4"
                         />
+                        <track kind="captions" srcLang="en" label="English captions" />
                         Your browser does not support the video tag.
                       </video>
 

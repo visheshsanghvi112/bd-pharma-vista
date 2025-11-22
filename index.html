@@ -87,7 +87,10 @@
     <!-- Performance optimizations for resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
     <link rel="preload" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 
     <!-- Open Graph & Twitter tags handled by React Helmet -->
     
@@ -100,8 +103,9 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" color="#1e3a8a" />
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
+    <!-- Fonts - Async loaded to prevent render blocking -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" /></noscript>
 
     <!-- Structured Data handled by React Helmet -->
   </head>
