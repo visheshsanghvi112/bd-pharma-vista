@@ -57,6 +57,38 @@ const Index = () => {
       setIsVisible(true);
     }, isMobile ? 200 : 100);
 
+    // Lazy load videos after page load to improve LCP
+    const loadVideosAfterPageLoad = () => {
+      // Wait for page to be fully loaded
+      if (document.readyState === 'complete') {
+        requestIdleCallback(() => {
+          const videos = document.querySelectorAll('video[data-autoplay="true"]');
+          videos.forEach(video => {
+            const videoEl = video as HTMLVideoElement;
+            if (videoEl.readyState >= 2) {
+              // Already loaded metadata, can play
+              try { videoEl.play(); } catch {}
+            } else {
+              // Trigger load
+              videoEl.load();
+            }
+          });
+        }, { timeout: 2000 });
+      } else {
+        window.addEventListener('load', () => {
+          requestIdleCallback(() => {
+            const videos = document.querySelectorAll('video[data-autoplay="true"]');
+            videos.forEach(video => {
+              const videoEl = video as HTMLVideoElement;
+              videoEl.load();
+            });
+          }, { timeout: 2000 });
+        }, { once: true });
+      }
+    };
+
+    loadVideosAfterPageLoad();
+
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', checkMobile);
@@ -305,21 +337,23 @@ const Index = () => {
                     {/* Inner glow effect */}
                     <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-blue-600/10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
 
-                    {/* Hero Video */}
+                    {/* Hero Video - Optimized for LCP */}
                     <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
                       <video
-                        autoPlay
                         muted
                         loop
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         controls={false}
                         aria-label="Baker and Davis pharmaceutical excellence showcase video"
                         width="1920"
                         height="1080"
-                        onCanPlay={(e) => {
+                        data-autoplay="true"
+                        onLoadedData={(e) => {
                           const v = e.currentTarget;
-                          try { v.play(); } catch { }
+                          if (v.dataset.autoplay === 'true') {
+                            try { v.play(); } catch { }
+                          }
                         }}
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
@@ -541,14 +575,20 @@ const Index = () => {
 
                     <div className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm">
                       <video
-                        autoPlay
                         muted
                         loop
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         aria-label="Medical supplies and pharmaceutical products showcase"
                         width="1920"
                         height="1080"
+                        data-autoplay="true"
+                        onLoadedData={(e) => {
+                          const v = e.currentTarget;
+                          if (v.dataset.autoplay === 'true') {
+                            try { v.play(); } catch { }
+                          }
+                        }}
                         className="w-full h-auto object-cover rounded-xl sm:rounded-2xl lg:rounded-3xl"
                         poster="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg"
                       >
