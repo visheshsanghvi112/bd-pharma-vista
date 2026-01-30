@@ -204,7 +204,7 @@ const About = () => {
         {/* Product Development Section - HIDDEN, not relevant for distribution company */}
         {/* <ProductDevelopmentSection /> */}
 
-        {/* Certifications Section - HIDDEN FOR NOW, will update with real licenses */}}
+        {/* Certifications Section - HIDDEN FOR NOW, will update with real licenses */}
         {/* <CertificationsSection /> */}
 
         {/* CTA Section */}
