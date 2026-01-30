@@ -408,8 +408,6 @@ const Index = () => {
 
         {/* Stats Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-gradient-section-light relative overflow-hidden">
-          {/* Dot texture overlay */}
-          <div className="absolute inset-0 texture-dots pointer-events-none"></div>
           {/* Subtle glow overlay */}
           <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -440,8 +438,6 @@ const Index = () => {
 
         {/* Pharmaceutical Products Section */}
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-section-subtle relative overflow-hidden">
-          {/* Hexagon texture */}
-          <div className="absolute inset-0 texture-hexagon pointer-events-none"></div>
           {/* Layered gradient effect */}
           <div className="absolute inset-0 bg-gradient-glow-bottom-left pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -600,8 +596,6 @@ const Index = () => {
 
         {/* Product Categories Section */}
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-section-light relative overflow-hidden">
-          {/* Circuit texture */}
-          <div className="absolute inset-0 texture-circuit pointer-events-none"></div>
           {/* Premium gradient overlay */}
           <div className="absolute inset-0 bg-gradient-glow-top pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">

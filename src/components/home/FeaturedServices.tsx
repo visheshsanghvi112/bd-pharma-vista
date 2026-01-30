@@ -45,11 +45,9 @@ const services = [
 const FeaturedServices = () => {
   return (
     <section className="py-24 bg-gradient-section-subtle relative overflow-hidden">
-      {/* Diagonal lines texture */}
-      <div className="absolute inset-0 texture-diagonal pointer-events-none"></div>
       {/* Premium gradient glow */}
       <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge className="bg-pharma-navy/10 text-pharma-navy border-pharma-navy/20 mb-4">
             <CheckCircle className="w-4 h-4 mr-2" />
