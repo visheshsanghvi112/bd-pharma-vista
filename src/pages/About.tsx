@@ -69,8 +69,10 @@ const About = () => {
 			/>
 		</section>
 		{/* Title and intro - Mobile optimized */}
-		<section className="py-8 md:py-16 bg-white">
-			<div className="container mx-auto px-4">
+		<section className="py-8 md:py-16 bg-white relative overflow-hidden">
+			{/* Mesh gradient texture */}
+			<div className="absolute inset-0 texture-mesh pointer-events-none"></div>
+			<div className="container mx-auto px-4 relative z-10">
 				<div className="max-w-5xl mx-auto">
 					<h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-pharma-navy text-center">
 						About Baker & Davis
@@ -94,8 +96,10 @@ const About = () => {
 		</section>
 
         {/* Mission & Vision - Mobile optimized */}
-        <section className="py-10 md:py-20 bg-gradient-to-br from-pharma-light/40 to-white">
-          <div className="container mx-auto px-4">
+        <section className="py-10 md:py-20 bg-gradient-to-br from-pharma-light/40 to-white relative overflow-hidden">
+          {/* Dots texture */}
+          <div className="absolute inset-0 texture-dots pointer-events-none"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-4xl font-bold text-pharma-navy mb-2 md:mb-4">Our Purpose & Direction</h2>
               <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto hidden md:block">Guided by clear principles and driven by a vision for global healthcare excellence</p>
@@ -130,8 +134,10 @@ const About = () => {
         </section>
 
         {/* Our Story - Mobile optimized */}
-        <section className="py-10 md:py-20 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="py-10 md:py-20 bg-white relative overflow-hidden">
+          {/* Topography texture */}
+          <div className="absolute inset-0 texture-topography pointer-events-none"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
               <div>
                 <h2 className="text-2xl md:text-4xl font-bold text-pharma-navy mb-4 md:mb-6">Our Story</h2>

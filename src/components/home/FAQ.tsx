@@ -40,8 +40,10 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background/50 to-background overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-b from-background/50 to-background overflow-hidden relative">
+      {/* Dots texture */}
+      <div className="absolute inset-0 texture-dots pointer-events-none"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <AnimatedElement
           animation="slide-up"
           className="mb-12 text-center"

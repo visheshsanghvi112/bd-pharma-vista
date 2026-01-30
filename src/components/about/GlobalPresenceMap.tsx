@@ -45,8 +45,10 @@ const GlobalPresenceMap = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-background">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gradient-to-br from-pharma-light/20 to-background relative overflow-hidden">
+      {/* Hexagon texture */}
+      <div className="absolute inset-0 texture-hexagon pointer-events-none"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-center gap-3 mb-6">
           <Globe className="w-8 h-8 text-pharma-navy" />
           <h2 className="text-3xl font-bold text-pharma-navy transition-colors duration-300">Global Presence</h2>
