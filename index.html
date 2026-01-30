@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baker and Davis | Baker & Davis | Baker Davis Pharmaceuticals India - Global Pharmaceutical Distributor & Exporter Mumbai</title>
     
-    <!-- Primary Meta Tags handled by React Helmet -->
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Baker and Davis is undergoing scheduled maintenance to enhance your experience. We'll be back shortly with improved services. Premier pharmaceutical distributor and global medicine exporter in Mumbai, India." />
+    <meta name="keywords" content="Baker and Davis, Baker Davis, BD India, pharmaceutical distributor, medicine exporter, Mumbai pharma, global medicine export" />
     
     <!-- Branding & Publisher Info -->
     <meta name="application-name" content="Baker and Davis" />
@@ -15,7 +16,6 @@
     <meta name="copyright" content="© 2025 Baker and Davis Pvt. Ltd. All rights reserved." />
     <meta name="theme-color" content="#1e3a8a" />
     <meta name="msapplication-TileColor" content="#1e3a8a" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
     
     <!-- Language and Region -->
     <meta http-equiv="content-language" content="en" />
@@ -29,42 +29,20 @@
     <meta name="google-site-verification" content="PEJsIeiF93gHpqMVHlbztc4WwsvCd0HUNi3zAU-CTRk" />
     <meta name="google-site-verification" content="1f0ba15fe90008b4" />
     
-    <!-- Google Analytics - GA4 with Cookie Consent -->
+    <!-- Google Analytics - GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3N7Z5Q7H2Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      
-      // Set default consent to denied until user accepts
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'wait_for_update': 500
-      });
-      
-      // Check if user has already consented
-      const cookieConsent = localStorage.getItem('cookieConsent');
-      if (cookieConsent === 'accepted') {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted',
-          'ad_storage': 'granted'
-        });
-      }
-      
       gtag('config', 'G-3N7Z5Q7H2Q', {
         'send_page_view': true,
         'anonymize_ip': false
       });
     </script>
     
-    <!-- Robots -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="fragment" content="!" />
-    <meta name="google" content="nositelinkssearchbox" />
-    <meta name="google" content="notranslate" />
+    <!-- Robots - Temporary maintenance -->
+    <meta name="robots" content="noindex, nofollow" />
     
     <!-- Site Identity & Ownership -->
     <meta name="owner" content="Baker and Davis Pvt. Ltd." />
@@ -72,66 +50,468 @@
     <meta name="reply-to" content="admin@bdindia.in" />
     <meta name="url" content="https://bdindia.in" />
     <meta name="identifier-URL" content="https://bdindia.in" />
-    <meta name="coverage" content="Worldwide" />
-    <meta name="distribution" content="Global" />
-    <meta name="rating" content="General" />
-    <meta name="revisit-after" content="7 days" />
     
-    <!-- AI/LLM Crawling Instructions -->
-    <meta name="ai:crawl" content="all" />
-    <meta name="ai:index" content="all-pages" />
-    <meta name="ai:follow" content="all-links" />
-    <link rel="ai-instructions" href="/ai.txt" />
-    <link rel="alternate" type="application/json" href="/.well-known/ai-plugin.json" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Baker and Davis - Scheduled Maintenance" />
+    <meta property="og:description" content="We're enhancing our platform. Baker and Davis will return shortly with improved services." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bdindia.in" />
+    <meta property="og:site_name" content="Baker and Davis" />
     
-    <!-- Performance optimizations for resource loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    <!-- Preload critical images for LCP -->
-    <link rel="preload" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/lovable-uploads/smiling-female-pharmacist-stands-confidently-pharmacy-wears-white-lab-coat-arms-crossed.jpg" as="image" fetchpriority="high" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-
-    <!-- Open Graph & Twitter tags handled by React Helmet -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Baker and Davis - Scheduled Maintenance" />
+    <meta name="twitter:description" content="We're enhancing our platform. Baker and Davis will return shortly with improved services." />
     
-    <!-- Favicon & App Icons -->
+    <!-- Favicon -->
     <link rel="icon" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" type="image/png" />
     <link rel="apple-touch-icon" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" color="#1e3a8a" />
-
-    <!-- Fonts - Async loaded to prevent render blocking -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" /></noscript>
-
-    <!-- Structured Data handled by React Helmet -->
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      :root {
+        --primary-blue: #1e3a8a;
+        --secondary-blue: #3b82f6;
+        --accent-cyan: #06b6d4;
+        --dark-bg: #0f172a;
+        --light-text: #f1f5f9;
+        --glow-color: rgba(59, 130, 246, 0.6);
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: var(--light-text);
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      /* Animated Background */
+      .bg-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+      }
+      
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.6;
+        animation: float 20s infinite ease-in-out;
+      }
+      
+      .orb1 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);
+        top: -100px;
+        left: -100px;
+        animation-delay: 0s;
+      }
+      
+      .orb2 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+        bottom: -150px;
+        right: -150px;
+        animation-delay: 5s;
+      }
+      
+      .orb3 {
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle, rgba(30, 58, 138, 0.5) 0%, transparent 70%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-delay: 10s;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        25% { transform: translate(50px, 100px) scale(1.1); }
+        50% { transform: translate(-50px, 50px) scale(0.9); }
+        75% { transform: translate(100px, -50px) scale(1.05); }
+      }
+      
+      /* Grid Pattern */
+      .grid-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: 1;
+        animation: gridMove 20s linear infinite;
+      }
+      
+      @keyframes gridMove {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(50px, 50px); }
+      }
+      
+      /* Main Container */
+      .container {
+        position: relative;
+        z-index: 10;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+      }
+      
+      /* Logo */
+      .logo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 2rem;
+        border-radius: 20px;
+        box-shadow: 
+          0 10px 40px rgba(59, 130, 246, 0.3),
+          0 0 100px rgba(59, 130, 246, 0.2);
+        animation: pulse 3s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      
+      /* Main Card */
+      .main-card {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 30px;
+        padding: 3rem 2.5rem;
+        max-width: 700px;
+        box-shadow: 
+          0 20px 60px rgba(0, 0, 0, 0.5),
+          0 0 100px rgba(59, 130, 246, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .main-card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, 
+          var(--secondary-blue), 
+          var(--accent-cyan), 
+          var(--secondary-blue));
+        border-radius: 30px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .main-card:hover::before {
+        opacity: 0.3;
+      }
+      
+      /* Typography */
+      h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shimmer 3s ease-in-out infinite;
+      }
+      
+      @keyframes shimmer {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+      
+      .subtitle {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-weight: 600;
+        color: var(--accent-cyan);
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+      }
+      
+      .description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #cbd5e1;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      /* Loading Animation */
+      .loader-container {
+        margin: 2rem 0;
+      }
+      
+      .loader {
+        display: inline-flex;
+        gap: 0.5rem;
+      }
+      
+      .loader span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--secondary-blue);
+        animation: bounce 1.4s infinite ease-in-out both;
+        box-shadow: 0 0 20px var(--glow-color);
+      }
+      
+      .loader span:nth-child(1) { animation-delay: -0.32s; }
+      .loader span:nth-child(2) { animation-delay: -0.16s; }
+      .loader span:nth-child(3) { animation-delay: 0; }
+      
+      @keyframes bounce {
+        0%, 80%, 100% {
+          transform: scale(0.8);
+          opacity: 0.5;
+        }
+        40% {
+          transform: scale(1.2);
+          opacity: 1;
+        }
+      }
+      
+      /* Progress Bar */
+      .progress-container {
+        width: 100%;
+        max-width: 400px;
+        height: 6px;
+        background: rgba(59, 130, 246, 0.2);
+        border-radius: 10px;
+        margin: 2rem auto;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, 
+          var(--secondary-blue) 0%, 
+          var(--accent-cyan) 50%, 
+          var(--secondary-blue) 100%);
+        background-size: 200% 100%;
+        border-radius: 10px;
+        animation: progressMove 2s linear infinite;
+        box-shadow: 0 0 20px var(--glow-color);
+      }
+      
+      @keyframes progressMove {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      
+      /* Contact Info */
+      .contact-info {
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(59, 130, 246, 0.2);
+      }
+      
+      .contact-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.5rem 1rem;
+        color: #94a3b8;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+      }
+      
+      .contact-item:hover {
+        color: var(--accent-cyan);
+        transform: translateY(-2px);
+      }
+      
+      .contact-item svg {
+        width: 20px;
+        height: 20px;
+      }
+      
+      /* Floating Icons */
+      .floating-icon {
+        position: absolute;
+        animation: floatIcon 6s ease-in-out infinite;
+        opacity: 0.15;
+        z-index: 5;
+      }
+      
+      @keyframes floatIcon {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+      }
+      
+      .icon1 { top: 10%; left: 10%; animation-delay: 0s; }
+      .icon2 { top: 20%; right: 15%; animation-delay: 1s; }
+      .icon3 { bottom: 15%; left: 15%; animation-delay: 2s; }
+      .icon4 { bottom: 20%; right: 10%; animation-delay: 3s; }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .main-card {
+          padding: 2rem 1.5rem;
+        }
+        
+        .contact-item {
+          display: block;
+          margin: 0.75rem 0;
+        }
+        
+        .floating-icon {
+          display: none;
+        }
+      }
+      
+      /* SEO Hidden Content */
+      .seo-content {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+    </style>
   </head>
-
+  
   <body>
-    <noscript>
-      <div style="padding: 40px; text-align: center; font-family: Arial, sans-serif;">
-        <h1>Baker and Davis - Leading Pharmaceutical Distributor & Exporter</h1>
-        <p>Baker and Davis (Baker & Davis, Baker Davis, BD India) is a premier pharmaceutical distributor and global medicine exporter in Mumbai, India.</p>
-        <h2>Our Services:</h2>
-        <ul style="list-style: none; padding: 0;">
-          <li>✓ Pharmaceutical Distribution</li>
-          <li>✓ Global Medicine Export</li>
-          <li>✓ International Trading</li>
-          <li>✓ Supply Chain Management</li>
-        </ul>
-        <p><strong>Contact Us:</strong> admin@bdindia.in | +91-22-48256677</p>
-        <p><strong>Location:</strong> Mumbai, Maharashtra, India</p>
-        <p><strong>Certifications:</strong> WHO-GMP Certified, ISO 9001:2015</p>
-        <hr />
-        <p>Please enable JavaScript to view the full interactive website.</p>
-        <p><a href="https://bdindia.in/about">About Us</a> | <a href="https://bdindia.in/contact">Contact</a> | <a href="https://bdindia.in/careers">Careers</a></p>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+    <div class="grid-pattern"></div>
+    
+    <!-- Floating Medical Icons -->
+    <div class="floating-icon icon1">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="floating-icon icon2">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6H16V4C16 2.9 15.1 2 14 2H10C8.9 2 8 2.9 8 4V6H4C2.9 6 2 6.9 2 8V20C2 21.1 2.9 22 4 22H20C21.1 22 22 21.1 22 20V8C22 6.9 21.1 6 20 6ZM10 4H14V6H10V4Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="floating-icon icon3">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7V17C2 20.5 5.4 23.7 12 25C18.6 23.7 22 20.5 22 17V7L12 2Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="floating-icon icon4">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="currentColor"/>
+      </svg>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+      <img 
+        src="/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png" 
+        alt="Baker and Davis Logo" 
+        class="logo"
+        onerror="this.style.display='none'"
+      />
+      
+      <div class="main-card">
+        <h1>Work in Progress</h1>
+        <p class="subtitle">We're Making Things Better</p>
+        
+        <p class="description">
+          Baker and Davis is currently undergoing scheduled maintenance to enhance your experience. 
+          Our team is working diligently to bring you improved services and features. 
+          We'll be back online shortly. Thank you for your patience!
+        </p>
+        
+        <div class="loader-container">
+          <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
+            </svg>
+            <span>admin@bdindia.in</span>
+          </div>
+          
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="currentColor"/>
+            </svg>
+            <span>+91-22-48256677</span>
+          </div>
+          
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
+            </svg>
+            <span>Mumbai, Maharashtra, India</span>
+          </div>
+        </div>
       </div>
-    </noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    </div>
+    
+    <!-- SEO Content - Hidden but crawlable -->
+    <div class="seo-content">
+      <h2>Baker and Davis - Premier Pharmaceutical Distributor</h2>
+      <p>Baker and Davis (Baker & Davis, Baker Davis, BD India) is a leading pharmaceutical distributor and global medicine exporter based in Mumbai, India.</p>
+      <h3>Our Services:</h3>
+      <ul>
+        <li>Pharmaceutical Distribution</li>
+        <li>Global Medicine Export</li>
+        <li>International Trading</li>
+        <li>Supply Chain Management</li>
+        <li>WHO-GMP Certified Products</li>
+        <li>ISO 9001:2015 Certified Operations</li>
+      </ul>
+      <p><strong>Contact:</strong> admin@bdindia.in | +91-22-48256677</p>
+      <p><strong>Location:</strong> Mumbai, Maharashtra, India</p>
+      <p><strong>Certifications:</strong> WHO-GMP Certified, ISO 9001:2015</p>
+    </div>
   </body>
 </html>
