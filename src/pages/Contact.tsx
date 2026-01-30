@@ -72,29 +72,19 @@ const Contact = () => {
   return (
     <>
       <Seo
-        title="Contact Baker & Davis | Pharmaceutical Distributor Mumbai | BD India Export Inquiries"
-        description="Contact Baker & Davis (BD India) pharmaceutical distributor and exporter in Mumbai. Reach Baker Davis for pharmaceutical distribution inquiries, medicine trading partnerships, and global export opportunities. Davis Baker serves Kalbadevi Mumbai and worldwide. Get pharmaceutical supply chain solutions from Baker India."
+        title="Contact Baker & Davis | Pharmaceutical Distributor Mumbai, Maharashtra | BD India"
+        description="Contact Baker & Davis (BD India) pharmaceutical distributor and exporter in Mumbai, Maharashtra. Reach us for pharmaceutical distribution inquiries, medicine trading partnerships, and export opportunities to Sudan, Hong Kong & more."
         keywords={[
-          "contact Baker Davis Mumbai",
-          "Davis Baker pharmaceutical distributor contact",
-          "BD India pharmaceutical inquiries",
-          "Baker and Davis Mumbai address",
+          "contact Baker and Davis Mumbai",
+          "BD India contact",
+          "pharmaceutical distributor Mumbai contact",
+          "Baker and Davis address",
           "pharmaceutical distributor Kalbadevi",
-          "Baker Davis export contact",
-          "pharmaceutical trader Mumbai contact Baker India",
-          "medicine export inquiries BD India",
-          "Baker and Davis phone number",
-          "pharmaceutical supply chain contact Baker Davis",
-          "Davis pharmaceutical Mumbai office",
-          "pharmaceutical distribution inquiries Baker India",
-          "Baker Davis Babu Genu Road",
-          "BD India pharmaceutical exporter contact",
-          "Baker and Davis email Mumbai",
-          "pharmaceutical trading contact Baker Davis",
-          "medicine distributor Mumbai contact",
-          "Baker India pharmaceutical partnerships",
-          "Davis Baker global distribution contact",
-          "pharmaceutical wholesaler Mumbai Baker Davis"
+          "Baker and Davis export contact",
+          "medicine exporter Mumbai contact",
+          "Baker and Davis phone",
+          "BD India pharmaceutical contact",
+          "pharmaceutical trading Mumbai"
         ]}
         schema={{
           "@context": "https://schema.org",
@@ -297,7 +287,7 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Business Details */}
+        {/* Company Information - HIDDEN FOR NOW
         <section className="py-16 bg-white dark:bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
@@ -327,6 +317,7 @@ const Contact = () => {
             </div>
           </div>
         </section>
+        */}
       </div>
     </>
   );

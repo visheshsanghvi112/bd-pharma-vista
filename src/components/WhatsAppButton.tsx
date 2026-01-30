@@ -29,8 +29,8 @@ const WhatsAppButton: React.FC = () => {
     "provider": {
       "@type": "Organization",
       "name": "Baker & Davis",
-      "alternateName": ["BD India", "Baker India"],
-      "description": "Leading pharmaceutical distributors, traders and exporters in India"
+      "alternateName": ["BD India", "Baker and Davis"],
+      "description": "Trusted pharmaceutical distributors, traders and exporters in India"
     },
     "availableChannel": {
       "@type": "ServiceChannel",

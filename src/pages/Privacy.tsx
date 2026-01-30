@@ -7,7 +7,7 @@ const Privacy = () => {
     <>
       <Seo 
         title="Privacy Policy"
-        description="Baker & Davis pharmaceutical manufacturing privacy policy. Learn about how we protect your data and maintain confidentiality in our global pharmaceutical operations."
+        description="Baker & Davis pharmaceutical distribution privacy policy. Learn about how we protect your data and maintain confidentiality in our pharmaceutical trading operations."
       />
       <div className="flex min-h-screen flex-col bg-background">
         {/* Hero Section */}

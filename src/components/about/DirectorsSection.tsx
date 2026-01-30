@@ -5,17 +5,17 @@ const DirectorsSection = () => {
   const directors = [
     {
       name: "Mr. Vikram Jain",
-      title: "Managing Director",
+      title: "Director",
       initials: "VJ",
-      shortDesc: "Leading strategic expansion into international markets with expertise in regulatory compliance and supply chain management.",
-      fullDesc: "With over 20 years of distinguished experience in pharmaceutical distribution and global trade, Mr. Vikram Jain leads our strategic expansion into international markets. His expertise in regulatory compliance, supply chain management, and international partnerships has been instrumental in establishing Baker & Davis as a trusted pharmaceutical distributor across multiple continents."
+      shortDesc: "Leading business operations and strategic growth initiatives.",
+      fullDesc: "Mr. Vikram Jain leads the overall business operations and strategic growth of Baker & Davis, focusing on expanding our distribution network and building strong partnerships with healthcare providers."
     },
     {
       name: "Mr. Piyush Jain",
       title: "Director", 
       initials: "PJ",
-      shortDesc: "Specializing in pharmaceutical logistics, quality assurance, and operational excellence for global distribution.",
-      fullDesc: "Mr. Piyush Jain brings exceptional knowledge of pharmaceutical logistics, quality assurance, and operational excellence to Baker & Davis. His leadership in developing robust distribution networks and ensuring compliance with international pharmaceutical trade regulations has positioned Baker & Davis as a reliable partner for global pharmaceutical supply."
+      shortDesc: "Managing logistics, operations and supply chain activities.",
+      fullDesc: "Mr. Piyush Jain oversees the logistics, supply chain operations and day-to-day activities at Baker & Davis, ensuring efficient and timely delivery of pharmaceutical products."
     }
   ];
 
@@ -25,8 +25,7 @@ const DirectorsSection = () => {
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-4xl font-bold text-pharma-navy mb-2 md:mb-4">Our Leadership</h2>
           <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto hidden md:block">
-            Led by experienced directors with deep expertise in pharmaceutical distribution and global trade, 
-            Baker & Davis continues to excel in providing reliable pharmaceutical supply chain solutions worldwide.
+            Baker & Davis is led by a dedicated team committed to reliable pharmaceutical distribution services.
           </p>
         </div>
 
@@ -59,6 +58,7 @@ const DirectorsSection = () => {
           ))}
         </div>
 
+        {/* Leadership highlight cards - HIDDEN FOR NOW
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
             <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-pharma-light/40 flex items-center justify-center">
@@ -71,8 +71,8 @@ const DirectorsSection = () => {
             <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-pharma-light/40 flex items-center justify-center">
               <Globe className="w-7 h-7 text-pharma-navy" />
             </div>
-            <h4 className="text-xl font-semibold text-pharma-navy mb-2">Global Reach</h4>
-            <p className="text-gray-600 text-sm">Extensive network spanning over 50 countries worldwide</p>
+            <h4 className="text-xl font-semibold text-pharma-navy mb-2">Pan-India & International</h4>
+            <p className="text-gray-600 text-sm">Distribution network across India and 10+ countries internationally</p>
           </div>
           <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
             <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-pharma-light/40 flex items-center justify-center">
@@ -82,6 +82,7 @@ const DirectorsSection = () => {
             <p className="text-gray-600 text-sm">Full adherence to international pharmaceutical trade regulations</p>
           </div>
         </div>
+        */}
       </div>
     </section>
   );

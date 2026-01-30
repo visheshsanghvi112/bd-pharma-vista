@@ -19,22 +19,22 @@ const About = () => {
   const values = [
     {
       title: "Quality",
-      description: "We maintain the highest standards in all aspects of our pharmaceutical distribution, from sourcing to delivery.",
+      description: "Products sourced only from trusted and certified manufacturers.",
       icon: Star
     },
     {
       title: "Reliability",
-      description: "Our dedicated team ensures consistent and timely delivery of pharmaceutical products to global markets.",
+      description: "Consistent and dependable pharmaceutical supply you can count on.",
       icon: User
     },
     {
       title: "Integrity",
-      description: "We conduct our business with unwavering ethical standards and transparency, building trust with partners worldwide.",
+      description: "Transparent business practices and honest dealings with all partners.",
       icon: Award
     },
     {
-      title: "Compliance",
-      description: "We adhere to all international regulatory requirements and maintain certifications from leading global health authorities.",
+      title: "Service",
+      description: "Dedicated support and timely delivery to meet your needs.",
       icon: Briefcase
     }
   ];
@@ -42,33 +42,21 @@ const About = () => {
   return (
     <>
       <Seo 
-        title="About Baker & Davis - Leading Pharmaceutical Distributor & Exporter | BD India"
-        description="Learn about Baker & Davis (BD India) - a premier pharmaceutical distributor and global exporter. Baker Davis has been serving the pharmaceutical industry with reliable distribution services. Discover Davis and Baker's commitment to excellence in pharmaceutical supply chain solutions and international medicine trading."
+        title="About Baker & Davis - Pharmaceutical Distributor & Exporter Mumbai | BD India"
+        description="Learn about Baker & Davis (BD India) - a trusted pharmaceutical distributor and exporter based in Mumbai, Maharashtra. Established in 2017, we serve healthcare providers across India and export to 10+ countries including Sudan and Hong Kong. Cold storage facilities available."
         keywords={[
-          "Baker Davis pharmaceutical company",
-          "Davis Baker about us",
+          "Baker and Davis pharmaceutical company",
           "BD India company profile",
-          "pharmaceutical distributor history Baker and Davis",
-          "Baker India pharmaceutical background",
-          "pharmaceutical export company profile Baker Davis",
-          "global pharmaceutical distribution Baker and Davis",
-          "pharmaceutical trading company history BD India",
-          "medicine supply chain company Baker Davis",
-          "pharmaceutical logistics company Baker India",
-          "WHO-GDP certified distributor Baker and Davis",
-          "pharmaceutical wholesaler profile BD India",
-          "international medicine trading Baker Davis",
-          "pharmaceutical import export company Baker India",
-          "medical supplies distributor about Baker Davis",
-          "generic medicine distributor Baker and Davis",
-          "pharmaceutical supply chain solutions BD India",
-          "medicine trading company profile Baker Davis",
-          "global pharmaceutical trader Baker India",
-          "pharmaceutical distribution network Baker and Davis",
-          "international pharmaceutical distribution Baker Davis",
-          "medicine export services company BD India",
-          "pharmaceutical company Mumbai Baker Davis",
-          "Davis pharmaceutical distribution services"
+          "pharmaceutical distributor Mumbai",
+          "pharmaceutical exporter Maharashtra",
+          "Baker and Davis about us",
+          "medicine trading company Mumbai",
+          "pharmaceutical distributor India",
+          "cold storage pharmaceutical",
+          "medicine export Sudan Hong Kong",
+          "Baker and Davis Mumbai",
+          "BD India pharmaceutical",
+          "pharmaceutical trading India"
         ]}
       />
       <div className="flex flex-col">
@@ -95,7 +83,7 @@ const About = () => {
 							Baker & Davis is a premier pharmaceutical distributor and exporter based in Mumbai, India, serving the global healthcare industry with dedication to quality and reliability.
 						</p>
 						<p className="text-sm md:text-lg text-gray-700 leading-relaxed">
-							Our operations span across more than 50 countries with <span className="font-semibold text-pharma-navy">WHO-GDP certification</span>, ensuring every product meets the highest standards of safety and efficacy.
+							Our operations span across India and 10+ countries internationally, ensuring every product meets the highest standards of safety and efficacy.
 						</p>
 						<p className="hidden md:block text-lg text-gray-700 leading-relaxed mt-4">
 							At Baker & Davis, we don't just distribute pharmaceuticals – we build partnerships, ensure regulatory compliance, and contribute to global health accessibility. Our expertise in international pharmaceutical logistics makes us the preferred partner for pharmaceutical companies seeking reliable global distribution channels.
@@ -149,17 +137,17 @@ const About = () => {
                 <h2 className="text-2xl md:text-4xl font-bold text-pharma-navy mb-4 md:mb-6">Our Story</h2>
                 <div className="space-y-3 md:space-y-4 text-gray-700 text-sm md:text-lg leading-relaxed">
                   <p>
-                    Baker & Davis was founded with a mission to deliver trusted pharmaceutical distribution solutions globally. What began in Mumbai has grown into a respected pharmaceutical distributor with truly global reach.
+                    Baker & Davis was founded in 2017 with a mission to deliver trusted pharmaceutical distribution solutions. What began in Mumbai has grown into a respected pharmaceutical distributor serving India and international markets.
                   </p>
                   <p>
-                    For over <span className="font-semibold text-pharma-navy">two decades</span>, we've provided reliable pharmaceutical supply chain solutions meeting rigorous international standards.
+                    Since our establishment, we've provided reliable pharmaceutical supply chain solutions meeting rigorous international standards.
                     <span className="hidden md:inline"> Our journey has been marked by continuous growth, strategic partnerships, and an unwavering commitment to excellence.</span>
                   </p>
                   <p className="hidden md:block">
-                    Our commitment to quality has earned us certifications from leading health authorities worldwide, including <span className="font-semibold text-pharma-navy">WHO-GDP certification</span>, ISO standards, and regulatory approvals from multiple international markets.
+                    Our commitment to compliance ensures we meet pharmaceutical distribution standards. We maintain proper documentation and quality processes throughout our supply chain.
                   </p>
                   <p>
-                    Today, we serve healthcare providers in over <span className="font-semibold text-pharma-navy">50 countries</span><span className="hidden md:inline">, with a continuously expanding network of trusted pharmaceutical suppliers, manufacturers, and distribution partners. Every day, we facilitate the journey of life-saving medicines from manufacturers to patients worldwide</span>.
+                    Today, we serve healthcare providers across India and <span className="font-semibold text-pharma-navy">10+ countries</span> internationally<span className="hidden md:inline">, with a continuously expanding network of trusted pharmaceutical suppliers and distribution partners. Every day, we facilitate the journey of medicines from manufacturers to distributors across India and abroad</span>.
                   </p>
                 </div>
               </div>
@@ -178,14 +166,14 @@ const About = () => {
         <DirectorsSection />
 
 
-        {/* Awards & Recognition */}
-        <AwardsSection />
+        {/* Awards & Recognition - HIDDEN FOR NOW */}
+        {/* <AwardsSection /> */}
 
         {/* Global Presence Map */}
         <GlobalPresenceMap />
 
-        {/* Testimonials Section */}
-        <TestimonialsSection />
+        {/* Testimonials Section - HIDDEN FOR NOW */}
+        {/* <TestimonialsSection /> */}
 
         {/* Values Section */}
         <section className="py-16 bg-gradient-to-br from-pharma-light/30 to-white dark:from-pharma-dark/20 dark:to-background transition-colors duration-300">
@@ -205,19 +193,19 @@ const About = () => {
           </div>
         </section>
 
-        {/* CSR/Community Involvement Section - Hidden on mobile */}
-        <div className="hidden md:block">
+        {/* CSR/Community Involvement Section - HIDDEN FOR NOW */}
+        {/* <div className="hidden md:block">
           <CsrSection />
-        </div>
+        </div> */}
 
         {/* Distribution Network Section */}
         <FacilitiesSection />
 
-        {/* Supply Chain Process */}
-        <ProductDevelopmentSection />
+        {/* Product Development Section - HIDDEN, not relevant for distribution company */}
+        {/* <ProductDevelopmentSection /> */}
 
-        {/* Certifications Section */}
-        <CertificationsSection />
+        {/* Certifications Section - HIDDEN FOR NOW, will update with real licenses */}}
+        {/* <CertificationsSection /> */}
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-primary/90 to-primary-dark dark:from-primary-dark/90 dark:to-primary text-white">

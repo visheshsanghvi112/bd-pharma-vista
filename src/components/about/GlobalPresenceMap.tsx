@@ -4,12 +4,10 @@ import { Globe, MapPin } from "lucide-react";
 
 const GlobalPresenceMap = () => {
   const regions = [
-    { name: "North America", countries: ["USA", "Canada", "Mexico"], count: 3 },
-    { name: "South America", countries: ["Brazil", "Argentina", "Colombia", "Chile"], count: 4 },
-    { name: "Europe", countries: ["UK", "Germany", "France", "Italy", "Spain", "Netherlands"], count: 6 },
-    { name: "Asia", countries: ["India", "China", "Japan", "Singapore", "South Korea"], count: 5 },
-    { name: "Africa", countries: ["South Africa", "Kenya", "Nigeria", "Egypt"], count: 4 },
-    { name: "Oceania", countries: ["Australia", "New Zealand"], count: 2 },
+    { name: "India", countries: ["Pan-India Distribution"], count: "All States" },
+    { name: "Africa", countries: ["Sudan", "Kenya", "Tanzania", "Uganda"], count: 4 },
+    { name: "Asia Pacific", countries: ["Hong Kong", "Myanmar", "Nepal"], count: 3 },
+    { name: "Middle East", countries: ["UAE", "Oman"], count: 2 },
   ];
 
   const mapRef = useRef<HTMLDivElement>(null);
@@ -54,7 +52,7 @@ const GlobalPresenceMap = () => {
           <h2 className="text-3xl font-bold text-pharma-navy transition-colors duration-300">Global Presence</h2>
         </div>
         <p className="text-foreground text-center max-w-3xl mx-auto mb-12">
-          Our products reach patients in more than 50 countries across 6 continents, supported by a robust distribution network.
+          Our products reach distributors across India and 10+ countries internationally, supported by a reliable distribution network.
         </p>
         
         <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden mb-8 bg-card shadow-lg">
@@ -66,14 +64,14 @@ const GlobalPresenceMap = () => {
           {/* Overlay with key locations */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-5 right-5 bg-white/80 dark:bg-card/80 p-4 rounded-lg shadow-md backdrop-blur-sm z-10">
-              <p className="text-xl font-bold text-pharma-navy">50+ Countries</p>
-              <p className="text-sm text-muted-foreground">Global Distribution Network</p>
+              <p className="text-xl font-bold text-pharma-navy">10+ Countries</p>
+              <p className="text-sm text-muted-foreground">International Distribution Network</p>
             </div>
           </div>
         </div>
         
         {/* Region Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {regions.map((region, index) => (
             <div 
               key={index} 

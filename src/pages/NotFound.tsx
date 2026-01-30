@@ -43,7 +43,7 @@ const NotFound = () => {
           "BD India",
           "pharmaceutical distributors",
           "medicine traders",
-          "Baker India",
+          "Baker and Davis",
           "pharmaceutical exporters"
         ]}
       />
@@ -121,7 +121,7 @@ const NotFound = () => {
 
           {/* Keywords for SEO */}
           <div className="mt-6 text-xs text-gray-400">
-            <p>Baker & Davis - BD India - Pharmaceutical Distributors - Medicine Traders - Baker India</p>
+            <p>Baker & Davis - BD India - Pharmaceutical Distributors - Medicine Traders - Baker and Davis</p>
           </div>
         </div>
       </div>

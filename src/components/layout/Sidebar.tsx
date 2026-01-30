@@ -18,13 +18,9 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const mainNavLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Blog", path: "/blog" },
-    { name: "Team", path: "/team" },
   ];
 
   const contactLinks = [
-    { name: "FAQ", path: "/faq" },
-    { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
     { name: "Privacy", path: "/privacy" },
   ];

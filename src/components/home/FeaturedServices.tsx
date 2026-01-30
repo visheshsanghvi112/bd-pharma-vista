@@ -10,24 +10,24 @@ import { Badge } from "@/components/ui/badge";
 const services = [
   {
     icon: Shield,
-    title: "Quality Assurance",
-    description: "WHO-GMP certified manufacturing with rigorous quality control processes",
+    title: "Trusted Supply Chain",
+    description: "Reliable distribution with proper storage and handling standards",
     color: "from-pharma-navy to-primary",
     iconColor: "text-pharma-navy",
     bgColor: "bg-gradient-to-br from-pharma-light to-pharma-lighter",
   },
   {
     icon: Globe,
-    title: "Global Distribution",
-    description: "Extensive network serving healthcare providers in 50+ countries",
+    title: "Pan-India & Export",
+    description: "Distribution network across India and exports to Sudan, Hong Kong & more",
     color: "from-primary to-primary-light",
     iconColor: "text-primary",
     bgColor: "bg-gradient-to-br from-pharma-lighter to-white",
   },
   {
     icon: Zap,
-    title: "Innovation Focus",
-    description: "Cutting-edge R&D facilities developing next-generation pharmaceuticals",
+    title: "Cold Storage",
+    description: "Temperature-controlled facilities for sensitive pharmaceutical products",
     color: "from-primary-light to-accent",
     iconColor: "text-primary-light",
     bgColor: "bg-gradient-to-br from-pharma-light to-secondary",
@@ -35,7 +35,7 @@ const services = [
   {
     icon: Heart,
     title: "Healthcare Mission",
-    description: "Dedicated to improving global health through quality medicine",
+    description: "Dedicated to improving healthcare access through reliable medicine distribution",
     color: "from-pharma-navy to-primary-dark",
     iconColor: "text-pharma-navy",
     bgColor: "bg-gradient-to-br from-secondary to-pharma-light",
@@ -57,7 +57,7 @@ const FeaturedServices = () => {
             Comprehensive Pharmaceutical Solutions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We offer a wide range of pharmaceutical manufacturing and export services to meet your specific healthcare needs.
+            We offer comprehensive pharmaceutical trading and distribution services to meet your healthcare supply needs.
           </p>
         </div>
         

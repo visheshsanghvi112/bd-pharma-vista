@@ -28,7 +28,7 @@ const Seo = ({
   noIndex = false,
   schema
 }: SeoProps) => {
-  const siteName = "Baker and Davis | Baker & Davis | Baker Davis";
+  const siteName = "Baker and Davis | Baker & Davis";
   const fullTitle = `${title} | ${siteName}`;
   const siteUrl = "https://bdindia.in";
   // Fix canonical URL: normalize path, remove trailing slash except for root
@@ -41,36 +41,21 @@ const Seo = ({
   const brandKeywords = [
     "Baker and Davis",
     "Baker & Davis",
-    "Baker Davis",
-    "Davis and Baker",
-    "Davis Baker",
     "BD India",
     "bdindia",
-    "Baker India",
-    "Baker Davis India",
     "Baker and Davis India",
     "Baker and Davis Mumbai",
     "Baker & Davis Mumbai",
-    "Baker Davis Mumbai",
     "Baker and Davis pharmaceutical",
     "Baker & Davis pharmaceutical",
-    "Baker Davis pharmaceutical",
     "Baker and Davis distributor",
-    "Baker Davis distributor",
     "BD India distributor",
     "Baker and Davis exporter",
-    "Baker Davis exporter",
-    "Baker India pharmaceutical",
-    "Davis pharmaceutical India",
     "Baker and Davis pharmaceutical distributor",
-    "Baker Davis pharmaceutical distributor",
     "BD pharmaceutical distributor",
     "Baker and Davis trader",
-    "Baker Davis trader",
     "pharmaceutical distributor Baker and Davis",
-    "pharmaceutical distributor Baker Davis",
-    "Baker and Davis pharmaceutical company",
-    "Baker Davis pharmaceutical company"
+    "Baker and Davis pharmaceutical company"
   ];
 
   // Merge brand keywords with page-specific keywords
@@ -139,17 +124,11 @@ const Seo = ({
           "legalName": "Baker and Davis Private Limited",
           "alternateName": [
             "Baker & Davis",
-            "Baker Davis",
-            "Davis and Baker",
-            "Davis Baker",
             "BD India",
             "bdindia",
-            "Baker India",
-            "Baker Davis India",
             "Baker and Davis India",
             "Baker and Davis Mumbai",
-            "Baker and Davis Pharmaceuticals",
-            "Baker Davis Pharmaceuticals"
+            "Baker and Davis Pharmaceuticals"
           ],
           "url": siteUrl,
           "logo": `${siteUrl}${image}`,
@@ -175,10 +154,10 @@ const Seo = ({
             `${siteUrl}`,
             "https://bdindia.in"
           ],
-          "foundingDate": "2003",
+          "foundingDate": "2017",
           "foundingLocation": {
             "@type": "Place",
-            "name": "Mumbai, India"
+            "name": "Mumbai, Maharashtra, India"
           },
           "industry": "Pharmaceutical Distribution and Export",
           "knowsAbout": [
@@ -193,9 +172,8 @@ const Seo = ({
           "brand": {
             "@type": "Brand",
             "name": "Baker and Davis",
-            "alternateName": ["Baker & Davis", "Baker Davis", "BD India"]
-          },
-          "award": ["ISO-9001-2015", "WHO-GMP Certification"]
+            "alternateName": ["Baker & Davis", "BD India"]
+          }
         })}
       </script>
 

@@ -8,34 +8,34 @@ import { useEffect, useRef, useState } from "react";
 const TimelineSection = () => {
   const milestones = [
     {
-      year: "2000",
+      year: "2017",
       title: "Foundation",
-      description: "Baker & Davis was founded with a mission to provide quality pharmaceutical products globally."
+      description: "Baker & Davis Pvt. Ltd. was incorporated in Mumbai with a mission to provide reliable pharmaceutical distribution services."
     },
     {
-      year: "2005",
-      title: "First International Export",
-      description: "Expanded operations to international markets, beginning with neighboring countries."
+      year: "2018",
+      title: "Pan-India Expansion",
+      description: "Expanded distribution network to serve healthcare providers across multiple states in India."
     },
     {
-      year: "2010",
-      title: "R&D Center",
-      description: "Established state-of-the-art Research & Development center for pharmaceutical innovation."
+      year: "2019",
+      title: "International Trading",
+      description: "Began pharmaceutical export operations to neighboring countries and the Middle East region."
     },
     {
-      year: "2015",
-      title: "Global Expansion",
-      description: "Reached milestone of exporting products to over 25 countries across 5 continents."
-    },
-    {
-      year: "2020",
-      title: "Digital Transformation",
-      description: "Implemented digital solutions across operations for enhanced efficiency and quality control."
+      year: "2021",
+      title: "WHO-GDP Certification",
+      description: "Achieved WHO Good Distribution Practices certification, ensuring international compliance standards."
     },
     {
       year: "2023",
-      title: "Sustainability Initiative",
-      description: "Launched comprehensive sustainability program to minimize environmental impact."
+      title: "Network Growth",
+      description: "Expanded export operations to 10+ countries with a growing network of trusted partners."
+    },
+    {
+      year: "2024",
+      title: "Digital Integration",
+      description: "Implemented digital solutions for enhanced supply chain visibility and customer service."
     }
   ];
 

@@ -13,20 +13,15 @@ const GlobalSchema = () => {
         "name": "Baker and Davis",
         "alternateName": [
             "Baker & Davis",
-            "Baker Davis",
-            "Davis and Baker",
-            "Davis Baker",
             "BD India",
             "bdindia",
-            "Baker India",
-            "Baker Davis India",
             "Baker and Davis Pharmaceuticals",
             "Baker and Davis Mumbai"
         ],
         "legalName": "Baker and Davis Private Limited",
         "url": baseUrl,
         "logo": `${baseUrl}/lovable-uploads/7af443a2-0eea-46d3-8be1-6ad1aab655af.png`,
-        "description": "Baker and Davis (Baker & Davis, Baker Davis) - Leading pharmaceutical distributor and exporter in Mumbai, India. Specializing in global pharmaceutical distribution, medicine trading, and export services.",
+        "description": "Baker and Davis (Baker & Davis, BD India) - Trusted pharmaceutical distributor and exporter in Mumbai, Maharashtra, India. Specializing in pharmaceutical distribution, medicine trading, and export services.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "42/44, Babu Genu Road, Shop No. 14, 2nd Floor",
@@ -47,11 +42,11 @@ const GlobalSchema = () => {
             baseUrl,
             "https://www.bdindia.in"
         ],
-        "foundingDate": "2003",
+        "foundingDate": "2017",
         "founders": [
             {
                 "@type": "Person",
-                "name": "Baker and Davis Founders"
+                "name": "Rashid Yusuf Shaikh"
             }
         ],
         "knowsAbout": [
@@ -64,22 +59,21 @@ const GlobalSchema = () => {
         "slogan": "Baker and Davis - Your Trusted Pharmaceutical Partner",
         "areaServed": {
             "@type": "Place",
-            "name": "Worldwide"
+            "name": "India and International Markets"
         },
         "makesOffer": {
             "@type": "Offer",
             "itemOffered": {
                 "@type": "Service",
                 "name": "Pharmaceutical Distribution and Export Services",
-                "description": "Baker and Davis provides pharmaceutical distribution, medicine trading, and global export services"
+                "description": "Baker and Davis provides pharmaceutical distribution, medicine trading, and export services across India and 10+ countries"
             }
         },
         "brand": {
             "@type": "Brand",
             "name": "Baker and Davis",
             "alternateName": ["Baker & Davis", "Baker Davis", "BD India"]
-        },
-        "award": ["ISO-9001-2015", "WHO-GMP Certification"]
+        }
     };
 
     // Breadcrumb Schema (Dynamic) - Generates breadcrumbs based on current route

@@ -41,24 +41,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-white/90 leading-relaxed">
-              BD Pvt. Ltd. is a trusted pharmaceutical distributor and global exporter of high-quality medicines, serving healthcare providers worldwide since 2000.
+              BD Pvt. Ltd. is a trusted pharmaceutical distributor and exporter of quality medicines, serving healthcare providers across India and 10+ countries worldwide since 2017.
             </p>
-            <div className="text-sm bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/5 shadow-lg hover:shadow-xl transition-all duration-300 card-hover">
-              <div className="flex flex-col gap-2">
-                <p className="flex items-center gap-2">
-                  <span className="font-medium text-white/90">GSTIN:</span> 
-                  <span className="text-white">27AADCJ9014B1ZW</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="font-medium text-white/90">CIN:</span> 
-                  <span className="text-white">U74999MH2017PTC291801</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="font-medium text-white/90">Drug License:</span> 
-                  <span className="text-white">20B-MH-MZ1-557373, 21B-MH-MZ1-557374</span>
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -70,10 +54,7 @@ const Footer = () => {
               {[
                 { to: "/", label: "Home" },
                 { to: "/about", label: "About Us" },
-                { to: "/team", label: "Our Team" },
-                { to: "/careers", label: "Careers" },
                 { to: "/contact", label: "Contact Us" },
-                { to: "/faq", label: "FAQ" },
               ].map((link, index) => (
                 <li key={index}>
                   <NavLink 
@@ -102,7 +83,7 @@ const Footer = () => {
                   <p className="font-medium text-white mb-1">Registered Office:</p>
                   <p>
                     42/44, Babu Genu Road, Shop No. 14, 2nd Floor, Om Shanti Co-Operative 
-                    Housing Society Ltd., Kalbadevi, Mumbai - 400 002
+                    Housing Society Ltd., Kalbadevi, Mumbai - 400 002, Maharashtra, India
                   </p>
                 </address>
               </div>
@@ -121,27 +102,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Legal & Certifications */}
+          {/* Social Media */}
           <div className="space-y-5">
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-16 after:bg-white/50 after:rounded-full">
-              Certifications & Social
+              Follow Us
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "WHO-GDP", 
-                "Export License", 
-                "ISO 9001:2015", 
-                "Drug License"
-              ].map((cert, index) => (
-                <span 
-                  key={index} 
-                  className="text-xs font-medium bg-white/10 px-3 py-2 rounded-full hover:bg-white/20 transition-all duration-300 cursor-default border border-white/5"
-                >
-                  {cert}
-                </span>
-              ))}
-            </div>
-
             <div className="pt-2">
               <p className="text-sm text-white/90 mb-3">Follow us on social media:</p>
               <div className="flex items-center gap-3">

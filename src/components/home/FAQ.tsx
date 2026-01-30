@@ -17,23 +17,23 @@ import { getStaggeredDelay } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "What quality certifications do you have?",
-    answer: "We maintain WHO-GMP certification and FDA approval for our manufacturing facility, ensuring the highest quality standards in pharmaceutical production.",
+    question: "What services do you provide?",
+    answer: "We are a pharmaceutical trading and distribution company. We source quality medicines from certified manufacturers and distribute them to healthcare providers across India and 10+ countries internationally.",
     icon: Award
   },
   {
-    question: "What is your production capacity?",
-    answer: "Our state-of-the-art facility can produce millions of units per month across various pharmaceutical forms including tablets, capsules, and liquid formulations.",
+    question: "What is your distribution capacity?",
+    answer: "Our robust distribution network enables us to handle large volumes of pharmaceutical products, ensuring timely delivery to distributors and healthcare providers across India and abroad.",
     icon: Factory
   },
   {
-    question: "Do you offer custom manufacturing services?",
-    answer: "Yes, we provide custom pharmaceutical manufacturing services tailored to your specific requirements while maintaining the highest quality standards.",
+    question: "Do you offer export services?",
+    answer: "Yes, we provide pharmaceutical export services to 10+ countries. We handle all regulatory documentation and ensure compliance with international trade requirements.",
     icon: Landmark
   },
   {
-    question: "What countries do you export to?",
-    answer: "We export to over 50 countries worldwide, with a strong presence in Asia, Africa, Europe, and the Americas.",
+    question: "Which regions do you serve?",
+    answer: "We distribute across all states of India and export to 10+ countries including the Middle East, Africa, and neighboring Asian countries.",
     icon: Globe
   }
 ];
@@ -50,7 +50,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Get answers to the most common questions about our pharmaceutical manufacturing and export services
+            Get answers to the most common questions about our pharmaceutical distribution and export services
           </p>
         </AnimatedElement>
         

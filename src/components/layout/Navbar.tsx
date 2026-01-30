@@ -33,15 +33,15 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
   const mainNavLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
 
-  const dropdownLinks = [
-    { name: "Our Story", path: "/our-story" },
-    { name: "FAQ", path: "/faq" },
-    { name: "Careers", path: "/careers" },
-  ];
+  // Hidden pages - temporarily disabled
+  // const dropdownLinks = [
+  //   { name: "Our Story", path: "/our-story" },
+  //   { name: "FAQ", path: "/faq" },
+  //   { name: "Careers", path: "/careers" },
+  // ];
 
   return (
     <header 
@@ -88,27 +88,6 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
               {link.name}
             </NavLink>
           ))}
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="flex items-center gap-1 px-2 hover:bg-transparent">
-                <span className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">More</span>
-                <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48 bg-white/95 backdrop-blur-md border border-gray-100 shadow-lg animate-fade-in animate-duration-200">
-              {dropdownLinks.map((link) => (
-                <DropdownMenuItem key={link.name} asChild className="hover:bg-gray-50 focus:bg-gray-50">
-                  <NavLink
-                    to={link.path}
-                    className="w-full cursor-pointer text-sm font-medium py-1.5"
-                  >
-                    {link.name}
-                  </NavLink>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
         </nav>
 
         <div className="flex items-center">

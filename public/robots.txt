@@ -1,17 +1,20 @@
 
 # Baker and Davis Pharmaceuticals - Robots.txt
-# Last Updated: 2025-11-19
+# Last Updated: 2025-01-30
 # ALL bots and crawlers are welcome!
 
 User-agent: *
 Allow: /
 Allow: /about
-Allow: /our-story
-Allow: /team
-Allow: /careers
 Allow: /contact
-Allow: /faq
 Allow: /privacy
+
+# Hidden pages - removed from navigation
+Disallow: /our-story
+Disallow: /team
+Disallow: /careers
+Disallow: /faq
+Disallow: /blog
 
 # Sitemaps
 Sitemap: https://bdindia.in/sitemap.xml

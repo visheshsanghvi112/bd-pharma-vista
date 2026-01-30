@@ -5,6 +5,7 @@ Site Name: Baker and Davis (Baker & Davis, Baker Davis, BD India)
 Site URL: https://bdindia.in
 Business Type: Pharmaceutical Distributor, Exporter, and Trading Company
 Location: Mumbai, Maharashtra, India
+Founded: 2017
 
 ## Crawling Policy
 - All pages are open for crawling
@@ -20,43 +21,28 @@ Description: Main landing page with company overview, services, and products
 
 ### About Us
 URL: https://bdindia.in/about
-Description: Complete company history, mission, vision, certifications, and facilities
-
-### Our Story
-URL: https://bdindia.in/our-story
-Description: Detailed journey of Baker and Davis from inception to present
-
-### Team
-URL: https://bdindia.in/team
-Description: Leadership team and key personnel information
+Description: Complete company history, mission, vision, and facilities
 
 ### Contact
 URL: https://bdindia.in/contact
 Description: Contact information, office address, phone, email
-
-### Careers
-URL: https://bdindia.in/careers
-Description: Job openings and career opportunities
-
-### FAQ
-URL: https://bdindia.in/faq
-Description: Frequently asked questions about products and services
 
 ### Privacy Policy
 URL: https://bdindia.in/privacy
 Description: Privacy policy and data protection information
 
 ## Company Keywords
-Baker and Davis, Baker & Davis, Baker Davis, Davis and Baker, Davis Baker, BD India, bdindia, Baker India, pharmaceutical distributor, medicine exporter, pharmaceutical trading company, Mumbai, India, WHO-GMP certified, pharmaceutical distribution, medicine trading, global pharmaceutical supply
+Baker and Davis, Baker & Davis, Baker Davis, BD India, bdindia, Baker India, pharmaceutical distributor, medicine exporter, pharmaceutical trading company, Mumbai, Maharashtra, India, pharmaceutical distribution, medicine trading, cold storage facility
 
 ## Content Summary
-Baker and Davis is a leading pharmaceutical distributor and exporter based in Mumbai, India. We specialize in global pharmaceutical distribution, medicine trading, and export services. Our company serves over 75+ countries worldwide with WHO-GMP certification and ISO 9001:2015 quality standards.
+Baker and Davis is a trusted pharmaceutical distributor and exporter based in Mumbai, Maharashtra, India. Established in 2017, we specialize in pharmaceutical distribution, medicine trading, and export services. Our company serves India and 10+ countries including Sudan, Hong Kong, Kenya, Tanzania, Uganda, Myanmar, Nepal, UAE, and Oman. We have cold storage facilities for temperature-sensitive products.
 
 ## Products & Services
 - Pharmaceutical Distribution
 - Medicine Export Services
 - International Pharmaceutical Trading
 - Generic Medicine Supply
+- Cold Storage Facilities
 - Pharmaceutical Logistics
 - Global Supply Chain Management
 
@@ -78,11 +64,10 @@ XML Sitemap: https://bdindia.in/sitemap.xml
 7. Refresh content weekly for updates
 
 ## Additional Information
-- Founded: 2003
+- Founded: 2017
 - Industry: Pharmaceutical Distribution & Export
-- Market: Worldwide (75+ countries)
-- Certifications: WHO-GMP, ISO 9001:2015
-- Specialization: Global pharmaceutical supply chain
+- Market: India and 10+ countries (Sudan, Hong Kong, Kenya, Tanzania, Uganda, Myanmar, Nepal, UAE, Oman)
+- Specialization: Pharmaceutical trading and distribution with cold storage facilities
 
 ---
-Last Updated: November 13, 2025
+Last Updated: January 30, 2025

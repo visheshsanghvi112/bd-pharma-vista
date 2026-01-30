@@ -18,14 +18,15 @@ import CookieConsent from "./components/CookieConsent";
 // Code-split non-essential pages for better performance
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
-const Blog = lazy(() => import("./pages/Blog"));
-const Team = lazy(() => import("./pages/Team"));
-const Careers = lazy(() => import("./pages/Careers"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const FAQ = lazy(() => import("./pages/FAQ"));
-const OurStory = lazy(() => import("./pages/OurStory"));
+// Hidden pages - temporarily disabled
+// const Blog = lazy(() => import("./pages/Blog"));
+// const Team = lazy(() => import("./pages/Team"));
+// const Careers = lazy(() => import("./pages/Careers"));
+// const FAQ = lazy(() => import("./pages/FAQ"));
+// const OurStory = lazy(() => import("./pages/OurStory"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -63,26 +64,6 @@ const AnimatedRoutes = () => {
               <About />
             </PageTransition>
           } />
-          <Route path="/blog" element={
-            <PageTransition>
-              <Blog />
-            </PageTransition>
-          } />
-          <Route path="/our-story" element={
-            <PageTransition>
-              <OurStory />
-            </PageTransition>
-          } />
-          <Route path="/team" element={
-            <PageTransition>
-              <Team />
-            </PageTransition>
-          } />
-          <Route path="/careers" element={
-            <PageTransition>
-              <Careers />
-            </PageTransition>
-          } />
           <Route path="/contact" element={
             <PageTransition>
               <Contact />
@@ -91,11 +72,6 @@ const AnimatedRoutes = () => {
           <Route path="/privacy" element={
             <PageTransition>
               <Privacy />
-            </PageTransition>
-          } />
-          <Route path="/faq" element={
-            <PageTransition>
-              <FAQ />
             </PageTransition>
           } />
         </Route>

@@ -144,10 +144,10 @@ const Index = () => {
   };
 
   const stats = [
-    { value: "15+", label: "Years of Excellence", icon: Calendar, color: "text-blue-600" },
-    { value: "75+", label: "Countries Served", icon: Globe, color: "text-green-600" },
-    { value: "500+", label: "Products Developed", icon: Activity, color: "text-purple-600" },
-    { value: "2000+", label: "Happy Clients", icon: Users, color: "text-orange-600" }
+    { value: "7+", label: "Years of Excellence", icon: Calendar, color: "text-blue-600" },
+    { value: "10+", label: "Countries Served", icon: Globe, color: "text-green-600" },
+    { value: "500+", label: "Products Distributed", icon: Activity, color: "text-purple-600" },
+    { value: "1000+", label: "Happy Clients", icon: Users, color: "text-orange-600" }
   ];
 
   const testimonials = [
@@ -180,54 +180,33 @@ const Index = () => {
   return (
     <>
       <Seo
-        title="Baker and Davis | Baker & Davis | Baker Davis - Leading Pharmaceutical Distributor Mumbai India | BD India"
-        description="Baker and Davis (Baker & Davis, Baker Davis, BD India) - Premier pharmaceutical distributor and global medicine exporter in Mumbai, India. Baker and Davis specializes in reliable pharmaceutical distribution, international medicine trading, and export services. Contact Baker Davis for pharmaceutical supply chain solutions worldwide."
+        title="Baker and Davis | Baker & Davis - Pharmaceutical Distributor Mumbai, Maharashtra | BD India"
+        description="Baker and Davis (Baker & Davis, BD India) - Trusted pharmaceutical distributor and exporter in Mumbai, Maharashtra. We specialize in pharmaceutical trading, distribution across India, and exports to Sudan, Hong Kong & 10+ countries. Cold storage facilities available."
         keywords={[
           "Baker and Davis",
           "Baker & Davis",
-          "Baker Davis",
-          "Davis and Baker",
-          "Davis Baker",
           "BD India",
           "bdindia",
-          "Baker India",
-          "Baker Davis India",
-          "Baker and Davis India",
           "Baker and Davis Mumbai",
-          "Baker Davis Mumbai",
-          "Baker and Davis pharmaceutical",
-          "Baker Davis pharmaceutical",
-          "Baker and Davis distributor",
-          "Baker Davis distributor",
-          "Baker and Davis exporter",
-          "Baker Davis exporter",
-          "pharmaceutical distributor Baker and Davis",
-          "pharmaceutical distributor Baker Davis",
-          "pharmaceutical distributor India",
+          "pharmaceutical distributor Mumbai",
+          "pharmaceutical distributor Maharashtra",
           "medicine exporter Mumbai",
           "pharmaceutical trading company Mumbai",
           "BD India distributor",
-          "pharmaceutical export company India",
-          "Baker India pharmaceutical distributor",
-          "Davis pharmaceutical India",
-          "global pharmaceutical distribution Baker and Davis",
-          "medicine supply chain Baker Davis",
-          "pharmaceutical logistics BD India",
-          "WHO-GDP certified Baker and Davis",
+          "pharmaceutical export India",
+          "medicine trading Mumbai",
           "pharmaceutical wholesaler Mumbai",
-          "medicine trading company Baker and Davis Mumbai",
-          "global pharmaceutical trader BD India",
-          "pharmaceutical distribution network Baker Davis",
-          "international pharmaceutical services Baker India",
-          "Baker and Davis pharmaceutical company",
-          "Baker Davis pharmaceutical company India",
-          "pharmaceutical distributor Mumbai India"
+          "cold storage pharmaceutical Mumbai",
+          "pharmaceutical distributor India",
+          "medicine export Sudan",
+          "medicine export Hong Kong",
+          "Baker and Davis pharmaceutical"
         ]}
         schema={{
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "Baker and Davis",
-          "alternateName": ["Baker & Davis", "Baker Davis", "BD India"],
+          "alternateName": ["Baker & Davis", "BD India"],
           "url": "https://bdindia.in",
           "potentialAction": {
             "@type": "SearchAction",
@@ -289,7 +268,7 @@ const Index = () => {
                   transition={{ delay: 0.2 }}
                 >
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
-                  WHO-GDP Certified Excellence
+                  Trusted Pharmaceutical Distributor
                 </motion.div>
 
                 <motion.h1
@@ -306,8 +285,8 @@ const Index = () => {
                   className="text-base sm:text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto lg:mx-0"
                   variants={fadeInUp}
                 >
-                  Setting new standards in pharmaceutical excellence with innovative research,
-                  quality manufacturing, and global healthcare solutions that make a difference.
+                  Setting new standards in pharmaceutical distribution with reliable supply chains,
+                  trusted partnerships, and healthcare solutions that make a difference across India and beyond.
                 </motion.p>
 
                 <motion.div
@@ -510,7 +489,7 @@ const Index = () => {
                     <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Quality Products</h3>
-                  <p className="text-gray-600 text-sm sm:text-base">WHO-GMP certified with international quality standards</p>
+                  <p className="text-gray-600 text-sm sm:text-base">Sourced from certified and trusted manufacturers</p>
                 </div>
               </motion.div>
 
@@ -546,20 +525,20 @@ const Index = () => {
                   Pharmaceutical Products by Baker & Davis
                 </h3>
                 <p className="text-base sm:text-lg text-gray-600">
-                  WHO-GMP certified tablets, capsules and injectables with extensive range across therapeutic categories.
+                  Quality tablets, capsules and injectables with extensive range across therapeutic categories.
                 </p>
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center gap-3 justify-center lg:justify-start">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm sm:text-base">WHO-GMP Certified Manufacturing</span>
+                    <span className="text-gray-700 text-sm sm:text-base">Sourced from Trusted Manufacturers</span>
                   </div>
                   <div className="flex items-center gap-3 justify-center lg:justify-start">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm sm:text-base">International Quality Standards</span>
+                    <span className="text-gray-700 text-sm sm:text-base">Cold Storage & Temperature Control</span>
                   </div>
                   <div className="flex items-center gap-3 justify-center lg:justify-start">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm sm:text-base">Global Distribution Network</span>
+                    <span className="text-gray-700 text-sm sm:text-base">Pan-India & International Network</span>
                   </div>
                 </div>
               </motion.div>
@@ -691,9 +670,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Testimonials Section - Hidden on mobile */}
+        {/* Testimonials Section - HIDDEN FOR NOW
         <section className="hidden md:block py-24 bg-gradient-section-alternate relative overflow-hidden">
-          {/* Center glow for testimonials */}
           <div className="absolute inset-0 bg-gradient-glow-center pointer-events-none"></div>
           <div className="container mx-auto px-4">
             <motion.div
@@ -751,6 +729,7 @@ const Index = () => {
             </motion.div>
           </div>
         </section>
+        */}
 
         {/* Trusted Partners Section (moved here) */}
         <section className="py-0">

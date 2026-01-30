@@ -32,7 +32,7 @@ const ChatBot: React.FC = () => {
     "How can I become a distributor partner?",
     "What pharmaceutical products do you distribute?",
     "Do you export medicines internationally?",
-    "What are your quality certifications?",
+    "Do you have cold storage facilities?",
     "How to place bulk orders?",
     "What are your payment terms?",
     "Do you provide cold chain logistics?",
@@ -143,7 +143,7 @@ const ChatBot: React.FC = () => {
       { 
         keywords: ["products", "medicines", "drugs", "pharmaceutical", "catalog", "what do you distribute", "inventory"],
         responses: [
-          "Baker & Davis distributes a comprehensive range of pharmaceuticals including generic medicines, branded drugs, medical devices, surgical instruments, and healthcare products. We work with leading manufacturers and maintain WHO-GMP standards. Our product categories include antibiotics, cardiovascular drugs, diabetes medications, and specialty medicines.",
+          "Baker & Davis distributes a comprehensive range of pharmaceuticals including generic medicines, branded drugs, medical devices, surgical instruments, and healthcare products. We source from trusted manufacturers and maintain high distribution standards. Our product categories include antibiotics, cardiovascular drugs, diabetes medications, and specialty medicines.",
           "Our extensive pharmaceutical portfolio covers therapeutic areas like cardiology, neurology, gastroenterology, and more. We also distribute medical equipment, diagnostic tools, and hospital supplies. Would you like specific information about any particular therapeutic category or brand?"
         ]
       },
@@ -152,8 +152,8 @@ const ChatBot: React.FC = () => {
       { 
         keywords: ["export", "international", "overseas", "global", "bd india", "baker india", "foreign"],
         responses: [
-          "Yes! Baker & Davis operates robust international pharmaceutical trading through our BD India division. We export quality Indian pharmaceuticals to over 20+ countries including Africa, Middle East, and Southeast Asia. Our export services include regulatory compliance, documentation, quality certifications, and end-to-end logistics support.",
-          "Our BD India export division handles international pharmaceutical trading with complete regulatory compliance. We ensure all exported medicines meet destination country standards and provide certificates of analysis, WHO-GMP certificates, and proper documentation for smooth customs clearance."
+          "Yes! Baker & Davis operates international pharmaceutical trading through our BD India division. We export quality Indian pharmaceuticals to 10+ countries including Africa, Middle East, and neighboring Asian countries. Our export services include regulatory compliance, documentation, and end-to-end logistics support.",
+          "Our BD India export division handles international pharmaceutical trading with complete regulatory compliance. We ensure all exported medicines meet destination country standards and provide certificates of analysis and proper documentation for smooth customs clearance."
         ]
       },
       
@@ -161,8 +161,8 @@ const ChatBot: React.FC = () => {
       { 
         keywords: ["quality", "certification", "gmp", "who", "standards", "license", "regulatory"],
         responses: [
-          "Quality is paramount at Baker & Davis. We maintain WHO-GMP standards and hold certifications from Drug Controller General of India (DCGI). Our facilities are ISO certified, and we follow strict quality assurance protocols including temperature-controlled storage, batch tracking, and regular quality audits.",
-          "All our pharmaceutical products undergo rigorous quality checks. We maintain proper cold chain logistics, have validated storage facilities, and our quality team ensures compliance with all regulatory requirements. Every batch comes with certificates of analysis and proper documentation."
+          "At Baker & Davis, we source products only from trusted and certified manufacturers. We maintain proper storage facilities including cold storage for temperature-sensitive products. Our team ensures proper handling and timely delivery of all pharmaceutical products.",
+          "All pharmaceutical products we distribute come from certified manufacturers. We maintain proper cold chain logistics, organized storage facilities, and our team ensures proper handling throughout the distribution process."
         ]
       },
       
