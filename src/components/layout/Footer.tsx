@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import { Mail, Phone, MapPin, Globe, Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -90,7 +90,7 @@ const Footer = () => {
               
               <div className="flex items-center gap-3 group hover:translate-x-1 transition-transform duration-300">
                 <Phone size={18} className="shrink-0 text-white/80 group-hover:text-white" />
-                <p className="text-sm text-white/80 group-hover:text-white transition-colors">022-48256677 / 022-40134455</p>
+                <p className="text-sm text-white/80 group-hover:text-white transition-colors">+91 22-48256677 / +91 22-40134455</p>
               </div>
               
               <div className="flex items-center gap-3 group hover:translate-x-1 transition-transform duration-300">
@@ -102,30 +102,28 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social Media */}
+          {/* Connect With Us */}
           <div className="space-y-5">
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-16 after:bg-white/50 after:rounded-full">
-              Follow Us
+              Connect With Us
             </h3>
             <div className="pt-2">
-              <p className="text-sm text-white/90 mb-3">Follow us on social media:</p>
+              <p className="text-sm text-white/90 mb-3">Get in touch for business inquiries:</p>
               <div className="flex items-center gap-3">
-                {[
-                  { icon: Facebook, href: "#", label: "Facebook" },
-                  { icon: Instagram, href: "#", label: "Instagram" },
-                  { icon: Twitter, href: "#", label: "Twitter" },
-                  { icon: Linkedin, href: "#", label: "LinkedIn" },
-                  { icon: Globe, href: "#", label: "Website" }
-                ].map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={`Visit our ${social.label} page`}
-                    className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transform transition-all duration-300 hover:scale-110 hover:rotate-3"
-                  >
-                    <social.icon size={18} className="text-white" />
-                  </a>
-                ))}
+                <a
+                  href="https://bdindia.in"
+                  aria-label="Visit our website"
+                  className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transform transition-all duration-300 hover:scale-110 hover:rotate-3"
+                >
+                  <Globe size={18} className="text-white" />
+                </a>
+                <a
+                  href="mailto:admin@bdindia.in"
+                  aria-label="Email us"
+                  className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transform transition-all duration-300 hover:scale-110 hover:rotate-3"
+                >
+                  <Mail size={18} className="text-white" />
+                </a>
               </div>
             </div>
           </div>
